@@ -11,12 +11,6 @@ RAM_SYMS := $(BUILD_DIR)/ram_syms.sym
 SAVE_CHUNKS_GEN_EVENT := $(BUILD_DIR)/save_chunks.gen.event
 SUSP_CHUNKS_GEN_EVENT := $(BUILD_DIR)/suspend_chunks.gen.event
 
-$(ARCHIPELAGO_DEFS): $(GENDEFS) $(RAM_STRUCTURES_H)
-	$(GENDEFS) Event > $@
-
-$(RAM_SYMS): $(GENDEFS) $(RAM_STRUCTURES_H)
-	$(GENDEFS) Sym > $@
-
 $(RAM_STRUCTURES_H): $(BIN_DIR)/ram_alloc.py data/ram_structures.csv
 	python $< --items_file $(word 2,$^) > $@
 
@@ -30,7 +24,8 @@ SYMBOLS := $(TARGET:.gba=.sym)
 
 EVENTS := $(EVENT_MAIN) $(ARCHIPELAGO_DEFS) $(BLANK_WEAPON_RANKS)
 
-hack: $(BASEPATCH)
+# CR cam: this should be a ups patch
+hack: $(TARGET)
 
 # All subdirectories
 dir := src
@@ -45,15 +40,13 @@ $(BASEROM):
 	$(error no $(BASEROM) found at build root)
 
 # CR cam: split out the postprocess step somehow
-$(TARGET) $(SYMBOLS) $(POPULATED_CONNECTOR_CONFIG): \
-		$(BASEROM) $(COLORZCORE) $(EVENTS) $(PARSEFILE) $(RAM_SYMS) \
-		$(CONNECTOR_CONFIG_PY) $(POSTPROCESS)
+$(TARGET) $(SYMBOLS): $(BASEROM) $(COLORZCORE) $(EVENTS) $(PARSEFILE) $(RAM_SYMS)
 	cd $(BUILD_DIR) && \
 		cp ../$(BASEROM) ../$(TARGET) && \
 		./ColorzCore A FE7 $(EAFLAGS) && \
 	|| (rm -f ../$(TARGET) ../$(SYMBOLS) && false)
 
-CLEAN := $(CLEAN) $(BUILD_DIR) $(BASEPATCH)
+CLEAN := $(CLEAN) $(BUILD_DIR)
 
 .PHONY: clean
 clean: clean-tools

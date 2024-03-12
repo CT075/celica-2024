@@ -1,10 +1,11 @@
-#ifdef _FE7_
+#ifdef _FE8_
   #include "EAstdlib.event"
 	#include "EA Standard Library/Backward Compatibility.txt"
 	#define FreeSpace 0xefb2e0
 
 	ORG FreeSpace
 
+  #include "vendor/src/ExpandedModularSave/ExModularSave.event"
   #include "src/main.event"
   #include "data/main.event"
 #else
