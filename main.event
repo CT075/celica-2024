@@ -1,0 +1,12 @@
+#ifdef _FE7_
+  #include "EAstdlib.event"
+	#include "EA Standard Library/Backward Compatibility.txt"
+	#define FreeSpace 0xefb2e0
+
+	ORG FreeSpace
+
+  #include "src/main.event"
+  #include "data/main.event"
+#else
+    ERROR You are not assembling FE7 events!
+#endif
