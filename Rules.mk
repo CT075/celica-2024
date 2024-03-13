@@ -34,6 +34,9 @@ include $(dir)/Rules.mk
 dir := data
 include $(dir)/Rules.mk
 
+dir := vendor/src
+include $(dir)/Rules.mk
+
 # The variables `EVENTS` and `CLEAN` are populated by subdirectory makefiles.
 
 $(BASEROM):
@@ -43,7 +46,7 @@ $(BASEROM):
 $(TARGET) $(SYMBOLS): $(BASEROM) $(COLORZCORE) $(EVENTS) $(PARSEFILE) $(RAM_SYMS)
 	cd $(BUILD_DIR) && \
 		cp ../$(BASEROM) ../$(TARGET) && \
-		./ColorzCore A FE7 $(EAFLAGS) && \
+		./ColorzCore A FE8 $(EAFLAGS) \
 	|| (rm -f ../$(TARGET) ../$(SYMBOLS) && false)
 
 CLEAN := $(CLEAN) $(BUILD_DIR)

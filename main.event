@@ -1,6 +1,7 @@
 #ifdef _FE8_
   #include "EAstdlib.event"
 	#include "EA Standard Library/Backward Compatibility.txt"
+  #include "Extensions/Hack Installation.txt"
 	#define FreeSpace 0xefb2e0
 
 	ORG FreeSpace
@@ -9,5 +10,5 @@
   #include "src/main.event"
   #include "data/main.event"
 #else
-    ERROR You are not assembling FE7 events!
+    ERROR You are not assembling FE8 events!
 #endif

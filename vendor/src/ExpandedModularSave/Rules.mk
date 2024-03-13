@@ -12,7 +12,7 @@ EVENTS_$(d) := \
 	$(d)/ExModularSave.event \
 	$(d)/ExModularSaveInternals.event \
 	$(SAVE_CHUNKS_GEN_EVENT) \
-	$(SUSP_CHUNKS_GEN_EVENT) \
+	$(SUSP_CHUNKS_GEN_EVENT)
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))
 

@@ -4,6 +4,7 @@
 *.bin
 *.elf
 *.gba
+*.sav
 *.lyn.event
 *.o
 *.sym

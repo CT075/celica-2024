@@ -4,4 +4,6 @@
 #define BLUE_UNIT_MAX 62
 #define FREE_RAM_START 0x02026E30
 
+#define UI_SCRATCH_A_ADDR 0x02003D2C
+
 #endif // CONSTANTS_H
