@@ -36,6 +36,9 @@ $(PNG2DMP): $(PNG2DMP_DIR)/Png2Dmp.hs $(PNG2DMP_DIR)/Png2Dmp.cabal
 		cabal build && \
 		cp $(shell cd $(PNG2DMP_DIR) && cabal list-bin Png2Dmp) Png2Dmp
 
+# TODO: clone this and build this from github
+MAR2DMP := $(BUILD_DIR)/mar2dmp
+
 .PHONY: ColorzCore
 ColorzCore: $(COLORZCORE)
 

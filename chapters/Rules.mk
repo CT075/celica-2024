@@ -2,10 +2,10 @@ sp := $(sp).x
 dirstack_$(sp) := $(d)
 d := $(dir)
 
-#dir := $(d)/maps
-#include $(dir)/Rules.mk
+dir := $(d)/TheChapter
+include $(dir)/Rules.mk
 
-EVENTS_$(d) := $(d)/main.event #$(d)/tweaks.event
+EVENTS_$(d) := $(d)/main.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))
 
