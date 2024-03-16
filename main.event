@@ -9,6 +9,7 @@
   #include "vendor/src/ExpandedModularSave/ExModularSave.event"
   #include "src/main.event"
   #include "data/main.event"
+  #include "chapters/main.event"
 #else
     ERROR You are not assembling FE8 events!
 #endif

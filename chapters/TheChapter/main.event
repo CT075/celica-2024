@@ -1,16 +1,22 @@
 #include EAstdlib.event
 
-// 0x7 is prologue events
 PUSH
+// prologue events
 EventPointerTable(0x7,ChEvents)
+// prologue map
+EventPointerTable(0x4,ChMap)
 POP
 
+ChMap:
+#incbin map.dmp
+
+ALIGN 4
 ChEvents:
 POIN TurnBasedEvents
 POIN CharacterBasedEvents
 POIN LocationBasedEvents
 POIN MiscBasedEvents
-POIN Dunno Dunno Dunno
+POIN AltMiscEventsA AltMiscEventsB AltMiscEventsC
 POIN Tutorial
 POIN TrapData TrapData
 POIN PlayerUnits PlayerUnits
@@ -21,9 +27,33 @@ TurnBasedEvents:
 TurnEventPlayer(0,BeginningScene,0)
 END_MAIN
 
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+END_MAIN
+
 MiscBasedEvents:
 CauseGameOverIfLordDies
 END_MAIN
 
+TrapData:
+END_MAIN
+
+PlayerUnits:
+UNIT Eirika EirikaMasterLord Eirika Level(1,Ally,0) [9,0] 0 0 1 EirMoves [Rapier,Vulnerary] NoAI
+UNIT Seth Paladin Eirika Level(1,Ally,0) [10,0] 0 0 1 SethMoves [SilverLance,SteelSword] NoAI
+UNIT
+
+EirMoves:
+REDA [8,2]
+SethMoves:
+REDA [6,5]
+
 BeginningScene:
+LOAD1 1 PlayerUnits
+ENUN
+ENDA
+
+EndingScene:
 ENDA

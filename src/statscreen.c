@@ -14,7 +14,7 @@ inline void displaySkills(void) {
   // CR cam: Change to draw stat icons
   for (int i = 0; i < MAX_SKILLS_POSSIBLE; i++) {
     int idx = i + 1;
-    int icon = 0x79 * idx;
+    int icon = 0x79 + idx;
 
     DrawIcon(
         gUiTmScratchA + TILEMAP_INDEX(2 * idx, 14), icon,
