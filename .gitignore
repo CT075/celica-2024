@@ -14,8 +14,8 @@
 *.bsdiff*
 !src/progressiveCaps/unitListHook.s
 !src/fillAIDangerMap/FillAIDangerMap.s
-!src/ExpandedModularSave/Src/*.lyn.event
-!src/ExpandedModularSave/Src/*.s
+!vendor/src/ExpandedModularSave/Src/*.lyn.event
+!vendor/src/ExpandedModularSave/Src/*.s
 !src/HpBars/asm/*
 !src/HpBars/GameOptions/*
 !src/HpBars/bin/*
