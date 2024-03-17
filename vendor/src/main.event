@@ -1,0 +1,19 @@
+#define FreeSpaceBL 0x1C1EC0  // junk strings; runs up to 0x1C33CC
+#define HP_BARS
+#define BATTLE_STATS
+#define LTOGGLE_HACK
+#define DANGER_ZONE
+
+#include "_FE8EssentialFixes.event"
+#include "ExpandedModularSave/ExModularSave.event"
+#include "DangerZone/DangerZone.event"
+#include "HpBars/HpBars.event"
+#include "BattleStatsWithAnimsOff/FE8-BattleStats.event"
+#include "InlineFix2_GenerateBestMovementScript.event"
+
+PUSH
+ORG FreeSpaceBL
+#define inBLRange
+#include "LToggle/LToggle.event"
+#undef inBLRange
+POP

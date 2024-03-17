@@ -19,8 +19,8 @@ $(SAVE_CHUNKS_GEN_EVENT): $(BIN_DIR)/save_alloc.py data/save_chunks.csv
 $(SUSP_CHUNKS_GEN_EVENT): $(BIN_DIR)/save_alloc.py data/save_chunks.csv
 	python $< --items_file $(word 2,$^) --which suspend > $@
 
-%.dmp: %.mar
-	$(MAR2DMP) --width 20 --height 20 --input $< --output $@
+%.dmp: %.mar $(MAR2DMP)
+	$(MAR2DMP) --width $(MAP_WIDTH) --height $(MAP_HEIGHT) --input $< --output $@
 
 SYMBOLS := $(TARGET:.gba=.sym)
 

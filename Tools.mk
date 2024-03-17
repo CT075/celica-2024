@@ -36,8 +36,12 @@ $(PNG2DMP): $(PNG2DMP_DIR)/Png2Dmp.hs $(PNG2DMP_DIR)/Png2Dmp.cabal
 		cabal build && \
 		cp $(shell cd $(PNG2DMP_DIR) && cabal list-bin Png2Dmp) Png2Dmp
 
-# TODO: clone this and build this from github
-MAR2DMP := $(BUILD_DIR)/mar2dmp
+MAR2DMP_DIR := $(BIN_DIR)/cam-formatting-suite
+MAR2DMP := $(MAR2DMP_DIR)/target/release/mar2dmp
+
+.PHONY: $(MAR2DMP)
+$(MAR2DMP):
+	cd $(MAR2DMP_DIR) && cargo build --profile release
 
 .PHONY: ColorzCore
 ColorzCore: $(COLORZCORE)

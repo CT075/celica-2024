@@ -6,7 +6,7 @@
 
 	ORG FreeSpace
 
-  #include "vendor/src/ExpandedModularSave/ExModularSave.event"
+  #include "vendor/src/main.event"
   #include "src/main.event"
   #include "data/main.event"
   #include "chapters/main.event"
