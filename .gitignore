@@ -28,12 +28,12 @@ data/text/.TextEntries
 obj
 
 # tools
-bin/lyn/lyn
-bin/lyn/CMakeFiles
-bin/lyn/CMakeCache.txt
-bin/lyn/Makefile
-bin/lyn/cmake_install.cmake
-bin/gendefs/gendefs
-bin/Png2Dmp/dist-newstyle
-bin/Png2Dmp/Png2Dmp
+vendor/bin/lyn/lyn
+vendor/bin/lyn/CMakeFiles
+vendor/bin/lyn/CMakeCache.txt
+vendor/bin/lyn/Makefile
+vendor/bin/lyn/cmake_install.cmake
+vendor/bin/gendefs/gendefs
+vendor/bin/Png2Dmp/dist-newstyle
+vendor/bin/Png2Dmp/Png2Dmp
 _build
