@@ -1,7 +1,9 @@
 # Build tools in bin/
 # These can be called recursively because those tools are all self-contained
 
-LYN_DIR := $(BIN_DIR)/lyn
+VENDOR_BIN := $(VENDOR_DIR)/bin
+
+LYN_DIR := $(VENDOR_BIN)/lyn
 LYN := $(LYN_DIR)/lyn
 
 # ColorzCore needs to be run from the directory containing the `Language Raws`
@@ -19,7 +21,7 @@ $(LYN_DIR)/Makefile:
 $(LYN): $(LYN_DIR)/Makefile
 	cd $(LYN_DIR) && $(MAKE)
 
-PARSEFILE_DIR := $(BIN_DIR)/ParseFile
+PARSEFILE_DIR := $(VENDOR_BIN)/ParseFile
 PARSEFILE := $(BUILD_DIR)/ParseFile
 
 $(PARSEFILE): $(PARSEFILE_DIR)/ParseFile.hs $(PARSEFILE_DIR)/FlagUtilities.hs \
@@ -42,6 +44,8 @@ MAR2DMP := $(MAR2DMP_DIR)/target/release/mar2dmp
 .PHONY: $(MAR2DMP)
 $(MAR2DMP):
 	cd $(MAR2DMP_DIR) && cargo build --profile release
+
+TEXT_PROCESS_CLASSIC := $(VENDOR_BIN)/text-process-classic.py
 
 .PHONY: ColorzCore
 ColorzCore: $(COLORZCORE)
