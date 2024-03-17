@@ -5,8 +5,13 @@ PUSH
 EventPointerTable(0x7,ChEvents)
 // prologue map
 EventPointerTable(0x4,ChMap)
+
+// prologue worldmap events
+ORG 0x8B0890+117
+BYTE 0
 POP
 
+ALIGN 4
 ChMap:
 #incbin map.dmp
 
@@ -24,7 +29,9 @@ POIN $0 $0 $0 $0 $0 $0
 POIN BeginningScene EndingScene
 
 TurnBasedEvents:
-TurnEventPlayer(0,BeginningScene,0)
+TurnEventPlayer(0,BeginningScene,1)
+TurnEventPlayer(0,LoadFlier,2)
+TurnEventPlayer(0,CheckWarning,4)
 END_MAIN
 
 CharacterBasedEvents:
@@ -45,15 +52,40 @@ UNIT Eirika EirikaMasterLord Eirika Level(1,Ally,0) [9,0] 0 0 1 EirMoves [Rapier
 UNIT Seth Paladin Eirika Level(1,Ally,0) [10,0] 0 0 1 SethMoves [SilverLance,SteelSword] NoAI
 UNIT
 
-EirMoves:
-REDA [8,2]
-SethMoves:
-REDA [6,5]
+Flier:
+UNIT Vanessa FalcoKnight Eirika Level(1,Ally,0) [0,7] 0 0 1 FlierMoves [SlimLance,HeavySpear] NoAI
+UNIT
 
 BeginningScene:
 LOAD1 1 PlayerUnits
 ENUN
 ENDA
 
+LoadFlier:
+LOAD1 1 Flier
+ENUN
+ENDA
+
+#define Failed 1
+#define Done 2
+CheckWarning:
+CHECK_INAREA Eirika [5,16] [1,1]
+BEQ Failed sC s0
+POPUP 0x00D4 0
+GOTO Done
+LABEL Failed
+POPUP 0x00D5 0
+LABEL Done
+ENDA
+#undef Failed
+#undef Done
+
 EndingScene:
 ENDA
+
+EirMoves:
+REDA [8,2]
+SethMoves:
+REDA [6,5]
+FlierMoves:
+REDA [4,4]

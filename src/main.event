@@ -1,2 +1,2 @@
-#include disableEasyMode/main.event
+#include disableDifficultySelect/main.event
 #include statscreen.lyn.event
