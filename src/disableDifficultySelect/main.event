@@ -1,0 +1,6 @@
+#include disableDifficultySelect.lyn.event
+
+PUSH
+ORG 0x0AC3F0
+POIN ProcScr_FakeDifficultySelect
+POP

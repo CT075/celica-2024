@@ -2,7 +2,7 @@ sp := $(sp).x
 dirstack_$(sp) := $(d)
 d := $(dir)
 
-EVENTS_$(d) := $(d)/main.event
+EVENTS_$(d) := $(d)/main.event $(d)/disableDifficultySelect.lyn.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))
 
