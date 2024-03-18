@@ -1,5 +1,9 @@
 #include EAstdlib.event
 
+// Thanks to Colorz and Contro for figuring out this trick!
+#define SetLabel(parentLabel) "LABEL (currentOffset - (parentLabel))"
+#define LabelDest(parentLabel, destLabel) "((destLabel) - (parentLabel))"
+
 PUSH
 // prologue events
 EventPointerTable(0x7,ChEvents)
@@ -7,9 +11,12 @@ EventPointerTable(0x7,ChEvents)
 EventPointerTable(0x4,ChMap)
 
 // prologue worldmap events
-ORG 0x8B0890+117
-BYTE 0
+//ORG 0x8B0890+117
+//BYTE 0
 POP
+
+#define EarlyWarningId 10
+#define MageHouseId 11
 
 ALIGN 4
 ChMap:
@@ -31,16 +38,18 @@ POIN BeginningScene EndingScene
 TurnBasedEvents:
 TurnEventPlayer(0,BeginningScene,1)
 TurnEventPlayer(0,LoadFlier,2)
-TurnEventPlayer(0,CheckWarning,4)
+TurnEventPlayer(0,SpawnEnemies,4)
 END_MAIN
 
 CharacterBasedEvents:
 END_MAIN
 
 LocationBasedEvents:
+House(MageHouseId, MageHouse, 15, 12)
 END_MAIN
 
 MiscBasedEvents:
+AREA EarlyWarningId CheckEarlyWarning [5,16] [5,17]
 CauseGameOverIfLordDies
 END_MAIN
 
@@ -52,36 +61,97 @@ UNIT Eirika EirikaMasterLord Eirika Level(1,Ally,0) [9,0] 0 0 1 EirMoves [Rapier
 UNIT Seth Paladin Eirika Level(1,Ally,0) [10,0] 0 0 1 SethMoves [SilverLance,SteelSword] NoAI
 UNIT
 
+BaseEnemies:
+UNIT ONeill Brigand ONeill Level(1,Enemy,0) [11,5] 0 0 0 0 [IronAxe,Vulnerary] NoAI
+UNIT
+
 Flier:
 UNIT Vanessa FalcoKnight Eirika Level(1,Ally,0) [0,7] 0 0 1 FlierMoves [SlimLance,HeavySpear] NoAI
 UNIT
 
+BoltingMage:
+UNIT Lute MageKnight Eirika Level(1,Ally,0) [15,12] 0 0 1 MageMoves [Bolting,Vulnerary] NoAI
+UNIT
+
 BeginningScene:
+// "Phew, finally home. Let's go to the castle"
 LOAD1 1 PlayerUnits
 ENUN
+// "Oh there's bandits"
+LOAD1 1 BaseEnemies
+ENUN
+NoFade
 ENDA
 
 LoadFlier:
+// "Hey, sorry I'm late!"
 LOAD1 1 Flier
 ENUN
+NoFade
 ENDA
 
-#define Failed 1
-#define Done 2
-CheckWarning:
-CHECK_INAREA Eirika [5,16] [1,1]
-BEQ Failed sC s0
-POPUP 0x00D4 0
-GOTO Done
-LABEL Failed
-POPUP 0x00D5 0
-LABEL Done
-ENDA
-#undef Failed
-#undef Done
+MageHouse: {
+  CHECK_TURNS
+  SVAL s1 5
+  BLT LabelDest(MageHouse,TooLate) s1 sC
+  LOAD1 1 BoltingMage
+  ENUN
+  GOTO LabelDest(MageHouse,Done)
 
-EndingScene:
-ENDA
+  TooLate:
+  SetLabel(MageHouse)
+  // "oops too late, if you'd visited earlier she would have been here"
+
+  Done:
+  SetLabel(MageHouse)
+  NoFade
+  ENDA
+}
+
+CheckEarlyWarning: {
+  CHECK_INAREA Eirika [5,16] [1,1]
+  BEQ LabelDest(CheckEarlyWarning,NotThere) sC s0
+  POPUP 0x00D4 0
+  GOTO Done
+
+  NotThere:
+  SetLabel(CheckEarlyWarning)
+  CHECK_TURNS
+  SVAL s1 4
+  BLT LabelDest(CheckEarlyWarning,Done) s1 sC
+  ENUF EarlyWarningId
+
+  Done:
+  SetLabel(CheckEarlyWarning)
+  NoFade
+  ENDA
+}
+
+SpawnEnemies: {
+  CHECK_INAREA Eirika [5,16] [1,1]
+  BEQ LabelDest(SpawnEnemies,Failed) sC s0
+  POPUP 0x00D4 0
+  GOTO LabelDest(SpawnEnemies,Done)
+
+  Failed:
+  SetLabel(SpawnEnemies)
+  POPUP 0x00D5 0
+
+  Done:
+  SetLabel(Done)
+  NoFade
+  ENDA
+}
+
+MageHouse: {
+  NoFade
+  ENDA
+}
+
+EndingScene: {
+  NoFade
+  ENDA
+}
 
 EirMoves:
 REDA [8,2]
@@ -89,3 +159,7 @@ SethMoves:
 REDA [6,5]
 FlierMoves:
 REDA [4,4]
+MageMoves:
+REDA [14,12]
+
+ALIGN 4
