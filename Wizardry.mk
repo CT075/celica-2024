@@ -49,6 +49,6 @@ $(LYN_REFERENCE): $(FE8_SYMBOLS)
 
 .PHONY: fe8-symbols
 fe8-symbols:
-	python $(BIN_DIR)/elf2ref.py $(FIREEMBLEM8U)/fireemblem8.elf > $(FE8_SYMBOLS)
+	python $(VENDOR_DIR)/bin/elf2ref.py $(FIREEMBLEM8U)/fireemblem8.elf > $(FE8_SYMBOLS)
 
 -include $(wildcard $(CACHE_DIR)/*.d)
