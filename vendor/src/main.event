@@ -10,6 +10,7 @@
 #include "HpBars/HpBars.event"
 #include "BattleStatsWithAnimsOff/FE8-BattleStats.event"
 #include "InlineFix2_GenerateBestMovementScript.event"
+#include "SkipHuffmanDecompression/Installer.event"
 
 PUSH
 ORG FreeSpaceBL
