@@ -143,11 +143,6 @@ SpawnEnemies: {
   ENDA
 }
 
-MageHouse: {
-  NoFade
-  ENDA
-}
-
 EndingScene: {
   NoFade
   ENDA
