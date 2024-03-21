@@ -1,1 +1,2 @@
 name,real_type,access_type,notes
+g Battle Round Order,struct BattleRound[MAX_BATTLE_ROUNDS],struct BattleRound *,

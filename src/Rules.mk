@@ -8,7 +8,10 @@ include $(dir)/Rules.mk
 dir := $(d)/disableDifficultySelect
 include $(dir)/Rules.mk
 
-EVENTS_$(d) := $(d)/main.event $(d)/statscreen.lyn.event
+dir := $(d)/disableExp
+include $(dir)/Rules.mk
+
+EVENTS_$(d) := $(d)/main.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))
 

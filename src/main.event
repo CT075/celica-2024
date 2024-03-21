@@ -1,2 +1,2 @@
 #include disableDifficultySelect/main.event
-#include statscreen.lyn.event
+#include disableExp/disableExp.lyn.event

@@ -1,1 +1,5 @@
 #include "core.lyn.event"
+
+#ifndef NO_MICROSKILLSYS_STATSCREEN
+#include "statscreen.lyn.event"
+#endif

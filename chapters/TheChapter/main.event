@@ -67,10 +67,11 @@ UNIT
 
 Flier:
 UNIT Vanessa FalcoKnight Eirika Level(1,Ally,0) [0,7] 0 0 1 FlierMoves [SlimLance,HeavySpear] NoAI
+UNIT Brigand Sniper LyonCC Level(1,Enemy,0) [0,11] 0 0 1 ArcherMoves [Longbow] AttackInRangeAI
 UNIT
 
 BoltingMage:
-UNIT Lute MageKnight Eirika Level(1,Ally,0) [15,12] 0 0 1 MageMoves [Bolting,Vulnerary] NoAI
+UNIT LArachel MageKnight Eirika Level(1,Ally,0) [15,12] 0 0 1 MageMoves [Bolting,Vulnerary] NoAI
 UNIT
 
 BeginningScene:
@@ -111,7 +112,7 @@ MageHouse: {
 CheckEarlyWarning: {
   CHECK_INAREA Eirika [5,16] [1,1]
   BEQ LabelDest(CheckEarlyWarning,NotThere) sC s0
-  POPUP 0x00D4 0
+  CALL SecretEnding
   GOTO Done
 
   NotThere:
@@ -130,7 +131,7 @@ CheckEarlyWarning: {
 SpawnEnemies: {
   CHECK_INAREA Eirika [5,16] [1,1]
   BEQ LabelDest(SpawnEnemies,Failed) sC s0
-  POPUP 0x00D4 0
+  CALL SecretEnding
   GOTO LabelDest(SpawnEnemies,Done)
 
   Failed:
@@ -139,6 +140,13 @@ SpawnEnemies: {
 
   Done:
   SetLabel(Done)
+  NoFade
+  ENDA
+}
+
+SecretEnding: {
+  POPUP 0x00D4 0
+  CALL EndingScene
   NoFade
   ENDA
 }
@@ -156,5 +164,7 @@ FlierMoves:
 REDA [4,4]
 MageMoves:
 REDA [14,12]
+ArcherMoves:
+REDA [2,11]
 
 ALIGN 4

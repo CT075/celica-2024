@@ -11,6 +11,7 @@ HEADER = """\
 #define RAM_STRUCTURES_H
 
 #include "global.h"
+#include "constants.h"
 
 #define sizeof_round(ty) ((sizeof(ty) + sizeof(int)-1) & ~(sizeof(int)-1))
 """

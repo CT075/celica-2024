@@ -7,6 +7,7 @@
 #include "statscreen.h"
 
 #include "constants.h"
+#include "microskillsys.h"
 
 #define gUiTmScratchA ((u16 *)UI_SCRATCH_A_ADDR)
 
