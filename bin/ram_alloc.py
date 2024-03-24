@@ -12,6 +12,7 @@ HEADER = """\
 
 #include "global.h"
 #include "constants.h"
+#include "microskillsys/battle.h"
 
 #define sizeof_round(ty) ((sizeof(ty) + sizeof(int)-1) & ~(sizeof(int)-1))
 """
@@ -52,6 +53,7 @@ def main(items: Iterable[Item]) -> None:
         print(item.var_declaration())
         last_addr = f"{item.address_name()}"
         bump = f"sizeof_round({item.real_type})"
+    print(f"#define ALLOC_END ({last_addr} + {bump}) // for verifying that ram does not overrun")
     print(FOOTER)
 
 

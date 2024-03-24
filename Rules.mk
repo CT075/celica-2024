@@ -22,6 +22,19 @@ $(SUSP_CHUNKS_GEN_EVENT): $(BIN_DIR)/save_alloc.py data/save_chunks.csv
 %.dmp: %.mar $(MAR2DMP)
 	$(MAR2DMP) --width $(MAP_WIDTH) --height $(MAP_HEIGHT) --input $< --output $@
 
+VERIFY_DIR := $(BIN_DIR)/verifyAllocs
+VERIFY_RAM_SRC := $(VERIFY_DIR)/verify_ram_alloc.c
+VERIFY_RAM := $(BUILD_DIR)/verify_ram_alloc
+
+$(VERIFY_RAM): $(VERIFY_RAM_SRC) $(RAM_STRUCTURES_H)
+	# Use real gcc here, not ARM_CC, because we want a binary that works on the
+	# host system
+	$(CC) $< -o $@ $(INCFLAGS) -m32 $(CDEPFLAGS)
+
+.PHONY: verify_allocations
+verify_allocations: $(VERIFY_RAM)
+	$(VERIFY_RAM)
+
 SYMBOLS := $(TARGET:.gba=.sym)
 
 EVENTS := $(EVENT_MAIN) $(ARCHIPELAGO_DEFS) $(BLANK_WEAPON_RANKS)
@@ -50,7 +63,7 @@ $(BASEROM):
 	$(error no $(BASEROM) found at build root)
 
 # CR cam: split out the postprocess step somehow
-$(TARGET) $(SYMBOLS): $(BASEROM) $(COLORZCORE) $(EVENTS) $(ASSETS)
+$(TARGET) $(SYMBOLS): $(BASEROM) $(COLORZCORE) $(EVENTS) $(ASSETS) verify_allocations
 	cd $(BUILD_DIR) && \
 		cp ../$(BASEROM) ../$(TARGET) && \
 		./ColorzCore A FE8 $(EAFLAGS) \

@@ -2,7 +2,7 @@ sp := $(sp).x
 dirstack_$(sp) := $(d)
 d := $(dir)
 
-dir := $(d)/core
+dir := $(d)/microskillsys
 include $(dir)/Rules.mk
 
 dir := $(d)/disableDifficultySelect

@@ -17,22 +17,18 @@ void clearRoundOrder(void) {
   }
 }
 
-#define returnBattleOver                                                               \
-  {                                                                                    \
-    out->turn = BattleOver;                                                            \
-    return;                                                                            \
-  }
-
 void setFollowup(
     struct BattleUnit *initiator, struct BattleUnit *target, struct BattleRound *out
 ) {
   if (target->battleSpeed > 250) {
-    returnBattleOver;
+    out->turn = BattleOver;
+    return;
   }
 
   if (ABS(initiator->battleSpeed - target->battleSpeed) <
       BATTLE_FOLLOWUP_SPEED_THRESHOLD) {
-    returnBattleOver;
+    out->turn = BattleOver;
+    return;
   }
 
   struct BattleUnit *attacker;
@@ -47,11 +43,13 @@ void setFollowup(
   }
 
   if (GetItemWeaponEffect(attacker->weaponBefore) == WPN_EFFECT_HPHALVE) {
-    returnBattleOver;
+    out->turn = BattleOver;
+    return;
   }
 
   if (GetItemIndex(attacker->weapon) == ITEM_MONSTER_STONE) {
-    returnBattleOver;
+    out->turn = BattleOver;
+    return;
   }
 
   out->count = 1 << BattleCheckBraveEffect(attacker);
@@ -106,4 +104,53 @@ void BattleUnwind(void) {
   runBattleRounds(initiator, target, attrs);
 
   gBattleHitIterator->info |= BATTLE_HIT_INFO_END;
+}
+
+// This is the original `ComputeBattleUnitAttack` from decomp. We hook out of
+// the original, but need to preserve this version so it can be called as a
+// fallthrough from other skills.
+void originalComputeBattleUnitAttack(
+    struct BattleUnit *attacker, struct BattleUnit *defender
+) {
+  short attack;
+
+  attacker->battleAttack = GetItemMight(attacker->weapon) + attacker->wTriangleDmgBonus;
+  attack = attacker->battleAttack;
+
+  if (IsUnitEffectiveAgainst(&attacker->unit, &defender->unit) == TRUE) {
+    attack = attacker->battleAttack * 3;
+  }
+
+  if (IsItemEffectiveAgainst(attacker->weapon, &defender->unit) == TRUE) {
+    attack = attacker->battleAttack;
+
+    switch (GetItemIndex(attacker->weapon)) {
+
+    case ITEM_SWORD_AUDHULMA:
+    case ITEM_LANCE_VIDOFNIR:
+    case ITEM_AXE_GARM:
+    case ITEM_BOW_NIDHOGG:
+    case ITEM_ANIMA_EXCALIBUR:
+    case ITEM_LIGHT_IVALDI:
+    case ITEM_SWORD_SIEGLINDE:
+    case ITEM_LANCE_SIEGMUND:
+      attack *= 2;
+      break;
+
+    default:
+      attack *= 3;
+      break;
+
+    } // switch (GetItemIndex(attacker->weapon))
+  }
+
+  attacker->battleAttack = attack;
+  attacker->battleAttack += attacker->unit.pow;
+
+  if (GetItemIndex(attacker->weapon) == ITEM_MONSTER_STONE)
+    attacker->battleAttack = 0;
+}
+
+void ComputeBattleUnitAttack(struct BattleUnit *attacker, struct BattleUnit *defender) {
+  originalComputeBattleUnitAttack(attacker, defender);
 }
