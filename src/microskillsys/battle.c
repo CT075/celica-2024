@@ -14,6 +14,7 @@ void clearRoundOrder(void) {
   }
 }
 
+// CR cam: hook out
 void setFollowup(
     struct BattleUnit *initiator, struct BattleUnit *target, struct BattleRound *out
 ) {
@@ -228,8 +229,7 @@ void computeBattleUnitStatsBasic(
   ComputeBattleUnitStatusBonuses(unit);
 }
 
-// TODO: separate into hooks
-void ComputeBattleUnitStats(struct BattleUnit *unit, struct BattleUnit *opponent) {
+void defaultBattleUnitStats(struct BattleUnit *unit, struct BattleUnit *opponent) {
   struct BasicPreBattleMods mods;
   populateVanillaPreBattleMods(unit, opponent, &mods);
   computeBattleUnitStatsBasic(unit, opponent, &mods);

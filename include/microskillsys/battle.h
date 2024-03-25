@@ -26,7 +26,6 @@ struct BasicPreBattleMods {
   u8 avoMod;
   u8 critMod;
   u8 dodgeMod;
-  u8 supportBonusMultiplier;
 };
 
 void clearRoundOrder();
