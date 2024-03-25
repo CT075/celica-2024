@@ -5,4 +5,4 @@ AltMiscEventsB:
 AltMiscEventsC:
 WORD $0
 
-//#include TheChapter/main.event
+#include TheChapter/main.event

@@ -8,9 +8,6 @@
 #include "microskillsys/battle.h"
 #include "ram_structures.h"
 
-// void ComputeBattleUnitStats(struct BattleUnit *attacker, struct BattleUnit *defender)
-// {}
-
 void clearRoundOrder(void) {
   for (int i = 0; i < MAX_BATTLE_ROUNDS; i += 1) {
     gBattleRoundOrder[i].turn = BattleOver;
@@ -31,28 +28,28 @@ void setFollowup(
     return;
   }
 
-  struct BattleUnit *attacker;
+  struct BattleUnit *unit;
 
   if (initiator->battleSpeed > target->battleSpeed) {
-    attacker = initiator;
+    unit = initiator;
     out->turn = InitiatorTurn;
   }
   else {
-    attacker = target;
+    unit = target;
     out->turn = TargetTurn;
   }
 
-  if (GetItemWeaponEffect(attacker->weaponBefore) == WPN_EFFECT_HPHALVE) {
+  if (GetItemWeaponEffect(unit->weaponBefore) == WPN_EFFECT_HPHALVE) {
     out->turn = BattleOver;
     return;
   }
 
-  if (GetItemIndex(attacker->weapon) == ITEM_MONSTER_STONE) {
+  if (GetItemIndex(unit->weapon) == ITEM_MONSTER_STONE) {
     out->turn = BattleOver;
     return;
   }
 
-  out->count = 1 << BattleCheckBraveEffect(attacker);
+  out->count = 1 << BattleCheckBraveEffect(unit);
 }
 
 void populateRoundOrder(struct BattleUnit *initiator, struct BattleUnit *target) {
@@ -106,25 +103,15 @@ void BattleUnwind(void) {
   gBattleHitIterator->info |= BATTLE_HIT_INFO_END;
 }
 
-// This is the original `ComputeBattleUnitAttack` from decomp. We hook out of
-// the original, but need to preserve this version so it can be called as a
-// fallthrough from other skills.
-void originalComputeBattleUnitAttack(
-    struct BattleUnit *attacker, struct BattleUnit *defender
+void populateVanillaPreBattleMods(
+    struct BattleUnit *unit, struct BattleUnit *opponent, struct BasicPreBattleMods *out
 ) {
-  short attack;
-
-  attacker->battleAttack = GetItemMight(attacker->weapon) + attacker->wTriangleDmgBonus;
-  attack = attacker->battleAttack;
-
-  if (IsUnitEffectiveAgainst(&attacker->unit, &defender->unit) == TRUE) {
-    attack = attacker->battleAttack * 3;
+  if (IsUnitEffectiveAgainst(&unit->unit, &opponent->unit) == TRUE) {
+    out->weaponMultiplier = 3;
   }
 
-  if (IsItemEffectiveAgainst(attacker->weapon, &defender->unit) == TRUE) {
-    attack = attacker->battleAttack;
-
-    switch (GetItemIndex(attacker->weapon)) {
+  if (IsItemEffectiveAgainst(unit->weapon, &opponent->unit) == TRUE) {
+    switch (GetItemIndex(unit->weapon)) {
 
     case ITEM_SWORD_AUDHULMA:
     case ITEM_LANCE_VIDOFNIR:
@@ -134,23 +121,116 @@ void originalComputeBattleUnitAttack(
     case ITEM_LIGHT_IVALDI:
     case ITEM_SWORD_SIEGLINDE:
     case ITEM_LANCE_SIEGMUND:
-      attack *= 2;
+      out->weaponMultiplier = 2;
       break;
 
     default:
-      attack *= 3;
+      out->weaponMultiplier = 3;
       break;
-
-    } // switch (GetItemIndex(attacker->weapon))
+    }
   }
-
-  attacker->battleAttack = attack;
-  attacker->battleAttack += attacker->unit.pow;
-
-  if (GetItemIndex(attacker->weapon) == ITEM_MONSTER_STONE)
-    attacker->battleAttack = 0;
 }
 
-void ComputeBattleUnitAttack(struct BattleUnit *attacker, struct BattleUnit *defender) {
-  originalComputeBattleUnitAttack(attacker, defender);
+void computeBattleUnitAttackBasic(
+    struct BattleUnit *unit, struct BattleUnit *opponent,
+    struct BasicPreBattleMods *mods
+) {
+  unit->battleAttack = GetItemMight(unit->weapon) + unit->wTriangleDmgBonus;
+  unit->battleAttack *= mods->weaponMultiplier;
+  unit->battleAttack += unit->unit.pow;
+  unit->battleAttack += mods->defMod;
+
+  if (GetItemIndex(unit->weapon) == ITEM_MONSTER_STONE) {
+    unit->battleAttack = 0;
+  }
+}
+
+void computeBattleUnitDefenseBasic(
+    struct BattleUnit *unit, struct BattleUnit *opponent,
+    struct BasicPreBattleMods *mods
+) {
+  if (GetItemAttributes(unit->weapon) & IA_MAGICDAMAGE) {
+    opponent->battleDefense = opponent->terrainResistance + opponent->unit.res;
+  }
+  else if (GetItemAttributes(unit->weapon) & IA_MAGIC) {
+    opponent->battleDefense = opponent->terrainResistance + opponent->unit.res;
+  }
+  else {
+    opponent->battleDefense = opponent->terrainDefense + opponent->unit.def;
+  }
+
+  opponent->battleDefense += mods->defMod;
+}
+
+void computeBattleUnitSpeedBasic(
+    struct BattleUnit *bu, struct BasicPreBattleMods *mods
+) {
+  int effWt = GetItemWeight(bu->weaponBefore);
+
+  effWt -= bu->unit.conBonus;
+
+  if (effWt < 0) {
+    effWt = 0;
+  }
+
+  bu->battleSpeed = bu->unit.spd - effWt + mods->speedMod;
+
+  if (bu->battleSpeed < 0) {
+    bu->battleSpeed = 0;
+  }
+}
+
+void computeBattleUnitHitRateBasic(
+    struct BattleUnit *bu, struct BasicPreBattleMods *mods
+) {
+  ComputeBattleUnitHitRate(bu);
+  bu->battleHitRate += mods->hitMod;
+}
+
+void computeBattleUnitAvoidRateBasic(
+    struct BattleUnit *bu, struct BasicPreBattleMods *mods
+) {
+  bu->battleAvoidRate =
+      (bu->battleSpeed * 2) + bu->terrainAvoid + bu->unit.lck + mods->avoMod;
+
+  if (bu->battleAvoidRate < 0) {
+    bu->battleAvoidRate = 0;
+  }
+}
+
+void computeBattleUnitCritRateBasic(
+    struct BattleUnit *bu, struct BasicPreBattleMods *mods
+) {
+  ComputeBattleUnitCritRate(bu);
+  bu->battleCritRate += mods->critMod;
+}
+
+void computeBattleUnitDodgeRateBasic(
+    struct BattleUnit *bu, struct BasicPreBattleMods *mods
+) {
+  ComputeBattleUnitDodgeRate(bu);
+  bu->battleDodgeRate += mods->dodgeMod;
+}
+
+void computeBattleUnitStatsBasic(
+    struct BattleUnit *unit, struct BattleUnit *opponent,
+    struct BasicPreBattleMods *mods
+) {
+  computeBattleUnitDefenseBasic(opponent, unit, mods);
+  computeBattleUnitAttackBasic(unit, opponent, mods);
+  computeBattleUnitSpeedBasic(unit, mods);
+  computeBattleUnitHitRateBasic(unit, mods);
+  computeBattleUnitAvoidRateBasic(unit, mods);
+  computeBattleUnitCritRateBasic(unit, mods);
+  computeBattleUnitDodgeRateBasic(unit, mods);
+  ComputeBattleUnitSupportBonuses(unit, opponent);
+  ComputeBattleUnitWeaponRankBonuses(unit);
+  ComputeBattleUnitStatusBonuses(unit);
+}
+
+// TODO: separate into hooks
+void ComputeBattleUnitStats(struct BattleUnit *unit, struct BattleUnit *opponent) {
+  struct BasicPreBattleMods mods;
+  populateVanillaPreBattleMods(unit, opponent, &mods);
+  computeBattleUnitStatsBasic(unit, opponent, &mods);
 }

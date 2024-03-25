@@ -14,6 +14,21 @@ struct BattleRound {
   u32 count : 4;
 };
 
+struct BasicPreBattleMods {
+  // Multiplier applied to the weapon (includes effectiveness)
+  u8 weaponMultiplier;
+  // Flat damage applied to final attack
+  u8 attackMod;
+  // Flat damage applied to final defense
+  u8 defMod;
+  u8 speedMod;
+  u8 hitMod;
+  u8 avoMod;
+  u8 critMod;
+  u8 dodgeMod;
+  u8 supportBonusMultiplier;
+};
+
 void clearRoundOrder();
 void populateRoundOrder();
 
