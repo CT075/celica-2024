@@ -29,28 +29,28 @@ void setFollowup(
     return;
   }
 
-  struct BattleUnit *unit;
+  struct BattleUnit *lastRoundAttacker;
 
   if (initiator->battleSpeed > target->battleSpeed) {
-    unit = initiator;
+    lastRoundAttacker = initiator;
     out->turn = InitiatorTurn;
   }
   else {
-    unit = target;
+    lastRoundAttacker = target;
     out->turn = TargetTurn;
   }
 
-  if (GetItemWeaponEffect(unit->weaponBefore) == WPN_EFFECT_HPHALVE) {
+  if (GetItemWeaponEffect(lastRoundAttacker->weaponBefore) == WPN_EFFECT_HPHALVE) {
     out->turn = BattleOver;
     return;
   }
 
-  if (GetItemIndex(unit->weapon) == ITEM_MONSTER_STONE) {
+  if (GetItemIndex(lastRoundAttacker->weapon) == ITEM_MONSTER_STONE) {
     out->turn = BattleOver;
     return;
   }
 
-  out->count = 1 << BattleCheckBraveEffect(unit);
+  out->count = 1 << BattleCheckBraveEffect(lastRoundAttacker);
 }
 
 void populateRoundOrder(struct BattleUnit *initiator, struct BattleUnit *target) {
@@ -105,14 +105,14 @@ void BattleUnwind(void) {
 }
 
 void populateVanillaPreBattleMods(
-    struct BattleUnit *unit, struct BattleUnit *opponent, struct BasicPreBattleMods *out
+    struct BattleUnit *bu, struct BattleUnit *opponent, struct BasicPreBattleMods *out
 ) {
-  if (IsUnitEffectiveAgainst(&unit->unit, &opponent->unit) == TRUE) {
+  if (IsUnitEffectiveAgainst(&bu->unit, &opponent->unit) == TRUE) {
     out->weaponMultiplier = 3;
   }
 
-  if (IsItemEffectiveAgainst(unit->weapon, &opponent->unit) == TRUE) {
-    switch (GetItemIndex(unit->weapon)) {
+  if (IsItemEffectiveAgainst(bu->weapon, &opponent->unit) == TRUE) {
+    switch (GetItemIndex(bu->weapon)) {
 
     case ITEM_SWORD_AUDHULMA:
     case ITEM_LANCE_VIDOFNIR:
@@ -133,34 +133,32 @@ void populateVanillaPreBattleMods(
 }
 
 void computeBattleUnitAttackBasic(
-    struct BattleUnit *unit, struct BattleUnit *opponent,
-    struct BasicPreBattleMods *mods
+    struct BattleUnit *bu, struct BattleUnit *opponent, struct BasicPreBattleMods *mods
 ) {
-  unit->battleAttack = GetItemMight(unit->weapon) + unit->wTriangleDmgBonus;
-  unit->battleAttack *= mods->weaponMultiplier;
-  unit->battleAttack += unit->unit.pow;
-  unit->battleAttack += mods->defMod;
+  bu->battleAttack = GetItemMight(bu->weapon) + bu->wTriangleDmgBonus;
+  bu->battleAttack *= mods->weaponMultiplier;
+  bu->battleAttack += bu->unit.pow;
+  bu->battleAttack += mods->defMod;
 
-  if (GetItemIndex(unit->weapon) == ITEM_MONSTER_STONE) {
-    unit->battleAttack = 0;
+  if (GetItemIndex(bu->weapon) == ITEM_MONSTER_STONE) {
+    bu->battleAttack = 0;
   }
 }
 
 void computeBattleUnitDefenseBasic(
-    struct BattleUnit *unit, struct BattleUnit *opponent,
-    struct BasicPreBattleMods *mods
+    struct BattleUnit *bu, struct BattleUnit *opponent, struct BasicPreBattleMods *mods
 ) {
-  if (GetItemAttributes(unit->weapon) & IA_MAGICDAMAGE) {
-    opponent->battleDefense = opponent->terrainResistance + opponent->unit.res;
+  if (GetItemAttributes(opponent->weapon) & IA_MAGICDAMAGE) {
+    bu->battleDefense = bu->terrainResistance + bu->unit.res;
   }
-  else if (GetItemAttributes(unit->weapon) & IA_MAGIC) {
-    opponent->battleDefense = opponent->terrainResistance + opponent->unit.res;
+  else if (GetItemAttributes(opponent->weapon) & IA_MAGIC) {
+    bu->battleDefense = bu->terrainResistance + bu->unit.res;
   }
   else {
-    opponent->battleDefense = opponent->terrainDefense + opponent->unit.def;
+    bu->battleDefense = bu->terrainDefense + bu->unit.def;
   }
 
-  opponent->battleDefense += mods->defMod;
+  bu->battleDefense += mods->defMod;
 }
 
 void computeBattleUnitSpeedBasic(

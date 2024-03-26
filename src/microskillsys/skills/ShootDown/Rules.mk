@@ -2,11 +2,7 @@ sp := $(sp).x
 dirstack_$(sp) := $(d)
 d := $(dir)
 
-# TODO: do all of these automatically
-dir := $(d)/ShootDown
-include $(dir)/Rules.mk
-
-EVENTS_$(d) := $(d)/main.event
+EVENTS_$(d) := $(d)/ShootDown.lyn.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))
 

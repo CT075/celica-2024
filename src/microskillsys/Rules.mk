@@ -2,10 +2,13 @@ sp := $(sp).x
 dirstack_$(sp) := $(d)
 d := $(dir)
 
-$(d)/battle.o: $(RAM_STRUCTURES_H)
+dir := $(d)/internal
+include $(dir)/Rules.mk
 
-EVENTS_$(d) := $(d)/main.event $(d)/core.lyn.event $(d)/statscreen.lyn.event \
-	$(d)/battle.lyn.event
+dir := $(d)/skills
+include $(dir)/Rules.mk
+
+EVENTS_$(d) := $(d)/microskillsys.event $(d)/frontend.lyn.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))
 

@@ -1,0 +1,7 @@
+#include "internal/battle.lyn.event"
+
+#ifndef NO_MICROSKILLSYS_STATSCREEN
+#include "internal/statscreen.lyn.event"
+#endif
+
+#include "frontend.lyn.event"

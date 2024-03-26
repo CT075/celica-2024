@@ -17,9 +17,15 @@ LYN_REFERENCE := $(BUILD_DIR)/fe8-reference.o
 %.dmp: %.o
 	$(ARM_OBJCOPY) -S $< -O binary $@
 
+# CR cam: it'd be ideal to avoid needing to specify this here
+MICROSKILLSYS_DIR := src/microskillsys
+
 # In theory, libgbafe and the decomp headers are incompatible, but it should be
-# fine as long as we never try to include both in the same file.
-INCLUDE_DIRS := include $(VENDOR_DIR)/fireemblem8u/include $(VENDOR_DIR)/CLib/include
+# fine as long as we never try to include both in the same file. It does mean
+# that we have to delete `gbafe.h` from the decomp headers, but I wouldn't want
+# to use that anyway.
+INCLUDE_DIRS := include $(VENDOR_DIR)/fireemblem8u/include $(VENDOR_DIR)/CLib/include \
+								$(MICROSKILLSYS_DIR)/include
 INCFLAGS := $(foreach dir, $(INCLUDE_DIRS), -I "$(dir)")
 
 ARCH := -mcpu=arm7tdmi -mthumb -mthumb-interwork
