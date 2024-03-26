@@ -1,7 +1,13 @@
 #ifndef MICROSKILLSYS_BATTLE_H
 #define MICROSKILLSYS_BATTLE_H
 
+#include "global.h"
+#include "bmunit.h"
+#include "bmbattle.h"
+
 #define MAX_BATTLE_ROUNDS 8
+
+// Battle system primitives
 
 enum BattlePosition {
   InitiatorTurn = 1,
@@ -14,9 +20,14 @@ struct BattleRound {
   u32 count : 4;
 };
 
+void clearRoundOrder();
+void populateRoundOrder();
+
+// Pre-battle helpers
+
 struct BasicPreBattleMods {
-  // Multiplier applied to the weapon (includes effectiveness)
-  u8 weaponMultiplier;
+  // Multiplier used in effective bonus
+  u8 effectivenessMultiplier;
   // Flat damage applied to final attack
   u8 attackMod;
   // Flat damage applied to final defense
@@ -28,12 +39,10 @@ struct BasicPreBattleMods {
   u8 dodgeMod;
 };
 
-void clearRoundOrder();
-void populateRoundOrder();
-
 void populateVanillaPreBattleMods(
     struct BattleUnit *unit, struct BattleUnit *opponent, struct BasicPreBattleMods *out
 );
+// CR-soon cam: Do we need to expose all of these?
 void computeBattleUnitAttackBasic(
     struct BattleUnit *unit, struct BattleUnit *opponent,
     struct BasicPreBattleMods *mods

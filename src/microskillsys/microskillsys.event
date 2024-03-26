@@ -4,4 +4,5 @@
 #include "internal/statscreen.lyn.event"
 #endif
 
+#include "skills/main.event"
 #include "frontend.lyn.event"

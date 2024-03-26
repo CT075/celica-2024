@@ -107,36 +107,41 @@ void BattleUnwind(void) {
 void populateVanillaPreBattleMods(
     struct BattleUnit *bu, struct BattleUnit *opponent, struct BasicPreBattleMods *out
 ) {
-  if (IsUnitEffectiveAgainst(&bu->unit, &opponent->unit) == TRUE) {
-    out->weaponMultiplier = 3;
+  switch (GetItemIndex(bu->weapon)) {
+  case ITEM_SWORD_AUDHULMA:
+  case ITEM_LANCE_VIDOFNIR:
+  case ITEM_AXE_GARM:
+  case ITEM_BOW_NIDHOGG:
+  case ITEM_ANIMA_EXCALIBUR:
+  case ITEM_LIGHT_IVALDI:
+  case ITEM_SWORD_SIEGLINDE:
+  case ITEM_LANCE_SIEGMUND:
+    out->effectivenessMultiplier = 2;
+    break;
+
+  default:
+    out->effectivenessMultiplier = 3;
+    break;
   }
 
-  if (IsItemEffectiveAgainst(bu->weapon, &opponent->unit) == TRUE) {
-    switch (GetItemIndex(bu->weapon)) {
-
-    case ITEM_SWORD_AUDHULMA:
-    case ITEM_LANCE_VIDOFNIR:
-    case ITEM_AXE_GARM:
-    case ITEM_BOW_NIDHOGG:
-    case ITEM_ANIMA_EXCALIBUR:
-    case ITEM_LIGHT_IVALDI:
-    case ITEM_SWORD_SIEGLINDE:
-    case ITEM_LANCE_SIEGMUND:
-      out->weaponMultiplier = 2;
-      break;
-
-    default:
-      out->weaponMultiplier = 3;
-      break;
-    }
-  }
+  out->attackMod = 0;
+  out->defMod = 0;
+  out->speedMod = 0;
+  out->hitMod = 0;
+  out->avoMod = 0;
+  out->critMod = 0;
+  out->dodgeMod = 0;
 }
 
 void computeBattleUnitAttackBasic(
     struct BattleUnit *bu, struct BattleUnit *opponent, struct BasicPreBattleMods *mods
 ) {
   bu->battleAttack = GetItemMight(bu->weapon) + bu->wTriangleDmgBonus;
-  bu->battleAttack *= mods->weaponMultiplier;
+
+  if (IsUnitEffectiveAgainst(&bu->unit, &opponent->unit) ||
+      IsItemEffectiveAgainst(bu->weapon, &opponent->unit)) {
+    bu->battleAttack *= mods->effectivenessMultiplier;
+  }
   bu->battleAttack += bu->unit.pow;
   bu->battleAttack += mods->defMod;
 
