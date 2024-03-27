@@ -6,6 +6,64 @@ Warning successful![X]
 
 Warning failed![X]
 
+# 0x00D6
+
+This chapter has multiple[NL]
+[ToggleRed]hidden objectives[ToggleRed].[A][X]
+
+# 0x00D7
+
+At the end of the map,[NL]
+you'll get a [ToggleRed]grade[ToggleRed][NL]
+based on how many you[NL]
+found.[A][X]
+
+# 0x00D8
+
+Note that some objectives[NL]
+are [ToggleRed]mutually exclusive[ToggleRed],[NL]
+so you can't get them all[NL]
+in one run.[A][X]
+
+# 0x00D9
+
+Currently, your goal is to[NL]
+[ToggleRed]end the chapter[ToggleRed] by [ToggleRed]reaching[NL]
+the castle with Eirika.[ToggleRed][A][X]
+
 # 0x01A2
 
-Reach Castle
+Reach Castle[X]
+
+# 0x0160
+
+A Diversion[X]
+
+# 0x0903
+
+[OpenMidLeft][LoadFace][0x2][0x1]
+The Demon King killed my family[NL]
+and took over my country![A][NL]
+[CloseSpeechSlow]
+[ToggleMouthMove]
+...[A][NL]
+[ToggleMouthMove]
+[ToggleSmile][CloseSpeechSlow]
+Just kidding![A][NL]
+[CloseSpeechFast]
+I sure hope nothing happens[NL]
+on my peaceful ride home...[A]
+[X]
+
+# 0x0904
+
+[OpenMidLeft][LoadFace][0x4C][0x1]
+Hey, look! Is that the princess?[NL]
+Time to cause trouble![A][NL]
+[X]
+
+# 0x08FE
+
+[OpenLeft][LoadFace][0x64][0x1]
+[OpenLeft]Do you want to quit?
+[NL][Yes]

@@ -4,6 +4,10 @@
 #define SetLabel(parentLabel) "LABEL (currentOffset - (parentLabel))"
 #define LabelDest(parentLabel, destLabel) "((destLabel) - (parentLabel))"
 
+#define ScrollText(id) "SVAL sB (-1); TUTORIALTEXTBOXSTART; TEXTSHOW (id); TEXTEND;"
+#define CursorFlash(c, time) "CURSOR_FLASHING c; STAL (time); REMOVE_CURSORS;"
+#define CursorFlash(c) "FlashCursor(c, 30)"
+
 PUSH
 // prologue events
 EventPointerTable(0x7,ChEvents)
@@ -15,8 +19,13 @@ EventPointerTable(0x4,ChMap)
 //BYTE 0
 POP
 
+#define CastleCoords [5,16]
+
 #define EarlyWarningId 10
 #define MageHouseId 11
+
+#define StartBadGuy 0x8E
+#define BadGuy 0x80
 
 ALIGN 4
 ChMap:
@@ -36,7 +45,6 @@ POIN $0 $0 $0 $0 $0 $0
 POIN BeginningScene EndingScene
 
 TurnBasedEvents:
-TurnEventPlayer(0,BeginningScene,1)
 TurnEventPlayer(0,LoadFlier,2)
 TurnEventPlayer(0,SpawnEnemies,4)
 END_MAIN
@@ -62,12 +70,16 @@ UNIT Seth Paladin Eirika Level(1,Ally,0) [10,0] 0 0 1 SethMoves [SilverLance,Ste
 UNIT
 
 BaseEnemies:
-UNIT ONeill Brigand ONeill Level(1,Enemy,0) [11,5] 0 0 0 0 [IronAxe,Vulnerary] NoAI
+UNIT StartBadGuy Brigand 0 Level(1,Enemy,0) [13,3] 0 0 1 BanditMoves1 [IronAxe,Vulnerary] NoAI
+UNIT StartBadGuy Brigand 0 Level(1,Enemy,0) [13,3] 0 0 1 BanditMoves2 [IronAxe,Vulnerary] NoAI
 UNIT
 
 Flier:
 UNIT Vanessa FalcoKnight Eirika Level(1,Ally,0) [0,7] 0 0 1 FlierMoves [SlimLance,HeavySpear] NoAI
-UNIT Brigand Sniper LyonCC Level(1,Enemy,0) [0,11] 0 0 1 ArcherMoves [Longbow] AttackInRangeAI
+UNIT BadGuy Sniper 0 Level(1,Enemy,0) [0,11] 0 0 1 ArcherMoves [Longbow] AttackInRangeAI
+UNIT
+
+BadGuysWave1:
 UNIT
 
 BoltingMage:
@@ -75,12 +87,26 @@ UNIT LArachel MageKnight Eirika Level(1,Ally,0) [15,12] 0 0 1 MageMoves [Bolting
 UNIT
 
 BeginningScene:
-// "Phew, finally home. Let's go to the castle"
 LOAD1 1 PlayerUnits
 ENUN
-// "Oh there's bandits"
+CursorFlash(Eirika)
+Text(Woodland, 0x0903)
 LOAD1 1 BaseEnemies
 ENUN
+// We need to do this due to a bug in ColorzCore macro parsing that doesn't respect
+// [bracketed,coordinates] as a single parameter.
+#define hlcoords [11,5]
+CursorFlash(hlcoords)
+#undef hlcoords
+Text(Woodland, 0x0904)
+ScrollText(0x00D6)
+ScrollText(0x00D7)
+ScrollText(0x00D8)
+CAMERA CastleCoords
+CursorFlash(CastleCoords)
+STAL 30
+CursorFlash(CastleCoords)
+ScrollText(0x00D9)
 NoFade
 ENDA
 
@@ -88,7 +114,6 @@ LoadFlier:
 // "Hey, sorry I'm late!"
 LOAD1 1 Flier
 ENUN
-NoFade
 ENDA
 
 MageHouse: {
@@ -129,7 +154,7 @@ CheckEarlyWarning: {
 }
 
 SpawnEnemies: {
-  CHECK_INAREA Eirika [5,16] [1,1]
+  CHECK_INAREA Eirika CastleCoords [1,1]
   BEQ LabelDest(SpawnEnemies,Failed) sC s0
   CALL SecretEnding
   GOTO LabelDest(SpawnEnemies,Done)
@@ -166,5 +191,9 @@ MageMoves:
 REDA [14,12]
 ArcherMoves:
 REDA [2,11]
+BanditMoves1:
+REDA [11,5]
+BanditMoves2:
+REDA [10,6]
 
 ALIGN 4

@@ -1,3 +1,13 @@
 #include disableDifficultySelect/main.event
 #include disableExp/disableExp.lyn.event
 #include microskillsys/microskillsys.event
+
+// Individual tweaks
+
+PUSH
+// Skip very beginning world map
+ORG $A39768
+EVBIT_MODIFY 0x1
+SKIPWN
+ENDA
+POP

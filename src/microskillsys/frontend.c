@@ -6,7 +6,7 @@
 
 #include "microskillsys/battle.h"
 
-// CR cam: How to handle individual skill headers?
+// CR cam: collect these from skill folders
 bool hasShootDown(struct Unit *unit);
 void applyShootDown(
     struct Unit *unit, struct Unit *opponent, struct BasicPreBattleMods *mods
