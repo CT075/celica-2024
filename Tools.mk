@@ -28,7 +28,7 @@ $(PARSEFILE): $(PARSEFILE_DIR)/ParseFile.hs $(PARSEFILE_DIR)/FlagUtilities.hs \
 		$(PARSEFILE_DIR)/GBAUtilities.hs $(PARSEFILE_DIR)/FEParser.hs
 	ghc $< -i$(PARSEFILE_DIR) -o $@
 
-PNG2DMP_DIR := $(BIN_DIR)/Png2Dmp
+PNG2DMP_DIR := $(VENDOR_BIN)/Png2Dmp
 PNG2DMP := $(PNG2DMP_DIR)/Png2Dmp
 
 # XXX: We should properly be checking every .hs file here, but this is

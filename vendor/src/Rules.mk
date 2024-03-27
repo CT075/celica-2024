@@ -17,5 +17,8 @@ include $(dir)/Rules.mk
 dir := $(d)/SkipHuffmanDecompression
 include $(dir)/Rules.mk
 
+dir := $(d)/ChapterNames
+include $(dir)/Rules.mk
+
 d := $(dirstack_$(sp))
 sp := $(basename $(sp))

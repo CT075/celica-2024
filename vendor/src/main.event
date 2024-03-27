@@ -11,6 +11,7 @@
 #include "BattleStatsWithAnimsOff/FE8-BattleStats.event"
 #include "InlineFix2_GenerateBestMovementScript.event"
 #include "SkipHuffmanDecompression/Installer.event"
+#include "ChapterNames/fe8_chnames.event"
 
 PUSH
 ORG FreeSpaceBL

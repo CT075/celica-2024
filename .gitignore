@@ -23,6 +23,8 @@
 !src/LToggle/asm/*
 !src/BattleStatsWithAnimsOff/*
 !vendor/CLib/reference/*
+!vendor/src/ChapterNames/fe8_chapter_names.*
+!vendor/src/ChapterNames/chartable.dmp
 data/text/.TextEntries
 .cache
 obj
