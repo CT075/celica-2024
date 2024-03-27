@@ -25,6 +25,7 @@ void populateRoundOrder();
 
 // Pre-battle helpers
 
+// CR cam: Move these to [battle_simple.h]?
 struct BasicPreBattleMods {
   // Multiplier used in effective bonus
   u8 effectivenessMultiplier;

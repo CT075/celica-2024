@@ -6,6 +6,9 @@ d := $(dir)
 dir := $(d)/ShootDown
 include $(dir)/Rules.mk
 
+dir := $(d)/Smite
+include $(dir)/Rules.mk
+
 EVENTS_$(d) := $(d)/main.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))
