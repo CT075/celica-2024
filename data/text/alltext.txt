@@ -1,45 +1,46 @@
-# 0x00D4
-
-Warning successful![X]
-
-# 0x00D5
-
-Warning failed![X]
-
-# 0x00D6
+# 0x00D4 ExplainHidden
 
 This chapter has multiple[NL]
 [ToggleRed]hidden objectives[ToggleRed].[A][X]
 
-# 0x00D7
+# # ExplainGrade
 
 At the end of the map,[NL]
 you'll get a [ToggleRed]grade[ToggleRed][NL]
 based on how many you[NL]
 found.[A][X]
 
-# 0x00D8
+# # ExplainMutuallyExclusive
 
 Note that some objectives[NL]
 are [ToggleRed]mutually exclusive[ToggleRed],[NL]
 so you can't get them all[NL]
 in one run.[A][X]
 
-# 0x00D9
+# # ExplainGoToCastle
 
 Currently, your goal is to[NL]
 [ToggleRed]end the chapter[ToggleRed] by [ToggleRed]reaching[NL]
-the castle with Eirika.[ToggleRed][A][X]
+the castle with Eirika.[ToggleRed][A]
+[X]
 
-# 0x01A2
+# # ExplainSeize
+
+Note that [ToggleRed]reaching the castle[NL]
+is enough.[ToggleRed] There's [ToggleRed]no need to[NL]
+seize your own castle[ToggleRed], after[NL]
+all.
+[X]
+
+# 0x01A2 StartingGoal
 
 Reach Castle[X]
 
-# 0x0160
+# 0x0160 ChapterTitle
 
 A Diversion[X]
 
-# 0x0903
+# 0x0903 OpeningText
 
 [OpenMidLeft][LoadFace][0x2][0x1]
 The Demon King killed my family[NL]
@@ -55,15 +56,83 @@ I sure hope nothing happens[NL]
 on my peaceful ride home...[A]
 [X]
 
-# 0x0904
+# # OpeningBandits
 
 [OpenMidLeft][LoadFace][0x4C][0x1]
 Hey, look! Is that the princess?[NL]
 Time to cause trouble![A][NL]
 [X]
 
-# 0x08FE
+# # FlierSpawn
+
+[OpenMidLeft][LoadFace][0x8][0x1]
+Princess! Enemies approach![A][NL]
+They'll arrive in [ToggleRed]two minutes![ToggleRed][A]
+[X]
+
+# # EarlyMageGeneric
+
+[OpenMidLeft][LoadFace][0x22][0x1]
+[OpenMidRight][LoadFace][0xFF][0xFF]
+[OpenMidLeft]
+Why, hello![A][NL]
+Are you headed to the castle?[NL]
+Well, I simply must join you![A]
+[X]
+
+# # EarlyMageEirika
+
+[OpenMidLeft][LoadFace][0x22][0x1]
+[OpenMidRight][LoadFace][0x2][0x1]
+[OpenMidLeft]
+Why, Eirika![A][NL]
+What providence that we should[NL]
+meet here, on this day![A]
+Are you headed to the castle?[NL]
+Well, I simply must join you![A]
+[X]
+
+# # LateMageGeneric
+
+[OpenMidLeft][LoadFace][0x22][0x1]
+[OpenMidRight][LoadFace][0xFF][0xFF]
+[OpenMidLeft]
+Why, hello![A][NL]
+Are you involved with this[NL]
+nasty business outdoors?[A][NL]
+Well, I simply must join you![A]
+[X]
+
+# # LateMageEirika
+
+[OpenMidLeft][LoadFace][0x22][0x1]
+[OpenMidRight][LoadFace][0x2][0x1]
+[OpenMidLeft]
+Why, Eirika![A][NL]
+What providence that we should[NL]
+meet here, on this day![A][NL]
+Are you involved with this[NL]
+nasty business outdoors?[A][NL]
+Well, I simply must join you![A]
+[X]
+
+# # SorryLostBolting
+
+[OpenMidLeft][LoadFace][0x22][0x1]
+It's a shame, but I seem[NL]
+to have misplaced my tome[A][NL]
+of divine thunder when that[NL]
+band of ruffians arrived.[A][NL]
+Without it, I won't be able[NL]
+to [ToggleRed]smite foes from afar.[ToggleRed][A][NL]
+If you had [ToggleRed]arrived just a[NL]
+few minutes earlier,[ToggleRed] I would[A][NL]
+have had it on hand.[A]
+[X]
+
+# 0x08FE SuspendDialogue
 
 [OpenLeft][LoadFace][0x64][0x1]
 [OpenLeft]Do you want to quit?
 [NL][Yes]
+[X]

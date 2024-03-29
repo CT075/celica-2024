@@ -29,6 +29,10 @@ __TEXTPROCESS0D7:
 #incbin ".TextEntries/alltextExplainGoToCastle.fetxt.dmp"
 setText($D7, __TEXTPROCESS0D7)
 
+__TEXTPROCESS0D8:
+#incbin ".TextEntries/alltextExplainSeize.fetxt.dmp"
+setText($D8, __TEXTPROCESS0D8)
+
 __TEXTPROCESS1A2:
 #incbin ".TextEntries/alltextStartingGoal.fetxt.dmp"
 setText($1A2, __TEXTPROCESS1A2)
@@ -38,12 +42,40 @@ __TEXTPROCESS160:
 setText($160, __TEXTPROCESS160)
 
 __TEXTPROCESS903:
-#incbin ".TextEntries/alltextOpeningScene.fetxt.dmp"
+#incbin ".TextEntries/alltextOpeningText.fetxt.dmp"
 setText($903, __TEXTPROCESS903)
 
 __TEXTPROCESS904:
-#incbin ".TextEntries/alltextOpeningBanditScene.fetxt.dmp"
+#incbin ".TextEntries/alltextOpeningBandits.fetxt.dmp"
 setText($904, __TEXTPROCESS904)
+
+__TEXTPROCESS905:
+#incbin ".TextEntries/alltextFlierSpawn.fetxt.dmp"
+setText($905, __TEXTPROCESS905)
+
+__TEXTPROCESS906:
+#incbin ".TextEntries/alltextEarlyMageGeneric.fetxt.dmp"
+setText($906, __TEXTPROCESS906)
+
+__TEXTPROCESS907:
+#incbin ".TextEntries/alltextEarlyMageEirika.fetxt.dmp"
+setText($907, __TEXTPROCESS907)
+
+__TEXTPROCESS908:
+#incbin ".TextEntries/alltextLateMageGeneric.fetxt.dmp"
+setText($908, __TEXTPROCESS908)
+
+__TEXTPROCESS909:
+#incbin ".TextEntries/alltextLateMageEirika.fetxt.dmp"
+setText($909, __TEXTPROCESS909)
+
+__TEXTPROCESS90A:
+#incbin ".TextEntries/alltextSorryLostBolting.fetxt.dmp"
+setText($90A, __TEXTPROCESS90A)
+
+__TEXTPROCESS8FE:
+#incbin ".TextEntries/alltextSuspendDialogue.fetxt.dmp"
+setText($8FE, __TEXTPROCESS8FE)
 
 }
 
