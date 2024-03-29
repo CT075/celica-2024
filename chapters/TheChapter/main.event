@@ -14,9 +14,9 @@ EventPointerTable(0x7,ChEvents)
 // prologue map
 EventPointerTable(0x4,ChMap)
 
-// prologue worldmap events
-//ORG 0x8B0890+117
-//BYTE 0
+// (initial) goal window
+ORG 0x8B091A
+SHORT 0x01A2
 POP
 
 #define CastleCoords [5,16]
@@ -72,21 +72,61 @@ PlayerUnit(Seth,Paladin,10) [10,0] 0 0 1 SethMoves [SilverLance,SteelSword] NoAI
 UNIT
 
 BaseEnemies:
-UNIT StartBadGuy Brigand 0 Level(1,Enemy,0) [13,3] 0 0 1 BanditMoves1 [IronAxe,Vulnerary] NoAI
-UNIT StartBadGuy Brigand 0 Level(1,Enemy,0) [13,3] 0 0 1 BanditMoves2 [IronAxe,Vulnerary] NoAI
+UNIT StartBadGuy Brigand 0 Level(18,Enemy,1) [13,3] 0 0 1 BanditMoves1 [IronAxe,Vulnerary] NoAI
+UNIT StartBadGuy Brigand 0 Level(15,Enemy,1) [13,3] 0 0 1 BanditMoves2 [IronAxe,Vulnerary] NoAI
 UNIT
 
 Flier:
-PlayerUnit(Vanessa,FalcoKnight,1) [0,7] 0 0 1 FlierMoves [SlimLance,HeavySpear] NoAI
-UNIT BadGuy Sniper 0 Level(1,Enemy,0) [0,11] 0 0 1 ArcherMoves [Longbow] AttackInRangeAI
+PlayerUnit(Vanessa,FalcoKnight,4) [0,7] 0 0 1 FlierMoves [SlimLance,HeavySpear] NoAI
+UNIT BadGuy Sniper 0 Level(5,Enemy,1) [0,11] 0 0 1 ArcherMoves [Longbow] AttackInRangeAI
 UNIT
 
-BadGuysWave1:
+Turn2BadGuys1:
+UNIT BadGuy Warrior 0 Level(3,Enemy,1) [17,3] 0 0 0 0 [SilverAxe,IronBow] NoAI
+UNIT BadGuy Fighter 0 Level(16,Enemy,1) [17,3] 0 0 1 m1 [IronAxe] NoAI
+UNIT BadGuy Fighter 0 Level(18,Enemy,1) [17,3] 0 0 1 m2 [SteelAxe] NoAI
+UNIT
+
+Turn2BadGuys2:
+UNIT BadGuy Paladin 0 Level(4,Enemy,1) [19,15] 0 0 1 m3 [SilverAxe,IronBow] NoAI
+UNIT BadGuy Fighter 0 Level(16,Enemy,1) [19,16] 0 0 1 m4 [IronAxe] NoAI
+UNIT BadGuy Fighter 0 Level(18,Enemy,1) [19,15] 0 0 1 m5 [SteelAxe] NoAI
 UNIT
 
 BoltingMage:
-PlayerUnit(LArachel,Valkyrie,1) [15,12] 0 0 1 MageMoves [Bolting,Elfire,Vulnerary] NoAI
+PlayerUnit(LArachel,Valkyrie,1) [15,12] 0 0 1 MageMoves [Elfire,Bolting,Vulnerary] NoAI
 UNIT
+
+NonBoltingMage:
+PlayerUnit(LArachel,Valkyrie,1) [15,12] 0 0 1 MageMoves [Elfire,Vulnerary] NoAI
+UNIT
+
+EirMoves:
+REDA [8,2]
+SethMoves:
+REDA [6,5]
+FlierMoves:
+REDA [4,4]
+MageMoves:
+REDA [14,12]
+ArcherMoves:
+REDA [2,11]
+BanditMoves1:
+REDA [11,5]
+BanditMoves2:
+REDA [10,6]
+m1:
+REDA [16,2]
+m2:
+REDA [17,4]
+m3:
+REDA [17,14]
+m4:
+REDA [18,13]
+m5:
+REDA [18,15]
+
+ALIGN 4
 
 BeginningScene:
 LOAD1 1 PlayerUnits
@@ -109,13 +149,21 @@ CursorFlash(CastleCoords)
 STAL 30
 CursorFlash(CastleCoords)
 ScrollText(0x00D9)
+ScrollText(0x00DA)
 NoFade
 ENDA
 
 LoadFlier:
-// "Hey, sorry I'm late!"
 LOAD1 1 Flier
 ENUN
+CAMERA Vanessa
+CursorFlash(Vanessa)
+Text(Plain_2, 0x0905)
+LOAD1 1 Turn2BadGuys1
+ENUN
+LOAD1 1 Turn2BadGuys2
+ENUN
+NoFade
 ENDA
 
 MageHouse: {
@@ -172,7 +220,6 @@ SpawnEnemies: {
 }
 
 SecretEnding: {
-  POPUP 0x00D4 0
   CALL EndingScene
   NoFade
   ENDA
@@ -182,20 +229,5 @@ EndingScene: {
   NoFade
   ENDA
 }
-
-EirMoves:
-REDA [8,2]
-SethMoves:
-REDA [6,5]
-FlierMoves:
-REDA [4,4]
-MageMoves:
-REDA [14,12]
-ArcherMoves:
-REDA [2,11]
-BanditMoves1:
-REDA [11,5]
-BanditMoves2:
-REDA [10,6]
 
 ALIGN 4
