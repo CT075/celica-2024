@@ -9,48 +9,40 @@
     #define TextTable 0x15D48C
 #endif
 #define setText(textID, offset) "PUSH; ORG (TextTable+4*textID); POIN (offset | 0x80000000); POP"
-#include "ParseDefinitions.txt"
+#include "../../_build/ParseDefinitions.event"
 
 {
 
 __TEXTPROCESS0D4:
-#incbin ".TextEntries/alltext0D4.fetxt.dmp"
+#incbin ".TextEntries/alltextExplainHidden.fetxt.dmp"
 setText($D4, __TEXTPROCESS0D4)
 
 __TEXTPROCESS0D5:
-#incbin ".TextEntries/alltext0D5.fetxt.dmp"
+#incbin ".TextEntries/alltextExplainGrade.fetxt.dmp"
 setText($D5, __TEXTPROCESS0D5)
 
 __TEXTPROCESS0D6:
-#incbin ".TextEntries/alltext0D6.fetxt.dmp"
+#incbin ".TextEntries/alltextExplainMutuallyExclusive.fetxt.dmp"
 setText($D6, __TEXTPROCESS0D6)
 
 __TEXTPROCESS0D7:
-#incbin ".TextEntries/alltext0D7.fetxt.dmp"
+#incbin ".TextEntries/alltextExplainGoToCastle.fetxt.dmp"
 setText($D7, __TEXTPROCESS0D7)
 
-__TEXTPROCESS0D8:
-#incbin ".TextEntries/alltext0D8.fetxt.dmp"
-setText($D8, __TEXTPROCESS0D8)
-
-__TEXTPROCESS0D9:
-#incbin ".TextEntries/alltext0D9.fetxt.dmp"
-setText($D9, __TEXTPROCESS0D9)
-
 __TEXTPROCESS1A2:
-#incbin ".TextEntries/alltext1A2.fetxt.dmp"
+#incbin ".TextEntries/alltextStartingGoal.fetxt.dmp"
 setText($1A2, __TEXTPROCESS1A2)
 
 __TEXTPROCESS160:
-#incbin ".TextEntries/alltext160.fetxt.dmp"
+#incbin ".TextEntries/alltextChapterTitle.fetxt.dmp"
 setText($160, __TEXTPROCESS160)
 
 __TEXTPROCESS903:
-#incbin ".TextEntries/alltext903.fetxt.dmp"
+#incbin ".TextEntries/alltextOpeningScene.fetxt.dmp"
 setText($903, __TEXTPROCESS903)
 
 __TEXTPROCESS904:
-#incbin ".TextEntries/alltext904.fetxt.dmp"
+#incbin ".TextEntries/alltextOpeningBanditScene.fetxt.dmp"
 setText($904, __TEXTPROCESS904)
 
 }

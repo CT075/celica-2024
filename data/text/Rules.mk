@@ -3,9 +3,9 @@ dirstack_$(sp) := $(d)
 d := $(dir)
 
 EVENTS_$(d) := $(d)/main.event
+PARSE_DEFNS := $(BUILD_DIR)/ParseDefinitions.event
 
-$(d)/main.event: PARSE_DEFNS := $(d)/ParseDefinitions.txt
-$(d)/main.event: $(d)/alltext.txt $(PARSEFILE) $(TEXT_PROCESS_CLASSIC)
+$(d)/main.event $(PARSE_DEFNS): $(d)/alltext.txt $(PARSEFILE) $(TEXT_PROCESS_CLASSIC)
 	python $(TEXT_PROCESS_CLASSIC) $< \
 		--installer $@ \
 		--definitions $(PARSE_DEFNS) \
