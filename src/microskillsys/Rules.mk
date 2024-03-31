@@ -21,11 +21,10 @@ $(shell mkdir -p $(d)/include/microskillsys/skills)
 $(d)/include/microskillsys/skills/%.h: $(d)/skills/$$*/$$*.h
 	cp $< $@
 
-$(d)/include/microskillsys/skills.h: HERE := $(d)
 $(d)/include/microskillsys/skills.h: $(d)/skills/skill_list.txt
-	@for skill in $$(cat $<); do \
-		$(MAKE) $(HERE)/include/microskillsys/skills/$$skill.h; \
-	done
+$(d)/include/microskillsys/skills.h: $(shell \
+	cat $(d)/skills/skill_list.txt | \
+	xargs -I '{}' python -c 'print("$(d)/include/microskillsys/skills/{}.h")')
 
 d := $(dirstack_$(sp))
 sp := $(basename $(sp))
