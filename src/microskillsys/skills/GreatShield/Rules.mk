@@ -8,3 +8,4 @@ EVENTS := $(EVENTS) $(EVENTS_$(d))
 
 d := $(dirstack_$(sp))
 sp := $(basename $(sp))
+

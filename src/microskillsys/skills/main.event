@@ -1,2 +1,1 @@
-#include "ShootDown/ShootDown.lyn.event"
-#include "Smite/Smite.lyn.event"
+#include "skill_includes.event"

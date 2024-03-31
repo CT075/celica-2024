@@ -26,7 +26,8 @@ void populateRoundResult(
   defaultPopulateRoundResult(attacker, defender, out);
 
   // Cheat L'Arachel's hitrate against the hidden sniper to ensure the fastclear
-  if (UNIT_CHAR_ID(attacker) == CHARACTER_LARACHEL && UNIT_CHAR_ID(defender) == 0x8F) {
+  if (UNIT_CHAR_ID(&attacker->unit) == CHARACTER_LARACHEL &&
+      UNIT_CHAR_ID(&defender->unit) == 0x8F) {
     out->didAttackHit = true;
   }
 }
