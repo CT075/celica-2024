@@ -7,6 +7,9 @@ include $(VENDOR_DIR)/devkitARM_base_tools.mk
 CACHE_DIR := $(BUILD_DIR)/cache
 $(shell mkdir -p $(CACHE_DIR) > /dev/null)
 
+BUILD_INCLUDE := $(BUILD_DIR)/include
+$(shell mkdir -p $(BUILD_INCLUDE) > /dev/null)
+
 FE8_SYMBOLS := $(VENDOR_DIR)/fe8-symbols.s
 
 LYN_REFERENCE := $(BUILD_DIR)/fe8-reference.o
@@ -25,7 +28,7 @@ MICROSKILLSYS_DIR := src/microskillsys
 # that we have to delete `gbafe.h` from the decomp headers, but I wouldn't want
 # to use that anyway.
 INCLUDE_DIRS := include $(VENDOR_DIR)/fireemblem8u/include $(VENDOR_DIR)/CLib/include \
-								$(MICROSKILLSYS_DIR)/include
+								$(MICROSKILLSYS_DIR)/include $(BUILD_INCLUDE)
 INCFLAGS := $(foreach dir, $(INCLUDE_DIRS), -I "$(dir)")
 
 ARCH := -mcpu=arm7tdmi -mthumb -mthumb-interwork

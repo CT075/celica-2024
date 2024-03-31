@@ -6,15 +6,10 @@
 #include "constants/items.h"
 
 #include "microskillsys/battle.h"
-#include "microskillsys/battle_simple.h"
 #include "microskillsys/frontend.h"
 
-// CR cam: collect these from skill folders
-bool hasNihil(struct Unit *unit) { return false; }
-bool hasShootDown(struct Unit *unit);
-void applyShootDown(struct PrebattleActors *pba, struct BasicPreBattleMods *mods);
-bool hasSmite(struct Unit *unit);
-void applySmite(struct PrebattleActors *pba, struct BasicPreBattleMods *mods);
+#include "microskillsys/battle_simple.h"
+#include "microskillsys/skills.h"
 
 #define NUM_PRE_BATTLE_SPECS                                                           \
   (sizeof(simpleSkills) / sizeof(struct SimplePreBattleSkillSpec))
@@ -22,6 +17,17 @@ void applySmite(struct PrebattleActors *pba, struct BasicPreBattleMods *mods);
 // CR cam: generate this
 const struct SimplePreBattleSkillSpec simpleSkills[] = {
   { hasShootDown, applyShootDown }, { hasSmite, applySmite }
+};
+
+#define NUM_PROC_SKILLS (sizeof(procSkills) / sizeof(struct ProcSkillSpec))
+
+const struct ProcSkillSpec procSkills[] = {
+  {
+      Defender,
+      hasGreatShield,
+      GreatShieldProcRate,
+      applyGreatShield,
+  },
 };
 
 void populateRoundOrder(struct BattleUnit *initiator, struct BattleUnit *target) {
@@ -32,6 +38,25 @@ void populateRoundResult(
     struct BattleUnit *attacker, struct BattleUnit *defender, struct RoundResult *out
 ) {
   defaultPopulateRoundResult(attacker, defender, out);
+
+  for (int i = 0; i < NUM_PROC_SKILLS; i += 1) {
+    struct BattleUnit *bu;
+    struct ProcSkillSpec skill = procSkills[i];
+    switch (skill.side) {
+    case Attacker:
+      bu = attacker;
+      break;
+    case Defender:
+      bu = defender;
+      break;
+    }
+    if (skill.canProc(&bu->unit)) {
+      int rate = skill.procRate(bu);
+      if (BattleRoll1RN(rate, FALSE)) {
+        skill.apply(attacker, defender, out);
+      }
+    }
+  }
 
   // Cheat L'Arachel's hitrate against the hidden sniper to ensure the fastclear
   if (UNIT_CHAR_ID(&attacker->unit) == CHARACTER_LARACHEL &&

@@ -84,7 +84,9 @@ struct RoundResult {
   short finalDamage;
   bool didAttackHit;
   bool didAttackCrit;
+  // For visual effect only
   bool didAttackerProcSkill;
+  // For visual effect only
   bool didDefenderProcSkill;
 };
 

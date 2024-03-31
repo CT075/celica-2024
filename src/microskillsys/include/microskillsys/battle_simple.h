@@ -1,3 +1,5 @@
+// CR cam: come up with a better name for this
+
 #ifndef MICROSKILLSYS_BATTLE_SIMPLE_H
 #define MICROSKILLSYS_BATTLE_SIMPLE_H
 
@@ -15,6 +17,18 @@ struct PrebattleActors {
 struct SimplePreBattleSkillSpec {
   bool (*conditionMet)(struct Unit *unit);
   void (*apply)(struct PrebattleActors *input, struct BasicPreBattleMods *mods);
+};
+
+enum ProcSide { Attacker, Defender };
+
+struct ProcSkillSpec {
+  enum ProcSide side;
+  bool (*canProc)(struct Unit *bu);
+  int (*procRate)(struct BattleUnit *bu);
+  void (*apply)(
+      struct BattleUnit *attacker, struct BattleUnit *defender,
+      struct RoundResult *result
+  );
 };
 
 #endif

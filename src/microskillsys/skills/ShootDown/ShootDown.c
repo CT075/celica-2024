@@ -22,3 +22,5 @@ void applyShootDown(struct PrebattleActors *pba, struct BasicPreBattleMods *mods
     mods->hitMod += 20;
   }
 }
+
+const struct SimplePreBattleSkillSpec shootDownSpec = { hasShootDown, applyShootDown };

@@ -1,6 +1,7 @@
 // This is split into a separate file so I can have a script easily append to
 // it without having to worry about munging manual edits
 
+#include "Nihil/Nihil.lyn.event"
 #include "ShootDown/ShootDown.lyn.event"
 #include "Smite/Smite.lyn.event"
 #include "GreatShield/GreatShield.lyn.event"

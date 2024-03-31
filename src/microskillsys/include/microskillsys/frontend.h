@@ -1,6 +1,8 @@
 #ifndef MICROSKILLSYS_FRONTEND_H
 #define MICROSKILLSYS_FRONTEND_H
 
+#include "battle.h"
+
 // Compute the battle round order
 void populateRoundOrder(struct BattleUnit *initiator, struct BattleUnit *target);
 

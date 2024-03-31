@@ -298,6 +298,8 @@ void defaultPopulateRoundResult(
     return;
   }
 
+  out->didAttackHit = true;
+
   out->finalDamage = gBattleStats.attack - gBattleStats.defense;
 
   if (BattleRoll1RN(gBattleStats.critRate, FALSE)) {
