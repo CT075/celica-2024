@@ -1,6 +1,7 @@
 #include "bmbattle.h"
 #include "bmitem.h"
 #include "bmunit.h"
+#include "constants/characters.h"
 #include "constants/classes.h"
 #include "constants/items.h"
 
@@ -23,6 +24,11 @@ void populateRoundResult(
     struct BattleUnit *attacker, struct BattleUnit *defender, struct RoundResult *out
 ) {
   defaultPopulateRoundResult(attacker, defender, out);
+
+  // Cheat L'Arachel's hitrate against the hidden sniper to ensure the fastclear
+  if (UNIT_CHAR_ID(attacker) == CHARACTER_LARACHEL && UNIT_CHAR_ID(defender) == 0x8F) {
+    out->didAttackHit = true;
+  }
 }
 
 // CR cam: figure out how to bundle this

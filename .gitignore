@@ -25,6 +25,9 @@
 !vendor/CLib/reference/*
 !vendor/src/ChapterNames/fe8_chapter_names.*
 !vendor/src/ChapterNames/chartable.dmp
+!vendor/bin/Sappy2EA/*
+!data/music/tracks/*.s
+data/music/tracks/*.event
 data/text/.TextEntries
 .cache
 obj
@@ -39,3 +42,7 @@ vendor/bin/gendefs/gendefs
 vendor/bin/Png2Dmp/dist-newstyle
 vendor/bin/Png2Dmp/Png2Dmp
 _build
+
+# misc
+Template.Rules.mk
+initskill.py
