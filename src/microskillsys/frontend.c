@@ -16,7 +16,9 @@
 
 // CR cam: generate this
 const struct SimplePreBattleSkillSpec simpleSkills[] = {
-  { hasShootDown, applyShootDown }, { hasSmite, applySmite }
+  { hasShootDown, applyShootDown },
+  { hasSmite, applySmite },
+  { recklessMayApply, applyReckless },
 };
 
 #define NUM_PROC_SKILLS (sizeof(procSkills) / sizeof(struct ProcSkillSpec))
@@ -81,10 +83,30 @@ void populatePreBattleMods(
                                  .opponentWeapon = opponent->weapon };
 
   for (int i = 0; i < NUM_PRE_BATTLE_SPECS; i += 1) {
-    if (simpleSkills[i].conditionMet(&bu->unit)) {
-      simpleSkills[i].apply(&pba, mods);
+    struct SimplePreBattleSkillSpec skill = simpleSkills[i];
+    if (skill.applies(&bu->unit)) {
+      skill.apply(&pba, mods);
     }
   }
 
   computeBattleUnitStatsBasic(bu, opponent, mods);
+}
+
+// CR cam: Is there some better way to express this?
+void ComputeBattleUnitEffectiveHitRate(
+    struct BattleUnit *attacker, struct BattleUnit *defender
+) {
+  if (hasNoGuard(&attacker->unit) || hasNoGuard(&defender->unit)) {
+    attacker->battleEffectiveHitRate = 100;
+  }
+  else {
+    attacker->battleEffectiveHitRate =
+        attacker->battleHitRate - defender->battleAvoidRate;
+  }
+
+  if (attacker->battleEffectiveHitRate > 100)
+    attacker->battleEffectiveHitRate = 100;
+
+  if (attacker->battleEffectiveHitRate < 0)
+    attacker->battleEffectiveHitRate = 0;
 }

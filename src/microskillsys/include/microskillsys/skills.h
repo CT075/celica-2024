@@ -2,3 +2,5 @@
 #include "skills/ShootDown.h"
 #include "skills/Smite.h"
 #include "skills/Nihil.h"
+#include "skills/Reckless.h"
+#include "skills/NoGuard.h"

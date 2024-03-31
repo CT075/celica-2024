@@ -3,6 +3,7 @@
 #include "constants/classes.h"
 #include "constants/items.h"
 
+#include "ShootDown.h"
 #include "microskillsys/battle.h"
 #include "microskillsys/battle_simple.h"
 
@@ -17,7 +18,7 @@ void applyShootDown(struct PrebattleActors *pba, struct BasicPreBattleMods *mods
 
   // We cheat here and assume that, if an iron bow is effective against the
   // opponent, it's a flier. We do not check effectiveness directly, because
-  // some bows may be effective against more than just fliers
+  // some bows may be effective against more than just fliers.
   if (IsItemEffectiveAgainst(ITEM_BOW_IRON, opponent)) {
     mods->hitMod += 20;
   }

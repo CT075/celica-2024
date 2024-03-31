@@ -3,3 +3,4 @@ ShootDown
 Smite
 Nihil
 Reckless
+NoGuard

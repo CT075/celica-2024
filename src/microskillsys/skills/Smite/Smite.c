@@ -3,6 +3,7 @@
 #include "constants/characters.h"
 #include "constants/items.h"
 
+#include "Smite.h"
 #include "microskillsys/battle.h"
 #include "microskillsys/battle_simple.h"
 

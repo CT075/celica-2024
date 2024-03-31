@@ -14,8 +14,9 @@ struct PrebattleActors {
   u16 opponentWeapon;
 };
 
+// CR cam: This is maybe not expressive enough (see Reckless)
 struct SimplePreBattleSkillSpec {
-  bool (*conditionMet)(struct Unit *unit);
+  bool (*applies)(struct Unit *unit);
   void (*apply)(struct PrebattleActors *input, struct BasicPreBattleMods *mods);
 };
 

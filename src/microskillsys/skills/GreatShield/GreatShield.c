@@ -3,6 +3,7 @@
 #include "constants/classes.h"
 #include "constants/items.h"
 
+#include "GreatShield.h"
 #include "microskillsys/battle.h"
 #include "microskillsys/battle_simple.h"
 
