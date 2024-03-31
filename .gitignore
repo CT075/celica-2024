@@ -1,4 +1,5 @@
 # basic artifacts
+__pycache__
 *.zip
 *.dmp
 *.bin
