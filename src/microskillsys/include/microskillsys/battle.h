@@ -40,7 +40,7 @@ struct BasicPreBattleMods {
   u8 dodgeMod;
 };
 
-void populateVanillaPreBattleMods(
+void vanillaPopulatePreBattleMods(
     struct BattleUnit *unit, struct BattleUnit *opponent, struct BasicPreBattleMods *out
 );
 // CR-soon cam: Do we need to expose all of these?

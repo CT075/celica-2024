@@ -107,7 +107,7 @@ void BattleUnwind(void) {
   gBattleHitIterator->info |= BATTLE_HIT_INFO_END;
 }
 
-void populateVanillaPreBattleMods(
+void vanillaPopulatePreBattleMods(
     struct BattleUnit *bu, struct BattleUnit *opponent, struct BasicPreBattleMods *out
 ) {
   switch (GetItemIndex(bu->weapon)) {
@@ -237,8 +237,14 @@ void computeBattleUnitStatsBasic(
 
 void defaultBattleUnitStats(struct BattleUnit *unit, struct BattleUnit *opponent) {
   struct BasicPreBattleMods mods;
-  populateVanillaPreBattleMods(unit, opponent, &mods);
+  vanillaPopulatePreBattleMods(unit, opponent, &mods);
   computeBattleUnitStatsBasic(unit, opponent, &mods);
+}
+
+void ComputeBattleUnitStats(struct BattleUnit *bu, struct BattleUnit *opponent) {
+  struct BasicPreBattleMods mods;
+  populatePreBattleMods(bu, opponent, &mods);
+  computeBattleUnitStatsBasic(bu, opponent, &mods);
 }
 
 void applyRoundResult(

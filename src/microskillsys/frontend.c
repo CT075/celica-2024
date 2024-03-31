@@ -16,6 +16,14 @@ void applyShootDown(struct PrebattleActors *pba, struct BasicPreBattleMods *mods
 bool hasSmite(struct Unit *unit);
 void applySmite(struct PrebattleActors *pba, struct BasicPreBattleMods *mods);
 
+#define NUM_PRE_BATTLE_SPECS                                                           \
+  (sizeof(simpleSkills) / sizeof(struct SimplePreBattleSkillSpec))
+
+// CR cam: generate this
+const struct SimplePreBattleSkillSpec simpleSkills[] = {
+  { hasShootDown, applyShootDown }, { hasSmite, applySmite }
+};
+
 void populateRoundOrder(struct BattleUnit *initiator, struct BattleUnit *target) {
   defaultPopulateRoundOrder(initiator, target);
 }
@@ -32,24 +40,15 @@ void populateRoundResult(
   }
 }
 
-// CR cam: figure out how to bundle this
+void populatePreBattleMods(
+    struct BattleUnit *bu, struct BattleUnit *opponent, struct BasicPreBattleMods *mods
+) {
+  vanillaPopulatePreBattleMods(bu, opponent, mods);
 
-// CR cam: generate this
-const struct SimplePreBattleSkillSpec simpleSkills[] = {
-  { hasShootDown, applyShootDown }, { hasSmite, applySmite }
-};
-
-#define NUM_PRE_BATTLE_SPECS                                                           \
-  (sizeof(simpleSkills) / sizeof(struct SimplePreBattleSkillSpec))
-
-void ComputeBattleUnitStats(struct BattleUnit *bu, struct BattleUnit *opponent) {
   if (hasNihil(&opponent->unit)) {
     defaultBattleUnitStats(bu, opponent);
     return;
   }
-
-  struct BasicPreBattleMods mods;
-  populateVanillaPreBattleMods(bu, opponent, &mods);
 
   struct PrebattleActors pba = { .unit = &bu->unit,
                                  .unitWeapon = bu->weapon,
@@ -58,9 +57,9 @@ void ComputeBattleUnitStats(struct BattleUnit *bu, struct BattleUnit *opponent) 
 
   for (int i = 0; i < NUM_PRE_BATTLE_SPECS; i += 1) {
     if (simpleSkills[i].conditionMet(&bu->unit)) {
-      simpleSkills[i].apply(&pba, &mods);
+      simpleSkills[i].apply(&pba, mods);
     }
   }
 
-  computeBattleUnitStatsBasic(bu, opponent, &mods);
+  computeBattleUnitStatsBasic(bu, opponent, mods);
 }
