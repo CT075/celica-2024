@@ -15,3 +15,6 @@ include $(dir)/Rules.mk
 
 dir := $(d)/NoGuard
 include $(dir)/Rules.mk
+
+dir := $(d)/Trample
+include $(dir)/Rules.mk

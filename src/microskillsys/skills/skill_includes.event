@@ -7,3 +7,4 @@
 #include "GreatShield/GreatShield.lyn.event"
 #include "Reckless/Reckless.lyn.event"
 #include "NoGuard/NoGuard.lyn.event"
+#include "Trample/Trample.lyn.event"
