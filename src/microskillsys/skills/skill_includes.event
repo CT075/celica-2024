@@ -5,3 +5,4 @@
 #include "ShootDown/ShootDown.lyn.event"
 #include "Smite/Smite.lyn.event"
 #include "GreatShield/GreatShield.lyn.event"
+#include "Reckless/Reckless.lyn.event"
