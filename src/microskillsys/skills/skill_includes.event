@@ -8,3 +8,4 @@
 #include "Reckless/Reckless.lyn.event"
 #include "NoGuard/NoGuard.lyn.event"
 #include "Trample/Trample.lyn.event"
+#include "Pierce/Pierce.lyn.event"

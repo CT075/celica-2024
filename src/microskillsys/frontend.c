@@ -19,11 +19,19 @@ const struct SimplePreBattleSkillSpec simpleSkills[] = {
   { hasShootDown, applyShootDown },
   { hasSmite, applySmite },
   { recklessMayApply, applyReckless },
+  { hasTrample, applyTrample },
 };
 
 #define NUM_PROC_SKILLS (sizeof(procSkills) / sizeof(struct ProcSkillSpec))
 
 const struct ProcSkillSpec procSkills[] = {
+  // Pierce must come first, because GreatShield can cancel pierce damage.
+  {
+      Attacker,
+      hasPierce,
+      PierceProcRate,
+      applyPierce,
+  },
   {
       Defender,
       hasGreatShield,
@@ -42,7 +50,7 @@ void populateRoundResult(
   defaultPopulateRoundResult(attacker, defender, out);
 
   for (int i = 0; i < NUM_PROC_SKILLS; i += 1) {
-    struct BattleUnit *bu;
+    struct BattleUnit *bu = attacker;
     struct ProcSkillSpec skill = procSkills[i];
     switch (skill.side) {
     case Attacker:

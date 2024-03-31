@@ -5,3 +5,4 @@
 #include "skills/Reckless.h"
 #include "skills/NoGuard.h"
 #include "skills/Trample.h"
+#include "skills/Pierce.h"

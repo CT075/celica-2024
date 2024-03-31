@@ -18,3 +18,6 @@ include $(dir)/Rules.mk
 
 dir := $(d)/Trample
 include $(dir)/Rules.mk
+
+dir := $(d)/Pierce
+include $(dir)/Rules.mk

@@ -20,6 +20,10 @@ their original licenses:
 - Project template initially forked from MysticOCE's
   [EasyBuildfile](https://github.com/MysticOCE/EasyBuildfile)
 
+In addition, the design and implementation of this project's "microskillsystem"
+were non-trivially influenced by the FE8 Skill System, though all actual code
+therein is original.
+
 ### Artistic assets made by me
 
 Assets in this section are available for use under 
