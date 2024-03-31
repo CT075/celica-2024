@@ -6,12 +6,26 @@
 
 #include "microskillsys/battle.h"
 #include "microskillsys/battle_simple.h"
+#include "microskillsys/frontend.h"
 
 // CR cam: collect these from skill folders
+bool hasNihil(struct Unit *unit) { return false; }
 bool hasShootDown(struct Unit *unit);
 void applyShootDown(struct PrebattleActors *pba, struct BasicPreBattleMods *mods);
 bool hasSmite(struct Unit *unit);
 void applySmite(struct PrebattleActors *pba, struct BasicPreBattleMods *mods);
+
+void populateRoundOrder(struct BattleUnit *initiator, struct BattleUnit *target) {
+  defaultPopulateRoundOrder(initiator, target);
+}
+
+void populateRoundResult(
+    struct BattleUnit *attacker, struct BattleUnit *defender, struct RoundResult *out
+) {
+  defaultPopulateRoundResult(attacker, defender, out);
+}
+
+// CR cam: figure out how to bundle this
 
 // CR cam: generate this
 const struct SimplePreBattleSkillSpec simpleSkills[] = {
@@ -20,8 +34,6 @@ const struct SimplePreBattleSkillSpec simpleSkills[] = {
 
 #define NUM_PRE_BATTLE_SPECS                                                           \
   (sizeof(simpleSkills) / sizeof(struct SimplePreBattleSkillSpec))
-
-bool hasNihil(struct Unit *unit) { return false; }
 
 void ComputeBattleUnitStats(struct BattleUnit *bu, struct BattleUnit *opponent) {
   if (hasNihil(&opponent->unit)) {

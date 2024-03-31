@@ -1,9 +1,9 @@
 #ifndef MICROSKILLSYS_BATTLE_H
 #define MICROSKILLSYS_BATTLE_H
 
-#include "global.h"
-#include "bmunit.h"
 #include "bmbattle.h"
+#include "bmunit.h"
+#include "global.h"
 
 #define MAX_BATTLE_ROUNDS 8
 
@@ -21,7 +21,7 @@ struct BattleRound {
 };
 
 void clearRoundOrder();
-void populateRoundOrder();
+void defaultPopulateRoundOrder();
 
 // Pre-battle helpers
 
@@ -72,5 +72,24 @@ void computeBattleUnitStatsBasic(
     struct BasicPreBattleMods *mods
 );
 void defaultBattleUnitStats(struct BattleUnit *unit, struct BattleUnit *opponent);
+
+// final battle mods
+
+enum {
+  BATTLE_HIT_ATTR_ATTACKER_SKILL = BATTLE_HIT_ATTR_SURESHOT,
+  BATTLE_HIT_ATTR_DEFENDER_SKILL = BATTLE_HIT_ATTR_GREATSHLD,
+};
+
+struct RoundResult {
+  short finalDamage;
+  bool didAttackHit;
+  bool didAttackCrit;
+  bool didAttackerProcSkill;
+  bool didDefenderProcSkill;
+};
+
+void defaultPopulateRoundResult(
+    struct BattleUnit *attacker, struct BattleUnit *defender, struct RoundResult *out
+);
 
 #endif

@@ -6,6 +6,7 @@
 #include "constants/items.h"
 
 #include "microskillsys/battle.h"
+#include "microskillsys/frontend.h"
 #include "ram_structures.h"
 
 void clearRoundOrder(void) {
@@ -53,7 +54,9 @@ void setFollowup(
   out->count = 1 << BattleCheckBraveEffect(lastRoundAttacker);
 }
 
-void populateRoundOrder(struct BattleUnit *initiator, struct BattleUnit *target) {
+void defaultPopulateRoundOrder(
+    struct BattleUnit *initiator, struct BattleUnit *target
+) {
   gBattleRoundOrder[0].turn = InitiatorTurn;
   gBattleRoundOrder[0].count = 1 << BattleCheckBraveEffect(initiator);
   gBattleRoundOrder[1].turn = TargetTurn;
@@ -236,4 +239,72 @@ void defaultBattleUnitStats(struct BattleUnit *unit, struct BattleUnit *opponent
   struct BasicPreBattleMods mods;
   populateVanillaPreBattleMods(unit, opponent, &mods);
   computeBattleUnitStatsBasic(unit, opponent, &mods);
+}
+
+void applyRoundResult(
+    struct BattleUnit *attacker, struct BattleUnit *defender, struct RoundResult *attrs
+) {
+  gBattleStats.damage = 0;
+
+  if (!attrs->didAttackHit) {
+    gBattleHitIterator->attributes |= BATTLE_HIT_ATTR_MISS;
+    return;
+  }
+
+  if (attrs->didAttackerProcSkill) {
+    gBattleHitIterator->attributes |= BATTLE_HIT_ATTR_ATTACKER_SKILL;
+  }
+
+  if (attrs->didDefenderProcSkill) {
+    gBattleHitIterator->attributes |= BATTLE_HIT_ATTR_DEFENDER_SKILL;
+  }
+
+  if (attrs->didAttackCrit) {
+    gBattleHitIterator->attributes |= BATTLE_HIT_ATTR_CRIT;
+  }
+
+  gBattleStats.damage = attrs->finalDamage;
+
+  if (gBattleStats.damage > BATTLE_MAX_DAMAGE) {
+    gBattleStats.damage = BATTLE_MAX_DAMAGE;
+  }
+
+  BattleCheckPetrify(attacker, defender);
+
+  if (gBattleStats.damage != 0) {
+    attacker->nonZeroDamage = TRUE;
+  }
+}
+
+void initRoundResult(struct RoundResult *out) {
+  out->finalDamage = 0;
+  out->didAttackHit = false;
+  out->didAttackCrit = false;
+  out->didAttackerProcSkill = false;
+  out->didDefenderProcSkill = false;
+}
+
+void defaultPopulateRoundResult(
+    struct BattleUnit *attacker, struct BattleUnit *defender, struct RoundResult *out
+) {
+  if (!BattleRoll2RN(gBattleStats.hitRate, TRUE)) {
+    out->didAttackHit = false;
+    return;
+  }
+
+  out->finalDamage = gBattleStats.attack - gBattleStats.defense;
+
+  if (BattleRoll1RN(gBattleStats.critRate, FALSE)) {
+    out->didAttackCrit = true;
+    out->finalDamage *= 3;
+  }
+}
+
+void BattleGenerateHitAttributes(
+    struct BattleUnit *attacker, struct BattleUnit *defender
+) {
+  struct RoundResult battleResult;
+  initRoundResult(&battleResult);
+  populateRoundResult(attacker, defender, &battleResult);
+  applyRoundResult(attacker, defender, &battleResult);
 }

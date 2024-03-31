@@ -130,6 +130,10 @@ few minutes earlier,[ToggleRed] I would[A][NL]
 have had it on hand.[A]
 [X]
 
+# 0x0793
+
+Onward![X]
+
 # 0x08FE SuspendDialogue
 
 [OpenLeft][LoadFace][0x64][0x1]
