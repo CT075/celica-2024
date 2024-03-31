@@ -20,6 +20,7 @@ const struct SimplePreBattleSkillSpec simpleSkills[] = {
   { hasSmite, applySmite },
   { recklessMayApply, applyReckless },
   { hasTrample, applyTrample },
+  { hasAirSuperiority, applyAirSuperiority }
 };
 
 #define NUM_PROC_SKILLS (sizeof(procSkills) / sizeof(struct ProcSkillSpec))
@@ -96,8 +97,6 @@ void populatePreBattleMods(
       skill.apply(&pba, mods);
     }
   }
-
-  computeBattleUnitStatsBasic(bu, opponent, mods);
 }
 
 // CR cam: Is there some better way to express this?
@@ -112,9 +111,11 @@ void ComputeBattleUnitEffectiveHitRate(
         attacker->battleHitRate - defender->battleAvoidRate;
   }
 
-  if (attacker->battleEffectiveHitRate > 100)
+  if (attacker->battleEffectiveHitRate > 100) {
     attacker->battleEffectiveHitRate = 100;
+  }
 
-  if (attacker->battleEffectiveHitRate < 0)
+  if (attacker->battleEffectiveHitRate < 0) {
     attacker->battleEffectiveHitRate = 0;
+  }
 }

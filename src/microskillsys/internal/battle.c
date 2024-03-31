@@ -64,6 +64,22 @@ void defaultPopulateRoundOrder(
   setFollowup(initiator, target, &gBattleRoundOrder[2]);
 }
 
+bool runBattleRound(
+    struct BattleUnit *attacker, struct BattleUnit *defender, u32 count
+) {
+  if (!attacker->weapon) {
+    return false;
+  }
+
+  for (int j = 0; j < count; j += 1) {
+    if (BattleGenerateHit(attacker, defender)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 void runBattleRounds(
     struct BattleUnit *initiator, struct BattleUnit *target, u16 attrs
 ) {
@@ -71,18 +87,10 @@ void runBattleRounds(
     gBattleHitIterator->attributes |= attrs;
     switch (gBattleRoundOrder[i].turn) {
     case InitiatorTurn:
-      for (int j = 0; j < gBattleRoundOrder[i].count; j += 1) {
-        if (BattleGenerateHit(initiator, target)) {
-          return;
-        }
-      }
+      runBattleRound(initiator, target, gBattleRoundOrder[i].count);
       break;
     case TargetTurn:
-      for (int j = 0; j < gBattleRoundOrder[i].count; j += 1) {
-        if (BattleGenerateHit(target, initiator)) {
-          return;
-        }
-      }
+      runBattleRound(target, initiator, gBattleRoundOrder[i].count);
       break;
     case BattleOver:
       return;
@@ -146,7 +154,7 @@ void computeBattleUnitAttackBasic(
     bu->battleAttack *= mods->effectivenessMultiplier;
   }
   bu->battleAttack += bu->unit.pow;
-  bu->battleAttack += mods->defMod;
+  bu->battleAttack += mods->attackMod;
 
   if (GetItemIndex(bu->weapon) == ITEM_MONSTER_STONE) {
     bu->battleAttack = 0;

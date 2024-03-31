@@ -21,3 +21,6 @@ include $(dir)/Rules.mk
 
 dir := $(d)/Pierce
 include $(dir)/Rules.mk
+
+dir := $(d)/AirSuperiority
+include $(dir)/Rules.mk

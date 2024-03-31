@@ -96,11 +96,11 @@ UNIT BadGuy Cavalier 0 Level(18,Enemy,1) [19,15] 0 0 1 m5 [SteelSword] NoAI
 UNIT
 
 BoltingMage:
-PlayerUnit(LArachel,Valkyrie,1) [15,12] 0 0 1 MageMoves [Divine,Bolting,Vulnerary] NoAI
+PlayerUnit(LArachel,MageKnight,1) [15,12] 0 0 1 MageMoves [Elfire,Bolting,Vulnerary] NoAI
 UNIT
 
 NonBoltingMage:
-PlayerUnit(LArachel,Valkyrie,1) [15,12] 0 0 1 MageMoves [Divine,Physic,Vulnerary] NoAI
+PlayerUnit(LArachel,MageKnight,1) [15,12] 0 0 1 MageMoves [Elfire,Physic,Vulnerary] NoAI
 UNIT
 
 EirMoves:

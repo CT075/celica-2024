@@ -6,3 +6,4 @@
 #include "skills/NoGuard.h"
 #include "skills/Trample.h"
 #include "skills/Pierce.h"
+#include "skills/AirSuperiority.h"

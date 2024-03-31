@@ -3,13 +3,15 @@
 #include "constants/classes.h"
 #include "constants/items.h"
 
-#include "Trample.h"
+#include "AirSuperiority.h"
 #include "microskillsys/battle.h"
 #include "microskillsys/battle_simple.h"
 
-bool hasTrample(struct Unit *unit) { return unit->pClassData->number == CLASS_PALADIN; }
+bool hasAirSuperiority(struct Unit *unit) {
+  return unit->pClassData->number == CLASS_FALCON_KNIGHT;
+}
 
-void applyTrample(struct PrebattleActors *pba, struct BasicPreBattleMods *mods) {
+void applyAirSuperiority(struct PrebattleActors *pba, struct BasicPreBattleMods *mods) {
   // We define "non-mounted" as "neither on horseback nor flying". The quick
   // and dirty way to determine this is to check if the opponent is weak to
   // Horseslayer or Iron Bow, respectively.
@@ -20,16 +22,8 @@ void applyTrample(struct PrebattleActors *pba, struct BasicPreBattleMods *mods) 
   }
 
   if (IsItemEffectiveAgainst(ITEM_BOW_IRON, opponent)) {
-    return;
+    mods->avoMod += 30;
+    mods->hitMod += 30;
+    mods->critMod += 15;
   }
-
-  if (IsItemEffectiveAgainst(ITEM_LANCE_HORSESLAYER, opponent)) {
-    return;
-  }
-
-  if (gBattleStats.range != 1) {
-    return;
-  }
-
-  mods->attackMod += 10;
 }

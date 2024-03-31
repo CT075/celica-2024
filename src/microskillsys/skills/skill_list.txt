@@ -6,3 +6,4 @@ Reckless
 NoGuard
 Trample
 Pierce
+AirSuperiority
