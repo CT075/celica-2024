@@ -9,7 +9,7 @@
 
 bool recklessMayApply(struct Unit *unit) { return true; }
 
-void applyReckless(struct PrebattleActors *pba, struct BasicPreBattleMods *mods) {
+void applyReckless(struct PrebattleActors *pba, struct InCombatBonuses *mods) {
   // If both combatants have this skill, it should stack, so we have to check
   // both separately.
 

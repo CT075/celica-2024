@@ -6,6 +6,7 @@
 #include "constants/items.h"
 
 #include "microskillsys/battle.h"
+#include "microskillsys/battleunit_calc.h"
 #include "microskillsys/frontend.h"
 #include "ram_structures.h"
 
@@ -115,28 +116,38 @@ void BattleUnwind(void) {
   gBattleHitIterator->info |= BATTLE_HIT_INFO_END;
 }
 
-void vanillaPopulatePreBattleMods(
-    struct BattleUnit *bu, struct BattleUnit *opponent, struct BasicPreBattleMods *out
-) {
-  switch (GetItemIndex(bu->weapon)) {
-  case ITEM_SWORD_AUDHULMA:
-  case ITEM_LANCE_VIDOFNIR:
-  case ITEM_AXE_GARM:
-  case ITEM_BOW_NIDHOGG:
-  case ITEM_ANIMA_EXCALIBUR:
-  case ITEM_LIGHT_IVALDI:
-  case ITEM_SWORD_SIEGLINDE:
-  case ITEM_LANCE_SIEGMUND:
-    out->effectivenessMultiplier = 2;
-    break;
+// CR cam: Maybe we should just remove the flooring inline?
+void computeBattleUnitSpeedUnfloored(struct BattleUnit *bu) {
+  int effWt = GetItemWeight(bu->weaponBefore);
 
-  default:
-    out->effectivenessMultiplier = 3;
-    break;
-  }
+  effWt -= bu->unit.conBonus;
 
+  if (effWt < 0)
+    effWt = 0;
+
+  bu->battleSpeed = bu->unit.spd - effWt;
+}
+
+void computeBattleUnitAvoidRateUnfloored(struct BattleUnit *bu) {
+  bu->battleAvoidRate = (bu->battleSpeed * 2) + bu->terrainAvoid + (bu->unit.lck);
+}
+
+void defaultPopulateBattleStatGetters(struct BattleStatGetters *out) {
+  out->computeAttack = ComputeBattleUnitAttack;
+  out->computeDefense = ComputeBattleUnitDefense;
+  out->computeSpeed = computeBattleUnitSpeedUnfloored;
+  out->computeHit = ComputeBattleUnitHitRate;
+  out->computeAvoid = computeBattleUnitAvoidRateUnfloored;
+  out->computeCrit = ComputeBattleUnitCritRate;
+  out->computeDodge = ComputeBattleUnitDodgeRate;
+  out->computeSupportBonuses = ComputeBattleUnitSupportBonuses;
+  out->computeWeaponRankBonuses = ComputeBattleUnitWeaponRankBonuses;
+  out->computeStatusBonuses = ComputeBattleUnitStatusBonuses;
+}
+
+void initializeBonuses(struct InCombatBonuses *out) {
   out->attackMod = 0;
-  out->defMod = 0;
+  out->defenseMod = 0;
   out->speedMod = 0;
   out->hitMod = 0;
   out->avoMod = 0;
@@ -144,115 +155,31 @@ void vanillaPopulatePreBattleMods(
   out->dodgeMod = 0;
 }
 
-void computeBattleUnitAttackBasic(
-    struct BattleUnit *bu, struct BattleUnit *opponent, struct BasicPreBattleMods *mods
+void applyCombatBonuses(
+    struct BattleUnit *bu, struct BattleUnit *opponent, struct InCombatBonuses *mods
 ) {
-  bu->battleAttack = GetItemMight(bu->weapon) + bu->wTriangleDmgBonus;
-
-  if (IsUnitEffectiveAgainst(&bu->unit, &opponent->unit) ||
-      IsItemEffectiveAgainst(bu->weapon, &opponent->unit)) {
-    bu->battleAttack *= mods->effectivenessMultiplier;
-  }
-  bu->battleAttack += bu->unit.pow;
   bu->battleAttack += mods->attackMod;
-
-  if (GetItemIndex(bu->weapon) == ITEM_MONSTER_STONE) {
-    bu->battleAttack = 0;
-  }
+  opponent->battleDefense += mods->defenseMod;
+  bu->battleSpeed += mods->speedMod;
+  bu->battleHitRate += mods->hitMod;
+  bu->battleAvoidRate += mods->avoMod;
+  bu->battleCritRate += mods->critMod;
+  bu->battleDodgeRate += mods->dodgeMod;
 }
 
-void computeBattleUnitDefenseBasic(
-    struct BattleUnit *bu, struct BattleUnit *opponent, struct BasicPreBattleMods *mods
-) {
-  if (GetItemAttributes(opponent->weapon) & IA_MAGICDAMAGE) {
-    bu->battleDefense = bu->terrainResistance + bu->unit.res;
-  }
-  else if (GetItemAttributes(opponent->weapon) & IA_MAGIC) {
-    bu->battleDefense = bu->terrainResistance + bu->unit.res;
-  }
-  else {
-    bu->battleDefense = bu->terrainDefense + bu->unit.def;
-  }
-
-  bu->battleDefense += mods->defMod;
-}
-
-void computeBattleUnitSpeedBasic(
-    struct BattleUnit *bu, struct BasicPreBattleMods *mods
-) {
-  int effWt = GetItemWeight(bu->weaponBefore);
-
-  effWt -= bu->unit.conBonus;
-
-  if (effWt < 0) {
-    effWt = 0;
-  }
-
-  bu->battleSpeed = bu->unit.spd - effWt + mods->speedMod;
+void ComputeBattleUnitStats(struct BattleUnit *bu, struct BattleUnit *opponent) {
+  struct InCombatBonuses mods;
+  initializeBonuses(&mods);
+  populateBaseStats(bu, opponent);
+  populateCombatBonuses(bu, opponent, &mods);
+  applyCombatBonuses(bu, opponent, &mods);
 
   if (bu->battleSpeed < 0) {
     bu->battleSpeed = 0;
   }
-}
-
-void computeBattleUnitHitRateBasic(
-    struct BattleUnit *bu, struct BasicPreBattleMods *mods
-) {
-  ComputeBattleUnitHitRate(bu);
-  bu->battleHitRate += mods->hitMod;
-}
-
-void computeBattleUnitAvoidRateBasic(
-    struct BattleUnit *bu, struct BasicPreBattleMods *mods
-) {
-  bu->battleAvoidRate =
-      (bu->battleSpeed * 2) + bu->terrainAvoid + bu->unit.lck + mods->avoMod;
-
   if (bu->battleAvoidRate < 0) {
     bu->battleAvoidRate = 0;
   }
-}
-
-void computeBattleUnitCritRateBasic(
-    struct BattleUnit *bu, struct BasicPreBattleMods *mods
-) {
-  ComputeBattleUnitCritRate(bu);
-  bu->battleCritRate += mods->critMod;
-}
-
-void computeBattleUnitDodgeRateBasic(
-    struct BattleUnit *bu, struct BasicPreBattleMods *mods
-) {
-  ComputeBattleUnitDodgeRate(bu);
-  bu->battleDodgeRate += mods->dodgeMod;
-}
-
-void computeBattleUnitStatsBasic(
-    struct BattleUnit *unit, struct BattleUnit *opponent,
-    struct BasicPreBattleMods *mods
-) {
-  computeBattleUnitDefenseBasic(opponent, unit, mods);
-  computeBattleUnitAttackBasic(unit, opponent, mods);
-  computeBattleUnitSpeedBasic(unit, mods);
-  computeBattleUnitHitRateBasic(unit, mods);
-  computeBattleUnitAvoidRateBasic(unit, mods);
-  computeBattleUnitCritRateBasic(unit, mods);
-  computeBattleUnitDodgeRateBasic(unit, mods);
-  ComputeBattleUnitSupportBonuses(unit, opponent);
-  ComputeBattleUnitWeaponRankBonuses(unit);
-  ComputeBattleUnitStatusBonuses(unit);
-}
-
-void defaultBattleUnitStats(struct BattleUnit *unit, struct BattleUnit *opponent) {
-  struct BasicPreBattleMods mods;
-  vanillaPopulatePreBattleMods(unit, opponent, &mods);
-  computeBattleUnitStatsBasic(unit, opponent, &mods);
-}
-
-void ComputeBattleUnitStats(struct BattleUnit *bu, struct BattleUnit *opponent) {
-  struct BasicPreBattleMods mods;
-  populatePreBattleMods(bu, opponent, &mods);
-  computeBattleUnitStatsBasic(bu, opponent, &mods);
 }
 
 void applyRoundResult(

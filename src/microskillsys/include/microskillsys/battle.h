@@ -5,6 +5,8 @@
 #include "bmunit.h"
 #include "global.h"
 
+// CR cam: clean this up before release
+
 #define MAX_BATTLE_ROUNDS 8
 
 // Battle system primitives
@@ -26,13 +28,11 @@ void defaultPopulateRoundOrder();
 // Pre-battle helpers
 
 // CR cam: Move these to [battle_simple.h]?
-struct BasicPreBattleMods {
-  // Multiplier used in effective bonus
-  u8 effectivenessMultiplier;
+struct InCombatBonuses {
   // Flat damage applied to final attack
   u8 attackMod;
   // Flat damage applied to final defense
-  u8 defMod;
+  u8 defenseMod;
   u8 speedMod;
   u8 hitMod;
   u8 avoMod;
@@ -41,35 +41,35 @@ struct BasicPreBattleMods {
 };
 
 void vanillaPopulatePreBattleMods(
-    struct BattleUnit *unit, struct BattleUnit *opponent, struct BasicPreBattleMods *out
+    struct BattleUnit *unit, struct BattleUnit *opponent, struct InCombatBonuses *out
 );
 // CR-soon cam: Do we need to expose all of these?
 void computeBattleUnitAttackBasic(
     struct BattleUnit *unit, struct BattleUnit *opponent,
-    struct BasicPreBattleMods *mods
+    struct InCombatBonuses *mods
 );
 void computeBattleUnitDefenseBasic(
     struct BattleUnit *unit, struct BattleUnit *opponent,
-    struct BasicPreBattleMods *mods
+    struct InCombatBonuses *mods
 );
 void computeBattleUnitSpeedBasic(
-    struct BattleUnit *bu, struct BasicPreBattleMods *mods
+    struct BattleUnit *bu, struct InCombatBonuses *mods
 );
 void computeBattleUnitHitRateBasic(
-    struct BattleUnit *bu, struct BasicPreBattleMods *mods
+    struct BattleUnit *bu, struct InCombatBonuses *mods
 );
 void computeBattleUnitAvoidRateBasic(
-    struct BattleUnit *bu, struct BasicPreBattleMods *mods
+    struct BattleUnit *bu, struct InCombatBonuses *mods
 );
 void computeBattleUnitCritRateBasic(
-    struct BattleUnit *bu, struct BasicPreBattleMods *mods
+    struct BattleUnit *bu, struct InCombatBonuses *mods
 );
 void computeBattleUnitDodgeRateBasic(
-    struct BattleUnit *bu, struct BasicPreBattleMods *mods
+    struct BattleUnit *bu, struct InCombatBonuses *mods
 );
 void computeBattleUnitStatsBasic(
     struct BattleUnit *unit, struct BattleUnit *opponent,
-    struct BasicPreBattleMods *mods
+    struct InCombatBonuses *mods
 );
 void defaultBattleUnitStats(struct BattleUnit *unit, struct BattleUnit *opponent);
 
@@ -93,5 +93,11 @@ struct RoundResult {
 void defaultPopulateRoundResult(
     struct BattleUnit *attacker, struct BattleUnit *defender, struct RoundResult *out
 );
+
+// Re-exports of vanilla functions for some reason or other
+
+void computeBattleUnitSpeedUnfloored(struct BattleUnit *bu);
+void computeBattleUnitHitRateUnfloored(struct BattleUnit *bu);
+void computeBattleUnitAvoidRateUnfloored(struct BattleUnit *bu);
 
 #endif

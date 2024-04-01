@@ -11,7 +11,7 @@ bool hasAirSuperiority(struct Unit *unit) {
   return unit->pClassData->number == CLASS_FALCON_KNIGHT;
 }
 
-void applyAirSuperiority(struct PrebattleActors *pba, struct BasicPreBattleMods *mods) {
+void applyAirSuperiority(struct PrebattleActors *pba, struct InCombatBonuses *mods) {
   // We define "non-mounted" as "neither on horseback nor flying". The quick
   // and dirty way to determine this is to check if the opponent is weak to
   // Horseslayer or Iron Bow, respectively.

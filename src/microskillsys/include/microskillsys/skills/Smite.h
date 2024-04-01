@@ -5,6 +5,6 @@
 #include "microskillsys/battle_simple.h"
 
 bool hasSmite(struct Unit *unit);
-void applySmite(struct PrebattleActors *pba, struct BasicPreBattleMods *mods);
+void applySmite(struct PrebattleActors *pba, struct InCombatBonuses *mods);
 
 #endif

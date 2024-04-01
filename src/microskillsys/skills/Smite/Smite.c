@@ -11,7 +11,7 @@ bool hasSmite(struct Unit *unit) {
   return unit->pCharacterData->number == CHARACTER_LARACHEL;
 }
 
-void applySmite(struct PrebattleActors *pba, struct BasicPreBattleMods *mods) {
+void applySmite(struct PrebattleActors *pba, struct InCombatBonuses *mods) {
   switch (pba->unitWeapon) {
   case ITEM_ANIMA_THUNDER:
   case ITEM_ANIMA_BOLTING:

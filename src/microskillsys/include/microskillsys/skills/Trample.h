@@ -5,6 +5,6 @@
 #include "microskillsys/battle_simple.h"
 
 bool hasTrample(struct Unit *);
-void applyTrample(struct PrebattleActors *pba, struct BasicPreBattleMods *mods);
+void applyTrample(struct PrebattleActors *pba, struct InCombatBonuses *mods);
 
 #endif

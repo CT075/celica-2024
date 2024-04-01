@@ -5,6 +5,6 @@
 #include "microskillsys/battle_simple.h"
 
 bool hasAirSuperiority(struct Unit *);
-void applyAirSuperiority(struct PrebattleActors *pba, struct BasicPreBattleMods *mods);
+void applyAirSuperiority(struct PrebattleActors *pba, struct InCombatBonuses *mods);
 
 #endif

@@ -6,22 +6,32 @@
 #include "ShootDown.h"
 #include "microskillsys/battle.h"
 #include "microskillsys/battle_simple.h"
+#include "microskillsys/battleunit_calc.h"
 
 bool hasShootDown(struct Unit *unit) {
   return unit->pClassData->number == CLASS_SNIPER;
 }
 
-void applyShootDown(struct PrebattleActors *pba, struct BasicPreBattleMods *mods) {
-  mods->effectivenessMultiplier = 5;
+// CR cam: it'd be nice to not have to reproduce the entirety of
+// ComputeBattleUnitAttack here.
+void computeAttackWithShootDown(struct BattleUnit *bu, struct BattleUnit *opponent) {
+  bu->battleAttack = GetItemMight(bu->weapon) + bu->wTriangleDmgBonus;
 
-  struct Unit *opponent = pba->opponent;
+  // Check Iron Bow specifically because Vidofnir is also effective vs monsters
+  if (IsItemEffectiveAgainst(ITEM_BOW_IRON, &opponent->unit)) {
+    bu->battleAttack *= 5;
+  }
+  else if (GetItemIndex(bu->weapon) == ITEM_BOW_NIDHOGG) {
+    bu->battleAttack *= 2;
+  }
 
-  // We cheat here and assume that, if an iron bow is effective against the
-  // opponent, it's a flier. We do not check effectiveness directly, because
-  // some bows may be effective against more than just fliers.
-  if (IsItemEffectiveAgainst(ITEM_BOW_IRON, opponent)) {
-    mods->hitMod += 20;
+  bu->battleAttack += bu->unit.pow;
+
+  if (GetItemIndex(bu->weapon) == ITEM_MONSTER_STONE) {
+    bu->battleAttack = 0;
   }
 }
 
-const struct SimplePreBattleSkillSpec shootDownSpec = { hasShootDown, applyShootDown };
+void applyShootDown(struct BattleStatGetters *getters) {
+  getters->computeAttack = computeAttackWithShootDown;
+}

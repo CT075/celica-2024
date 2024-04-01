@@ -9,14 +9,18 @@
 #include "microskillsys/frontend.h"
 
 #include "microskillsys/battle_simple.h"
+#include "microskillsys/battleunit_calc.h"
 #include "microskillsys/skills.h"
+
+#define NUM_CALC_SKILLS (sizeof(calcSkills) / sizeof(struct CalcModSkillSpec))
+
+const struct CalcModSkillSpec calcSkills[] = { { hasShootDown, applyShootDown } };
 
 #define NUM_PRE_BATTLE_SPECS                                                           \
   (sizeof(simpleSkills) / sizeof(struct SimplePreBattleSkillSpec))
 
 // CR cam: generate this
 const struct SimplePreBattleSkillSpec simpleSkills[] = {
-  { hasShootDown, applyShootDown },
   { hasSmite, applySmite },
   { recklessMayApply, applyReckless },
   { hasTrample, applyTrample },
@@ -25,8 +29,9 @@ const struct SimplePreBattleSkillSpec simpleSkills[] = {
 
 #define NUM_PROC_SKILLS (sizeof(procSkills) / sizeof(struct ProcSkillSpec))
 
+// CR cam: Maybe it'd be better to split into attacker/defender instead of
+// using the enum?
 const struct ProcSkillSpec procSkills[] = {
-  // Pierce must come first, because GreatShield can cancel pierce damage.
   {
       Attacker,
       hasPierce,
@@ -76,13 +81,34 @@ void populateRoundResult(
   }
 }
 
-void populatePreBattleMods(
-    struct BattleUnit *bu, struct BattleUnit *opponent, struct BasicPreBattleMods *mods
-) {
-  vanillaPopulatePreBattleMods(bu, opponent, mods);
+void populateBaseStats(struct BattleUnit *bu, struct BattleUnit *opponent) {
+  struct BattleStatGetters getters;
 
+  defaultPopulateBattleStatGetters(&getters);
+
+  for (int i = 0; i < NUM_CALC_SKILLS; i += 1) {
+    struct CalcModSkillSpec skill = calcSkills[i];
+    if (skill.applies(&bu->unit)) {
+      skill.apply(&getters);
+    }
+  }
+
+  getters.computeAttack(bu, opponent);
+  getters.computeDefense(opponent, bu);
+  getters.computeSpeed(bu);
+  getters.computeHit(bu);
+  getters.computeAvoid(bu);
+  getters.computeCrit(bu);
+  getters.computeDodge(bu);
+  getters.computeSupportBonuses(bu, opponent);
+  getters.computeWeaponRankBonuses(bu);
+  getters.computeStatusBonuses(bu);
+}
+
+void populateCombatBonuses(
+    struct BattleUnit *bu, struct BattleUnit *opponent, struct InCombatBonuses *mods
+) {
   if (hasNihil(&opponent->unit)) {
-    defaultBattleUnitStats(bu, opponent);
     return;
   }
 
