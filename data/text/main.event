@@ -81,6 +81,86 @@ __TEXTPROCESS8FE:
 #incbin ".TextEntries/alltextSuspendDialogue.fetxt.dmp"
 setText($8FE, __TEXTPROCESS8FE)
 
+__TEXTPROCESSB00:
+#incbin ".TextEntries/alltextAegisName.fetxt.dmp"
+setText($B00, __TEXTPROCESSB00)
+
+__TEXTPROCESSB01:
+#incbin ".TextEntries/alltextAegisDesc.fetxt.dmp"
+setText($B01, __TEXTPROCESSB01)
+
+__TEXTPROCESSB02:
+#incbin ".TextEntries/alltextAirSuperiorityName.fetxt.dmp"
+setText($B02, __TEXTPROCESSB02)
+
+__TEXTPROCESSB03:
+#incbin ".TextEntries/alltextAirSuperiorityDesc.fetxt.dmp"
+setText($B03, __TEXTPROCESSB03)
+
+__TEXTPROCESSB04:
+#incbin ".TextEntries/alltextNihilName.fetxt.dmp"
+setText($B04, __TEXTPROCESSB04)
+
+__TEXTPROCESSB05:
+#incbin ".TextEntries/alltextNihilDesc.fetxt.dmp"
+setText($B05, __TEXTPROCESSB05)
+
+__TEXTPROCESSB06:
+#incbin ".TextEntries/alltextNoGuardName.fetxt.dmp"
+setText($B06, __TEXTPROCESSB06)
+
+__TEXTPROCESSB07:
+#incbin ".TextEntries/alltextNoGuardDesc.fetxt.dmp"
+setText($B07, __TEXTPROCESSB07)
+
+__TEXTPROCESSB08:
+#incbin ".TextEntries/alltextPerfectGuardName.fetxt.dmp"
+setText($B08, __TEXTPROCESSB08)
+
+__TEXTPROCESSB09:
+#incbin ".TextEntries/alltextPerfectGuardDesc.fetxt.dmp"
+setText($B09, __TEXTPROCESSB09)
+
+__TEXTPROCESSB0A:
+#incbin ".TextEntries/alltextPierceName.fetxt.dmp"
+setText($B0A, __TEXTPROCESSB0A)
+
+__TEXTPROCESSB0B:
+#incbin ".TextEntries/alltextPierceDesc.fetxt.dmp"
+setText($B0B, __TEXTPROCESSB0B)
+
+__TEXTPROCESSB0C:
+#incbin ".TextEntries/alltextRecklessName.fetxt.dmp"
+setText($B0C, __TEXTPROCESSB0C)
+
+__TEXTPROCESSB0D:
+#incbin ".TextEntries/alltextRecklessDesc.fetxt.dmp"
+setText($B0D, __TEXTPROCESSB0D)
+
+__TEXTPROCESSB0E:
+#incbin ".TextEntries/alltextShootDownName.fetxt.dmp"
+setText($B0E, __TEXTPROCESSB0E)
+
+__TEXTPROCESSB0F:
+#incbin ".TextEntries/alltextShootDownDesc.fetxt.dmp"
+setText($B0F, __TEXTPROCESSB0F)
+
+__TEXTPROCESSB10:
+#incbin ".TextEntries/alltextSmiteName.fetxt.dmp"
+setText($B10, __TEXTPROCESSB10)
+
+__TEXTPROCESSB11:
+#incbin ".TextEntries/alltextSmiteDesc.fetxt.dmp"
+setText($B11, __TEXTPROCESSB11)
+
+__TEXTPROCESSB12:
+#incbin ".TextEntries/alltextTrampleName.fetxt.dmp"
+setText($B12, __TEXTPROCESSB12)
+
+__TEXTPROCESSB13:
+#incbin ".TextEntries/alltextTrampleDesc.fetxt.dmp"
+setText($B13, __TEXTPROCESSB13)
+
 }
 
 #endif // TEXT_INSTALLER_ALLTEXT

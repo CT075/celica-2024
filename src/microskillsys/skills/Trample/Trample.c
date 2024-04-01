@@ -33,5 +33,5 @@ void applyTrample(struct PrebattleActors *pba, struct InCombatBonuses *mods) {
     return;
   }
 
-  mods->attackMod += 10;
+  mods->attackMod += 5;
 }
