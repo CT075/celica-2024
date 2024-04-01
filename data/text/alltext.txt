@@ -130,6 +130,47 @@ few minutes earlier,[ToggleRed] I would[A][NL]
 have had it on hand.[A]
 [X]
 
+# # DontSeize1
+
+[OpenMidLeft][LoadFace][0x2][0x1]
+Phew! We've seized the[NL]
+castle gate![A]
+[CloseSpeechSlow]
+[ToggleMouthMove]
+...[A]
+[ToggleMouthMove]
+[OpenMidLeft]
+Wait, isn't this already[NL]
+our castle?[A] Why did we[NL]
+need to seize it, again?[A]
+[X]
+
+# # DontSeize2
+
+Well.[A]
+[X]
+
+# # DontSeize3
+
+Didn't I already tell you[NL]
+that [ToggleRed]you don't need to seize[NL]
+your own castle?[ToggleRed][A]
+[X]
+
+# # DontSeize4
+
+To end the chapter, [ToggleRed]Eirika[NL]
+just needs to stand on the[NL]
+castle tile.[ToggleRed][A]
+[X]
+
+# # DontSeize5
+
+Now go back and do it[NL]
+again! Properly, this[NL]
+time![A]
+[X]
+
 # 0x0793
 
 Onward![X]

@@ -73,6 +73,26 @@ __TEXTPROCESS90A:
 #incbin ".TextEntries/alltextSorryLostBolting.fetxt.dmp"
 setText($90A, __TEXTPROCESS90A)
 
+__TEXTPROCESS90B:
+#incbin ".TextEntries/alltextDontSeize1.fetxt.dmp"
+setText($90B, __TEXTPROCESS90B)
+
+__TEXTPROCESS90C:
+#incbin ".TextEntries/alltextDontSeize2.fetxt.dmp"
+setText($90C, __TEXTPROCESS90C)
+
+__TEXTPROCESS90D:
+#incbin ".TextEntries/alltextDontSeize3.fetxt.dmp"
+setText($90D, __TEXTPROCESS90D)
+
+__TEXTPROCESS90E:
+#incbin ".TextEntries/alltextDontSeize4.fetxt.dmp"
+setText($90E, __TEXTPROCESS90E)
+
+__TEXTPROCESS90F:
+#incbin ".TextEntries/alltextDontSeize5.fetxt.dmp"
+setText($90F, __TEXTPROCESS90F)
+
 __TEXTPROCESS793:
 #incbin ".TextEntries/alltext793.fetxt.dmp"
 setText($793, __TEXTPROCESS793)

@@ -56,6 +56,8 @@ END_MAIN
 
 LocationBasedEvents:
 House(MageHouseId, MageHouse, 15, 12)
+//Seize(0x3, DontSeizeBaka, CastleCoords)
+Seize(0x3, DontSeizeBaka, 5, 16)
 END_MAIN
 
 MiscBasedEvents:
@@ -83,28 +85,29 @@ PlayerUnit(Vanessa,FalcoKnight,4) [0,7] 0 0 1 FlierMoves [SlimLance,HeavySpear] 
 UNIT TheSniper Sniper 0 Level(5,Enemy,1) [0,11] 0 0 1 ArcherMoves [Longbow] AttackInRangeAI
 UNIT
 
-Turn2BadGuys1:
+Turn2BadGuys:
 UNIT BadGuy Warrior 0 Level(3,Enemy,1) [17,3] 0 0 0 0 [SilverAxe,IronBow] NoAI
 UNIT BadGuy Fighter 0 Level(16,Enemy,1) [17,3] 0 0 1 m1 [IronAxe] NoAI
 UNIT BadGuy Fighter 0 Level(18,Enemy,1) [17,3] 0 0 1 m2 [SteelAxe] NoAI
 UNIT
 
-Turn2BadGuys2:
+Turn3BadGuys:
 UNIT BadGuy Paladin 0 Level(4,Enemy,1) [19,15] 0 0 1 m3 [SilverLance,SteelSword] NoAI
 UNIT BadGuy Cavalier 0 Level(16,Enemy,1) [19,16] 0 0 1 m4 [IronLance] NoAI
 UNIT BadGuy Cavalier 0 Level(18,Enemy,1) [19,15] 0 0 1 m5 [SteelSword] NoAI
 UNIT
 
 BoltingMage:
-PlayerUnit(LArachel,MageKnight,1) [15,12] 0 0 1 MageMoves [Elfire,Bolting,Vulnerary] NoAI
+PlayerUnit(LArachel,MageKnight_F,1) [15,12] 0 0 1 MageMoves [Elfire,Bolting,Vulnerary] NoAI
 UNIT
 
 NonBoltingMage:
-PlayerUnit(LArachel,MageKnight,1) [15,12] 0 0 1 MageMoves [Elfire,Physic,Vulnerary] NoAI
+PlayerUnit(LArachel,MageKnight_F,1) [15,12] 0 0 1 MageMoves [Elfire,Physic,Vulnerary] NoAI
 UNIT
 
 EirMoves:
-REDA [8,2]
+//REDA [8,2]
+REDA CastleCoords
 SethMoves:
 REDA [6,5]
 FlierMoves:
@@ -162,9 +165,7 @@ CAMERA Vanessa
 CursorFlash(Vanessa)
 Text(0x0905)
 EVBIT_T 0x9
-LOAD1 1 Turn2BadGuys1
-ENUN
-LOAD1 1 Turn2BadGuys2
+LOAD1 1 Turn2BadGuys
 ENUN
 EVBIT_F 0x9
 NoFade
@@ -255,6 +256,17 @@ SecretEnding: {
 }
 
 EndingScene: {
+  NoFade
+  ENDA
+}
+
+DontSeizeBaka: {
+  Text(DontSeize1)
+  ScrollText(DontSeize2)
+  ScrollText(DontSeize3)
+  ScrollText(DontSeize4)
+  ScrollText(DontSeize5)
+  GameOver
   NoFade
   ENDA
 }
