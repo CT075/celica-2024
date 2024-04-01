@@ -1,7 +1,7 @@
 #include "internal/battle.lyn.event"
 
 #ifndef NO_MICROSKILLSYS_STATSCREEN
-#include "internal/statscreen.lyn.event"
+#include "internal/statscreen.event"
 #endif
 
 #include "skills/main.event"

@@ -1,5 +1,5 @@
-#ifndef MICROSKILLSYS_AEGIS
-#define MICROSKILLSYS_AEGIS
+#ifndef MICROSKILLSYS_AEGIS_H
+#define MICROSKILLSYS_AEGIS_H
 
 #include "bmunit.h"
 #include "microskillsys/battle_simple.h"

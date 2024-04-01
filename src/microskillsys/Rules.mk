@@ -8,6 +8,8 @@ include $(dir)/Rules.mk
 dir := $(d)/skills
 include $(dir)/Rules.mk
 
+$(d)/frontend.o: $(RAM_STRUCTURES_H)
+
 EVENTS_$(d) := $(d)/microskillsys.event $(d)/frontend.lyn.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))

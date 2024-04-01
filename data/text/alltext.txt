@@ -38,7 +38,7 @@ Reach Castle[X]
 
 # 0x0160 ChapterTitle
 
-A Diversion[X]
+Diversions[X]
 
 # 0x0903 OpeningText
 
@@ -141,90 +141,50 @@ Onward![X]
 [NL][Yes]
 [X]
 
-# 0x0B00 AegisName
-
-Aegis[X]
-
-# # AegisDesc
+# 0x0B00 AegisDesc
 
 Moderate chance to halve[NL]
 incoming damage.[X]
-
-# # AirSuperiorityName
-
-Air Superiority[X]
 
 # # AirSuperiorityDesc
 
 Greatly increases stats[NL]
 in air-to-air combat.[X]
 
-# # NihilName
-
-Nihil[X]
-
 # # NihilDesc
 
 Disables most enemy[NL]
 skills.[X]
-
-# # NoGuardName
-
-No Guard[X]
 
 # # NoGuardDesc
 
 In combat, unit and foe[NL]
 cannot miss.[X]
 
-# # PerfectGuardName
-
-Perfect Guard[X]
-
 # # PerfectGuardDesc
 
 Small chance to negate[NL]
 all incoming damage.[X]
-
-# # PierceName
-
-Pierce[X]
 
 # # PierceDesc
 
 Small chance to attack[NL]
 ignoring foe's defenses.[X]
 
-# # RecklessName
-
-Reckless[X]
-
 # # RecklessDesc
 
 Greatly increases critical[NL]
 hit for both unit and foe.[X]
-
-# # ShootDownName
-
-Shoot Down[X]
 
 # # ShootDownDesc
 
 Greatly increases damage and[NL]
 hit rate against flying foes.[X]
 
-# # SmiteName
-
-Smite[X]
-
 # # SmiteDesc
 
 Greatly increases damage when[NL]
 wielding "thunder" tomes.[X]
-
-# # TrampleName
-
-Trample[X]
 
 # # TrampleDesc
 

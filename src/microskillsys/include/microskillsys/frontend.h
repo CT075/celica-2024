@@ -3,6 +3,17 @@
 
 #include "battle.h"
 
+// Given a unit, initialize any info needed to later display skills properly.
+// This is usually used to load the list of skills a unit has into memory for
+// easy lookup by `getNthSkillText`.
+void initSkillDisplay(struct Unit *unit);
+
+// Return the list of icons to display, as indexes into the skill icon table.
+void populateSkillIconList(struct Unit *unit, int *icons);
+
+// Return the description of the nth skill in the list.
+short getNthSkillText(struct Unit *unit, int index);
+
 // Compute the battle round order
 void populateRoundOrder(struct BattleUnit *initiator, struct BattleUnit *target);
 

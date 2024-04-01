@@ -5,8 +5,12 @@
 #include "constants/classes.h"
 #include "constants/items.h"
 
+#include "ParseDefinitions.event.h"
+#include "constants.h"
 #include "microskillsys/battle.h"
+#include "microskillsys/constants.h"
 #include "microskillsys/frontend.h"
+#include "ram_structures.h"
 
 #include "microskillsys/battle_simple.h"
 #include "microskillsys/battleunit_calc.h"
@@ -144,4 +148,67 @@ void ComputeBattleUnitEffectiveHitRate(
   if (attacker->battleEffectiveHitRate < 0) {
     attacker->battleEffectiveHitRate = 0;
   }
+}
+
+short getCharacterSkillText(struct Unit *unit) {
+  // CR cam: populate this
+  switch (UNIT_CHAR_ID(unit)) {
+  case CHARACTER_LARACHEL:
+    return SmiteDesc;
+  }
+
+  return -1;
+}
+
+short getClassSkillText(struct Unit *unit) {
+  switch (UNIT_CLASS_ID(unit)) {
+  case CLASS_PALADIN:
+    return AegisDesc;
+  case CLASS_FALCON_KNIGHT:
+    return AirSuperiorityDesc;
+  case CLASS_WARRIOR:
+    return NoGuardDesc;
+  case CLASS_GENERAL:
+    return PerfectGuardDesc;
+  case CLASS_WYVERN_LORD:
+    return PierceDesc;
+  case CLASS_BERSERKER:
+    return RecklessDesc;
+  case CLASS_SNIPER:
+    return ShootDownDesc;
+  case CLASS_GREAT_KNIGHT:
+    return TrampleDesc;
+  }
+
+  return -1;
+}
+
+// CR cam: de-dup this from populateSkillIconList
+void initSkillDisplay(struct Unit *unit) {
+  for (int i = 0; i < MAX_SKILLS_POSSIBLE; i += 1) {
+    gSkillTextIdBuffer[i] = -1;
+  }
+
+  int index = 0;
+  short result;
+
+  if ((result = getCharacterSkillText(unit)) != -1) {
+    gSkillTextIdBuffer[index] = result;
+    index += 1;
+  }
+
+  if ((result = getClassSkillText(unit)) != -1) {
+    gSkillTextIdBuffer[index] = result;
+    index += 1;
+  }
+}
+
+void populateSkillIconList(struct Unit *unit, int *icons) {
+  for (int i = 0; i < MAX_SKILLS_POSSIBLE; i++) {
+    icons[i] = 0x79 + i + 1;
+  }
+}
+
+short getNthSkillText(struct Unit *unit, int index) {
+  return gSkillTextIdBuffer[index];
 }

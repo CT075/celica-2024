@@ -13,7 +13,7 @@ $(d)/main.event $(PARSE_DEFNS): $(d)/alltext.txt $(PARSEFILE) $(TEXT_PROCESS_CLA
 		--parser-exe $(PARSEFILE)
 
 $(PARSE_DEFNS_H): $(PARSE_DEFNS)
-	ln $< $@
+	sed "s/\\$$/0x/g" $< > $@
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))
 

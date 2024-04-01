@@ -4,6 +4,8 @@ d := $(dir)
 
 $(d)/battle.o: $(RAM_STRUCTURES_H)
 
+$(d)/statscreen.o: $(PARSE_DEFNS_H)
+
 EVENTS_$(d) := $(d)/statscreen.lyn.event $(d)/battle.lyn.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))

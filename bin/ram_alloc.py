@@ -12,6 +12,7 @@ HEADER = """\
 
 #include "global.h"
 #include "constants.h"
+#include "microskillsys/constants.h"
 #include "microskillsys/battle.h"
 
 #define sizeof_round(ty) ((sizeof(ty) + sizeof(int)-1) & ~(sizeof(int)-1))
