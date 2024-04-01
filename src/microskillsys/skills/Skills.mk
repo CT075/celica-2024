@@ -7,7 +7,7 @@ include $(dir)/Rules.mk
 dir := $(d)/Nihil
 include $(dir)/Rules.mk
 
-dir := $(d)/GreatShield
+dir := $(d)/PerfectGuard
 include $(dir)/Rules.mk
 
 dir := $(d)/Reckless
@@ -23,4 +23,7 @@ dir := $(d)/Pierce
 include $(dir)/Rules.mk
 
 dir := $(d)/AirSuperiority
+include $(dir)/Rules.mk
+
+dir := $(d)/Aegis
 include $(dir)/Rules.mk

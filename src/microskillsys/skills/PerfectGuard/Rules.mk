@@ -2,7 +2,7 @@ sp := $(sp).x
 dirstack_$(sp) := $(d)
 d := $(dir)
 
-EVENTS_$(d) := $(d)/GreatShield.lyn.event
+EVENTS_$(d) := $(d)/PerfectGuard.lyn.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))
 

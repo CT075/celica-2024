@@ -7,7 +7,9 @@
 #include "microskillsys/battle.h"
 #include "microskillsys/battle_simple.h"
 
-bool hasTrample(struct Unit *unit) { return unit->pClassData->number == CLASS_PALADIN; }
+bool hasTrample(struct Unit *unit) {
+  return unit->pClassData->number == CLASS_GREAT_KNIGHT;
+}
 
 void applyTrample(struct PrebattleActors *pba, struct InCombatBonuses *mods) {
   // We define "non-mounted" as "neither on horseback nor flying". The quick

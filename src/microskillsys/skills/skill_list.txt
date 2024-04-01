@@ -1,4 +1,4 @@
-GreatShield
+PerfectGuard
 ShootDown
 Smite
 Nihil
@@ -7,3 +7,4 @@ NoGuard
 Trample
 Pierce
 AirSuperiority
+Aegis

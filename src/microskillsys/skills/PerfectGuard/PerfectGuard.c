@@ -3,15 +3,15 @@
 #include "constants/classes.h"
 #include "constants/items.h"
 
-#include "GreatShield.h"
+#include "PerfectGuard.h"
 #include "microskillsys/battle.h"
 #include "microskillsys/battle_simple.h"
 
-bool hasGreatShield(struct Unit *unit) { return UNIT_CLASS_ID(unit) == CLASS_GENERAL; }
+bool hasPerfectGuard(struct Unit *unit) { return UNIT_CLASS_ID(unit) == CLASS_GENERAL; }
 
-int GreatShieldProcRate(struct BattleUnit *bu) { return bu->unit.level; }
+int PerfectGuardProcRate(struct BattleUnit *bu) { return GetUnitSkill(&bu->unit) / 2; }
 
-void applyGreatShield(
+void applyPerfectGuard(
     struct BattleUnit *attacker, struct BattleUnit *defender, struct RoundResult *result
 ) {
   result->didDefenderProcSkill = true;

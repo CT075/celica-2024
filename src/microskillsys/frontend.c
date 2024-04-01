@@ -40,9 +40,9 @@ const struct ProcSkillSpec procSkills[] = {
   },
   {
       Defender,
-      hasGreatShield,
-      GreatShieldProcRate,
-      applyGreatShield,
+      hasPerfectGuard,
+      PerfectGuardProcRate,
+      applyPerfectGuard,
   },
 };
 
