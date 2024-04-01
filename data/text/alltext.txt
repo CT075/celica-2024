@@ -148,8 +148,8 @@ incoming damage.[X]
 
 # # AirSuperiorityDesc
 
-Greatly increases stats[NL]
-in air-to-air combat.[X]
+Increases hit, avoid and[NL]
+crit in air-to-air combat.[X]
 
 # # NihilDesc
 
@@ -183,8 +183,8 @@ hit rate against flying foes.[X]
 
 # # SmiteDesc
 
-Greatly increases damage when[NL]
-wielding "thunder" tomes.[X]
+Smite foes from the heavens[NL]
+when wielding "thunder" tomes.[X]
 
 # # TrampleDesc
 
