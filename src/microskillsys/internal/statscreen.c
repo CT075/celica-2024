@@ -16,9 +16,17 @@ inline void displaySkills(void) {
   struct Unit *unit = gStatScreen.unit;
   int icons[MAX_SKILLS_POSSIBLE];
 
+  for (int i = 0; i < MAX_SKILLS_POSSIBLE; i++) {
+    icons[i] = -1;
+  }
+
   populateSkillIconList(unit, icons);
 
   for (int i = 0; i < MAX_SKILLS_POSSIBLE; i++) {
+    if (icons[i] == -1) {
+      return;
+    }
+
     int idx = i + 1;
 
     DrawIcon(

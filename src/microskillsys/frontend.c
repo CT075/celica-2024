@@ -150,6 +150,8 @@ void ComputeBattleUnitEffectiveHitRate(
   }
 }
 
+// CR cam: de-dup the text tables from the icon tables
+
 short getCharacterSkillText(struct Unit *unit) {
   // CR cam: populate this
   switch (UNIT_CHAR_ID(unit)) {
@@ -183,7 +185,6 @@ short getClassSkillText(struct Unit *unit) {
   return -1;
 }
 
-// CR cam: de-dup this from populateSkillIconList
 void initSkillDisplay(struct Unit *unit) {
   for (int i = 0; i < MAX_SKILLS_POSSIBLE; i += 1) {
     gSkillTextIdBuffer[i] = -1;
@@ -204,8 +205,17 @@ void initSkillDisplay(struct Unit *unit) {
 }
 
 void populateSkillIconList(struct Unit *unit, int *icons) {
-  for (int i = 0; i < MAX_SKILLS_POSSIBLE; i++) {
-    icons[i] = 0x79 + i + 1;
+  int index = 0;
+  short result;
+
+  if ((result = getCharacterSkillText(unit)) != -1) {
+    icons[index] = 0x79 + 0 + 1;
+    index += 1;
+  }
+
+  if ((result = getClassSkillText(unit)) != -1) {
+    icons[index] = 0x79 + 1 + 1;
+    index += 1;
   }
 }
 
