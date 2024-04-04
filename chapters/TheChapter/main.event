@@ -118,7 +118,7 @@ UNIT Gilliam General Gilliam Level(10,NPC,0) CastleCoords 0 0 0 0 [SilverLance,E
 UNIT
 
 EirMoves:
-REDA [8,2]
+REDA [5,17]
 SethMoves:
 REDA [6,5]
 FlierMoves:
@@ -234,7 +234,7 @@ CheckEarlyWarning: {
   CHECK_INAREA Eirika [5,16] [1,1]
   BEQ LabelDest(CheckEarlyWarning,NotThere) sC s0
   CALL SecretEnding
-  GOTO Done
+  GOTO LabelDest(CheckEarlyWarning,Done)
 
   NotThere:
   SetLabel(CheckEarlyWarning)
@@ -273,7 +273,6 @@ SecretEnding: {
   ScrollText(SecretEnding3)
   ScrollText(SecretEnding4)
   ScrollText(SecretEnding5)
-  NoFade
   CALL EndingScene
   ENDA
 }

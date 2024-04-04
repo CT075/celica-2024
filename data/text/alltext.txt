@@ -226,9 +226,8 @@ get some rest![A]
 
 # # SecretEnding1
 
-You did it! You[NL]
-made it to the[NL]
-castle.[A][X]
+You did it! You made[NL]
+it to the castle![A][X]
 
 # # SecretEnding2
 
@@ -284,8 +283,8 @@ skills.[X]
 
 # # NoGuardDesc
 
-In combat, unit and foe[NL]
-cannot miss.[X]
+In combat, neither combatant[NL]
+can miss.[X]
 
 # # PerfectGuardDesc
 
