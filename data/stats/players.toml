@@ -1,31 +1,40 @@
 schema = "character"
 
 [Eirika]
-hp = 35
-pow = 14
-skl = 17
-spd = 15
-def = 12
+hp = "31-18"
+pow = "14-3"
+skl = "17-3"
+spd = "18-4"
+def = "12-5"
 res = 13
 lck = 18
 ranks = { sword = "A" }
 
 [Seth]
-hp = 45
-pow = 18
-skl = 21
-spd = 19
-def = 17
-res = 12
+hp = "45-23"
+pow = "18-7"
+skl = "20-4"
+spd = "18-7"
+def = "17-8"
+res = "12-3"
 lck = 14
 ranks = { sword = "A", lance = "S" }
 
 [Vanessa]
-hp = 30
-pow = 16
-skl = 18
-spd = 22
-def = 13
-res = 18
+hp = "33-20"
+pow = "16-7"
+skl = "18-7"
+spd = "22-7"
+def = "11-5"
+res = "18-4"
 lck = 15
 ranks = { sword = "B", lance = "A" }
+
+[LArachel]
+hp = "28-19"
+pow = "14-3"
+skl = "17-5"
+spd = "15-6"
+def = "8-3"
+res = "21-6"
+ranks = { anima = "A", staff = "S" }

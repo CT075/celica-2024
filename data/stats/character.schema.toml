@@ -3,6 +3,14 @@ base_offset = 0x803D30
 num_entries = 256
 entry_size = 52
 
+[name]
+index = 0
+size = 2
+
+[description]
+index = 2
+size = 2
+
 [hp]
 index = 0xC
 size = 1

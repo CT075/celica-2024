@@ -225,9 +225,26 @@ hit rate against flying foes.[X]
 # # SmiteDesc
 
 Smite foes from the heavens[NL]
-when wielding "thunder" tomes.[X]
+when wielding [0x93]thunder[0x94] tomes.[X]
 
 # # TrampleDesc
 
 Slightly increase damage when[NL]
 attacking non-mounted foes.[X]
+
+# 0x024E BadGuyName
+
+Bad Guy[X]
+
+# 0x024F BanditName
+
+Rude Guy[X]
+
+# 0x02AA BadGuyDesc
+
+A villain![X]
+
+# # BanditDesc
+
+Small fry. Not worth[NL]
+considering.[X]

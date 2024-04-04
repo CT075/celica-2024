@@ -141,6 +141,22 @@ __TEXTPROCESSB09:
 #incbin ".TextEntries/alltextTrampleDesc.fetxt.dmp"
 setText($B09, __TEXTPROCESSB09)
 
+__TEXTPROCESS24E:
+#incbin ".TextEntries/alltextBadGuyName.fetxt.dmp"
+setText($24E, __TEXTPROCESS24E)
+
+__TEXTPROCESS24F:
+#incbin ".TextEntries/alltextBanditName.fetxt.dmp"
+setText($24F, __TEXTPROCESS24F)
+
+__TEXTPROCESS2AA:
+#incbin ".TextEntries/alltextBadGuyDesc.fetxt.dmp"
+setText($2AA, __TEXTPROCESS2AA)
+
+__TEXTPROCESS2AB:
+#incbin ".TextEntries/alltextBanditDesc.fetxt.dmp"
+setText($2AB, __TEXTPROCESS2AB)
+
 }
 
 #endif // TEXT_INSTALLER_ALLTEXT
