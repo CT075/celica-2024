@@ -17,7 +17,10 @@ struct PrebattleActors {
 // CR cam: This is maybe not expressive enough (see Reckless)
 struct SimplePreBattleSkillSpec {
   bool (*applies)(struct Unit *unit);
-  void (*apply)(struct PrebattleActors *input, struct InCombatBonuses *mods);
+  void (*apply)(
+      struct BattleUnit *attacker, struct BattleUnit *defender,
+      struct InCombatBonuses *mods
+  );
 };
 
 enum ProcSide { Attacker, Defender };

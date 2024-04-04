@@ -11,21 +11,18 @@ bool hasTrample(struct Unit *unit) {
   return unit->pClassData->number == CLASS_GREAT_KNIGHT;
 }
 
-void applyTrample(struct PrebattleActors *pba, struct InCombatBonuses *mods) {
+void applyTrample(
+    struct BattleUnit *bu, struct BattleUnit *opponent, struct InCombatBonuses *mods
+) {
   // We define "non-mounted" as "neither on horseback nor flying". The quick
   // and dirty way to determine this is to check if the opponent is weak to
   // Horseslayer or Iron Bow, respectively.
-  struct Unit *opponent = pba->opponent;
 
-  if (!opponent) {
+  if (IsItemEffectiveAgainst(ITEM_BOW_IRON, &opponent->unit)) {
     return;
   }
 
-  if (IsItemEffectiveAgainst(ITEM_BOW_IRON, opponent)) {
-    return;
-  }
-
-  if (IsItemEffectiveAgainst(ITEM_LANCE_HORSESLAYER, opponent)) {
+  if (IsItemEffectiveAgainst(ITEM_LANCE_HORSESLAYER, &opponent->unit)) {
     return;
   }
 

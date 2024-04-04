@@ -73,6 +73,9 @@ void computeBattleUnitStatsBasic(
 );
 void defaultBattleUnitStats(struct BattleUnit *unit, struct BattleUnit *opponent);
 
+void applyCombatBonuses(
+    struct BattleUnit *bu, struct BattleUnit *opponent, struct InCombatBonuses *mods);
+
 // final battle mods
 
 enum {

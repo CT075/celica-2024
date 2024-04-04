@@ -35,3 +35,11 @@ void computeAttackWithShootDown(struct BattleUnit *bu, struct BattleUnit *oppone
 void applyShootDown(struct BattleStatGetters *getters) {
   getters->computeAttack = computeAttackWithShootDown;
 }
+
+void applyShootDownHitBonus(
+    struct BattleUnit *bu, struct BattleUnit *opponent, struct InCombatBonuses *mods
+) {
+  if (IsItemEffectiveAgainst(ITEM_BOW_IRON, &opponent->unit)) {
+    mods->hitMod += 30;
+  }
+}

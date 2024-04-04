@@ -9,15 +9,17 @@
 
 bool recklessMayApply(struct Unit *unit) { return true; }
 
-void applyReckless(struct PrebattleActors *pba, struct InCombatBonuses *mods) {
+void applyReckless(
+    struct BattleUnit *bu, struct BattleUnit *opponent, struct InCombatBonuses *mods
+) {
   // If both combatants have this skill, it should stack, so we have to check
   // both separately.
 
-  if (UNIT_CLASS_ID(pba->unit) == CLASS_BERSERKER) {
+  if (UNIT_CLASS_ID(&bu->unit) == CLASS_BERSERKER) {
     mods->critMod += 30;
   }
 
-  if (UNIT_CLASS_ID(pba->opponent) == CLASS_BERSERKER) {
+  if (UNIT_CLASS_ID(&opponent->unit) == CLASS_BERSERKER) {
     mods->critMod += 30;
   }
 }

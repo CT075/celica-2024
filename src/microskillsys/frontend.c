@@ -25,6 +25,7 @@ const struct CalcModSkillSpec calcSkills[] = { { hasShootDown, applyShootDown } 
 
 // CR cam: generate this
 const struct SimplePreBattleSkillSpec simpleSkills[] = {
+  { hasShootDown, applyShootDownHitBonus },
   { hasSmite, applySmite },
   { recklessMayApply, applyReckless },
   { hasTrample, applyTrample },
@@ -82,6 +83,7 @@ void populateRoundResult(
   if (UNIT_CHAR_ID(&attacker->unit) == CHARACTER_LARACHEL &&
       UNIT_CHAR_ID(&defender->unit) == 0x8F) {
     out->didAttackHit = true;
+    out->finalDamage = 36;
   }
 }
 
@@ -116,15 +118,10 @@ void populateCombatBonuses(
     return;
   }
 
-  struct PrebattleActors pba = { .unit = &bu->unit,
-                                 .unitWeapon = bu->weapon,
-                                 .opponent = &opponent->unit,
-                                 .opponentWeapon = opponent->weapon };
-
   for (int i = 0; i < NUM_PRE_BATTLE_SPECS; i += 1) {
     struct SimplePreBattleSkillSpec skill = simpleSkills[i];
     if (skill.applies(&bu->unit)) {
-      skill.apply(&pba, mods);
+      skill.apply(bu, opponent, mods);
     }
   }
 }

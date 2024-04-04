@@ -5,6 +5,8 @@
 #include "microskillsys/battle_simple.h"
 
 bool recklessMayApply(struct Unit *unit);
-void applyReckless(struct PrebattleActors *pba, struct InCombatBonuses *mods);
+void applyReckless(
+    struct BattleUnit *unit, struct BattleUnit *opponent, struct InCombatBonuses *mods
+);
 
 #endif

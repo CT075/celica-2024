@@ -230,7 +230,6 @@ void defaultPopulateRoundResult(
 ) {
   if (!BattleRoll2RN(gBattleStats.hitRate, TRUE)) {
     out->didAttackHit = false;
-    return;
   }
 
   out->didAttackHit = true;
