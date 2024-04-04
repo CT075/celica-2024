@@ -18,6 +18,9 @@ EventPointerTable(0x4,ChMap)
 // (initial) goal window
 ORG 0x8B091A
 SHORT 0x01A2
+
+ORG 0x8B0916
+BYTE -1
 POP
 
 #define CastleCoords [5,16]

@@ -1,0 +1,8 @@
+[metadata]
+base_offset = 0x809B10
+num_entries = 206
+entry_size = 36
+
+[weight]
+index = 23
+size = 1

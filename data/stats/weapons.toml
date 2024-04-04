@@ -1,0 +1,13 @@
+schema = "item"
+
+[Elfire]
+weight = 8
+
+[Bolting]
+weight = 15
+
+[Fimbulvetr]
+weight = 10
+
+[Excalibur]
+weight = 7
