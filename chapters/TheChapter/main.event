@@ -114,7 +114,7 @@ PlayerUnit(LArachel,MageKnight_F,1) [15,12] 0 0 1 MageMoves [Elfire,Physic,Vulne
 UNIT
 
 GateGuard:
-UNIT Gilliam General Gilliam Level(20,NPC,0) CastleCoords 0 0 0 0 [SilverLance,Elixir] NoAI
+UNIT Gilliam General Gilliam Level(10,NPC,0) CastleCoords 0 0 0 0 [SilverLance,Elixir] NeverMoveAI
 UNIT
 
 EirMoves:
@@ -267,13 +267,19 @@ SpawnEnemies: {
 }
 
 SecretEnding: {
-  CALL EndingScene
+  Text(SecretEndingDialogue)
+  ScrollText(SecretEnding1)
+  ScrollText(SecretEnding2)
+  ScrollText(SecretEnding3)
+  ScrollText(SecretEnding4)
+  ScrollText(SecretEnding5)
   NoFade
+  CALL EndingScene
   ENDA
 }
 
 EndingScene: {
-  NoFade
+  GOTO_TITLE
   ENDA
 }
 

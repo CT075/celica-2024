@@ -201,15 +201,59 @@ I mean, setting up shop[NL]
 middle of a mountain?[A][NL]
 Who even does that?[A][NL]
 [CloseSpeechFast]
-[OpenMidLeft]
 Anyway, there's no secret shop[NL]
 here.[A] You'll want to check[NL]
 around the [ToggleRed]northwest peaks[ToggleRed].[A]
 [CloseSpeechSlow]
-[OpenMidLeft]
 Oh yeah, take this.[A][NL]
 You'll need it to[NL]
 get in. Good luck![A]
+[X]
+
+# # SecretEndingDialogue
+
+[OpenMidLeft][LoadFace][0x2][0x1]
+I'm home![A][NL]
+[CloseSpeechSlow]
+It was kind of Vanessa[NL]
+to give me a lift, but[A][NL]
+what was that thunderbolt[NL]
+that struck as we left?[A][NL]
+[CloseSpeechSlow]
+Oh well. Time to[NL]
+get some rest![A]
+[X]
+
+# # SecretEnding1
+
+You did it! You[NL]
+made it to the[NL]
+castle.[A][X]
+
+# # SecretEnding2
+
+Now, you got here too fast[NL]
+to have cleared any of the[NL]
+[ToggleRed]hidden objectives[ToggleRed], but...[A][X]
+
+# # SecretEnding3
+
+I guess I have no choice[NL]
+but to give you a [ToggleRed]perfect[NL]
+score.[ToggleRed][A]
+[X]
+
+# # SecretEnding4
+
+Besides, if you're seeing[NL]
+this, I'd bet that you've[NL]
+already beaten the map[NL]
+normally, anyway...[A]
+[X]
+
+# # SecretEnding5
+
+Thanks for playing![A]
 [X]
 
 # 0x0793

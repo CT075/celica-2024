@@ -38,3 +38,13 @@ spd = "15-6"
 def = "8-3"
 res = "21-6"
 ranks = { anima = "A", staff = "S" }
+
+[Gilliam]
+hp = 50
+pow = "26-7"
+skl = "21-5"
+spd = 6
+def = "28-7"
+res = "26-3"
+ranks = { sword = "B", lance = "S", axe = "A" }
+con = -2
