@@ -145,8 +145,8 @@ POP
   WORD 0
 
 //Skip Intro and Class Roll (otherwise pre-battle anims will crash this)
-  ORG $c63ad
-  BYTE $e0
+//ORG $c63ad
+//BYTE $e0
 
 // Fix proc names not being cleared (Stan)
 ORG $002C9E

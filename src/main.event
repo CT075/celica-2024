@@ -3,6 +3,7 @@
 #include microskillsys/microskillsys.event
 #include bgm/main.event
 #include checkSecretShop/main.lyn.event
+#include setRNGAtTitle/main.lyn.event
 
 // Individual tweaks
 

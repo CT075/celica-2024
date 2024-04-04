@@ -118,7 +118,7 @@ UNIT Gilliam General Gilliam Level(10,NPC,0) CastleCoords 0 0 0 0 [SilverLance,E
 UNIT
 
 EirMoves:
-REDA [5,17]
+REDA [8,2]
 SethMoves:
 REDA [6,5]
 FlierMoves:

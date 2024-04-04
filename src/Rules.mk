@@ -17,6 +17,9 @@ include $(dir)/Rules.mk
 dir := $(d)/bgm
 include $(dir)/Rules.mk
 
+dir := $(d)/setRNGAtTitle
+include $(dir)/Rules.mk
+
 EVENTS_$(d) := $(d)/main.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))
