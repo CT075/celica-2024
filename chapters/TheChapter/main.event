@@ -27,6 +27,9 @@ POP
 
 #define EarlyWarningId 10
 #define MageHouseId 11
+#define MemberCardId 12
+
+#define VisitedSecretShopId 131
 
 #define StartBadGuy 0x8E
 #define BadGuy 0x80
@@ -61,10 +64,12 @@ LocationBasedEvents:
 House(MageHouseId, MageHouse, 15, 12)
 //Seize(0x3, DontSeizeBaka, CastleCoords)
 Seize(0x3, DontSeizeBaka, 5, 16)
+SecretShop(SecretShopContents,0,7)
 END_MAIN
 
 MiscBasedEvents:
 AREA EarlyWarningId CheckEarlyWarning [5,16] [5,17]
+AREA MemberCardId GiveMemberCard [0,19] [0,19]
 CauseGameOverIfLordDies
 END_MAIN
 
@@ -89,7 +94,7 @@ UNIT TheSniper Sniper 0 Level(5,Enemy,0) [0,11] 0 0 1 ArcherMoves [Longbow] Atta
 UNIT
 
 Turn2BadGuys:
-UNIT BadGuy Warrior 0 Level(3,Enemy,1) [17,3] 0 0 0 0 [SilverAxe,IronBow] NoAI
+UNIT BadGuy Warrior 0 Level(3,Enemy,1) [17,3] 0 0 0 0 [SilverAxe] NoAI
 UNIT BadGuy Fighter 0 Level(16,Enemy,1) [17,3] 0 0 1 m1 [IronAxe] NoAI
 UNIT BadGuy Fighter 0 Level(18,Enemy,1) [17,3] 0 0 1 m2 [SteelAxe] NoAI
 UNIT
@@ -106,6 +111,10 @@ UNIT
 
 NonBoltingMage:
 PlayerUnit(LArachel,MageKnight_F,1) [15,12] 0 0 1 MageMoves [Elfire,Physic,Vulnerary] NoAI
+UNIT
+
+GateGuard:
+UNIT Gilliam General Gilliam Level(20,NPC,0) CastleCoords 0 0 0 0 [SilverLance,Elixir] NoAI
 UNIT
 
 EirMoves:
@@ -132,6 +141,11 @@ m4:
 REDA [18,13]
 m5:
 REDA [18,15]
+
+ALIGN 4
+
+SecretShopContents:
+SHLI Audhulma Vidofnir Garm Nidhogg Excalibur Ivaldi Gleipnir
 
 ALIGN 4
 
@@ -243,7 +257,8 @@ SpawnEnemies: {
 
   Failed:
   SetLabel(SpawnEnemies)
-  POPUP 0x00D5 0
+  LOAD1 1 GateGuard
+  ENUN
 
   Done:
   SetLabel(Done)
@@ -268,7 +283,18 @@ DontSeizeBaka: {
   ScrollText(DontSeize3)
   ScrollText(DontSeize4)
   ScrollText(DontSeize5)
+  ScrollText(DontSeize6)
+  ScrollText(DontSeize7)
+  ScrollText(DontSeize8)
   GameOver
+  NoFade
+  ENDA
+}
+
+GiveMemberCard: {
+  Text(GiveMemberCardText)
+  SVAL s3 MemberCard
+  GIVEITEMTO -1
   NoFade
   ENDA
 }

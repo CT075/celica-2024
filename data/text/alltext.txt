@@ -19,7 +19,7 @@ in one run.[A][X]
 
 # # ExplainGoToCastle
 
-Currently, your goal is to[NL]
+Anyway, your goal is to[NL]
 [ToggleRed]end the chapter[ToggleRed] by [ToggleRed]reaching[NL]
 the castle with Eirika.[ToggleRed][A]
 [X]
@@ -29,7 +29,7 @@ the castle with Eirika.[ToggleRed][A]
 Note that [ToggleRed]reaching the castle[NL]
 is enough.[ToggleRed] There's [ToggleRed]no need to[NL]
 seize your own castle[ToggleRed], after[NL]
-all.
+all.[A]
 [X]
 
 # 0x01A2 StartingGoal
@@ -147,28 +147,69 @@ need to seize it, again?[A]
 
 # # DontSeize2
 
-Well.[A]
+Alright, wise guy.[A]
 [X]
 
 # # DontSeize3
+
+Did you think you were[NL]
+being clever?[A]
+[X]
+
+# # DontSeize4
+
+Well, you were.[NL]
+[X]
+
+# # DontSeize5
+
+[ToggleRed]But.[ToggleRed][A]
+[X]
+
+# # DontSeize6
 
 Didn't I already tell you[NL]
 that [ToggleRed]you don't need to seize[NL]
 your own castle?[ToggleRed][A]
 [X]
 
-# # DontSeize4
+# # DontSeize7
 
 To end the chapter, [ToggleRed]Eirika[NL]
 just needs to stand on the[NL]
 castle tile.[ToggleRed][A]
 [X]
 
-# # DontSeize5
+# # DontSeize8
 
 Now go back and do it[NL]
 again! Properly, this[NL]
 time![A]
+[X]
+
+# # GiveMemberCardText
+
+[OpenMidLeft][LoadFace][0x64][0x1]
+Hmm... What to do...[A]
+[OpenMidRight][LoadFace][0xFF][0xFF]
+Um...[A]
+[OpenMidLeft]
+Oh, hello! Welcome to-[A][NL]
+Well, I guess there's[NL]
+not much here.[A]
+I mean, setting up shop[NL]
+middle of a mountain?[A][NL]
+Who even does that?[A][NL]
+[CloseSpeechFast]
+[OpenMidLeft]
+Anyway, there's no secret shop[NL]
+here.[A] You'll want to check[NL]
+around the [ToggleRed]northwest peaks[ToggleRed].[A]
+[CloseSpeechSlow]
+[OpenMidLeft]
+Oh yeah, take this.[A][NL]
+You'll need it to[NL]
+get in. Good luck![A]
 [X]
 
 # 0x0793

@@ -93,6 +93,22 @@ __TEXTPROCESS90F:
 #incbin ".TextEntries/alltextDontSeize5.fetxt.dmp"
 setText($90F, __TEXTPROCESS90F)
 
+__TEXTPROCESS910:
+#incbin ".TextEntries/alltextDontSeize6.fetxt.dmp"
+setText($910, __TEXTPROCESS910)
+
+__TEXTPROCESS911:
+#incbin ".TextEntries/alltextDontSeize7.fetxt.dmp"
+setText($911, __TEXTPROCESS911)
+
+__TEXTPROCESS912:
+#incbin ".TextEntries/alltextDontSeize8.fetxt.dmp"
+setText($912, __TEXTPROCESS912)
+
+__TEXTPROCESS913:
+#incbin ".TextEntries/alltextGiveMemberCardText.fetxt.dmp"
+setText($913, __TEXTPROCESS913)
+
 __TEXTPROCESS793:
 #incbin ".TextEntries/alltext793.fetxt.dmp"
 setText($793, __TEXTPROCESS793)

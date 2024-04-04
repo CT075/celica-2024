@@ -11,6 +11,12 @@ include $(dir)/Rules.mk
 dir := $(d)/disableExp
 include $(dir)/Rules.mk
 
+dir := $(d)/checkSecretShop
+include $(dir)/Rules.mk
+
+dir := $(d)/bgm
+include $(dir)/Rules.mk
+
 EVENTS_$(d) := $(d)/main.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))

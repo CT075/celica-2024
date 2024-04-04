@@ -1,6 +1,8 @@
 #include disableDifficultySelect/main.event
 #include disableExp/disableExp.lyn.event
 #include microskillsys/microskillsys.event
+#include bgm/main.event
+#include checkSecretShop/main.lyn.event
 
 // Individual tweaks
 
