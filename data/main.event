@@ -1,2 +1,3 @@
 #include music/main.event
 #include text/main.event
+#include stats/main.event

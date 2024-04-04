@@ -8,6 +8,9 @@ include $(dir)/Rules.mk
 dir := $(d)/music
 include $(dir)/Rules.mk
 
+dir := $(d)/stats
+include $(dir)/Rules.mk
+
 EVENTS_$(d) := $(d)/main.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))

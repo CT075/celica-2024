@@ -45,6 +45,13 @@ MAR2DMP := $(MAR2DMP_DIR)/target/release/mar2dmp
 $(MAR2DMP):
 	cd $(MAR2DMP_DIR) && cargo build --profile release
 
+STRUCT_MUNGER_DIR := $(BIN_DIR)/cam-formatting-suite
+STRUCT_MUNGER := $(STRUCT_MUNGER_DIR)/target/release/struct_munger
+
+.PHONY: $(STRUCT_MUNGER)
+$(STRUCT_MUNGER):
+	cd $(STRUCT_MUNGER_DIR) && cargo build --profile release
+
 TEXT_PROCESS_CLASSIC := $(VENDOR_BIN)/text-process-classic.py
 
 .PHONY: ColorzCore

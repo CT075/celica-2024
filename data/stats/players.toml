@@ -1,0 +1,31 @@
+schema = "character"
+
+[Eirika]
+hp = 35
+pow = 14
+skl = 17
+spd = 15
+def = 12
+res = 13
+lck = 18
+ranks = { sword = "A" }
+
+[Seth]
+hp = 45
+pow = 18
+skl = 21
+spd = 19
+def = 17
+res = 12
+lck = 14
+ranks = { sword = "A", lance = "S" }
+
+[Vanessa]
+hp = 30
+pow = 16
+skl = 18
+spd = 22
+def = 13
+res = 18
+lck = 15
+ranks = { sword = "B", lance = "A" }
