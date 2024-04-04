@@ -3,12 +3,12 @@ schema = "character"
 [TheSniper]
 name = "BadGuyName"
 description = "BadGuyDesc"
-hp = "25-21"
+hp = "29-21"
 pow = "19-7"
 skl = "27-6"
 spd = "14-5"
 def = "16-5"
-res = "-2"
+res = "1"
 lck = 14
 ranks = { bow = "S" }
 
