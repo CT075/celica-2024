@@ -17,27 +17,29 @@ onward_s_0:
         .byte   TEMPO , 120/2
 onward_s_0_LOOP:
         .byte           VOICE , 41
-        .byte           VOL   , 50
-        .byte           PAN   , c_v+14
+        .byte           PAN   , c_v+11
+        .byte           VOL   , 49
         .byte           N68   , Fs3 , v100 , gtp2
         .byte   W24
-        .byte           VOL   , 51
+        .byte           VOL   , 50
+        .byte   W03
+        .byte                   51
         .byte   W03
         .byte                   52
         .byte   W03
         .byte                   53
-        .byte   W03
-        .byte                   54
-        .byte   W03
-        .byte                   56
         .byte   W03
         .byte                   55
         .byte   W03
         .byte                   54
         .byte   W03
-        .byte                   52
+        .byte                   53
         .byte   W03
         .byte                   51
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   49
         .byte   W03
         .byte                   50
         .byte   W03
@@ -47,29 +49,25 @@ onward_s_0_LOOP:
         .byte   W03
         .byte                   53
         .byte   W03
-        .byte                   54
-        .byte   W03
-        .byte                   35
+        .byte                   34
         .byte   W06
-        .byte                   61
+        .byte                   60
         .byte           N16   , An3
         .byte   W18
-        .byte           VOL   , 54
+        .byte           VOL   , 53
         .byte           N04
         .byte   W03
-        .byte           VOL   , 58
+        .byte           VOL   , 57
         .byte   W03
 @ 001   ----------------------------------------
 onward_s_0_1:
         .byte           N84   , Gn3 , v100
         .byte   W24
-        .byte           VOL   , 60
+        .byte           VOL   , 59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
-        .byte   W03
-        .byte                   54
+        .byte                   55
         .byte   W03
         .byte                   53
         .byte   W03
@@ -78,6 +76,10 @@ onward_s_0_1:
         .byte                   51
         .byte   W03
         .byte                   50
+        .byte   W03
+        .byte                   49
+        .byte   W03
+        .byte                   47
         .byte   W03
         .byte                   48
         .byte   W03
@@ -90,23 +92,19 @@ onward_s_0_1:
         .byte                   52
         .byte   W03
         .byte                   53
-        .byte   W03
-        .byte                   54
         .byte   W06
-        .byte                   35
+        .byte                   34
         .byte   W24
         .byte   PEND
 @ 002   ----------------------------------------
-        .byte                   61
+        .byte                   60
         .byte           N84
         .byte   W24
-        .byte           VOL   , 60
+        .byte           VOL   , 59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
-        .byte   W03
-        .byte                   54
+        .byte                   55
         .byte   W03
         .byte                   53
         .byte   W03
@@ -115,6 +113,10 @@ onward_s_0_1:
         .byte                   51
         .byte   W03
         .byte                   50
+        .byte   W03
+        .byte                   49
+        .byte   W03
+        .byte                   47
         .byte   W03
         .byte                   48
         .byte   W03
@@ -127,62 +129,58 @@ onward_s_0_1:
         .byte                   52
         .byte   W03
         .byte                   53
-        .byte   W03
-        .byte                   54
         .byte   W06
-        .byte                   35
+        .byte                   34
         .byte   W18
-        .byte                   54
+        .byte                   53
         .byte           N05
         .byte   W03
-        .byte           VOL   , 58
+        .byte           VOL   , 57
         .byte   W03
 @ 003   ----------------------------------------
-        .byte                   61
+        .byte                   60
         .byte           N44   , Gn3 , v100 , gtp2
         .byte   W12
-        .byte           VOL   , 60
+        .byte           VOL   , 59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W03
-        .byte                   54
+        .byte                   53
         .byte   W03
-        .byte                   52
-        .byte   W06
         .byte                   51
-        .byte   W03
+        .byte   W06
         .byte                   50
+        .byte   W03
+        .byte                   49
         .byte   W09
         .byte                   42
         .byte   W06
-        .byte                   61
+        .byte                   60
         .byte           N44   , Fs3 , v100 , gtp3
         .byte   W12
-        .byte           VOL   , 60
+        .byte           VOL   , 59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W03
-        .byte                   54
+        .byte                   53
         .byte   W03
-        .byte                   52
-        .byte   W06
         .byte                   51
-        .byte   W03
+        .byte   W06
         .byte                   50
+        .byte   W03
+        .byte                   49
         .byte   W09
         .byte                   42
         .byte   W06
 @ 004   ----------------------------------------
-        .byte                   61
+        .byte                   60
         .byte           N68   , Fs3 , v100 , gtp2
         .byte   W24
-        .byte           VOL   , 60
-        .byte   W03
-        .byte                   58
+        .byte           VOL   , 59
         .byte   W03
         .byte                   57
         .byte   W03
@@ -200,38 +198,38 @@ onward_s_0_1:
         .byte   W03
         .byte                   50
         .byte   W03
+        .byte                   49
+        .byte   W03
+        .byte                   50
+        .byte   W03
         .byte                   51
         .byte   W03
         .byte                   52
         .byte   W03
         .byte                   53
         .byte   W03
-        .byte                   54
-        .byte   W03
-        .byte                   35
+        .byte                   34
         .byte   W06
-        .byte                   61
+        .byte                   60
         .byte           N16   , An3
         .byte   W18
-        .byte           VOL   , 54
+        .byte           VOL   , 53
         .byte           N04
         .byte   W03
-        .byte           VOL   , 58
+        .byte           VOL   , 57
         .byte   W03
 @ 005   ----------------------------------------
         .byte   PATT
          .word  onward_s_0_1
 @ 006   ----------------------------------------
-        .byte           VOL   , 61
+        .byte           VOL   , 60
         .byte           N84   , Gn3 , v100
         .byte   W24
-        .byte           VOL   , 60
+        .byte           VOL   , 59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
-        .byte   W03
-        .byte                   54
+        .byte                   55
         .byte   W03
         .byte                   53
         .byte   W03
@@ -240,6 +238,10 @@ onward_s_0_1:
         .byte                   51
         .byte   W03
         .byte                   50
+        .byte   W03
+        .byte                   49
+        .byte   W03
+        .byte                   47
         .byte   W03
         .byte                   48
         .byte   W03
@@ -252,85 +254,83 @@ onward_s_0_1:
         .byte                   52
         .byte   W03
         .byte                   53
-        .byte   W03
-        .byte                   54
         .byte   W06
-        .byte                   35
+        .byte                   34
         .byte   W18
-        .byte                   54
+        .byte                   53
         .byte           N04   , An3
         .byte   W03
-        .byte           VOL   , 58
+        .byte           VOL   , 57
         .byte   W03
 @ 007   ----------------------------------------
-        .byte                   61
+        .byte                   60
         .byte           N44   , Gn3 , v100 , gtp3
         .byte   W12
-        .byte           VOL   , 60
+        .byte           VOL   , 59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W03
-        .byte                   54
+        .byte                   53
         .byte   W03
-        .byte                   52
-        .byte   W06
         .byte                   51
-        .byte   W03
+        .byte   W06
         .byte                   50
+        .byte   W03
+        .byte                   49
         .byte   W09
         .byte                   42
         .byte   W06
-        .byte                   61
+        .byte                   60
         .byte           N44   , Fs3 , v100 , gtp3
         .byte   W12
-        .byte           VOL   , 60
+        .byte           VOL   , 59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W03
-        .byte                   54
+        .byte                   53
         .byte   W03
-        .byte                   52
-        .byte   W06
         .byte                   51
-        .byte   W03
+        .byte   W06
         .byte                   50
+        .byte   W03
+        .byte                   49
         .byte   W09
         .byte                   42
         .byte   W06
 @ 008   ----------------------------------------
         .byte           VOICE , 68
-        .byte           VOL   , 61
+        .byte           VOL   , 60
         .byte           N08   , Gn4 , v112
         .byte   W06
-        .byte           VOL   , 35
+        .byte           VOL   , 34
         .byte   W06
-        .byte                   61
+        .byte                   60
         .byte           N04   , Dn4
         .byte   W06
         .byte                   Cn4
         .byte   W06
-        .byte           VOL   , 54
+        .byte           VOL   , 53
         .byte           N32   , Bn3 , v112 , gtp2
         .byte   W03
-        .byte           VOL   , 46
+        .byte           VOL   , 45
         .byte   W03
-        .byte                   50
+        .byte                   49
         .byte   W03
-        .byte                   54
+        .byte                   53
         .byte   W03
-        .byte                   58
+        .byte                   57
+        .byte   W03
+        .byte                   59
         .byte   W03
         .byte                   60
-        .byte   W03
-        .byte                   61
         .byte   W12
-        .byte                   35
+        .byte                   34
         .byte   W06
-        .byte                   61
+        .byte                   60
         .byte           N04
         .byte   W06
         .byte                   Cn4
@@ -344,12 +344,14 @@ onward_s_0_1:
         .byte   W18
         .byte           N04   , Fn4
         .byte   W06
-        .byte           VOL   , 54
+        .byte           VOL   , 53
         .byte           N60
         .byte   W03
-        .byte           VOL   , 52
+        .byte           VOL   , 51
         .byte   W03
-        .byte                   50
+        .byte                   49
+        .byte   W03
+        .byte                   48
         .byte   W03
         .byte                   49
         .byte   W03
@@ -373,45 +375,43 @@ onward_s_0_1:
         .byte   W03
         .byte                   59
         .byte   W03
-        .byte                   60
+        .byte                   57
         .byte   W03
-        .byte                   58
+        .byte                   55
         .byte   W03
-        .byte                   56
+        .byte                   53
         .byte   W03
-        .byte                   54
-        .byte   W03
-        .byte                   35
+        .byte                   34
         .byte   W18
 @ 010   ----------------------------------------
-        .byte                   61
+        .byte                   60
         .byte           N08   , Gn4
         .byte   W06
-        .byte           VOL   , 35
+        .byte           VOL   , 34
         .byte   W06
-        .byte                   61
+        .byte                   60
         .byte           N04   , Dn4
         .byte   W06
         .byte                   Cn4
         .byte   W06
-        .byte           VOL   , 54
+        .byte           VOL   , 53
         .byte           N32   , Bn3 , v112 , gtp2
         .byte   W03
-        .byte           VOL   , 46
+        .byte           VOL   , 45
         .byte   W03
-        .byte                   50
+        .byte                   49
         .byte   W03
-        .byte                   54
+        .byte                   53
         .byte   W03
-        .byte                   58
+        .byte                   57
+        .byte   W03
+        .byte                   59
         .byte   W03
         .byte                   60
-        .byte   W03
-        .byte                   61
         .byte   W12
-        .byte                   35
+        .byte                   34
         .byte   W06
-        .byte                   61
+        .byte                   60
         .byte           N04
         .byte   W06
         .byte                   Cn4
@@ -423,21 +423,23 @@ onward_s_0_1:
 @ 011   ----------------------------------------
         .byte           N16   , Bn4
         .byte   W06
-        .byte           VOL   , 58
+        .byte           VOL   , 57
         .byte   W03
-        .byte                   54
+        .byte                   53
         .byte   W03
-        .byte                   50
+        .byte                   49
         .byte   W06
-        .byte                   58
+        .byte                   57
         .byte           N05   , Cn5
         .byte   W06
-        .byte           VOL   , 54
+        .byte           VOL   , 53
         .byte           N60   , An4
         .byte   W03
-        .byte           VOL   , 52
+        .byte           VOL   , 51
         .byte   W03
-        .byte                   50
+        .byte                   49
+        .byte   W03
+        .byte                   48
         .byte   W03
         .byte                   49
         .byte   W03
@@ -461,46 +463,44 @@ onward_s_0_1:
         .byte   W03
         .byte                   59
         .byte   W03
-        .byte                   60
+        .byte                   57
         .byte   W03
-        .byte                   58
+        .byte                   55
         .byte   W03
-        .byte                   56
+        .byte                   53
         .byte   W03
-        .byte                   54
-        .byte   W03
-        .byte                   35
+        .byte                   34
         .byte   W18
 @ 012   ----------------------------------------
 onward_s_0_12:
-        .byte           VOL   , 61
+        .byte           VOL   , 60
         .byte           N08   , Gn4 , v108
         .byte   W06
-        .byte           VOL   , 35
+        .byte           VOL   , 34
         .byte   W06
-        .byte                   61
+        .byte                   60
         .byte           N04   , Dn4
         .byte   W06
         .byte                   Cn4
         .byte   W06
-        .byte           VOL   , 54
+        .byte           VOL   , 53
         .byte           N32   , Bn3 , v108 , gtp2
         .byte   W03
-        .byte           VOL   , 46
+        .byte           VOL   , 45
         .byte   W03
-        .byte                   50
+        .byte                   49
         .byte   W03
-        .byte                   54
+        .byte                   53
         .byte   W03
-        .byte                   58
+        .byte                   57
+        .byte   W03
+        .byte                   59
         .byte   W03
         .byte                   60
-        .byte   W03
-        .byte                   61
         .byte   W12
-        .byte                   35
+        .byte                   34
         .byte   W06
-        .byte                   61
+        .byte                   60
         .byte           N04
         .byte   W06
         .byte                   Cn4
@@ -515,12 +515,14 @@ onward_s_0_12:
         .byte   W18
         .byte           N04   , Fn4
         .byte   W06
-        .byte           VOL   , 54
+        .byte           VOL   , 53
         .byte           N60
         .byte   W03
-        .byte           VOL   , 52
+        .byte           VOL   , 51
         .byte   W03
-        .byte                   50
+        .byte                   49
+        .byte   W03
+        .byte                   48
         .byte   W03
         .byte                   49
         .byte   W03
@@ -544,15 +546,13 @@ onward_s_0_12:
         .byte   W03
         .byte                   59
         .byte   W03
-        .byte                   60
+        .byte                   57
         .byte   W03
-        .byte                   58
+        .byte                   55
         .byte   W03
-        .byte                   56
+        .byte                   53
         .byte   W03
-        .byte                   54
-        .byte   W03
-        .byte                   35
+        .byte                   34
         .byte   W18
 @ 014   ----------------------------------------
         .byte   PATT
@@ -560,31 +560,33 @@ onward_s_0_12:
 @ 015   ----------------------------------------
         .byte           N16   , Bn4 , v108
         .byte   W06
-        .byte           VOL   , 58
+        .byte           VOL   , 57
         .byte   W03
-        .byte                   54
+        .byte                   53
         .byte   W03
-        .byte                   50
+        .byte                   49
         .byte   W06
-        .byte                   58
+        .byte                   57
         .byte           N05   , Cn5
         .byte   W06
-        .byte           VOL   , 61
+        .byte           VOL   , 60
         .byte           N68   , An4 , v108 , gtp1
         .byte   W03
-        .byte           VOL   , 60
+        .byte           VOL   , 59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W03
-        .byte                   54
+        .byte                   53
         .byte   W03
-        .byte                   52
+        .byte                   51
         .byte   W03
-        .byte                   50
+        .byte                   49
         .byte   W03
-        .byte                   48
+        .byte                   47
+        .byte   W03
+        .byte                   45
         .byte   W03
         .byte                   46
         .byte   W03
@@ -602,18 +604,16 @@ onward_s_0_12:
         .byte   W03
         .byte                   53
         .byte   W03
-        .byte                   54
+        .byte                   55
         .byte   W03
-        .byte                   56
+        .byte                   57
         .byte   W03
-        .byte                   58
+        .byte                   59
         .byte   W03
-        .byte                   60
-        .byte   W03
-        .byte                   35
+        .byte                   34
         .byte   W12
 @ 016   ----------------------------------------
-        .byte                   61
+        .byte                   60
         .byte   W96
 @ 017   ----------------------------------------
         .byte   W96
@@ -633,7 +633,7 @@ onward_s_0_12:
         .byte           VOICE , 59
         .byte   W12
         .byte                   75
-        .byte           N04   , Gn4 , v100
+        .byte           N04   , Gn4 , v112
         .byte   W06
         .byte                   Gn4
         .byte   W06
@@ -641,16 +641,16 @@ onward_s_0_12:
         .byte   W06
         .byte           VOL   , 38
         .byte   W06
-        .byte                   61
+        .byte                   60
         .byte           N04   , Bn4
         .byte   W06
         .byte                   Bn4
         .byte   W06
         .byte           N10
         .byte   W09
-        .byte           VOL   , 46
+        .byte           VOL   , 45
         .byte   W03
-        .byte                   61
+        .byte                   60
         .byte           N04   , An4
         .byte   W06
         .byte                   An4
@@ -659,15 +659,15 @@ onward_s_0_12:
         .byte   W09
         .byte           VOL   , 38
         .byte   W03
-        .byte                   61
+        .byte                   60
         .byte           N15   , Gn4
         .byte   W06
         .byte           VOL   , 38
         .byte   W06
 @ 025   ----------------------------------------
-        .byte                   35
+        .byte                   34
         .byte   W12
-        .byte                   61
+        .byte                   60
         .byte           N04
         .byte   W06
         .byte                   Gn4
@@ -676,16 +676,16 @@ onward_s_0_12:
         .byte   W06
         .byte           VOL   , 38
         .byte   W06
-        .byte                   61
+        .byte                   60
         .byte           N04   , Bn4
         .byte   W06
         .byte                   Bn4
         .byte   W06
         .byte           N10
         .byte   W09
-        .byte           VOL   , 46
+        .byte           VOL   , 45
         .byte   W03
-        .byte                   61
+        .byte                   60
         .byte           N04   , An4
         .byte   W06
         .byte                   An4
@@ -694,14 +694,14 @@ onward_s_0_12:
         .byte   W09
         .byte           VOL   , 38
         .byte   W03
-        .byte                   61
+        .byte                   60
         .byte           N15   , Gn4
         .byte   W06
         .byte           VOL   , 38
         .byte   W06
 @ 026   ----------------------------------------
         .byte   W12
-        .byte                   61
+        .byte                   60
         .byte           N04
         .byte   W06
         .byte                   Gn4
@@ -710,16 +710,16 @@ onward_s_0_12:
         .byte   W06
         .byte           VOL   , 38
         .byte   W06
-        .byte                   61
+        .byte                   60
         .byte           N04   , Bn4
         .byte   W06
         .byte                   Bn4
         .byte   W06
         .byte           N10
         .byte   W09
-        .byte           VOL   , 46
+        .byte           VOL   , 45
         .byte   W03
-        .byte                   61
+        .byte                   60
         .byte           N04   , An4
         .byte   W06
         .byte                   An4
@@ -728,15 +728,15 @@ onward_s_0_12:
         .byte   W09
         .byte           VOL   , 38
         .byte   W03
-        .byte                   61
+        .byte                   60
         .byte           N15   , Gn4
         .byte   W06
         .byte           VOL   , 38
         .byte   W06
 @ 027   ----------------------------------------
-        .byte                   35
+        .byte                   34
         .byte   W12
-        .byte                   61
+        .byte                   60
         .byte           N04
         .byte   W06
         .byte                   Gn4
@@ -745,16 +745,16 @@ onward_s_0_12:
         .byte   W06
         .byte           VOL   , 38
         .byte   W06
-        .byte                   61
+        .byte                   60
         .byte           N04   , Bn4
         .byte   W06
         .byte                   Bn4
         .byte   W06
         .byte           N10
         .byte   W09
-        .byte           VOL   , 46
+        .byte           VOL   , 45
         .byte   W03
-        .byte                   61
+        .byte                   60
         .byte           N04   , An4
         .byte   W06
         .byte                   An4
@@ -763,50 +763,48 @@ onward_s_0_12:
         .byte   W09
         .byte           VOL   , 38
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte           N10   , Gn4
         .byte   W06
-        .byte           VOL   , 46
+        .byte           VOL   , 45
         .byte   W06
 @ 028   ----------------------------------------
-        .byte                   58
+        .byte                   57
         .byte           VOICE , 40
         .byte           N68   , Gn3 , v090 , gtp3
         .byte   W03
-        .byte           VOL   , 54
+        .byte           VOL   , 53
+        .byte   W03
+        .byte                   55
         .byte   W03
         .byte                   56
+        .byte   W03
+        .byte                   59
         .byte   W03
         .byte                   57
         .byte   W03
+        .byte                   55
+        .byte   W03
+        .byte                   53
+        .byte   W03
         .byte                   60
-        .byte   W03
-        .byte                   58
-        .byte   W03
-        .byte                   56
-        .byte   W03
-        .byte                   54
-        .byte   W03
-        .byte                   61
         .byte   W48
-        .byte                   58
+        .byte                   57
         .byte           N10   , Dn3
         .byte   W12
         .byte                   Cn3
         .byte   W12
 @ 029   ----------------------------------------
-        .byte           VOL   , 61
+        .byte           VOL   , 60
         .byte           TIE   , Bn2
         .byte   W24
-        .byte           VOL   , 60
+        .byte           VOL   , 59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W03
-        .byte                   54
-        .byte   W03
-        .byte                   52
+        .byte                   53
         .byte   W03
         .byte                   51
         .byte   W03
@@ -819,25 +817,27 @@ onward_s_0_12:
         .byte                   47
         .byte   W03
         .byte                   46
+        .byte   W03
+        .byte                   45
         .byte   W18
+        .byte                   46
+        .byte   W06
         .byte                   47
         .byte   W06
         .byte                   48
-        .byte   W06
+        .byte   W03
         .byte                   49
         .byte   W03
-        .byte                   50
+        .byte                   51
         .byte   W03
-        .byte                   52
-        .byte   W03
-        .byte                   54
+        .byte                   53
         .byte   W03
 @ 030   ----------------------------------------
-        .byte                   35
+        .byte                   34
         .byte   W06
         .byte           EOT
         .byte   W18
-        .byte           VOL   , 61
+        .byte           VOL   , 60
         .byte           N11
         .byte   W12
         .byte                   Cn3
@@ -849,45 +849,45 @@ onward_s_0_12:
 @ 031   ----------------------------------------
         .byte           N44   , Gn3 , v090 , gtp3
         .byte   W12
-        .byte           VOL   , 60
+        .byte           VOL   , 59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W03
-        .byte                   54
+        .byte                   53
         .byte   W24
         .byte   W03
-        .byte                   61
+        .byte                   60
         .byte           N44   , Fs3 , v090 , gtp3
         .byte   W06
-        .byte           VOL   , 60
+        .byte           VOL   , 59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W03
-        .byte                   54
+        .byte                   53
         .byte   W03
-        .byte                   52
+        .byte                   51
         .byte   W03
-        .byte                   50
+        .byte                   49
         .byte   W09
+        .byte                   50
+        .byte   W03
         .byte                   51
         .byte   W03
         .byte                   52
         .byte   W03
         .byte                   53
         .byte   W03
-        .byte                   54
+        .byte                   55
         .byte   W03
-        .byte                   56
-        .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
 @ 032   ----------------------------------------
         .byte           VOICE , 41
-        .byte           VOL   , 50
+        .byte           VOL   , 49
         .byte   GOTO
          .word  onward_s_0_LOOP
         .byte   W72
@@ -900,8 +900,8 @@ onward_s_1:
 @ 000   ----------------------------------------
 onward_s_1_LOOP:
         .byte           VOICE , 2
-        .byte           VOL   , 41
-        .byte           PAN   , c_v-8
+        .byte           PAN   , c_v-10
+        .byte           VOL   , 38
         .byte           N11   , Cn1 , v112
         .byte   W24
         .byte                   Cn1 , v127
@@ -1318,13 +1318,11 @@ onward_s_2:
 @ 000   ----------------------------------------
 onward_s_2_LOOP:
         .byte           VOICE , 65
-        .byte           PAN   , c_v-14
-        .byte           VOL   , 63
-        .byte           N68   , Fs3 , v090 , gtp2
-        .byte   W12
+        .byte           PAN   , c_v-16
         .byte           VOL   , 62
-        .byte   W03
-        .byte                   61
+        .byte           N68   , Fs3 , v086 , gtp2
+        .byte   W12
+        .byte           VOL   , 61
         .byte   W03
         .byte                   60
         .byte   W03
@@ -1340,16 +1338,16 @@ onward_s_2_LOOP:
         .byte   W03
         .byte                   54
         .byte   W03
-        .byte                   52
+        .byte                   53
+        .byte   W03
+        .byte                   51
         .byte   W21
-        .byte                   36
+        .byte                   35
         .byte   W12
-        .byte                   63
+        .byte                   62
         .byte           N15   , An3
         .byte   W03
-        .byte           VOL   , 56
-        .byte   W03
-        .byte                   60
+        .byte           VOL   , 55
         .byte   W03
         .byte                   59
         .byte   W03
@@ -1358,18 +1356,18 @@ onward_s_2_LOOP:
         .byte                   57
         .byte   W03
         .byte                   56
+        .byte   W03
+        .byte                   55
         .byte           N05
         .byte   W03
-        .byte           VOL   , 54
+        .byte           VOL   , 53
         .byte   W03
 @ 001   ----------------------------------------
 onward_s_2_1:
-        .byte           VOL   , 63
-        .byte           N72   , Gn3 , v090
-        .byte   W12
         .byte           VOL   , 62
-        .byte   W03
-        .byte                   61
+        .byte           N72   , Gn3 , v086
+        .byte   W12
+        .byte           VOL   , 61
         .byte   W03
         .byte                   60
         .byte   W03
@@ -1385,18 +1383,18 @@ onward_s_2_1:
         .byte   W03
         .byte                   54
         .byte   W03
-        .byte                   52
+        .byte                   53
+        .byte   W03
+        .byte                   51
         .byte   W21
-        .byte                   36
+        .byte                   35
         .byte   W36
         .byte   PEND
 @ 002   ----------------------------------------
-        .byte                   63
-        .byte           N68   , Gn3 , v090 , gtp3
+        .byte                   62
+        .byte           N68   , Gn3 , v086 , gtp3
         .byte   W12
-        .byte           VOL   , 62
-        .byte   W03
-        .byte                   61
+        .byte           VOL   , 61
         .byte   W03
         .byte                   60
         .byte   W03
@@ -1412,53 +1410,53 @@ onward_s_2_1:
         .byte   W03
         .byte                   54
         .byte   W03
-        .byte                   52
+        .byte                   53
+        .byte   W03
+        .byte                   51
         .byte   W21
-        .byte                   36
+        .byte                   35
         .byte   W30
-        .byte                   48
+        .byte                   47
         .byte           N04
         .byte   W03
-        .byte           VOL   , 56
+        .byte           VOL   , 55
         .byte   W03
 @ 003   ----------------------------------------
-        .byte                   63
-        .byte           N44   , Gn3 , v090 , gtp2
+        .byte                   62
+        .byte           N44   , Gn3 , v086 , gtp2
         .byte   W18
-        .byte           VOL   , 62
+        .byte           VOL   , 61
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W03
-        .byte                   60
+        .byte                   59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W12
-        .byte                   48
+        .byte                   47
         .byte   W06
-        .byte                   63
-        .byte           N44   , Fs3 , v090 , gtp2
+        .byte                   62
+        .byte           N44   , Fs3 , v086 , gtp2
         .byte   W18
-        .byte           VOL   , 62
+        .byte           VOL   , 61
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W03
-        .byte                   60
+        .byte                   59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W12
-        .byte                   48
+        .byte                   47
         .byte   W06
 @ 004   ----------------------------------------
-        .byte                   63
-        .byte           N68   , Fs3 , v090 , gtp2
+        .byte                   62
+        .byte           N68   , Fs3 , v086 , gtp2
         .byte   W12
-        .byte           VOL   , 62
-        .byte   W03
-        .byte                   61
+        .byte           VOL   , 61
         .byte   W03
         .byte                   60
         .byte   W03
@@ -1474,36 +1472,36 @@ onward_s_2_1:
         .byte   W03
         .byte                   54
         .byte   W03
-        .byte                   52
+        .byte                   53
+        .byte   W03
+        .byte                   51
         .byte   W21
-        .byte                   36
+        .byte                   35
         .byte   W12
-        .byte                   56
+        .byte                   55
         .byte           N15   , An3
         .byte   W06
-        .byte           VOL   , 60
-        .byte   W03
-        .byte                   59
+        .byte           VOL   , 59
         .byte   W03
         .byte                   58
         .byte   W03
         .byte                   57
         .byte   W03
         .byte                   56
+        .byte   W03
+        .byte                   55
         .byte           N05
         .byte   W03
-        .byte           VOL   , 54
+        .byte           VOL   , 53
         .byte   W03
 @ 005   ----------------------------------------
         .byte   PATT
          .word  onward_s_2_1
 @ 006   ----------------------------------------
-        .byte           VOL   , 63
-        .byte           N80   , Gn3 , v090 , gtp3
-        .byte   W12
         .byte           VOL   , 62
-        .byte   W03
-        .byte                   61
+        .byte           N80   , Gn3 , v086 , gtp3
+        .byte   W12
+        .byte           VOL   , 61
         .byte   W03
         .byte                   60
         .byte   W03
@@ -1519,45 +1517,47 @@ onward_s_2_1:
         .byte   W03
         .byte                   54
         .byte   W03
-        .byte                   52
+        .byte                   53
+        .byte   W03
+        .byte                   51
         .byte   W21
-        .byte                   36
+        .byte                   35
         .byte   W30
-        .byte                   48
+        .byte                   47
         .byte           N04   , An3
         .byte   W03
-        .byte           VOL   , 56
+        .byte           VOL   , 55
         .byte   W03
 @ 007   ----------------------------------------
-        .byte                   63
-        .byte           N44   , Gn3 , v090 , gtp3
+        .byte                   62
+        .byte           N44   , Gn3 , v086 , gtp3
         .byte   W18
-        .byte           VOL   , 62
+        .byte           VOL   , 61
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W03
-        .byte                   60
+        .byte                   59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W12
-        .byte                   48
+        .byte                   47
         .byte   W06
-        .byte                   63
-        .byte           N44   , Fs3 , v090 , gtp3
+        .byte                   62
+        .byte           N44   , Fs3 , v086 , gtp3
         .byte   W18
-        .byte           VOL   , 62
+        .byte           VOL   , 61
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W03
-        .byte                   60
+        .byte                   59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W12
-        .byte                   48
+        .byte                   47
         .byte   W06
 @ 008   ----------------------------------------
         .byte   W96
@@ -1569,25 +1569,25 @@ onward_s_2_1:
         .byte   W96
 @ 012   ----------------------------------------
 onward_s_2_12:
-        .byte           VOL   , 63
-        .byte           N10   , Gn3 , v100
+        .byte           VOL   , 62
+        .byte           N10   , Gn3 , v096
         .byte   W09
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W03
-        .byte                   63
+        .byte                   62
         .byte           N04   , Dn3
         .byte   W06
         .byte                   Cn3
         .byte   W06
-        .byte           N32   , Bn2 , v100 , gtp2
+        .byte           N32   , Bn2 , v096 , gtp2
         .byte   W12
-        .byte           VOL   , 62
+        .byte           VOL   , 61
         .byte   W03
-        .byte                   60
+        .byte                   59
         .byte   W09
-        .byte                   36
+        .byte                   35
         .byte   W12
-        .byte                   63
+        .byte                   62
         .byte           N04
         .byte   W06
         .byte                   Cn3
@@ -1600,59 +1600,61 @@ onward_s_2_12:
 @ 013   ----------------------------------------
         .byte           N16
         .byte   W12
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W06
-        .byte                   56
+        .byte                   55
         .byte           N04   , Fn3
         .byte   W03
-        .byte           VOL   , 58
+        .byte           VOL   , 57
         .byte   W03
-        .byte                   63
+        .byte                   62
         .byte           N54
         .byte   W18
-        .byte           VOL   , 62
+        .byte           VOL   , 61
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W03
-        .byte                   60
+        .byte                   59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W12
-        .byte                   48
+        .byte                   47
         .byte   W06
-        .byte                   36
+        .byte                   35
         .byte   W24
 @ 014   ----------------------------------------
         .byte   PATT
          .word  onward_s_2_12
 @ 015   ----------------------------------------
-        .byte           N16   , Bn3 , v100
+        .byte           N16   , Bn3 , v096
         .byte   W12
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W06
-        .byte                   56
+        .byte                   55
         .byte           N04   , Cn4
         .byte   W03
-        .byte           VOL   , 58
+        .byte           VOL   , 57
         .byte   W03
-        .byte                   63
-        .byte           N68   , Dn4 , v100 , gtp2
+        .byte                   62
+        .byte           N68   , Dn4 , v096 , gtp2
         .byte   W03
-        .byte           VOL   , 62
+        .byte           VOL   , 61
         .byte   W03
-        .byte                   60
+        .byte                   59
         .byte   W03
-        .byte                   58
+        .byte                   57
         .byte   W03
-        .byte                   56
+        .byte                   55
         .byte   W03
-        .byte                   52
+        .byte                   51
         .byte   W03
-        .byte                   48
+        .byte                   47
         .byte   W03
-        .byte                   44
+        .byte                   43
+        .byte   W03
+        .byte                   38
         .byte   W03
         .byte                   39
         .byte   W03
@@ -1664,30 +1666,27 @@ onward_s_2_12:
         .byte   W03
         .byte                   43
         .byte   W03
-        .byte                   44
+        .byte                   45
         .byte   W03
-        .byte                   46
+        .byte                   47
         .byte   W03
-        .byte                   48
+        .byte                   49
         .byte   W03
-        .byte                   50
+        .byte                   51
         .byte   W03
-        .byte                   52
+        .byte                   53
         .byte   W03
-        .byte                   54
+        .byte                   55
         .byte   W03
-        .byte                   56
+        .byte                   57
         .byte   W03
-        .byte                   58
+        .byte                   59
         .byte   W03
-        .byte                   60
-        .byte   W03
-        .byte                   36
+        .byte                   35
         .byte   W06
 @ 016   ----------------------------------------
-        .byte           PAN   , c_v-16
         .byte           VOICE , 46
-        .byte           N04   , Gn2 , v112
+        .byte           N04   , Gn2 , v108
         .byte   W06
         .byte                   Dn3
         .byte   W06
@@ -1729,7 +1728,7 @@ onward_s_2_12:
 @ 017   ----------------------------------------
 onward_s_2_17:
         .byte           PAN   , c_v-16
-        .byte           N04   , Fn2 , v112
+        .byte           N04   , Fn2 , v108
         .byte   W06
         .byte                   An2
         .byte   W06
@@ -1777,7 +1776,7 @@ onward_s_2_17:
         .byte   PEND
 @ 018   ----------------------------------------
 onward_s_2_18:
-        .byte           N04   , Gn2 , v112
+        .byte           N04   , Gn2 , v108
         .byte   W06
         .byte                   Dn3
         .byte   W06
@@ -1911,7 +1910,7 @@ onward_s_2_18:
          .word  onward_s_2_18
 @ 023   ----------------------------------------
         .byte           PAN   , c_v-16
-        .byte           N04   , Fn2 , v112
+        .byte           N04   , Fn2 , v108
         .byte   W06
         .byte                   An2
         .byte   W06
@@ -1958,75 +1957,112 @@ onward_s_2_18:
         .byte   W06
 @ 024   ----------------------------------------
         .byte           PAN   , c_v+8
-        .byte           VOL   , 50
+        .byte           VOL   , 41
         .byte           VOICE , 42
-        .byte           TIE   , Gn5 , v050
+        .byte           TIE   , Gn5 , v048
         .byte   W03
-        .byte           VOL   , 52
+        .byte           VOL   , 42
         .byte   W03
-        .byte                   53
-        .byte   W18
-        .byte                   54
-        .byte   W24
-        .byte                   55
+        .byte                   43
+        .byte   W06
+        .byte                   44
         .byte   W12
-        .byte                   56
-        .byte   W06
-        .byte                   57
-        .byte   W06
-        .byte                   58
-        .byte   W06
-        .byte                   59
-        .byte   W06
-        .byte                   60
-        .byte   W03
-        .byte                   61
-        .byte   W03
-        .byte                   62
-        .byte   W03
-        .byte                   63
-        .byte   W03
-@ 025   ----------------------------------------
-        .byte   W18
-        .byte                   62
-        .byte   W24
-        .byte                   61
+        .byte                   45
         .byte   W12
-        .byte                   60
+        .byte                   46
         .byte   W12
-        .byte                   59
-        .byte   W12
-        .byte                   58
-        .byte   W12
-        .byte                   57
-        .byte   W06
-@ 026   ----------------------------------------
-        .byte   W06
-        .byte                   56
-        .byte   W18
-        .byte                   55
-        .byte   W24
-        .byte                   54
-        .byte   W30
-        .byte                   53
-        .byte   W18
-@ 027   ----------------------------------------
-        .byte   W36
-        .byte                   52
-        .byte   W36
+        .byte                   47
+        .byte   W03
         .byte                   48
         .byte   W03
-        .byte                   44
+        .byte                   49
         .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   55
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   57
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   59
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   61
+        .byte   W03
+        .byte                   62
+        .byte   W03
+@ 025   ----------------------------------------
+        .byte   W12
+        .byte                   61
+        .byte   W12
+        .byte                   60
+        .byte   W12
+        .byte                   59
+        .byte   W12
+        .byte                   58
+        .byte   W12
+        .byte                   57
+        .byte   W12
+        .byte                   56
+        .byte   W06
+        .byte                   55
+        .byte   W06
+        .byte                   54
+        .byte   W12
+@ 026   ----------------------------------------
+        .byte                   53
+        .byte   W12
+        .byte                   52
+        .byte   W12
+        .byte                   51
+        .byte   W12
+        .byte                   50
+        .byte   W12
+        .byte                   49
+        .byte   W12
+        .byte                   48
+        .byte   W12
+        .byte                   47
+        .byte   W24
+@ 027   ----------------------------------------
+        .byte   W06
+        .byte                   46
+        .byte   W24
+        .byte                   45
+        .byte   W12
+        .byte                   44
+        .byte   W12
+        .byte                   43
+        .byte   W06
+        .byte                   42
+        .byte   W06
+        .byte                   41
+        .byte   W06
         .byte                   40
         .byte   W03
-        .byte                   36
+        .byte                   39
         .byte   W03
-        .byte                   32
+        .byte                   37
         .byte   W03
-        .byte                   28
+        .byte                   31
         .byte   W03
-        .byte                   24
+        .byte                   27
+        .byte   W03
+        .byte                   23
+        .byte   W03
+        .byte                   20
         .byte   W03
         .byte                   16
         .byte   W03
@@ -2035,8 +2071,8 @@ onward_s_2_18:
         .byte   W06
         .byte           EOT
         .byte   W06
-        .byte           PAN   , c_v-14
-        .byte           VOL   , 63
+        .byte           PAN   , c_v-16
+        .byte           VOL   , 62
         .byte           N04   , Gn4 , v127
         .byte   W05
         .byte           N05
@@ -2049,22 +2085,22 @@ onward_s_2_18:
         .byte   W07
         .byte           N10
         .byte   W09
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W03
-        .byte                   63
+        .byte                   62
         .byte           N10   , An4
         .byte   W09
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W03
-        .byte                   63
+        .byte                   62
         .byte           N10
         .byte   W12
         .byte           N21   , Gn4
         .byte   W12
 @ 029   ----------------------------------------
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W12
-        .byte                   63
+        .byte                   62
         .byte           N04
         .byte   W05
         .byte           N05
@@ -2077,22 +2113,22 @@ onward_s_2_18:
         .byte   W07
         .byte           N10
         .byte   W09
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W03
-        .byte                   63
+        .byte                   62
         .byte           N11   , An4
         .byte   W09
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W03
-        .byte                   63
+        .byte                   62
         .byte           N10
         .byte   W12
         .byte           N21   , Gn4
         .byte   W12
 @ 030   ----------------------------------------
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W12
-        .byte                   63
+        .byte                   62
         .byte           N04
         .byte   W05
         .byte           N05
@@ -2105,22 +2141,22 @@ onward_s_2_18:
         .byte   W07
         .byte           N10
         .byte   W09
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W03
-        .byte                   63
+        .byte                   62
         .byte           N10   , An4
         .byte   W09
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W03
-        .byte                   63
+        .byte                   62
         .byte           N10
         .byte   W12
         .byte           N21   , Gn4
         .byte   W12
 @ 031   ----------------------------------------
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W12
-        .byte                   63
+        .byte                   62
         .byte           N04
         .byte   W05
         .byte           N05
@@ -2133,14 +2169,14 @@ onward_s_2_18:
         .byte   W07
         .byte           N10
         .byte   W09
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W03
-        .byte                   63
+        .byte                   62
         .byte           N10   , An4
         .byte   W09
-        .byte           VOL   , 36
+        .byte           VOL   , 35
         .byte   W03
-        .byte                   63
+        .byte                   62
         .byte           N10
         .byte   W12
         .byte           N12   , Gn4
@@ -2159,56 +2195,55 @@ onward_s_3:
 @ 000   ----------------------------------------
 onward_s_3_LOOP:
         .byte           VOICE , 51
-        .byte           PAN   , c_v+24
-        .byte           VOL   , 34
+        .byte           PAN   , c_v+22
+        .byte           VOL   , 31
         .byte           N78   , Fs2 , v092 , gtp1
         .byte   W12
-        .byte           VOL   , 35
+        .byte           VOL   , 32
         .byte   W03
-        .byte                   36
+        .byte                   33
+        .byte   W03
+        .byte                   34
         .byte   W06
-        .byte                   37
+        .byte                   35
         .byte   W48
-        .byte   W03
-        .byte                   23
+        .byte                   22
         .byte   W12
-        .byte                   36
+        .byte                   34
         .byte           N10   , Fs2 , v100
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
 @ 001   ----------------------------------------
 onward_s_3_1:
-        .byte           VOL   , 34
+        .byte           VOL   , 31
         .byte           N90   , Gn2 , v100 , gtp1
         .byte   W03
-        .byte           VOL   , 35
-        .byte   W03
-        .byte                   36
-        .byte   W03
-        .byte                   39
-        .byte   W03
-        .byte                   40
-        .byte   W09
-        .byte                   39
-        .byte   W06
-        .byte                   38
-        .byte   W03
-        .byte                   37
-        .byte   W06
-        .byte                   36
-        .byte   W24
-        .byte                   35
+        .byte           VOL   , 32
         .byte   W03
         .byte                   34
-        .byte   W09
+        .byte   W03
+        .byte                   36
+        .byte   W03
+        .byte                   37
+        .byte   W12
+        .byte                   36
+        .byte   W03
+        .byte                   35
+        .byte   W06
+        .byte                   34
+        .byte   W24
         .byte                   33
         .byte   W03
         .byte                   32
         .byte   W06
         .byte                   31
+        .byte   W09
+        .byte                   30
         .byte   W03
-        .byte                   23
+        .byte                   29
+        .byte   W06
+        .byte                   22
         .byte   W12
         .byte   PEND
 @ 002   ----------------------------------------
@@ -2216,63 +2251,62 @@ onward_s_3_1:
          .word  onward_s_3_1
 @ 003   ----------------------------------------
 onward_s_3_3:
-        .byte           VOL   , 34
+        .byte           VOL   , 31
         .byte           N44   , Gn2 , v100 , gtp2
         .byte   W03
-        .byte           VOL   , 36
+        .byte           VOL   , 34
         .byte   W03
-        .byte                   39
+        .byte                   36
         .byte   W03
-        .byte                   40
+        .byte                   37
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte   W12
-        .byte                   40
+        .byte                   37
         .byte   W03
-        .byte                   39
+        .byte                   36
         .byte   W15
-        .byte                   23
+        .byte                   22
         .byte   W06
-        .byte                   34
+        .byte                   31
         .byte           N44   , Fs2 , v100 , gtp2
         .byte   W03
-        .byte           VOL   , 36
+        .byte           VOL   , 34
         .byte   W03
-        .byte                   39
+        .byte                   36
         .byte   W03
-        .byte                   40
+        .byte                   37
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte   W12
-        .byte                   40
+        .byte                   37
         .byte   W03
-        .byte                   39
+        .byte                   36
         .byte   W15
-        .byte                   23
+        .byte                   22
         .byte   W06
         .byte   PEND
 @ 004   ----------------------------------------
-        .byte                   34
+        .byte                   31
         .byte           N78   , Fs2 , v092 , gtp1
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 36
         .byte   W03
-        .byte                   41
-        .byte   W06
-        .byte                   40
-        .byte   W03
-        .byte                   39
-        .byte   W06
         .byte                   38
-        .byte   W03
+        .byte   W06
         .byte                   37
-        .byte   W48
-        .byte                   23
-        .byte   W12
+        .byte   W06
         .byte                   36
+        .byte   W03
+        .byte                   35
+        .byte   W48
+        .byte   W03
+        .byte                   22
+        .byte   W12
+        .byte                   34
         .byte           N10   , Fs2 , v100
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
 @ 005   ----------------------------------------
         .byte   PATT
@@ -2285,84 +2319,84 @@ onward_s_3_3:
          .word  onward_s_3_3
 @ 008   ----------------------------------------
 onward_s_3_8:
-        .byte           VOL   , 34
+        .byte           VOL   , 31
         .byte           N10   , Dn2 , v100
         .byte   W06
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W06
-        .byte                   41
+        .byte                   38
         .byte           N10
         .byte   W06
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W06
-        .byte                   21
+        .byte                   19
+        .byte           N06
+        .byte   W12
+        .byte           VOL   , 31
+        .byte           N10
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   22
+        .byte   W06
+        .byte                   38
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 22
+        .byte   W06
+        .byte                   38
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 22
+        .byte   W06
+        .byte                   17
         .byte           N06
         .byte   W12
         .byte           VOL   , 34
         .byte           N10
-        .byte   W03
-        .byte           VOL   , 36
-        .byte   W03
-        .byte                   23
         .byte   W06
-        .byte                   41
-        .byte           N10
-        .byte   W06
-        .byte           VOL   , 23
-        .byte   W06
-        .byte                   41
-        .byte           N10
-        .byte   W06
-        .byte           VOL   , 23
-        .byte   W06
-        .byte                   18
-        .byte           N06
-        .byte   W12
-        .byte           VOL   , 36
-        .byte           N10
-        .byte   W06
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W06
         .byte   PEND
 @ 009   ----------------------------------------
 onward_s_3_9:
-        .byte           VOL   , 34
+        .byte           VOL   , 31
         .byte           N10   , Cn2 , v100
         .byte   W06
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W06
-        .byte                   41
+        .byte                   38
         .byte           N10
         .byte   W06
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W06
-        .byte                   21
+        .byte                   19
+        .byte           N06
+        .byte   W12
+        .byte           VOL   , 31
+        .byte           N10
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   22
+        .byte   W06
+        .byte                   38
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 22
+        .byte   W06
+        .byte                   38
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 22
+        .byte   W06
+        .byte                   17
         .byte           N06
         .byte   W12
         .byte           VOL   , 34
         .byte           N10
-        .byte   W03
-        .byte           VOL   , 36
-        .byte   W03
-        .byte                   23
         .byte   W06
-        .byte                   41
-        .byte           N10
-        .byte   W06
-        .byte           VOL   , 23
-        .byte   W06
-        .byte                   41
-        .byte           N10
-        .byte   W06
-        .byte           VOL   , 23
-        .byte   W06
-        .byte                   18
-        .byte           N06
-        .byte   W12
-        .byte           VOL   , 36
-        .byte           N10
-        .byte   W06
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W06
         .byte   PEND
 @ 010   ----------------------------------------
@@ -2370,43 +2404,43 @@ onward_s_3_9:
          .word  onward_s_3_8
 @ 011   ----------------------------------------
 onward_s_3_11:
-        .byte           VOL   , 34
+        .byte           VOL   , 31
         .byte           N10   , Fn2 , v100
         .byte   W06
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W06
-        .byte                   41
+        .byte                   38
         .byte           N10
         .byte   W06
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W06
-        .byte                   21
+        .byte                   19
+        .byte           N06
+        .byte   W12
+        .byte           VOL   , 31
+        .byte           N10
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   22
+        .byte   W06
+        .byte                   38
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 22
+        .byte   W06
+        .byte                   38
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 22
+        .byte   W06
+        .byte                   17
         .byte           N06
         .byte   W12
         .byte           VOL   , 34
         .byte           N10
-        .byte   W03
-        .byte           VOL   , 36
-        .byte   W03
-        .byte                   23
         .byte   W06
-        .byte                   41
-        .byte           N10
-        .byte   W06
-        .byte           VOL   , 23
-        .byte   W06
-        .byte                   41
-        .byte           N10
-        .byte   W06
-        .byte           VOL   , 23
-        .byte   W06
-        .byte                   18
-        .byte           N06
-        .byte   W12
-        .byte           VOL   , 36
-        .byte           N10
-        .byte   W06
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W06
         .byte   PEND
 @ 012   ----------------------------------------
@@ -2423,28 +2457,28 @@ onward_s_3_11:
          .word  onward_s_3_11
 @ 016   ----------------------------------------
 onward_s_3_16:
-        .byte           VOL   , 41
+        .byte           VOL   , 38
         .byte           N10   , Bn1 , v120
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte           N04
         .byte   W06
         .byte                   Cn2
         .byte   W03
-        .byte           VOL   , 36
+        .byte           VOL   , 34
         .byte   W03
-        .byte                   39
+        .byte                   36
         .byte           N32   , Dn2 , v120 , gtp2
         .byte   W03
-        .byte           VOL   , 40
+        .byte           VOL   , 37
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte   W21
-        .byte                   23
+        .byte                   22
         .byte   W09
-        .byte                   41
+        .byte                   38
         .byte           N04   , Bn1
         .byte   W06
         .byte                   Cn2
@@ -2453,65 +2487,65 @@ onward_s_3_16:
         .byte   W12
         .byte                   Dn2
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
         .byte   PEND
 @ 017   ----------------------------------------
 onward_s_3_17:
-        .byte           VOL   , 41
+        .byte           VOL   , 38
         .byte           N16   , Dn2 , v120
         .byte   W15
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte           N04   , Cn2
         .byte   W03
-        .byte           VOL   , 36
+        .byte           VOL   , 34
         .byte   W03
-        .byte                   39
+        .byte                   36
         .byte           N66   , En2
         .byte   W03
-        .byte           VOL   , 40
+        .byte           VOL   , 37
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte   W18
-        .byte                   40
-        .byte   W03
-        .byte                   39
-        .byte   W03
         .byte                   37
         .byte   W03
         .byte                   36
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   34
         .byte   W15
-        .byte                   23
+        .byte                   22
         .byte   W06
-        .byte                   18
+        .byte                   17
         .byte   W18
         .byte   PEND
 @ 018   ----------------------------------------
 onward_s_3_18:
-        .byte           VOL   , 41
+        .byte           VOL   , 38
         .byte           N10   , Bn1 , v120
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte           N04
         .byte   W06
         .byte                   Cn2
         .byte   W03
-        .byte           VOL   , 36
+        .byte           VOL   , 34
         .byte   W03
-        .byte                   39
+        .byte                   36
         .byte           N32   , Dn2 , v120 , gtp2
         .byte   W03
-        .byte           VOL   , 40
+        .byte           VOL   , 37
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte   W21
-        .byte                   23
+        .byte                   22
         .byte   W09
-        .byte                   41
+        .byte                   38
         .byte           N04
         .byte   W06
         .byte                   Dn2
@@ -2520,38 +2554,38 @@ onward_s_3_18:
         .byte   W12
         .byte                   Dn2
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
         .byte   PEND
 @ 019   ----------------------------------------
-        .byte                   41
+        .byte                   38
         .byte           N16
         .byte   W15
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte           N04   , En2
         .byte   W03
-        .byte           VOL   , 36
+        .byte           VOL   , 34
         .byte   W03
-        .byte                   39
+        .byte                   36
         .byte           N66   , Fn2
         .byte   W03
-        .byte           VOL   , 40
+        .byte           VOL   , 37
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte   W18
-        .byte                   40
-        .byte   W03
-        .byte                   39
-        .byte   W03
         .byte                   37
         .byte   W03
         .byte                   36
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   34
         .byte   W15
-        .byte                   23
+        .byte                   22
         .byte   W06
-        .byte                   18
+        .byte                   17
         .byte   W18
 @ 020   ----------------------------------------
         .byte   PATT
@@ -2563,46 +2597,48 @@ onward_s_3_18:
         .byte   PATT
          .word  onward_s_3_18
 @ 023   ----------------------------------------
-        .byte           VOL   , 41
+        .byte           VOL   , 38
         .byte           N16   , Dn2 , v120
         .byte   W15
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte           N04   , En2
         .byte   W03
-        .byte           VOL   , 36
+        .byte           VOL   , 34
         .byte   W03
-        .byte                   39
+        .byte                   36
         .byte           N72   , Fn2
         .byte   W03
-        .byte           VOL   , 40
+        .byte           VOL   , 37
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte   W09
-        .byte                   40
-        .byte   W03
-        .byte                   39
+        .byte                   37
         .byte   W03
         .byte                   36
         .byte   W03
-        .byte                   35
-        .byte   W03
         .byte                   34
+        .byte   W03
+        .byte                   32
         .byte   W03
         .byte                   31
         .byte   W03
-        .byte                   28
-        .byte   W06
-        .byte                   27
+        .byte                   29
         .byte   W03
         .byte                   26
         .byte   W06
-        .byte                   27
+        .byte                   25
+        .byte   W06
+        .byte                   24
+        .byte   W03
+        .byte                   25
+        .byte   W03
+        .byte                   26
         .byte   W03
         .byte                   28
         .byte   W03
-        .byte                   30
+        .byte                   29
         .byte   W03
         .byte                   31
         .byte   W03
@@ -2610,277 +2646,275 @@ onward_s_3_18:
         .byte   W03
         .byte                   36
         .byte   W03
-        .byte                   39
-        .byte   W03
-        .byte                   41
+        .byte                   38
         .byte   W03
 @ 024   ----------------------------------------
         .byte           N10   , Gn2 , v100
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
         .byte           N12
         .byte   W24
-        .byte           VOL   , 31
+        .byte           VOL   , 29
         .byte           N04
         .byte   W03
-        .byte           VOL   , 34
-        .byte   W03
-        .byte                   36
-        .byte           N04   , Gn2 , v090
-        .byte   W03
-        .byte           VOL   , 39
-        .byte   W03
-        .byte                   41
-        .byte           N10   , Gn2 , v100
-        .byte   W09
-        .byte           VOL   , 23
-        .byte   W03
-        .byte           N12
-        .byte   W24
         .byte           VOL   , 31
-        .byte           N10
+        .byte   W03
+        .byte                   34
+        .byte           N04   , Gn2 , v090
         .byte   W03
         .byte           VOL   , 36
         .byte   W03
-        .byte                   23
+        .byte                   38
+        .byte           N10   , Gn2 , v100
+        .byte   W09
+        .byte           VOL   , 22
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 29
+        .byte           N10
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   22
         .byte   W06
 @ 025   ----------------------------------------
-        .byte                   41
+        .byte                   38
         .byte           N10   , Fn2
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
         .byte           N12
         .byte   W24
-        .byte           VOL   , 31
+        .byte           VOL   , 29
         .byte           N04
         .byte   W03
-        .byte           VOL   , 34
+        .byte           VOL   , 31
         .byte   W03
-        .byte                   36
+        .byte                   34
         .byte           N04   , Fn2 , v090
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 36
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte           N10   , Fn2 , v100
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
         .byte           N12
         .byte   W24
-        .byte           VOL   , 31
+        .byte           VOL   , 29
         .byte           N10
         .byte   W03
-        .byte           VOL   , 36
+        .byte           VOL   , 34
         .byte   W03
-        .byte                   23
+        .byte                   22
         .byte   W06
 @ 026   ----------------------------------------
-        .byte                   41
+        .byte                   38
         .byte           N10   , Gn2
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
         .byte           N12
         .byte   W24
-        .byte           VOL   , 31
+        .byte           VOL   , 29
         .byte           N04
         .byte   W03
-        .byte           VOL   , 34
+        .byte           VOL   , 31
         .byte   W03
-        .byte                   36
+        .byte                   34
         .byte           N04   , Gn2 , v090
         .byte   W03
-        .byte           VOL   , 39
-        .byte   W03
-        .byte                   41
-        .byte           N10   , Gn2 , v100
-        .byte   W09
-        .byte           VOL   , 23
-        .byte   W03
-        .byte           N12
-        .byte   W24
-        .byte           VOL   , 31
-        .byte           N10   , Fn2
-        .byte   W03
         .byte           VOL   , 36
         .byte   W03
-        .byte                   23
-        .byte   W06
-@ 027   ----------------------------------------
-        .byte                   41
-        .byte           N10   , Ds2
+        .byte                   38
+        .byte           N10   , Gn2 , v100
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
         .byte           N12
         .byte   W24
-        .byte           VOL   , 31
-        .byte           N04
+        .byte           VOL   , 29
+        .byte           N10   , Fn2
         .byte   W03
         .byte           VOL   , 34
         .byte   W03
-        .byte                   36
-        .byte           N04   , Ds2 , v090
-        .byte   W03
-        .byte           VOL   , 39
-        .byte   W03
-        .byte                   41
-        .byte           N10   , Ds2 , v100
+        .byte                   22
+        .byte   W06
+@ 027   ----------------------------------------
+        .byte                   38
+        .byte           N10   , Ds2
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
         .byte           N12
         .byte   W24
+        .byte           VOL   , 29
+        .byte           N04
+        .byte   W03
         .byte           VOL   , 31
-        .byte           N05
+        .byte   W03
+        .byte                   34
+        .byte           N04   , Ds2 , v090
         .byte   W03
         .byte           VOL   , 36
+        .byte   W03
+        .byte                   38
+        .byte           N10   , Ds2 , v100
+        .byte   W09
+        .byte           VOL   , 22
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 29
+        .byte           N05
+        .byte   W03
+        .byte           VOL   , 34
         .byte   W02
         .byte           N05   , Fn2
         .byte   W01
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W06
 @ 028   ----------------------------------------
-        .byte                   41
+        .byte                   38
         .byte           N10   , Gn2 , v092
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
         .byte           N12
         .byte   W24
-        .byte           VOL   , 31
+        .byte           VOL   , 29
         .byte           N04
         .byte   W03
-        .byte           VOL   , 34
-        .byte   W03
-        .byte                   36
-        .byte           N04
-        .byte   W03
-        .byte           VOL   , 39
-        .byte   W03
-        .byte                   41
-        .byte           N10
-        .byte   W09
-        .byte           VOL   , 23
-        .byte   W03
-        .byte           N12
-        .byte   W24
         .byte           VOL   , 31
-        .byte           N10
+        .byte   W03
+        .byte                   34
+        .byte           N04
         .byte   W03
         .byte           VOL   , 36
         .byte   W03
-        .byte                   23
+        .byte                   38
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 22
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 29
+        .byte           N10
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   22
         .byte   W06
 @ 029   ----------------------------------------
-        .byte                   41
+        .byte                   38
         .byte           N10   , Fn2
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
         .byte           N12
         .byte   W24
-        .byte           VOL   , 31
+        .byte           VOL   , 29
         .byte           N04
         .byte   W03
-        .byte           VOL   , 34
-        .byte   W03
-        .byte                   36
-        .byte           N04
-        .byte   W03
-        .byte           VOL   , 39
-        .byte   W03
-        .byte                   41
-        .byte           N10
-        .byte   W09
-        .byte           VOL   , 23
-        .byte   W03
-        .byte           N12
-        .byte   W24
         .byte           VOL   , 31
-        .byte           N10
+        .byte   W03
+        .byte                   34
+        .byte           N04
         .byte   W03
         .byte           VOL   , 36
         .byte   W03
-        .byte                   23
+        .byte                   38
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 22
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 29
+        .byte           N10
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   22
         .byte   W06
 @ 030   ----------------------------------------
-        .byte                   41
+        .byte                   38
         .byte           N10   , Gn2
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
         .byte           N12
         .byte   W24
+        .byte           VOL   , 29
+        .byte           N04
+        .byte   W03
         .byte           VOL   , 31
+        .byte   W03
+        .byte                   34
         .byte           N04
         .byte   W03
-        .byte           VOL   , 34
+        .byte           VOL   , 36
         .byte   W03
-        .byte                   36
-        .byte           N04
-        .byte   W03
-        .byte           VOL   , 39
-        .byte   W03
-        .byte                   41
+        .byte                   38
         .byte           N10
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
         .byte           N12
         .byte   W24
-        .byte           VOL   , 31
+        .byte           VOL   , 29
         .byte           N10   , Fn2
         .byte   W03
-        .byte           VOL   , 36
+        .byte           VOL   , 34
         .byte   W03
-        .byte                   23
+        .byte                   22
         .byte   W06
 @ 031   ----------------------------------------
-        .byte                   41
+        .byte                   38
         .byte           N10   , Ds2
         .byte   W09
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W03
         .byte           N12
         .byte   W24
-        .byte           VOL   , 31
+        .byte           VOL   , 29
         .byte           N04
         .byte   W03
-        .byte           VOL   , 34
+        .byte           VOL   , 31
         .byte   W03
-        .byte                   36
+        .byte                   34
         .byte           N04   , Fn2
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 36
         .byte   W03
-        .byte                   41
+        .byte                   38
         .byte           N16   , Gn2
         .byte   W12
-        .byte           VOL   , 23
+        .byte           VOL   , 22
         .byte   W06
         .byte           N04
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 34
         .byte           N24   , An2
         .byte   W03
-        .byte           VOL   , 34
+        .byte           VOL   , 31
         .byte   W03
-        .byte                   31
+        .byte                   29
         .byte   W06
+        .byte                   31
+        .byte   W03
         .byte                   34
         .byte   W03
         .byte                   36
         .byte   W03
-        .byte                   39
-        .byte   W03
-        .byte                   41
+        .byte                   38
         .byte   W03
 @ 032   ----------------------------------------
-        .byte                   34
+        .byte                   31
         .byte   GOTO
          .word  onward_s_3_LOOP
         .byte   W72
@@ -2893,16 +2927,10 @@ onward_s_4:
 @ 000   ----------------------------------------
 onward_s_4_LOOP:
         .byte           VOICE , 47
-        .byte           VOL   , 39
-        .byte           N48   , Gn2 , v120
-        .byte   W03
-        .byte           VOL   , 42
-        .byte   W03
-        .byte                   45
-        .byte   W03
-        .byte                   48
-        .byte   W84
-        .byte   W03
+        .byte           PAN   , c_v-4
+        .byte           VOL   , 45
+        .byte           N48   , Gn2 , v100
+        .byte   W96
 @ 001   ----------------------------------------
         .byte   W96
 @ 002   ----------------------------------------
@@ -2910,7 +2938,7 @@ onward_s_4_LOOP:
 @ 003   ----------------------------------------
 onward_s_4_3:
         .byte   W84
-        .byte           N11   , Dn3 , v120
+        .byte           N11   , Dn3 , v100
         .byte   W12
         .byte   PEND
 @ 004   ----------------------------------------
@@ -2921,44 +2949,43 @@ onward_s_4_3:
 @ 006   ----------------------------------------
         .byte   W96
 @ 007   ----------------------------------------
-onward_s_4_7:
+        .byte                   Gn1
         .byte   W48
-        .byte           N02   , Dn3 , v028
+        .byte           N03   , Dn3 , v024
         .byte   W03
-        .byte                   Dn3 , v038
+        .byte                   Dn3 , v032
+        .byte   W03
+        .byte                   Dn3 , v040
         .byte   W03
         .byte                   Dn3 , v048
         .byte   W03
-        .byte                   Dn3 , v057
+        .byte                   Dn3 , v052
         .byte   W03
-        .byte                   Dn3 , v062
+        .byte                   Dn3 , v056
         .byte   W03
-        .byte                   Dn3 , v067
-        .byte   W03
-        .byte                   Dn3 , v072
+        .byte                   Dn3 , v060
         .byte   W03
         .byte                   Dn3
         .byte   W03
         .byte                   Dn3
         .byte   W03
-        .byte                   Dn3 , v069
+        .byte                   Dn3 , v058
         .byte   W03
-        .byte                   Dn3 , v067
+        .byte                   Dn3 , v056
         .byte   W03
-        .byte                   Dn3 , v062
+        .byte                   Dn3 , v052
         .byte   W03
-        .byte           N11   , Dn3 , v120
+        .byte           N11   , Dn3 , v100
         .byte   W12
-        .byte   PEND
 @ 008   ----------------------------------------
 onward_s_4_8:
-        .byte           N18   , Gn2 , v120
+        .byte           N18   , Gn2 , v100
         .byte   W24
-        .byte                   Dn2 , v096
+        .byte                   Dn2 , v080
         .byte   W24
-        .byte                   Gn2 , v120
+        .byte                   Gn2 , v100
         .byte   W24
-        .byte                   Dn2 , v096
+        .byte                   Dn2 , v080
         .byte   W24
         .byte   PEND
 @ 009   ----------------------------------------
@@ -2966,25 +2993,25 @@ onward_s_4_8:
          .word  onward_s_4_8
 @ 010   ----------------------------------------
 onward_s_4_10:
-        .byte           N18   , Gn2 , v120
+        .byte           N18   , Gn2 , v100
         .byte   W24
-        .byte                   Dn2 , v096
+        .byte                   Dn2 , v080
         .byte   W24
-        .byte                   Gn2 , v120
+        .byte                   Gn2 , v100
         .byte   W24
-        .byte           N12   , Dn2 , v096
+        .byte           N12   , Dn2 , v080
         .byte   W12
-        .byte                   Gn2 , v120
+        .byte                   Gn2 , v100
         .byte   W12
         .byte   PEND
 @ 011   ----------------------------------------
         .byte           N18   , An2
         .byte   W24
-        .byte                   Dn2 , v096
+        .byte                   Dn2 , v080
         .byte   W24
-        .byte                   An2 , v120
+        .byte                   An2 , v100
         .byte   W24
-        .byte                   Dn2 , v096
+        .byte                   Dn2 , v080
         .byte   W24
 @ 012   ----------------------------------------
         .byte   PATT
@@ -2996,28 +3023,28 @@ onward_s_4_10:
         .byte   PATT
          .word  onward_s_4_10
 @ 015   ----------------------------------------
-        .byte           N18   , An2 , v120
+        .byte           N18   , An2 , v100
         .byte   W24
-        .byte                   Dn2 , v096
+        .byte                   Dn2 , v080
         .byte   W24
-        .byte                   An2 , v120
+        .byte                   An2 , v100
         .byte   W24
-        .byte           N05   , Dn2 , v096
+        .byte           N05   , Dn2 , v080
         .byte   W06
-        .byte           N02   , Dn2 , v038
+        .byte           N03   , Dn2 , v032
+        .byte   W03
+        .byte                   Dn2 , v040
         .byte   W03
         .byte                   Dn2 , v048
         .byte   W03
-        .byte                   Dn2 , v057
+        .byte                   Dn2 , v052
         .byte   W03
-        .byte                   Dn2 , v062
+        .byte                   Dn2 , v056
         .byte   W03
-        .byte                   Dn2 , v067
-        .byte   W03
-        .byte                   Dn2 , v076
+        .byte                   Dn2 , v064
         .byte   W03
 @ 016   ----------------------------------------
-        .byte           N48   , Gn2 , v120
+        .byte           N48   , Gn2 , v100
         .byte   W96
 @ 017   ----------------------------------------
         .byte   W96
@@ -3027,17 +3054,42 @@ onward_s_4_10:
         .byte   PATT
          .word  onward_s_4_3
 @ 020   ----------------------------------------
-        .byte           N48   , Gn2 , v120
+        .byte           N48   , Gn2 , v100
         .byte   W96
 @ 021   ----------------------------------------
         .byte   W96
 @ 022   ----------------------------------------
         .byte   W96
 @ 023   ----------------------------------------
-        .byte   PATT
-         .word  onward_s_4_7
+        .byte   W48
+        .byte           N03   , Dn3 , v024
+        .byte   W03
+        .byte                   Dn3 , v032
+        .byte   W03
+        .byte                   Dn3 , v040
+        .byte   W03
+        .byte                   Dn3 , v048
+        .byte   W03
+        .byte                   Dn3 , v052
+        .byte   W03
+        .byte                   Dn3 , v056
+        .byte   W03
+        .byte                   Dn3 , v060
+        .byte   W03
+        .byte                   Dn3
+        .byte   W03
+        .byte                   Dn3
+        .byte   W03
+        .byte                   Dn3 , v058
+        .byte   W03
+        .byte                   Dn3 , v056
+        .byte   W03
+        .byte                   Dn3 , v052
+        .byte   W03
+        .byte           N11   , Dn3 , v100
+        .byte   W12
 @ 024   ----------------------------------------
-        .byte           N48   , Gn2 , v120
+        .byte           N48   , Gn2
         .byte   W96
 @ 025   ----------------------------------------
         .byte                   Gn2
@@ -3058,7 +3110,7 @@ onward_s_4_10:
         .byte   W96
 @ 028   ----------------------------------------
 onward_s_4_28:
-        .byte           N24   , Gn2 , v120
+        .byte           N24   , Gn2 , v100
         .byte   W24
         .byte                   Dn2
         .byte   W24
@@ -3082,28 +3134,27 @@ onward_s_4_28:
         .byte   PATT
          .word  onward_s_4_28
 @ 031   ----------------------------------------
-        .byte           N24   , Gn2 , v120
+        .byte           N24   , Gn2 , v100
         .byte   W24
         .byte                   Dn2
         .byte   W24
         .byte                   Gn2
         .byte   W24
-        .byte           N05   , Gn2 , v105
+        .byte           N05   , Gn2 , v088
         .byte   W06
-        .byte           N02   , Gn2 , v067
+        .byte           N03   , Gn2 , v056
         .byte   W03
-        .byte                   Gn2 , v076
+        .byte                   Gn2 , v064
         .byte   W03
-        .byte                   Gn2 , v086
+        .byte                   Gn2 , v072
         .byte   W03
-        .byte                   Gn2 , v096
+        .byte                   Gn2 , v080
         .byte   W03
-        .byte                   Gn2 , v100
+        .byte                   Gn2 , v084
         .byte   W03
-        .byte                   Gn2 , v105
+        .byte                   Gn2 , v088
         .byte   W03
 @ 032   ----------------------------------------
-        .byte           VOL   , 39
         .byte   GOTO
          .word  onward_s_4_LOOP
         .byte   W72
@@ -3116,60 +3167,60 @@ onward_s_5:
 @ 000   ----------------------------------------
 onward_s_5_LOOP:
         .byte           VOICE , 49
-        .byte           VOL   , 33
-        .byte           PAN   , c_v-26
+        .byte           PAN   , c_v+27
+        .byte           VOL   , 31
         .byte           N68   , Dn3 , v090 , gtp3
         .byte   W03
-        .byte           VOL   , 35
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   36
         .byte   W03
         .byte                   37
         .byte   W03
         .byte                   38
         .byte   W03
         .byte                   39
-        .byte   W03
-        .byte                   40
-        .byte   W03
-        .byte                   41
         .byte   W06
-        .byte                   42
+        .byte                   40
         .byte   W48
         .byte           N16   , Fs3 , v100
         .byte   W09
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W09
-        .byte                   38
+        .byte                   36
         .byte           N05
         .byte   W06
 @ 001   ----------------------------------------
 onward_s_5_1:
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N80   , Dn3 , v100 , gtp3
         .byte   W24
-        .byte           VOL   , 42
+        .byte           VOL   , 40
         .byte   W06
-        .byte                   41
+        .byte                   39
         .byte   W42
-        .byte                   24
+        .byte                   23
         .byte   W24
         .byte   PEND
 @ 002   ----------------------------------------
 onward_s_5_2:
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N80   , Dn3 , v100 , gtp3
         .byte   W24
-        .byte           VOL   , 42
+        .byte           VOL   , 40
         .byte   W06
-        .byte                   41
+        .byte                   39
         .byte   W42
-        .byte                   24
+        .byte                   23
         .byte   W18
-        .byte                   38
+        .byte                   36
         .byte           N04
         .byte   W06
         .byte   PEND
 @ 003   ----------------------------------------
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N44   , Dn3 , v100 , gtp3
         .byte   W48
         .byte                   Cn3
@@ -3177,15 +3228,15 @@ onward_s_5_2:
 @ 004   ----------------------------------------
         .byte           N68   , Dn3 , v090 , gtp3
         .byte   W24
-        .byte           VOL   , 42
+        .byte           VOL   , 40
         .byte   W06
-        .byte                   41
+        .byte                   39
         .byte   W42
         .byte           N16   , Fs3 , v100
         .byte   W09
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W09
-        .byte                   38
+        .byte                   36
         .byte           N05
         .byte   W06
 @ 005   ----------------------------------------
@@ -3195,95 +3246,95 @@ onward_s_5_2:
         .byte   PATT
          .word  onward_s_5_2
 @ 007   ----------------------------------------
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N44   , Dn3 , v100 , gtp2
         .byte   W24
-        .byte           VOL   , 42
+        .byte           VOL   , 40
         .byte   W06
-        .byte                   41
+        .byte                   39
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N44   , Cn3 , v100 , gtp3
         .byte   W24
-        .byte           VOL   , 42
+        .byte           VOL   , 40
         .byte   W06
-        .byte                   41
+        .byte                   39
         .byte   W18
 @ 008   ----------------------------------------
-        .byte                   35
+        .byte                   34
         .byte   W12
         .byte           VOICE , 57
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N04   , Gn3 , v076
         .byte   W06
         .byte           N09
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W12
-        .byte                   43
+        .byte                   41
         .byte           N12
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N10
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
 @ 009   ----------------------------------------
 onward_s_5_9:
         .byte   W12
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N04   , Fn3 , v076
         .byte   W06
         .byte           N09
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W12
-        .byte                   43
+        .byte                   41
         .byte           N12
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N10
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
         .byte   PEND
 @ 010   ----------------------------------------
         .byte   W12
-        .byte                   43
+        .byte                   41
         .byte           N04   , Gn3
         .byte   W06
         .byte           N09
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W12
-        .byte                   43
+        .byte                   41
         .byte           N12
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N10
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
 @ 011   ----------------------------------------
         .byte   PATT
@@ -3291,53 +3342,53 @@ onward_s_5_9:
 @ 012   ----------------------------------------
 onward_s_5_12:
         .byte   W12
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N04   , Gn3 , v072
         .byte   W06
         .byte           N09
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W12
-        .byte                   43
+        .byte                   41
         .byte           N12
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N10
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
         .byte   PEND
 @ 013   ----------------------------------------
 onward_s_5_13:
         .byte   W12
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N04   , Fn3 , v072
         .byte   W06
         .byte           N09
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W12
-        .byte                   43
+        .byte                   41
         .byte           N12
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N10
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
         .byte   PEND
 @ 014   ----------------------------------------
@@ -3347,110 +3398,109 @@ onward_s_5_13:
         .byte   PATT
          .word  onward_s_5_13
 @ 016   ----------------------------------------
-        .byte           PAN   , c_v-18
         .byte           VOICE , 73
         .byte           MOD   , 1
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N09   , Gn4 , v108
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           N12
         .byte   W03
         .byte           BEND  , c_v+63
         .byte   W03
         .byte                   c_v+0
         .byte   W03
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W03
-        .byte                   43
+        .byte                   41
         .byte           N09
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
         .byte           MOD   , 7
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N10
         .byte   W09
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W03
         .byte           MOD   , 1
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N12
         .byte   W03
         .byte           BEND  , c_v+63
         .byte   W03
         .byte                   c_v+0
         .byte   W03
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W03
-        .byte                   43
+        .byte                   41
         .byte           N09
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           MOD   , 7
         .byte           N09   , Gn4 , v098
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           MOD   , 1
         .byte           N10   , Gn4 , v108
         .byte   W09
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W03
 @ 017   ----------------------------------------
 onward_s_5_17:
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N09   , Gn4 , v108
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           N12   , Fn4
         .byte   W03
         .byte           BEND  , c_v+63
         .byte   W03
         .byte                   c_v+0
         .byte   W03
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W03
-        .byte                   43
+        .byte                   41
         .byte           N09
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
         .byte           MOD   , 7
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N10
         .byte   W09
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W03
         .byte           MOD   , 1
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N12
         .byte   W03
         .byte           BEND  , c_v+63
         .byte   W03
         .byte                   c_v+0
         .byte   W03
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W03
-        .byte                   43
+        .byte                   41
         .byte           N09
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           MOD   , 7
         .byte           N09   , Fn4 , v098
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           MOD   , 1
         .byte           N04   , Fn4 , v108
         .byte   W05
@@ -3464,54 +3514,54 @@ onward_s_5_18:
         .byte           BEND  , c_v+0
         .byte           N09   , Gn4 , v108
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           N12
         .byte   W03
         .byte           BEND  , c_v+63
         .byte   W03
         .byte                   c_v+0
         .byte   W03
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W03
-        .byte                   43
+        .byte                   41
         .byte           N09
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
         .byte           MOD   , 7
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N10
         .byte   W09
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W03
         .byte           MOD   , 1
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N12
         .byte   W03
         .byte           BEND  , c_v+63
         .byte   W03
         .byte                   c_v+0
         .byte   W03
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W03
-        .byte                   43
+        .byte                   41
         .byte           N09
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           MOD   , 7
         .byte           N09   , Gn4 , v098
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           MOD   , 1
         .byte           N10   , Gn4 , v108
         .byte   W09
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W03
         .byte   PEND
 @ 019   ----------------------------------------
@@ -3527,260 +3577,260 @@ onward_s_5_18:
         .byte   PATT
          .word  onward_s_5_18
 @ 023   ----------------------------------------
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N09   , Gn4 , v108
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           N12   , An4
         .byte   W03
         .byte           BEND  , c_v+63
         .byte   W03
         .byte                   c_v+0
         .byte   W03
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W03
-        .byte                   43
+        .byte                   41
         .byte           N09
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
         .byte           MOD   , 7
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N10
         .byte   W09
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W03
         .byte           MOD   , 1
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           N12
         .byte   W03
         .byte           BEND  , c_v+63
         .byte   W03
         .byte                   c_v+0
         .byte   W03
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W03
-        .byte                   43
+        .byte                   41
         .byte           N09
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           N24   , An4 , v098
         .byte   W03
-        .byte           VOL   , 42
+        .byte           VOL   , 40
         .byte           BEND  , c_v+63
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 37
         .byte           BEND  , c_v+6
         .byte   W03
-        .byte           VOL   , 38
+        .byte           VOL   , 36
         .byte           BEND  , c_v+63
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 37
         .byte           BEND  , c_v+6
         .byte   W03
-        .byte           VOL   , 41
+        .byte           VOL   , 39
         .byte           BEND  , c_v+63
         .byte   W03
-        .byte           VOL   , 42
+        .byte           VOL   , 40
         .byte           BEND  , c_v+0
         .byte   W03
-        .byte           VOL   , 43
+        .byte           VOL   , 41
         .byte           BEND  , c_v+63
         .byte   W03
 @ 024   ----------------------------------------
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte           BEND  , c_v+0
         .byte   W12
         .byte           VOICE , 57
-        .byte           VOL   , 43
-        .byte           N12   , Gn3 , v100
-        .byte           N12   , Dn3 , v064
-        .byte   W06
-        .byte           VOL   , 27
-        .byte   W18
-        .byte                   43
-        .byte           N12   , Gn3 , v100
-        .byte           N12   , Dn3 , v064
-        .byte   W06
-        .byte           VOL   , 27
-        .byte   W18
-        .byte                   43
-        .byte           N12   , Gn3 , v100
-        .byte           N12   , Dn3 , v064
-        .byte   W06
-        .byte           VOL   , 27
-        .byte   W18
-        .byte                   35
-        .byte           N04   , Gn3 , v100
-        .byte           N04   , Dn3 , v064
-        .byte   W03
-        .byte           VOL   , 38
-        .byte   W03
-        .byte                   39
-        .byte           N04   , Gn3 , v100
-        .byte           N04   , Dn3 , v064
-        .byte   W03
         .byte           VOL   , 41
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 26
+        .byte   W18
+        .byte                   41
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 26
+        .byte   W18
+        .byte                   41
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 26
+        .byte   W18
+        .byte                   34
+        .byte           N04   , Gn3 , v100
+        .byte           N04   , Dn3 , v064
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   37
+        .byte           N04   , Gn3 , v100
+        .byte           N04   , Dn3 , v064
+        .byte   W03
+        .byte           VOL   , 39
         .byte   W03
 @ 025   ----------------------------------------
         .byte           N09   , Gn3 , v100
         .byte           N09   , Dn3 , v064
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v100
         .byte           N12   , Dn3 , v064
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v100
         .byte           N12   , Dn3 , v064
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v100
         .byte           N12   , Dn3 , v064
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v100
         .byte           N12   , Dn3 , v064
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W06
 @ 026   ----------------------------------------
         .byte   W12
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v100
         .byte           N12   , Dn3 , v064
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v100
         .byte           N12   , Dn3 , v064
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v100
         .byte           N12   , Dn3 , v064
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W18
-        .byte                   35
+        .byte                   34
         .byte           N04   , Gn3 , v100
         .byte           N04   , Dn3 , v064
         .byte   W03
-        .byte           VOL   , 38
+        .byte           VOL   , 36
         .byte   W03
-        .byte                   39
+        .byte                   37
         .byte           N04   , Gn3 , v100
         .byte           N04   , Dn3 , v064
         .byte   W03
-        .byte           VOL   , 41
+        .byte           VOL   , 39
         .byte   W03
 @ 027   ----------------------------------------
         .byte           N09   , Gn3 , v080
         .byte           N09   , Dn3 , v064
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v100
         .byte           N12   , Dn3 , v064
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v100
         .byte           N12   , Dn3 , v064
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v100
         .byte           N12   , Dn3 , v064
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v100
         .byte           N12   , Dn3 , v064
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W06
 @ 028   ----------------------------------------
 onward_s_5_28:
         .byte   W12
-        .byte           VOL   , 43
-        .byte           N12   , Gn3 , v096
-        .byte           N12   , Dn3 , v060
-        .byte   W06
-        .byte           VOL   , 27
-        .byte   W18
-        .byte                   43
-        .byte           N12   , Gn3 , v096
-        .byte           N12   , Dn3 , v060
-        .byte   W06
-        .byte           VOL   , 27
-        .byte   W18
-        .byte                   43
-        .byte           N12   , Gn3 , v096
-        .byte           N12   , Dn3 , v060
-        .byte   W06
-        .byte           VOL   , 27
-        .byte   W18
-        .byte                   35
-        .byte           N04   , Gn3 , v096
-        .byte           N04   , Dn3 , v060
-        .byte   W03
-        .byte           VOL   , 38
-        .byte   W03
-        .byte                   39
-        .byte           N04   , Gn3 , v096
-        .byte           N04   , Dn3 , v060
-        .byte   W03
         .byte           VOL   , 41
+        .byte           N12   , Gn3 , v096
+        .byte           N12   , Dn3 , v060
+        .byte   W06
+        .byte           VOL   , 26
+        .byte   W18
+        .byte                   41
+        .byte           N12   , Gn3 , v096
+        .byte           N12   , Dn3 , v060
+        .byte   W06
+        .byte           VOL   , 26
+        .byte   W18
+        .byte                   41
+        .byte           N12   , Gn3 , v096
+        .byte           N12   , Dn3 , v060
+        .byte   W06
+        .byte           VOL   , 26
+        .byte   W18
+        .byte                   34
+        .byte           N04   , Gn3 , v096
+        .byte           N04   , Dn3 , v060
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   37
+        .byte           N04   , Gn3 , v096
+        .byte           N04   , Dn3 , v060
+        .byte   W03
+        .byte           VOL   , 39
         .byte   W03
         .byte   PEND
 @ 029   ----------------------------------------
         .byte           N09   , Gn3 , v076
         .byte           N09   , Dn3 , v060
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v096
         .byte           N12   , Dn3 , v060
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v096
         .byte           N12   , Dn3 , v060
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v096
         .byte           N12   , Dn3 , v060
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v096
         .byte           N12   , Dn3 , v060
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W06
 @ 030   ----------------------------------------
         .byte   PATT
@@ -3789,48 +3839,47 @@ onward_s_5_28:
         .byte           N09   , Gn3 , v076
         .byte           N09   , Dn3 , v060
         .byte   W06
-        .byte           VOL   , 24
+        .byte           VOL   , 23
         .byte   W06
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v096
         .byte           N12   , Dn3 , v060
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v096
         .byte           N12   , Dn3 , v060
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W18
-        .byte                   43
+        .byte                   41
         .byte           N12   , Gn3 , v100
         .byte           N12   , Dn3 , v068
         .byte   W06
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte   W06
-        .byte                   41
+        .byte                   39
         .byte           N24
         .byte           N24   , Fs3 , v108
         .byte   W03
-        .byte           VOL   , 38
+        .byte           VOL   , 36
         .byte   W03
-        .byte                   27
+        .byte                   26
+        .byte   W03
+        .byte                   28
         .byte   W03
         .byte                   30
         .byte   W03
         .byte                   31
         .byte   W03
-        .byte                   33
+        .byte                   34
         .byte   W03
-        .byte                   35
-        .byte   W03
-        .byte                   38
+        .byte                   36
         .byte   W03
 @ 032   ----------------------------------------
         .byte           VOICE , 49
-        .byte           VOL   , 33
-        .byte           PAN   , c_v-26
+        .byte           VOL   , 31
         .byte           MOD   , 0
         .byte   GOTO
          .word  onward_s_5_LOOP
@@ -3844,119 +3893,119 @@ onward_s_6:
 @ 000   ----------------------------------------
 onward_s_6_LOOP:
         .byte           VOICE , 63
-        .byte           VOL   , 36
-        .byte           PAN   , c_v+16
+        .byte           PAN   , c_v+14
+        .byte           VOL   , 34
         .byte   W12
         .byte           N15   , Cn2 , v090
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W03
 @ 001   ----------------------------------------
 onward_s_6_1:
         .byte   W12
-        .byte           VOL   , 36
+        .byte           VOL   , 34
         .byte           N15   , Bn1 , v090
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W03
         .byte   PEND
 @ 002   ----------------------------------------
 onward_s_6_2:
         .byte   W12
-        .byte           VOL   , 36
+        .byte           VOL   , 34
         .byte           N15   , As1 , v090
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W03
         .byte   PEND
 @ 003   ----------------------------------------
         .byte   W12
-        .byte                   36
+        .byte                   34
         .byte           N15   , An1
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15   , Dn2
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W03
 @ 004   ----------------------------------------
         .byte   W12
-        .byte                   36
+        .byte                   34
         .byte           N15   , Cn2
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W03
 @ 005   ----------------------------------------
         .byte   PATT
@@ -3966,51 +4015,51 @@ onward_s_6_2:
          .word  onward_s_6_2
 @ 007   ----------------------------------------
         .byte   W12
-        .byte           VOL   , 36
+        .byte           VOL   , 34
         .byte           N15   , An1 , v090
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N15   , Dn2
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W15
-        .byte                   36
+        .byte                   34
         .byte           N11
         .byte   W12
 @ 008   ----------------------------------------
 onward_s_6_8:
-        .byte           N09   , Bn1 , v094
+        .byte           N09   , Bn1 , v100
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W06
-        .byte                   36
+        .byte                   34
         .byte           N09
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W18
-        .byte                   36
+        .byte                   34
         .byte           N09
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W06
-        .byte                   36
+        .byte                   34
         .byte           N11
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W03
-        .byte                   36
+        .byte                   34
         .byte           N12
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W18
-        .byte                   36
+        .byte                   34
         .byte           N04   , Cn2
         .byte   W06
         .byte                   Dn2
@@ -4018,96 +4067,96 @@ onward_s_6_8:
         .byte   PEND
 @ 009   ----------------------------------------
 onward_s_6_9:
-        .byte           N09   , Fn2 , v094
+        .byte           N09   , Fn2 , v100
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W06
-        .byte                   36
+        .byte                   34
         .byte           N09
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W18
-        .byte                   36
+        .byte                   34
         .byte           N09
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W06
-        .byte                   36
+        .byte                   34
         .byte           N11
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W03
-        .byte                   36
+        .byte                   34
         .byte           N12
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W18
-        .byte                   36
+        .byte                   34
         .byte           N10   , Cn2
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W03
         .byte   PEND
 @ 010   ----------------------------------------
 onward_s_6_10:
-        .byte           VOL   , 36
-        .byte           N09   , Bn1 , v094
+        .byte           VOL   , 34
+        .byte           N09   , Bn1 , v100
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W06
-        .byte                   36
+        .byte                   34
         .byte           N09
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W18
-        .byte                   36
+        .byte                   34
         .byte           N09
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W06
-        .byte                   36
+        .byte                   34
         .byte           N11
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W03
-        .byte                   36
+        .byte                   34
         .byte           N12
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W18
-        .byte                   36
+        .byte                   34
         .byte           N04   , Fn2
         .byte   W06
         .byte                   Gn2
         .byte   W06
         .byte   PEND
 @ 011   ----------------------------------------
-        .byte           N09   , An2 , v090
+        .byte           N09   , An2
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W06
-        .byte                   36
+        .byte                   34
         .byte           N09
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W18
-        .byte                   36
+        .byte                   34
         .byte           N09
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W06
-        .byte                   36
+        .byte                   34
         .byte           N11
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W03
-        .byte                   36
+        .byte                   34
         .byte           N12
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W18
-        .byte                   36
-        .byte           N04   , Cn2 , v094
+        .byte                   34
+        .byte           N04   , Cn2
         .byte   W06
         .byte           N06   , Gn1
         .byte   W06
@@ -4121,34 +4170,34 @@ onward_s_6_10:
         .byte   PATT
          .word  onward_s_6_10
 @ 015   ----------------------------------------
-        .byte           N09   , An2 , v090
+        .byte           N09   , An2 , v100
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W06
-        .byte                   36
+        .byte                   34
         .byte           N09
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W18
-        .byte                   36
+        .byte                   34
         .byte           N09
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W06
-        .byte                   36
+        .byte                   34
         .byte           N11
         .byte   W09
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W03
-        .byte                   36
+        .byte                   34
         .byte           N12
         .byte   W06
-        .byte           VOL   , 20
+        .byte           VOL   , 19
         .byte   W18
-        .byte                   36
+        .byte                   34
         .byte           N04
         .byte   W06
-        .byte                   An2 , v074
+        .byte                   An2 , v080
         .byte   W06
 @ 016   ----------------------------------------
         .byte   W96
@@ -4167,313 +4216,313 @@ onward_s_6_10:
 @ 023   ----------------------------------------
         .byte   W96
 @ 024   ----------------------------------------
-        .byte           VOL   , 27
+        .byte           VOL   , 26
         .byte           N90   , Gn1 , v110
         .byte   W03
-        .byte           VOL   , 29
+        .byte           VOL   , 28
+        .byte   W03
+        .byte                   30
+        .byte   W03
+        .byte                   31
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   33
         .byte   W03
         .byte                   34
-        .byte   W03
-        .byte                   35
-        .byte   W03
-        .byte                   36
         .byte   W06
-        .byte                   35
-        .byte   W03
-        .byte                   34
-        .byte   W03
         .byte                   33
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   31
         .byte   W03
+        .byte                   30
+        .byte   W03
         .byte                   29
         .byte   W03
         .byte                   28
         .byte   W03
         .byte                   27
+        .byte   W03
+        .byte                   26
         .byte   W24
         .byte   W03
-        .byte                   25
+        .byte                   24
         .byte   W03
-        .byte                   20
+        .byte                   19
         .byte   W21
 @ 025   ----------------------------------------
-        .byte                   27
+        .byte                   26
         .byte           N90   , Fn1
         .byte   W03
-        .byte           VOL   , 29
+        .byte           VOL   , 28
+        .byte   W03
+        .byte                   30
+        .byte   W03
+        .byte                   31
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   33
         .byte   W03
         .byte                   34
-        .byte   W03
-        .byte                   35
-        .byte   W03
-        .byte                   36
         .byte   W06
-        .byte                   35
-        .byte   W03
-        .byte                   34
-        .byte   W03
         .byte                   33
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   31
         .byte   W03
+        .byte                   30
+        .byte   W03
         .byte                   29
         .byte   W03
         .byte                   28
         .byte   W03
         .byte                   27
+        .byte   W03
+        .byte                   26
         .byte   W24
         .byte   W03
-        .byte                   25
+        .byte                   24
         .byte   W03
-        .byte                   20
+        .byte                   19
         .byte   W21
 @ 026   ----------------------------------------
-        .byte                   27
+        .byte                   26
         .byte           N72   , En1
         .byte   W03
-        .byte           VOL   , 29
+        .byte           VOL   , 28
+        .byte   W03
+        .byte                   30
+        .byte   W03
+        .byte                   31
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   33
         .byte   W03
         .byte                   34
-        .byte   W03
-        .byte                   35
-        .byte   W03
-        .byte                   36
         .byte   W06
-        .byte                   35
-        .byte   W03
-        .byte                   34
-        .byte   W03
         .byte                   33
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   31
         .byte   W03
+        .byte                   30
+        .byte   W03
         .byte                   29
         .byte   W03
         .byte                   28
         .byte   W03
         .byte                   27
+        .byte   W03
+        .byte                   26
         .byte   W36
         .byte   W03
-        .byte                   29
+        .byte                   28
         .byte           N09   , Ds1
         .byte   W03
-        .byte           VOL   , 32
+        .byte           VOL   , 30
+        .byte   W03
+        .byte                   32
         .byte   W03
         .byte                   34
-        .byte   W03
-        .byte                   36
         .byte   W03
 @ 027   ----------------------------------------
-        .byte                   27
+        .byte                   26
         .byte           N90
         .byte   W03
-        .byte           VOL   , 29
+        .byte           VOL   , 28
+        .byte   W03
+        .byte                   30
+        .byte   W03
+        .byte                   31
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   33
         .byte   W03
         .byte                   34
-        .byte   W03
-        .byte                   35
-        .byte   W03
-        .byte                   36
         .byte   W06
-        .byte                   35
-        .byte   W03
-        .byte                   34
-        .byte   W03
         .byte                   33
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   31
         .byte   W03
+        .byte                   30
+        .byte   W03
         .byte                   29
         .byte   W03
         .byte                   28
         .byte   W03
         .byte                   27
+        .byte   W03
+        .byte                   26
         .byte   W24
         .byte   W03
-        .byte                   25
+        .byte                   24
         .byte   W03
-        .byte                   20
+        .byte                   19
         .byte   W21
 @ 028   ----------------------------------------
-        .byte                   27
+        .byte                   26
         .byte           N90   , Gn1 , v106
         .byte   W03
-        .byte           VOL   , 29
+        .byte           VOL   , 28
+        .byte   W03
+        .byte                   30
+        .byte   W03
+        .byte                   31
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   33
         .byte   W03
         .byte                   34
-        .byte   W03
-        .byte                   35
-        .byte   W03
-        .byte                   36
         .byte   W06
-        .byte                   35
-        .byte   W03
-        .byte                   34
-        .byte   W03
         .byte                   33
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   31
         .byte   W03
+        .byte                   30
+        .byte   W03
         .byte                   29
         .byte   W03
         .byte                   28
         .byte   W03
         .byte                   27
+        .byte   W03
+        .byte                   26
         .byte   W24
         .byte   W03
-        .byte                   25
+        .byte                   24
         .byte   W03
-        .byte                   20
+        .byte                   19
         .byte   W21
 @ 029   ----------------------------------------
-        .byte                   27
+        .byte                   26
         .byte           N90   , Fn1
         .byte   W03
-        .byte           VOL   , 29
+        .byte           VOL   , 28
+        .byte   W03
+        .byte                   30
+        .byte   W03
+        .byte                   31
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   33
         .byte   W03
         .byte                   34
-        .byte   W03
-        .byte                   35
-        .byte   W03
-        .byte                   36
         .byte   W06
-        .byte                   35
-        .byte   W03
-        .byte                   34
-        .byte   W03
         .byte                   33
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   31
         .byte   W03
+        .byte                   30
+        .byte   W03
         .byte                   29
         .byte   W03
         .byte                   28
         .byte   W03
         .byte                   27
+        .byte   W03
+        .byte                   26
         .byte   W24
         .byte   W03
-        .byte                   25
+        .byte                   24
         .byte   W03
-        .byte                   20
+        .byte                   19
         .byte   W21
 @ 030   ----------------------------------------
-        .byte                   27
+        .byte                   26
         .byte           N72   , En1
         .byte   W03
-        .byte           VOL   , 29
+        .byte           VOL   , 28
+        .byte   W03
+        .byte                   30
+        .byte   W03
+        .byte                   31
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   33
         .byte   W03
         .byte                   34
-        .byte   W03
-        .byte                   35
-        .byte   W03
-        .byte                   36
         .byte   W06
-        .byte                   35
-        .byte   W03
-        .byte                   34
-        .byte   W03
         .byte                   33
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   31
         .byte   W03
+        .byte                   30
+        .byte   W03
         .byte                   29
         .byte   W03
         .byte                   28
         .byte   W03
         .byte                   27
+        .byte   W03
+        .byte                   26
         .byte   W36
         .byte   W03
-        .byte                   29
+        .byte                   28
         .byte           N09   , Ds1
         .byte   W03
-        .byte           VOL   , 32
+        .byte           VOL   , 30
+        .byte   W03
+        .byte                   32
         .byte   W03
         .byte                   34
         .byte   W03
-        .byte                   36
-        .byte   W03
 @ 031   ----------------------------------------
-        .byte                   27
+        .byte                   26
         .byte           N90
         .byte   W03
-        .byte           VOL   , 29
+        .byte           VOL   , 28
+        .byte   W03
+        .byte                   30
+        .byte   W03
+        .byte                   31
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   33
         .byte   W03
         .byte                   34
-        .byte   W03
-        .byte                   35
-        .byte   W03
-        .byte                   36
         .byte   W06
-        .byte                   35
-        .byte   W03
-        .byte                   34
-        .byte   W03
         .byte                   33
         .byte   W03
         .byte                   32
         .byte   W03
         .byte                   31
         .byte   W03
+        .byte                   30
+        .byte   W03
         .byte                   29
         .byte   W03
         .byte                   28
         .byte   W03
         .byte                   27
+        .byte   W03
+        .byte                   26
         .byte   W24
         .byte   W03
-        .byte                   25
+        .byte                   24
         .byte   W03
-        .byte                   20
+        .byte                   19
         .byte   W21
 @ 032   ----------------------------------------
-        .byte                   36
+        .byte                   34
         .byte   GOTO
          .word  onward_s_6_LOOP
         .byte   W72
@@ -4486,8 +4535,8 @@ onward_s_7:
 @ 000   ----------------------------------------
 onward_s_7_LOOP:
         .byte           VOICE , 127
-        .byte           VOL   , 48
-        .byte           N24   , Cs2 , v076
+        .byte           VOL   , 50
+        .byte           N24   , Cs2 , v090
         .byte   W12
         .byte           N06   , Dn1 , v100
         .byte   W12
@@ -4564,7 +4613,7 @@ onward_s_7_3:
         .byte   W12
         .byte   PEND
 @ 004   ----------------------------------------
-        .byte           N24   , Cs2 , v080
+        .byte           N24   , Cs2 , v090
         .byte   W12
         .byte           N06   , Dn1 , v100
         .byte   W12
@@ -4727,54 +4776,54 @@ onward_s_7_16:
         .byte   W12
         .byte                   Dn1 , v100
         .byte   W12
-        .byte           VOL   , 42
+        .byte           VOL   , 44
         .byte           N24   , Ds1
         .byte   W03
-        .byte           VOL   , 30
+        .byte           VOL   , 31
         .byte   W03
-        .byte                   33
-        .byte   W03
-        .byte                   36
+        .byte                   35
         .byte   W03
         .byte                   38
         .byte   W03
         .byte                   39
         .byte   W03
-        .byte                   42
+        .byte                   41
         .byte   W03
-        .byte                   45
+        .byte                   44
+        .byte   W03
+        .byte                   47
         .byte   W03
 @ 024   ----------------------------------------
-        .byte                   48
+        .byte                   50
         .byte           N04   , Dn1
         .byte           N72   , An2
         .byte   W06
         .byte           N04   , Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
-        .byte                   48
+        .byte                   50
         .byte           N04   , Dn1
         .byte   W06
         .byte                   Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
-        .byte                   48
+        .byte                   50
         .byte           N04   , Dn1
         .byte   W06
         .byte                   Dn1 , v056
@@ -4787,47 +4836,47 @@ onward_s_7_16:
         .byte   W06
         .byte                   Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
 @ 025   ----------------------------------------
 onward_s_7_25:
-        .byte           VOL   , 48
+        .byte           VOL   , 50
         .byte           N04   , Dn1 , v100
         .byte           N24   , Cs2
         .byte   W06
         .byte           N04   , Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
-        .byte                   48
+        .byte                   50
         .byte           N04   , Dn1
         .byte   W06
         .byte                   Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
-        .byte                   48
+        .byte                   50
         .byte           N04   , Dn1
         .byte   W06
         .byte                   Dn1 , v056
@@ -4840,51 +4889,51 @@ onward_s_7_25:
         .byte   W06
         .byte                   Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
         .byte   PEND
 @ 026   ----------------------------------------
         .byte   PATT
          .word  onward_s_7_25
 @ 027   ----------------------------------------
-        .byte           VOL   , 48
+        .byte           VOL   , 50
         .byte           N04   , Dn1 , v100
         .byte           N24   , Cs2
         .byte   W06
         .byte           N04   , Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
-        .byte                   48
+        .byte                   50
         .byte           N04   , Dn1
         .byte           N68   , En2 , v100 , gtp2
         .byte   W06
         .byte           N04   , Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
-        .byte                   48
+        .byte                   50
         .byte           N04   , Dn1
         .byte   W06
         .byte                   Dn1 , v056
@@ -4897,46 +4946,46 @@ onward_s_7_25:
         .byte   W06
         .byte                   Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
 @ 028   ----------------------------------------
-        .byte                   48
+        .byte                   50
         .byte           N04   , Dn1
         .byte           N72   , An2
         .byte   W06
         .byte           N04   , Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
-        .byte                   48
+        .byte                   50
         .byte           N04   , Dn1
         .byte   W06
         .byte                   Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
-        .byte                   48
+        .byte                   50
         .byte           N04   , Dn1
         .byte   W06
         .byte                   Dn1 , v088
@@ -4949,47 +4998,47 @@ onward_s_7_25:
         .byte   W06
         .byte                   Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
 @ 029   ----------------------------------------
 onward_s_7_29:
-        .byte           VOL   , 48
+        .byte           VOL   , 50
         .byte           N04   , Dn1 , v100
         .byte           N24   , Cs2
         .byte   W06
         .byte           N04   , Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
-        .byte                   48
+        .byte                   50
         .byte           N04   , Dn1
         .byte   W06
         .byte                   Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
-        .byte                   48
+        .byte                   50
         .byte           N04   , Dn1
         .byte   W06
         .byte                   Dn1 , v088
@@ -5002,51 +5051,51 @@ onward_s_7_29:
         .byte   W06
         .byte                   Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
         .byte   PEND
 @ 030   ----------------------------------------
         .byte   PATT
          .word  onward_s_7_29
 @ 031   ----------------------------------------
-        .byte           VOL   , 48
+        .byte           VOL   , 50
         .byte           N04   , Dn1 , v100
         .byte           N24   , Cs2
         .byte   W06
         .byte           N04   , Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
-        .byte                   48
+        .byte                   50
         .byte           N04   , Dn1
         .byte           N68   , En2 , v100 , gtp2
         .byte   W06
         .byte           N04   , Dn1 , v056
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1 , v100
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
-        .byte                   48
+        .byte                   50
         .byte           N04   , Dn1
         .byte   W06
         .byte                   Dn1 , v088
@@ -5059,17 +5108,17 @@ onward_s_7_29:
         .byte   W06
         .byte                   Dn1
         .byte   W06
-        .byte           VOL   , 36
+        .byte           VOL   , 38
         .byte           N12   , Ds1
         .byte   W03
-        .byte           VOL   , 39
+        .byte           VOL   , 41
         .byte   W03
-        .byte                   42
+        .byte                   44
         .byte   W03
-        .byte                   45
+        .byte                   47
         .byte   W03
 @ 032   ----------------------------------------
-        .byte                   48
+        .byte                   50
         .byte   GOTO
          .word  onward_s_7_LOOP
         .byte   W72
