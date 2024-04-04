@@ -1,269 +1,619 @@
         .include "MPlayDef.s"
 
-        .equ    Onward_grp, voicegroup000
-        .equ    Onward_pri, 0
-        .equ    Onward_rev, 0
-        .equ    Onward_key, 0
+        .equ    onward_s_grp, voicegroup000
+        .equ    onward_s_pri, 0
+        .equ    onward_s_rev, 0
+        .equ    onward_s_key, 0
 
         .section .rodata
-        .global Onward
+        .global onward_s
         .align  2
 
 @****************** Track 0 (Midi-Chn.0) ******************@
 
-Onward_0:
-        .byte   KEYSH , Onward_key+0
+onward_s_0:
+        .byte   KEYSH , onward_s_key+0
 @ 000   ----------------------------------------
         .byte   TEMPO , 120/2
-Onward_0_LOOP:
-        .byte           VOICE , 49
-        .byte           VOL   , 55
-        .byte           N68   , Dn3 , v080 , gtp3
-        .byte   W72
-        .byte           N17   , Fs3
-        .byte   W18
-        .byte           N05
+onward_s_0_LOOP:
+        .byte           VOICE , 41
+        .byte           VOL   , 50
+        .byte           PAN   , c_v+14
+        .byte           N68   , Fs3 , v100 , gtp2
+        .byte   W24
+        .byte           VOL   , 51
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   55
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   35
         .byte   W06
+        .byte                   61
+        .byte           N16   , An3
+        .byte   W18
+        .byte           VOL   , 54
+        .byte           N04
+        .byte   W03
+        .byte           VOL   , 58
+        .byte   W03
 @ 001   ----------------------------------------
-        .byte           N68   , Dn3 , v080 , gtp3
-        .byte   W96
+onward_s_0_1:
+        .byte           N84   , Gn3 , v100
+        .byte   W24
+        .byte           VOL   , 60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   48
+        .byte   W03
+        .byte                   49
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   54
+        .byte   W06
+        .byte                   35
+        .byte   W24
+        .byte   PEND
 @ 002   ----------------------------------------
-        .byte                   Dn3
-        .byte   W96
+        .byte                   61
+        .byte           N84
+        .byte   W24
+        .byte           VOL   , 60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   48
+        .byte   W03
+        .byte                   49
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   54
+        .byte   W06
+        .byte                   35
+        .byte   W18
+        .byte                   54
+        .byte           N05
+        .byte   W03
+        .byte           VOL   , 58
+        .byte   W03
 @ 003   ----------------------------------------
-Onward_0_3:
-        .byte           N44   , Dn3 , v080 , gtp3
-        .byte   W48
-        .byte                   Cn3
-        .byte   W48
-        .byte   PEND
+        .byte                   61
+        .byte           N44   , Gn3 , v100 , gtp2
+        .byte   W12
+        .byte           VOL   , 60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   52
+        .byte   W06
+        .byte                   51
+        .byte   W03
+        .byte                   50
+        .byte   W09
+        .byte                   42
+        .byte   W06
+        .byte                   61
+        .byte           N44   , Fs3 , v100 , gtp3
+        .byte   W12
+        .byte           VOL   , 60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   52
+        .byte   W06
+        .byte                   51
+        .byte   W03
+        .byte                   50
+        .byte   W09
+        .byte                   42
+        .byte   W06
 @ 004   ----------------------------------------
-        .byte           N68   , Dn3 , v080 , gtp3
-        .byte   W72
-        .byte           N17   , Fs3
-        .byte   W18
-        .byte           N05
+        .byte                   61
+        .byte           N68   , Fs3 , v100 , gtp2
+        .byte   W24
+        .byte           VOL   , 60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   57
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   55
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   35
         .byte   W06
+        .byte                   61
+        .byte           N16   , An3
+        .byte   W18
+        .byte           VOL   , 54
+        .byte           N04
+        .byte   W03
+        .byte           VOL   , 58
+        .byte   W03
 @ 005   ----------------------------------------
-        .byte           N68   , Dn3 , v080 , gtp3
-        .byte   W96
+        .byte   PATT
+         .word  onward_s_0_1
 @ 006   ----------------------------------------
-        .byte                   Dn3
-        .byte   W96
+        .byte           VOL   , 61
+        .byte           N84   , Gn3 , v100
+        .byte   W24
+        .byte           VOL   , 60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   48
+        .byte   W03
+        .byte                   49
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   54
+        .byte   W06
+        .byte                   35
+        .byte   W18
+        .byte                   54
+        .byte           N04   , An3
+        .byte   W03
+        .byte           VOL   , 58
+        .byte   W03
 @ 007   ----------------------------------------
-        .byte   PATT
-         .word  Onward_0_3
+        .byte                   61
+        .byte           N44   , Gn3 , v100 , gtp3
+        .byte   W12
+        .byte           VOL   , 60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   52
+        .byte   W06
+        .byte                   51
+        .byte   W03
+        .byte                   50
+        .byte   W09
+        .byte                   42
+        .byte   W06
+        .byte                   61
+        .byte           N44   , Fs3 , v100 , gtp3
+        .byte   W12
+        .byte           VOL   , 60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   52
+        .byte   W06
+        .byte                   51
+        .byte   W03
+        .byte                   50
+        .byte   W09
+        .byte                   42
+        .byte   W06
 @ 008   ----------------------------------------
-        .byte   W96
+        .byte           VOICE , 68
+        .byte           VOL   , 61
+        .byte           N08   , Gn4 , v112
+        .byte   W06
+        .byte           VOL   , 35
+        .byte   W06
+        .byte                   61
+        .byte           N04   , Dn4
+        .byte   W06
+        .byte                   Cn4
+        .byte   W06
+        .byte           VOL   , 54
+        .byte           N32   , Bn3 , v112 , gtp2
+        .byte   W03
+        .byte           VOL   , 46
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   61
+        .byte   W12
+        .byte                   35
+        .byte   W06
+        .byte                   61
+        .byte           N04
+        .byte   W06
+        .byte                   Cn4
+        .byte   W06
+        .byte           N10   , Dn4
+        .byte   W12
+        .byte                   Gn4
+        .byte   W12
 @ 009   ----------------------------------------
-        .byte   W96
+        .byte           N16
+        .byte   W18
+        .byte           N04   , Fn4
+        .byte   W06
+        .byte           VOL   , 54
+        .byte           N60
+        .byte   W03
+        .byte           VOL   , 52
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   49
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   55
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   57
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   59
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   35
+        .byte   W18
 @ 010   ----------------------------------------
-        .byte   W96
+        .byte                   61
+        .byte           N08   , Gn4
+        .byte   W06
+        .byte           VOL   , 35
+        .byte   W06
+        .byte                   61
+        .byte           N04   , Dn4
+        .byte   W06
+        .byte                   Cn4
+        .byte   W06
+        .byte           VOL   , 54
+        .byte           N32   , Bn3 , v112 , gtp2
+        .byte   W03
+        .byte           VOL   , 46
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   61
+        .byte   W12
+        .byte                   35
+        .byte   W06
+        .byte                   61
+        .byte           N04
+        .byte   W06
+        .byte                   Cn4
+        .byte   W06
+        .byte           N10   , Dn4
+        .byte   W12
+        .byte                   Gn4
+        .byte   W12
 @ 011   ----------------------------------------
-        .byte   W96
+        .byte           N16   , Bn4
+        .byte   W06
+        .byte           VOL   , 58
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   50
+        .byte   W06
+        .byte                   58
+        .byte           N05   , Cn5
+        .byte   W06
+        .byte           VOL   , 54
+        .byte           N60   , An4
+        .byte   W03
+        .byte           VOL   , 52
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   49
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   55
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   57
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   59
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   35
+        .byte   W18
 @ 012   ----------------------------------------
-        .byte   W96
+onward_s_0_12:
+        .byte           VOL   , 61
+        .byte           N08   , Gn4 , v108
+        .byte   W06
+        .byte           VOL   , 35
+        .byte   W06
+        .byte                   61
+        .byte           N04   , Dn4
+        .byte   W06
+        .byte                   Cn4
+        .byte   W06
+        .byte           VOL   , 54
+        .byte           N32   , Bn3 , v108 , gtp2
+        .byte   W03
+        .byte           VOL   , 46
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   61
+        .byte   W12
+        .byte                   35
+        .byte   W06
+        .byte                   61
+        .byte           N04
+        .byte   W06
+        .byte                   Cn4
+        .byte   W06
+        .byte           N10   , Dn4
+        .byte   W12
+        .byte                   Gn4
+        .byte   W12
+        .byte   PEND
 @ 013   ----------------------------------------
-        .byte   W96
-@ 014   ----------------------------------------
-        .byte   W96
-@ 015   ----------------------------------------
-        .byte   W96
-@ 016   ----------------------------------------
-Onward_0_16:
-        .byte           N11   , Bn1 , v080
-        .byte   W12
-        .byte           N05
-        .byte   W06
-        .byte                   Cn2
-        .byte   W06
-        .byte           N32   , Dn2 , v080 , gtp3
-        .byte   W36
-        .byte           N05   , Bn1
-        .byte   W06
-        .byte                   Cn2
-        .byte   W06
-        .byte           N11   , Dn2
-        .byte   W12
-        .byte                   Dn2
-        .byte   W12
-        .byte   PEND
-@ 017   ----------------------------------------
-Onward_0_17:
-        .byte           N17   , Dn2 , v080
+        .byte           N16
         .byte   W18
-        .byte           N05   , Cn2
+        .byte           N04   , Fn4
         .byte   W06
-        .byte           N44   , En2 , v080 , gtp3
-        .byte   W72
-        .byte   PEND
-@ 018   ----------------------------------------
-Onward_0_18:
-        .byte           N11   , Bn1 , v080
-        .byte   W12
-        .byte           N05
-        .byte   W06
-        .byte                   Cn2
-        .byte   W06
-        .byte           N32   , Dn2 , v080 , gtp3
-        .byte   W36
-        .byte           N05
-        .byte   W06
-        .byte                   Dn2
-        .byte   W06
-        .byte           N11
-        .byte   W12
-        .byte                   Dn2
-        .byte   W12
-        .byte   PEND
-@ 019   ----------------------------------------
-Onward_0_19:
-        .byte           N17   , Dn2 , v080
+        .byte           VOL   , 54
+        .byte           N60
+        .byte   W03
+        .byte           VOL   , 52
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   49
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   55
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   57
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   59
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   35
         .byte   W18
-        .byte           N05   , Ds2
-        .byte   W06
-        .byte           N44   , Fn2 , v080 , gtp3
-        .byte   W72
-        .byte   PEND
-@ 020   ----------------------------------------
-        .byte   PATT
-         .word  Onward_0_16
-@ 021   ----------------------------------------
-        .byte   PATT
-         .word  Onward_0_17
-@ 022   ----------------------------------------
-        .byte   PATT
-         .word  Onward_0_18
-@ 023   ----------------------------------------
-        .byte   PATT
-         .word  Onward_0_19
-@ 024   ----------------------------------------
-        .byte   W96
-@ 025   ----------------------------------------
-        .byte   W96
-@ 026   ----------------------------------------
-        .byte   W96
-@ 027   ----------------------------------------
-        .byte   W96
-@ 028   ----------------------------------------
-        .byte   W96
-@ 029   ----------------------------------------
-        .byte   W96
-@ 030   ----------------------------------------
-        .byte   W96
-@ 031   ----------------------------------------
-        .byte   W96
-@ 032   ----------------------------------------
-        .byte   GOTO
-         .word  Onward_0_LOOP
-        .byte   FINE
-
-@****************** Track 1 (Midi-Chn.1) ******************@
-
-Onward_1:
-        .byte   KEYSH , Onward_key+0
-@ 000   ----------------------------------------
-Onward_1_LOOP:
-        .byte           VOICE , 48
-        .byte           VOL   , 55
-        .byte           N68   , Fs3 , v080 , gtp3
-        .byte   W72
-        .byte           N17   , An3
-        .byte   W18
-        .byte           N05
-        .byte   W06
-@ 001   ----------------------------------------
-        .byte           N68   , Gn3 , v080 , gtp3
-        .byte   W96
-@ 002   ----------------------------------------
-Onward_1_2:
-        .byte           N68   , Gn3 , v080 , gtp3
-        .byte   W90
-        .byte           N05
-        .byte   W06
-        .byte   PEND
-@ 003   ----------------------------------------
-Onward_1_3:
-        .byte           N44   , Gn3 , v080 , gtp3
-        .byte   W48
-        .byte                   Fs3
-        .byte   W48
-        .byte   PEND
-@ 004   ----------------------------------------
-Onward_1_4:
-        .byte           N68   , Fs3 , v080 , gtp3
-        .byte   W72
-        .byte           N17   , An3
-        .byte   W18
-        .byte           N05
-        .byte   W06
-        .byte   PEND
-@ 005   ----------------------------------------
-        .byte           N68   , Gn3 , v080 , gtp3
-        .byte   W96
-@ 006   ----------------------------------------
-Onward_1_6:
-        .byte           N80   , Gn3 , v080 , gtp3
-        .byte   W90
-        .byte           N05   , An3
-        .byte   W06
-        .byte   PEND
-@ 007   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_3
-@ 008   ----------------------------------------
-Onward_1_8:
-        .byte           N11   , Gn3 , v080
-        .byte   W12
-        .byte           N05   , Dn3
-        .byte   W06
-        .byte                   Cn3
-        .byte   W06
-        .byte           N32   , Bn2 , v080 , gtp3
-        .byte   W36
-        .byte           N05
-        .byte   W06
-        .byte                   Cn3
-        .byte   W06
-        .byte           N11   , Dn3
-        .byte   W12
-        .byte                   Gn3
-        .byte   W12
-        .byte   PEND
-@ 009   ----------------------------------------
-Onward_1_9:
-        .byte           N17   , Gn3 , v080
-        .byte   W18
-        .byte           N05   , Fn3
-        .byte   W06
-        .byte           N44   , Fn3 , v080 , gtp3
-        .byte   W72
-        .byte   PEND
-@ 010   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_8
-@ 011   ----------------------------------------
-Onward_1_11:
-        .byte           N17   , Bn3 , v080
-        .byte   W18
-        .byte           N05   , Cn4
-        .byte   W06
-        .byte           N44   , An3 , v080 , gtp3
-        .byte   W72
-        .byte   PEND
-@ 012   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_8
-@ 013   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_9
 @ 014   ----------------------------------------
         .byte   PATT
-         .word  Onward_1_8
+         .word  onward_s_0_12
 @ 015   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_11
+        .byte           N16   , Bn4 , v108
+        .byte   W06
+        .byte           VOL   , 58
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   50
+        .byte   W06
+        .byte                   58
+        .byte           N05   , Cn5
+        .byte   W06
+        .byte           VOL   , 61
+        .byte           N68   , An4 , v108 , gtp1
+        .byte   W03
+        .byte           VOL   , 60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   48
+        .byte   W03
+        .byte                   46
+        .byte   W03
+        .byte                   47
+        .byte   W03
+        .byte                   48
+        .byte   W03
+        .byte                   49
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   35
+        .byte   W12
 @ 016   ----------------------------------------
+        .byte                   61
         .byte   W96
 @ 017   ----------------------------------------
         .byte   W96
@@ -280,50 +630,214 @@ Onward_1_11:
 @ 023   ----------------------------------------
         .byte   W96
 @ 024   ----------------------------------------
-Onward_1_24:
+        .byte           VOICE , 59
         .byte   W12
-        .byte           N05   , Gn4 , v080
+        .byte                   75
+        .byte           N04   , Gn4 , v100
         .byte   W06
         .byte                   Gn4
         .byte   W06
-        .byte           N11
-        .byte   W12
-        .byte           N05   , Bn4
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 38
+        .byte   W06
+        .byte                   61
+        .byte           N04   , Bn4
         .byte   W06
         .byte                   Bn4
         .byte   W06
-        .byte           N11
-        .byte   W12
-        .byte           N05   , An4
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 46
+        .byte   W03
+        .byte                   61
+        .byte           N04   , An4
         .byte   W06
         .byte                   An4
         .byte   W06
-        .byte           N11
-        .byte   W12
-        .byte                   Gn4
-        .byte   W12
-        .byte   PEND
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 38
+        .byte   W03
+        .byte                   61
+        .byte           N15   , Gn4
+        .byte   W06
+        .byte           VOL   , 38
+        .byte   W06
 @ 025   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_24
+        .byte                   35
+        .byte   W12
+        .byte                   61
+        .byte           N04
+        .byte   W06
+        .byte                   Gn4
+        .byte   W06
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 38
+        .byte   W06
+        .byte                   61
+        .byte           N04   , Bn4
+        .byte   W06
+        .byte                   Bn4
+        .byte   W06
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 46
+        .byte   W03
+        .byte                   61
+        .byte           N04   , An4
+        .byte   W06
+        .byte                   An4
+        .byte   W06
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 38
+        .byte   W03
+        .byte                   61
+        .byte           N15   , Gn4
+        .byte   W06
+        .byte           VOL   , 38
+        .byte   W06
 @ 026   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_24
+        .byte   W12
+        .byte                   61
+        .byte           N04
+        .byte   W06
+        .byte                   Gn4
+        .byte   W06
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 38
+        .byte   W06
+        .byte                   61
+        .byte           N04   , Bn4
+        .byte   W06
+        .byte                   Bn4
+        .byte   W06
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 46
+        .byte   W03
+        .byte                   61
+        .byte           N04   , An4
+        .byte   W06
+        .byte                   An4
+        .byte   W06
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 38
+        .byte   W03
+        .byte                   61
+        .byte           N15   , Gn4
+        .byte   W06
+        .byte           VOL   , 38
+        .byte   W06
 @ 027   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_24
+        .byte                   35
+        .byte   W12
+        .byte                   61
+        .byte           N04
+        .byte   W06
+        .byte                   Gn4
+        .byte   W06
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 38
+        .byte   W06
+        .byte                   61
+        .byte           N04   , Bn4
+        .byte   W06
+        .byte                   Bn4
+        .byte   W06
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 46
+        .byte   W03
+        .byte                   61
+        .byte           N04   , An4
+        .byte   W06
+        .byte                   An4
+        .byte   W06
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 38
+        .byte   W03
+        .byte                   58
+        .byte           N10   , Gn4
+        .byte   W06
+        .byte           VOL   , 46
+        .byte   W06
 @ 028   ----------------------------------------
-        .byte           N68   , Gn3 , v080 , gtp3
-        .byte   W72
-        .byte           N11   , Dn3
+        .byte                   58
+        .byte           VOICE , 40
+        .byte           N68   , Gn3 , v090 , gtp3
+        .byte   W03
+        .byte           VOL   , 54
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   57
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   61
+        .byte   W48
+        .byte                   58
+        .byte           N10   , Dn3
         .byte   W12
         .byte                   Cn3
         .byte   W12
 @ 029   ----------------------------------------
-        .byte           N92   , Bn2 , v080 , gtp3
-        .byte   W96
-@ 030   ----------------------------------------
+        .byte           VOL   , 61
+        .byte           TIE   , Bn2
         .byte   W24
+        .byte           VOL   , 60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   51
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   49
+        .byte   W03
+        .byte                   48
+        .byte   W03
+        .byte                   47
+        .byte   W03
+        .byte                   46
+        .byte   W18
+        .byte                   47
+        .byte   W06
+        .byte                   48
+        .byte   W06
+        .byte                   49
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   54
+        .byte   W03
+@ 030   ----------------------------------------
+        .byte                   35
+        .byte   W06
+        .byte           EOT
+        .byte   W18
+        .byte           VOL   , 61
         .byte           N11
         .byte   W12
         .byte                   Cn3
@@ -333,308 +847,64 @@ Onward_1_24:
         .byte                   Gn3
         .byte   W24
 @ 031   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_3
+        .byte           N44   , Gn3 , v090 , gtp3
+        .byte   W12
+        .byte           VOL   , 60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W24
+        .byte   W03
+        .byte                   61
+        .byte           N44   , Fs3 , v090 , gtp3
+        .byte   W06
+        .byte           VOL   , 60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   50
+        .byte   W09
+        .byte                   51
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   53
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   58
+        .byte   W03
 @ 032   ----------------------------------------
+        .byte           VOICE , 41
+        .byte           VOL   , 50
         .byte   GOTO
-         .word  Onward_1_LOOP
+         .word  onward_s_0_LOOP
+        .byte   W72
         .byte   FINE
 
-@****************** Track 2 (Midi-Chn.2) ******************@
+@****************** Track 1 (Midi-Chn.1) ******************@
 
-Onward_2:
-        .byte   KEYSH , Onward_key+0
+onward_s_1:
+        .byte   KEYSH , onward_s_key+0
 @ 000   ----------------------------------------
-Onward_2_LOOP:
-        .byte           VOICE , 51
-        .byte           VOL   , 25
-        .byte   W96
-@ 001   ----------------------------------------
-        .byte   W96
-@ 002   ----------------------------------------
-        .byte   W96
-@ 003   ----------------------------------------
-        .byte   W96
-@ 004   ----------------------------------------
-        .byte   W96
-@ 005   ----------------------------------------
-        .byte   W96
-@ 006   ----------------------------------------
-        .byte   W96
-@ 007   ----------------------------------------
-        .byte   W96
-@ 008   ----------------------------------------
-        .byte   W96
-@ 009   ----------------------------------------
-        .byte   W96
-@ 010   ----------------------------------------
-        .byte   W96
-@ 011   ----------------------------------------
-        .byte   W96
-@ 012   ----------------------------------------
-        .byte   W96
-@ 013   ----------------------------------------
-        .byte   W96
-@ 014   ----------------------------------------
-        .byte   W96
-@ 015   ----------------------------------------
-        .byte   W96
-@ 016   ----------------------------------------
-        .byte   W96
-@ 017   ----------------------------------------
-        .byte   W96
-@ 018   ----------------------------------------
-        .byte   W96
-@ 019   ----------------------------------------
-        .byte   W96
-@ 020   ----------------------------------------
-Onward_2_20:
-        .byte           N11   , Gn4 , v080
-        .byte   W12
-        .byte                   Gn4
-        .byte   W12
-        .byte                   Gn4
-        .byte   W12
-        .byte                   Gn4
-        .byte   W12
-        .byte                   Gn4
-        .byte   W12
-        .byte                   Gn4
-        .byte   W12
-        .byte                   Gn4
-        .byte   W12
-        .byte                   Gn4
-        .byte   W12
-        .byte   PEND
-@ 021   ----------------------------------------
-        .byte                   Gn4
-        .byte   W12
-        .byte                   Fn4
-        .byte   W12
-        .byte                   Fn4
-        .byte   W12
-        .byte                   Fn4
-        .byte   W12
-        .byte                   Fn4
-        .byte   W12
-        .byte                   Fn4
-        .byte   W12
-        .byte                   Fn4
-        .byte   W12
-        .byte                   Fn4
-        .byte   W12
-@ 022   ----------------------------------------
-        .byte   PATT
-         .word  Onward_2_20
-@ 023   ----------------------------------------
-        .byte           N11   , Gn4 , v080
-        .byte   W12
-        .byte                   Fn4
-        .byte   W12
-        .byte                   Fn4
-        .byte   W12
-        .byte                   Fn4
-        .byte   W12
-        .byte                   Fn4
-        .byte   W12
-        .byte                   Fn4
-        .byte   W12
-        .byte                   Fn4
-        .byte   W12
-        .byte           N05
-        .byte   W12
-@ 024   ----------------------------------------
-        .byte   W96
-@ 025   ----------------------------------------
-        .byte   W96
-@ 026   ----------------------------------------
-        .byte   W96
-@ 027   ----------------------------------------
-        .byte   W96
-@ 028   ----------------------------------------
-        .byte   W96
-@ 029   ----------------------------------------
-        .byte   W96
-@ 030   ----------------------------------------
-        .byte   W96
-@ 031   ----------------------------------------
-        .byte   W96
-@ 032   ----------------------------------------
-        .byte   GOTO
-         .word  Onward_2_LOOP
-        .byte   FINE
-
-@****************** Track 3 (Midi-Chn.3) ******************@
-
-Onward_3:
-        .byte   KEYSH , Onward_key+0
-@ 000   ----------------------------------------
-Onward_3_LOOP:
-        .byte           VOICE , 121
-        .byte           VOL   , 70
-        .byte   W12
-        .byte           N24   , En1 , v080
+onward_s_1_LOOP:
+        .byte           VOICE , 2
+        .byte           VOL   , 41
+        .byte           PAN   , c_v-8
+        .byte           N11   , Cn1 , v112
         .byte   W24
-        .byte                   En1
-        .byte   W24
-        .byte                   En1
-        .byte   W24
-        .byte                   En1
-        .byte   W12
-@ 001   ----------------------------------------
-Onward_3_1:
-        .byte   W12
-        .byte           N24   , En1 , v080
-        .byte   W24
-        .byte                   En1
-        .byte   W24
-        .byte                   En1
-        .byte   W24
-        .byte                   En1
-        .byte   W12
-        .byte   PEND
-@ 002   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 003   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 004   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 005   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 006   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 007   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 008   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 009   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 010   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 011   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 012   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 013   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 014   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 015   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 016   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 017   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 018   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 019   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 020   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 021   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 022   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 023   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_1
-@ 024   ----------------------------------------
-Onward_3_24:
-        .byte   W12
-        .byte           N24   , En1 , v080
-        .byte   W06
-        .byte           N06   , Dn1
-        .byte   W06
-        .byte           N18
-        .byte   W12
-        .byte           N24   , En1
-        .byte   W06
-        .byte           N06   , Dn1
-        .byte   W06
-        .byte           N18
-        .byte   W12
-        .byte           N24   , En1
-        .byte   W06
-        .byte           N06   , Dn1
-        .byte   W06
-        .byte           N42
-        .byte   W12
-        .byte           N24   , En1
-        .byte   W12
-        .byte   PEND
-@ 025   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_24
-@ 026   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_24
-@ 027   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_24
-@ 028   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_24
-@ 029   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_24
-@ 030   ----------------------------------------
-        .byte   PATT
-         .word  Onward_3_24
-@ 031   ----------------------------------------
-        .byte   W12
-        .byte           N24   , En1 , v080
-        .byte   W06
-        .byte           N06   , Dn1
-        .byte   W06
-        .byte           N18
-        .byte   W12
-        .byte           N24   , En1
-        .byte   W06
-        .byte           N06   , Dn1
-        .byte   W06
-        .byte           N18
-        .byte   W12
-        .byte           N24   , En1
-        .byte   W06
-        .byte           N06   , Dn1
-        .byte   W30
-@ 032   ----------------------------------------
-        .byte   GOTO
-         .word  Onward_3_LOOP
-        .byte   FINE
-
-@****************** Track 4 (Midi-Chn.6) ******************@
-
-Onward_4:
-        .byte   KEYSH , Onward_key+0
-@ 000   ----------------------------------------
-Onward_4_LOOP:
-        .byte           VOICE , 39
-        .byte           VOL   , 100
-        .byte           N11   , Cn1 , v080
-        .byte   W24
-        .byte                   Cn1
+        .byte                   Cn1 , v127
         .byte   W24
         .byte                   Cn1
         .byte   W24
@@ -659,8 +929,8 @@ Onward_4_LOOP:
         .byte                   As0
         .byte   W24
 @ 003   ----------------------------------------
-Onward_4_3:
-        .byte           N11   , An0 , v080
+onward_s_1_3:
+        .byte           N11   , An0 , v127
         .byte   W24
         .byte                   An0
         .byte   W24
@@ -722,10 +992,10 @@ Onward_4_3:
         .byte   W12
 @ 007   ----------------------------------------
         .byte   PATT
-         .word  Onward_4_3
+         .word  onward_s_1_3
 @ 008   ----------------------------------------
-Onward_4_8:
-        .byte           N17   , Dn1 , v080
+onward_s_1_8:
+        .byte           N17   , Dn1 , v127
         .byte   W18
         .byte           N05
         .byte   W18
@@ -737,8 +1007,7 @@ Onward_4_8:
         .byte   W24
         .byte   PEND
 @ 009   ----------------------------------------
-Onward_4_9:
-        .byte           N17   , Cn1 , v080
+        .byte           N17   , Cn1
         .byte   W18
         .byte           N05
         .byte   W18
@@ -748,12 +1017,11 @@ Onward_4_9:
         .byte   W12
         .byte                   Cn1
         .byte   W24
-        .byte   PEND
 @ 010   ----------------------------------------
         .byte   PATT
-         .word  Onward_4_8
+         .word  onward_s_1_8
 @ 011   ----------------------------------------
-        .byte           N17   , Fn1 , v080
+        .byte           N17   , Fn1 , v127
         .byte   W18
         .byte           N05
         .byte   W18
@@ -761,11 +1029,11 @@ Onward_4_9:
         .byte   W24
         .byte                   En1
         .byte   W12
-        .byte                   Dn1
+        .byte           N17   , Dn1
         .byte   W24
 @ 012   ----------------------------------------
-Onward_4_12:
-        .byte           N17   , Dn1 , v080
+onward_s_1_12:
+        .byte           N17   , Dn1 , v124
         .byte   W18
         .byte           N05   , Gn1
         .byte   W18
@@ -777,13 +1045,21 @@ Onward_4_12:
         .byte   W24
         .byte   PEND
 @ 013   ----------------------------------------
-        .byte   PATT
-         .word  Onward_4_9
+        .byte           N17   , Cn1
+        .byte   W18
+        .byte           N05
+        .byte   W18
+        .byte           N11
+        .byte   W24
+        .byte                   Cn1
+        .byte   W12
+        .byte                   Cn1
+        .byte   W24
 @ 014   ----------------------------------------
         .byte   PATT
-         .word  Onward_4_12
+         .word  onward_s_1_12
 @ 015   ----------------------------------------
-        .byte           N17   , An1 , v080
+        .byte           N17   , An1 , v124
         .byte   W18
         .byte           N05
         .byte   W18
@@ -791,17 +1067,17 @@ Onward_4_12:
         .byte   W24
         .byte                   Fn1
         .byte   W12
-        .byte                   Fn1
+        .byte           N17
         .byte   W24
 @ 016   ----------------------------------------
-Onward_4_16:
-        .byte           N11   , Gn1 , v080
+onward_s_1_16:
+        .byte           N11   , Gn1 , v127
         .byte   W12
         .byte           N05   , Dn1
         .byte   W06
         .byte                   Cn1
         .byte   W06
-        .byte           N32   , Bn0 , v080 , gtp3
+        .byte           N32   , Bn0 , v127 , gtp3
         .byte   W36
         .byte           N05
         .byte   W06
@@ -813,8 +1089,8 @@ Onward_4_16:
         .byte   W12
         .byte   PEND
 @ 017   ----------------------------------------
-Onward_4_17:
-        .byte           N17   , Gn1 , v080
+onward_s_1_17:
+        .byte           N17   , Gn1 , v127
         .byte   W18
         .byte           N05   , Fn1
         .byte   W06
@@ -829,34 +1105,33 @@ Onward_4_17:
         .byte   PEND
 @ 018   ----------------------------------------
         .byte   PATT
-         .word  Onward_4_16
+         .word  onward_s_1_16
 @ 019   ----------------------------------------
-        .byte           N17   , Bn1 , v080
+        .byte           N17   , Bn1 , v127
         .byte   W18
         .byte           N05   , Cn2
         .byte   W06
-        .byte           N44   , An1 , v080 , gtp3
+        .byte           N44   , An1 , v127 , gtp3
         .byte   W72
 @ 020   ----------------------------------------
         .byte   PATT
-         .word  Onward_4_16
+         .word  onward_s_1_16
 @ 021   ----------------------------------------
         .byte   PATT
-         .word  Onward_4_17
+         .word  onward_s_1_17
 @ 022   ----------------------------------------
         .byte   PATT
-         .word  Onward_4_16
+         .word  onward_s_1_16
 @ 023   ----------------------------------------
-        .byte           N17   , Bn1 , v080
+        .byte           N17   , Bn1 , v127
         .byte   W18
         .byte           N05   , Cn2
         .byte   W06
-        .byte           N44   , Dn2 , v080 , gtp3
+        .byte           N44   , Dn2 , v127 , gtp3
         .byte   W72
 @ 024   ----------------------------------------
-Onward_4_24:
         .byte   W12
-        .byte           N05   , Gn1 , v080
+        .byte           N05   , Gn1
         .byte   W06
         .byte                   Gn1
         .byte   W06
@@ -876,11 +1151,9 @@ Onward_4_24:
         .byte   W12
         .byte                   Fn1
         .byte   W12
-        .byte   PEND
 @ 025   ----------------------------------------
-Onward_4_25:
         .byte   W12
-        .byte           N05   , Fn1 , v080
+        .byte           N05
         .byte   W06
         .byte                   Fn1
         .byte   W06
@@ -900,11 +1173,9 @@ Onward_4_25:
         .byte   W12
         .byte                   En1
         .byte   W12
-        .byte   PEND
 @ 026   ----------------------------------------
-Onward_4_26:
         .byte   W12
-        .byte           N05   , En1 , v080
+        .byte           N05
         .byte   W06
         .byte                   En1
         .byte   W06
@@ -924,11 +1195,9 @@ Onward_4_26:
         .byte   W12
         .byte                   Ds1
         .byte   W12
-        .byte   PEND
 @ 027   ----------------------------------------
-Onward_4_27:
         .byte   W12
-        .byte           N05   , Ds1 , v080
+        .byte           N05
         .byte   W06
         .byte                   Ds1
         .byte   W06
@@ -948,59 +1217,348 @@ Onward_4_27:
         .byte   W12
         .byte                   Fn1
         .byte   W12
-        .byte   PEND
 @ 028   ----------------------------------------
-        .byte   PATT
-         .word  Onward_4_24
+        .byte   W12
+        .byte           N05   , Gn1 , v120
+        .byte   W06
+        .byte                   Gn1
+        .byte   W06
+        .byte           N11
+        .byte   W12
+        .byte           N05
+        .byte   W06
+        .byte                   Gn1
+        .byte   W06
+        .byte           N11
+        .byte   W12
+        .byte           N05
+        .byte   W06
+        .byte                   Gn1
+        .byte   W06
+        .byte           N11
+        .byte   W12
+        .byte                   Fn1
+        .byte   W12
 @ 029   ----------------------------------------
-        .byte   PATT
-         .word  Onward_4_25
+        .byte   W12
+        .byte           N05
+        .byte   W06
+        .byte                   Fn1
+        .byte   W06
+        .byte           N11
+        .byte   W12
+        .byte           N05
+        .byte   W06
+        .byte                   Fn1
+        .byte   W06
+        .byte           N11
+        .byte   W12
+        .byte           N05
+        .byte   W06
+        .byte                   Fn1
+        .byte   W06
+        .byte           N11
+        .byte   W12
+        .byte                   En1
+        .byte   W12
 @ 030   ----------------------------------------
-        .byte   PATT
-         .word  Onward_4_26
+        .byte   W12
+        .byte           N05
+        .byte   W06
+        .byte                   En1
+        .byte   W06
+        .byte           N11
+        .byte   W12
+        .byte           N05
+        .byte   W06
+        .byte                   En1
+        .byte   W06
+        .byte           N11
+        .byte   W12
+        .byte           N05
+        .byte   W06
+        .byte                   En1
+        .byte   W06
+        .byte           N11
+        .byte   W12
+        .byte                   Ds1
+        .byte   W12
 @ 031   ----------------------------------------
-        .byte   PATT
-         .word  Onward_4_27
+        .byte   W12
+        .byte           N05
+        .byte   W06
+        .byte                   Ds1
+        .byte   W06
+        .byte           N11
+        .byte   W12
+        .byte           N05
+        .byte   W06
+        .byte                   Ds1
+        .byte   W06
+        .byte           N11
+        .byte   W12
+        .byte           N05
+        .byte   W06
+        .byte                   Ds1
+        .byte   W06
+        .byte           N11
+        .byte   W12
+        .byte                   Fn1
+        .byte   W12
 @ 032   ----------------------------------------
         .byte   GOTO
-         .word  Onward_4_LOOP
+         .word  onward_s_1_LOOP
+        .byte   W72
         .byte   FINE
 
-@***************** Track 5 (Midi-Chn.10) ******************@
+@****************** Track 2 (Midi-Chn.2) ******************@
 
-Onward_5:
-        .byte   KEYSH , Onward_key+0
+onward_s_2:
+        .byte   KEYSH , onward_s_key+0
 @ 000   ----------------------------------------
-Onward_5_LOOP:
-        .byte           VOICE , 61
-        .byte           VOL   , 50
-        .byte           N68   , Fs3 , v080 , gtp3
-        .byte   W72
-        .byte           N17   , An3
-        .byte   W18
+onward_s_2_LOOP:
+        .byte           VOICE , 65
+        .byte           PAN   , c_v-14
+        .byte           VOL   , 63
+        .byte           N68   , Fs3 , v090 , gtp2
+        .byte   W12
+        .byte           VOL   , 62
+        .byte   W03
+        .byte                   61
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   59
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   57
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   55
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   52
+        .byte   W21
+        .byte                   36
+        .byte   W12
+        .byte                   63
+        .byte           N15   , An3
+        .byte   W03
+        .byte           VOL   , 56
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   59
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   57
+        .byte   W03
+        .byte                   56
         .byte           N05
-        .byte   W06
+        .byte   W03
+        .byte           VOL   , 54
+        .byte   W03
 @ 001   ----------------------------------------
-        .byte           N68   , Gn3 , v080 , gtp3
-        .byte   W96
+onward_s_2_1:
+        .byte           VOL   , 63
+        .byte           N72   , Gn3 , v090
+        .byte   W12
+        .byte           VOL   , 62
+        .byte   W03
+        .byte                   61
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   59
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   57
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   55
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   52
+        .byte   W21
+        .byte                   36
+        .byte   W36
+        .byte   PEND
 @ 002   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_2
+        .byte                   63
+        .byte           N68   , Gn3 , v090 , gtp3
+        .byte   W12
+        .byte           VOL   , 62
+        .byte   W03
+        .byte                   61
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   59
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   57
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   55
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   52
+        .byte   W21
+        .byte                   36
+        .byte   W30
+        .byte                   48
+        .byte           N04
+        .byte   W03
+        .byte           VOL   , 56
+        .byte   W03
 @ 003   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_3
+        .byte                   63
+        .byte           N44   , Gn3 , v090 , gtp2
+        .byte   W18
+        .byte           VOL   , 62
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W12
+        .byte                   48
+        .byte   W06
+        .byte                   63
+        .byte           N44   , Fs3 , v090 , gtp2
+        .byte   W18
+        .byte           VOL   , 62
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W12
+        .byte                   48
+        .byte   W06
 @ 004   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_4
+        .byte                   63
+        .byte           N68   , Fs3 , v090 , gtp2
+        .byte   W12
+        .byte           VOL   , 62
+        .byte   W03
+        .byte                   61
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   59
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   57
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   55
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   52
+        .byte   W21
+        .byte                   36
+        .byte   W12
+        .byte                   56
+        .byte           N15   , An3
+        .byte   W06
+        .byte           VOL   , 60
+        .byte   W03
+        .byte                   59
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   57
+        .byte   W03
+        .byte                   56
+        .byte           N05
+        .byte   W03
+        .byte           VOL   , 54
+        .byte   W03
 @ 005   ----------------------------------------
-        .byte           N68   , Gn3 , v080 , gtp3
-        .byte   W96
+        .byte   PATT
+         .word  onward_s_2_1
 @ 006   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_6
+        .byte           VOL   , 63
+        .byte           N80   , Gn3 , v090 , gtp3
+        .byte   W12
+        .byte           VOL   , 62
+        .byte   W03
+        .byte                   61
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   59
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   57
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   55
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   52
+        .byte   W21
+        .byte                   36
+        .byte   W30
+        .byte                   48
+        .byte           N04   , An3
+        .byte   W03
+        .byte           VOL   , 56
+        .byte   W03
 @ 007   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_3
+        .byte                   63
+        .byte           N44   , Gn3 , v090 , gtp3
+        .byte   W18
+        .byte           VOL   , 62
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W12
+        .byte                   48
+        .byte   W06
+        .byte                   63
+        .byte           N44   , Fs3 , v090 , gtp3
+        .byte   W18
+        .byte           VOL   , 62
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W12
+        .byte                   48
+        .byte   W06
 @ 008   ----------------------------------------
         .byte   W96
 @ 009   ----------------------------------------
@@ -1010,21 +1568,2588 @@ Onward_5_LOOP:
 @ 011   ----------------------------------------
         .byte   W96
 @ 012   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_8
+onward_s_2_12:
+        .byte           VOL   , 63
+        .byte           N10   , Gn3 , v100
+        .byte   W09
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   63
+        .byte           N04   , Dn3
+        .byte   W06
+        .byte                   Cn3
+        .byte   W06
+        .byte           N32   , Bn2 , v100 , gtp2
+        .byte   W12
+        .byte           VOL   , 62
+        .byte   W03
+        .byte                   60
+        .byte   W09
+        .byte                   36
+        .byte   W12
+        .byte                   63
+        .byte           N04
+        .byte   W06
+        .byte                   Cn3
+        .byte   W06
+        .byte           N10   , Dn3
+        .byte   W12
+        .byte                   Gn3
+        .byte   W12
+        .byte   PEND
 @ 013   ----------------------------------------
-        .byte   PATT
-         .word  Onward_1_9
+        .byte           N16
+        .byte   W12
+        .byte           VOL   , 36
+        .byte   W06
+        .byte                   56
+        .byte           N04   , Fn3
+        .byte   W03
+        .byte           VOL   , 58
+        .byte   W03
+        .byte                   63
+        .byte           N54
+        .byte   W18
+        .byte           VOL   , 62
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W12
+        .byte                   48
+        .byte   W06
+        .byte                   36
+        .byte   W24
 @ 014   ----------------------------------------
         .byte   PATT
-         .word  Onward_1_8
+         .word  onward_s_2_12
 @ 015   ----------------------------------------
-        .byte           N17   , Bn3 , v080
-        .byte   W18
-        .byte           N05   , Cn4
+        .byte           N16   , Bn3 , v100
+        .byte   W12
+        .byte           VOL   , 36
         .byte   W06
-        .byte           N44   , Dn4 , v080 , gtp3
+        .byte                   56
+        .byte           N04   , Cn4
+        .byte   W03
+        .byte           VOL   , 58
+        .byte   W03
+        .byte                   63
+        .byte           N68   , Dn4 , v100 , gtp2
+        .byte   W03
+        .byte           VOL   , 62
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   48
+        .byte   W03
+        .byte                   44
+        .byte   W03
+        .byte                   39
+        .byte   W03
+        .byte                   40
+        .byte   W03
+        .byte                   41
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   43
+        .byte   W03
+        .byte                   44
+        .byte   W03
+        .byte                   46
+        .byte   W03
+        .byte                   48
+        .byte   W03
+        .byte                   50
+        .byte   W03
+        .byte                   52
+        .byte   W03
+        .byte                   54
+        .byte   W03
+        .byte                   56
+        .byte   W03
+        .byte                   58
+        .byte   W03
+        .byte                   60
+        .byte   W03
+        .byte                   36
+        .byte   W06
+@ 016   ----------------------------------------
+        .byte           PAN   , c_v-16
+        .byte           VOICE , 46
+        .byte           N04   , Gn2 , v112
+        .byte   W06
+        .byte                   Dn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Gn3
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           PAN   , c_v+0
+        .byte           N04   , Dn4
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Gn3
+        .byte   W06
+        .byte                   Dn3
+        .byte   W06
+        .byte           PAN   , c_v-16
+        .byte           N04   , Gn2
+        .byte   W06
+        .byte                   Dn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Gn3
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           PAN   , c_v+0
+        .byte           N04   , Dn4
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Gn3
+        .byte   W06
+        .byte                   Dn3
+        .byte   W06
+@ 017   ----------------------------------------
+onward_s_2_17:
+        .byte           PAN   , c_v-16
+        .byte           N04   , Fn2 , v112
+        .byte   W06
+        .byte                   An2
+        .byte   W06
+        .byte           PAN   , c_v-12
+        .byte           N04   , Cn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Fn3
+        .byte   W06
+        .byte           PAN   , c_v-4
+        .byte           N04   , An3
+        .byte   W06
+        .byte           PAN   , c_v+0
+        .byte           N04   , Cn4
+        .byte   W06
+        .byte           PAN   , c_v+4
+        .byte           N04   , Fn4
+        .byte   W06
+        .byte           PAN   , c_v+8
+        .byte           N04   , An4
+        .byte   W06
+        .byte           PAN   , c_v+12
+        .byte           N04   , Fn4
+        .byte   W06
+        .byte           PAN   , c_v+8
+        .byte           N04   , Cn4
+        .byte   W06
+        .byte           PAN   , c_v+4
+        .byte           N04   , An3
+        .byte   W06
+        .byte           PAN   , c_v+0
+        .byte           N04   , Fn3
+        .byte   W06
+        .byte           PAN   , c_v-4
+        .byte           N04   , Cn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , An2
+        .byte   W06
+        .byte           PAN   , c_v-16
+        .byte           N04   , Fn2
+        .byte   W06
+        .byte                   Cn2
+        .byte   W06
+        .byte   PEND
+@ 018   ----------------------------------------
+onward_s_2_18:
+        .byte           N04   , Gn2 , v112
+        .byte   W06
+        .byte                   Dn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Gn3
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           PAN   , c_v+0
+        .byte           N04   , Dn4
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Gn3
+        .byte   W06
+        .byte                   Dn3
+        .byte   W06
+        .byte           PAN   , c_v-16
+        .byte           N04   , Gn2
+        .byte   W06
+        .byte                   Dn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Gn3
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           PAN   , c_v+0
+        .byte           N04   , Dn4
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Gn3
+        .byte   W06
+        .byte                   Dn3
+        .byte   W06
+        .byte   PEND
+@ 019   ----------------------------------------
+        .byte           PAN   , c_v-16
+        .byte           N04   , Fn2
+        .byte   W06
+        .byte                   An2
+        .byte   W06
+        .byte           PAN   , c_v-12
+        .byte           N04   , Cn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Fn3
+        .byte   W06
+        .byte           PAN   , c_v-4
+        .byte           N04   , An3
+        .byte   W06
+        .byte           PAN   , c_v+0
+        .byte           N04   , Cn4
+        .byte   W06
+        .byte           PAN   , c_v+4
+        .byte           N04   , Fn4
+        .byte   W06
+        .byte           PAN   , c_v+8
+        .byte           N04   , An4
+        .byte   W06
+        .byte           PAN   , c_v+16
+        .byte           N04   , Cn5
+        .byte   W06
+        .byte                   An4
+        .byte   W06
+        .byte           PAN   , c_v+12
+        .byte           N04   , Fn4
+        .byte   W06
+        .byte           PAN   , c_v+4
+        .byte           N04   , Cn4
+        .byte   W06
+        .byte                   Fn4
+        .byte   W06
+        .byte                   Cn4
+        .byte   W06
+        .byte           PAN   , c_v+0
+        .byte           N04   , An3
+        .byte   W06
+        .byte           PAN   , c_v-4
+        .byte           N04   , Fn3
+        .byte   W06
+@ 020   ----------------------------------------
+        .byte           PAN   , c_v-16
+        .byte           N04   , Gn2
+        .byte   W06
+        .byte                   Dn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Gn3
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           PAN   , c_v+0
+        .byte           N04   , Dn4
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Gn3
+        .byte   W06
+        .byte                   Dn3
+        .byte   W06
+        .byte           PAN   , c_v-16
+        .byte           N04   , Gn2
+        .byte   W06
+        .byte                   Dn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Gn3
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           PAN   , c_v+0
+        .byte           N04   , Dn4
+        .byte   W06
+        .byte                   Bn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Gn3
+        .byte   W06
+        .byte                   Dn3
+        .byte   W06
+@ 021   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_2_17
+@ 022   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_2_18
+@ 023   ----------------------------------------
+        .byte           PAN   , c_v-16
+        .byte           N04   , Fn2 , v112
+        .byte   W06
+        .byte                   An2
+        .byte   W06
+        .byte           PAN   , c_v-12
+        .byte           N04   , Cn3
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Fn3
+        .byte   W06
+        .byte           PAN   , c_v-4
+        .byte           N04   , An3
+        .byte   W06
+        .byte           PAN   , c_v+0
+        .byte           N04   , Cn4
+        .byte   W06
+        .byte           PAN   , c_v+4
+        .byte           N04   , Fn4
+        .byte   W06
+        .byte           PAN   , c_v+8
+        .byte           N04   , An4
+        .byte   W06
+        .byte           PAN   , c_v+16
+        .byte           N04   , Cn5
+        .byte   W06
+        .byte           PAN   , c_v+12
+        .byte           N04   , An4
+        .byte   W06
+        .byte           PAN   , c_v+8
+        .byte           N04   , Fn4
+        .byte   W06
+        .byte                   Cn4
+        .byte   W06
+        .byte           PAN   , c_v-8
+        .byte           N04   , Fn3
+        .byte   W06
+        .byte           PAN   , c_v+8
+        .byte           N04   , An3
+        .byte   W06
+        .byte           PAN   , c_v+12
+        .byte           N04   , Cn4
+        .byte   W06
+        .byte           PAN   , c_v+16
+        .byte           N04   , Fn4
+        .byte   W06
+@ 024   ----------------------------------------
+        .byte           PAN   , c_v+8
+        .byte           VOL   , 50
+        .byte           VOICE , 42
+        .byte           TIE   , Gn5 , v050
+        .byte   W03
+        .byte           VOL   , 52
+        .byte   W03
+        .byte                   53
+        .byte   W18
+        .byte                   54
+        .byte   W24
+        .byte                   55
+        .byte   W12
+        .byte                   56
+        .byte   W06
+        .byte                   57
+        .byte   W06
+        .byte                   58
+        .byte   W06
+        .byte                   59
+        .byte   W06
+        .byte                   60
+        .byte   W03
+        .byte                   61
+        .byte   W03
+        .byte                   62
+        .byte   W03
+        .byte                   63
+        .byte   W03
+@ 025   ----------------------------------------
+        .byte   W18
+        .byte                   62
+        .byte   W24
+        .byte                   61
+        .byte   W12
+        .byte                   60
+        .byte   W12
+        .byte                   59
+        .byte   W12
+        .byte                   58
+        .byte   W12
+        .byte                   57
+        .byte   W06
+@ 026   ----------------------------------------
+        .byte   W06
+        .byte                   56
+        .byte   W18
+        .byte                   55
+        .byte   W24
+        .byte                   54
+        .byte   W30
+        .byte                   53
+        .byte   W18
+@ 027   ----------------------------------------
+        .byte   W36
+        .byte                   52
+        .byte   W36
+        .byte                   48
+        .byte   W03
+        .byte                   44
+        .byte   W03
+        .byte                   40
+        .byte   W03
+        .byte                   36
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   28
+        .byte   W03
+        .byte                   24
+        .byte   W03
+        .byte                   16
+        .byte   W03
+@ 028   ----------------------------------------
+        .byte           VOICE , 56
+        .byte   W06
+        .byte           EOT
+        .byte   W06
+        .byte           PAN   , c_v-14
+        .byte           VOL   , 63
+        .byte           N04   , Gn4 , v127
+        .byte   W05
+        .byte           N05
+        .byte   W07
+        .byte           N11
+        .byte   W12
+        .byte           N04   , Bn4
+        .byte   W05
+        .byte           N05
+        .byte   W07
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   63
+        .byte           N10   , An4
+        .byte   W09
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   63
+        .byte           N10
+        .byte   W12
+        .byte           N21   , Gn4
+        .byte   W12
+@ 029   ----------------------------------------
+        .byte           VOL   , 36
+        .byte   W12
+        .byte                   63
+        .byte           N04
+        .byte   W05
+        .byte           N05
+        .byte   W07
+        .byte           N11
+        .byte   W12
+        .byte           N04   , Bn4
+        .byte   W05
+        .byte           N05
+        .byte   W07
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   63
+        .byte           N11   , An4
+        .byte   W09
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   63
+        .byte           N10
+        .byte   W12
+        .byte           N21   , Gn4
+        .byte   W12
+@ 030   ----------------------------------------
+        .byte           VOL   , 36
+        .byte   W12
+        .byte                   63
+        .byte           N04
+        .byte   W05
+        .byte           N05
+        .byte   W07
+        .byte           N11
+        .byte   W12
+        .byte           N04   , Bn4
+        .byte   W05
+        .byte           N05
+        .byte   W07
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   63
+        .byte           N10   , An4
+        .byte   W09
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   63
+        .byte           N10
+        .byte   W12
+        .byte           N21   , Gn4
+        .byte   W12
+@ 031   ----------------------------------------
+        .byte           VOL   , 36
+        .byte   W12
+        .byte                   63
+        .byte           N04
+        .byte   W05
+        .byte           N05
+        .byte   W07
+        .byte           N11
+        .byte   W12
+        .byte           N04   , Bn4
+        .byte   W05
+        .byte           N05
+        .byte   W07
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   63
+        .byte           N10   , An4
+        .byte   W09
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   63
+        .byte           N10
+        .byte   W12
+        .byte           N12   , Gn4
+        .byte   W12
+@ 032   ----------------------------------------
+        .byte           VOICE , 65
+        .byte   GOTO
+         .word  onward_s_2_LOOP
         .byte   W72
+        .byte   FINE
+
+@****************** Track 3 (Midi-Chn.3) ******************@
+
+onward_s_3:
+        .byte   KEYSH , onward_s_key+0
+@ 000   ----------------------------------------
+onward_s_3_LOOP:
+        .byte           VOICE , 51
+        .byte           PAN   , c_v+24
+        .byte           VOL   , 34
+        .byte           N78   , Fs2 , v092 , gtp1
+        .byte   W12
+        .byte           VOL   , 35
+        .byte   W03
+        .byte                   36
+        .byte   W06
+        .byte                   37
+        .byte   W48
+        .byte   W03
+        .byte                   23
+        .byte   W12
+        .byte                   36
+        .byte           N10   , Fs2 , v100
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+@ 001   ----------------------------------------
+onward_s_3_1:
+        .byte           VOL   , 34
+        .byte           N90   , Gn2 , v100 , gtp1
+        .byte   W03
+        .byte           VOL   , 35
+        .byte   W03
+        .byte                   36
+        .byte   W03
+        .byte                   39
+        .byte   W03
+        .byte                   40
+        .byte   W09
+        .byte                   39
+        .byte   W06
+        .byte                   38
+        .byte   W03
+        .byte                   37
+        .byte   W06
+        .byte                   36
+        .byte   W24
+        .byte                   35
+        .byte   W03
+        .byte                   34
+        .byte   W09
+        .byte                   33
+        .byte   W03
+        .byte                   32
+        .byte   W06
+        .byte                   31
+        .byte   W03
+        .byte                   23
+        .byte   W12
+        .byte   PEND
+@ 002   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_3_1
+@ 003   ----------------------------------------
+onward_s_3_3:
+        .byte           VOL   , 34
+        .byte           N44   , Gn2 , v100 , gtp2
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   39
+        .byte   W03
+        .byte                   40
+        .byte   W03
+        .byte                   41
+        .byte   W12
+        .byte                   40
+        .byte   W03
+        .byte                   39
+        .byte   W15
+        .byte                   23
+        .byte   W06
+        .byte                   34
+        .byte           N44   , Fs2 , v100 , gtp2
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   39
+        .byte   W03
+        .byte                   40
+        .byte   W03
+        .byte                   41
+        .byte   W12
+        .byte                   40
+        .byte   W03
+        .byte                   39
+        .byte   W15
+        .byte                   23
+        .byte   W06
+        .byte   PEND
+@ 004   ----------------------------------------
+        .byte                   34
+        .byte           N78   , Fs2 , v092 , gtp1
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   41
+        .byte   W06
+        .byte                   40
+        .byte   W03
+        .byte                   39
+        .byte   W06
+        .byte                   38
+        .byte   W03
+        .byte                   37
+        .byte   W48
+        .byte                   23
+        .byte   W12
+        .byte                   36
+        .byte           N10   , Fs2 , v100
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+@ 005   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_3_1
+@ 006   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_3_1
+@ 007   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_3_3
+@ 008   ----------------------------------------
+onward_s_3_8:
+        .byte           VOL   , 34
+        .byte           N10   , Dn2 , v100
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte                   41
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte                   21
+        .byte           N06
+        .byte   W12
+        .byte           VOL   , 34
+        .byte           N10
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   23
+        .byte   W06
+        .byte                   41
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte                   41
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte                   18
+        .byte           N06
+        .byte   W12
+        .byte           VOL   , 36
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte   PEND
+@ 009   ----------------------------------------
+onward_s_3_9:
+        .byte           VOL   , 34
+        .byte           N10   , Cn2 , v100
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte                   41
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte                   21
+        .byte           N06
+        .byte   W12
+        .byte           VOL   , 34
+        .byte           N10
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   23
+        .byte   W06
+        .byte                   41
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte                   41
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte                   18
+        .byte           N06
+        .byte   W12
+        .byte           VOL   , 36
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte   PEND
+@ 010   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_3_8
+@ 011   ----------------------------------------
+onward_s_3_11:
+        .byte           VOL   , 34
+        .byte           N10   , Fn2 , v100
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte                   41
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte                   21
+        .byte           N06
+        .byte   W12
+        .byte           VOL   , 34
+        .byte           N10
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   23
+        .byte   W06
+        .byte                   41
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte                   41
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte                   18
+        .byte           N06
+        .byte   W12
+        .byte           VOL   , 36
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 23
+        .byte   W06
+        .byte   PEND
+@ 012   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_3_8
+@ 013   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_3_9
+@ 014   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_3_8
+@ 015   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_3_11
+@ 016   ----------------------------------------
+onward_s_3_16:
+        .byte           VOL   , 41
+        .byte           N10   , Bn1 , v120
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte                   41
+        .byte           N04
+        .byte   W06
+        .byte                   Cn2
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   39
+        .byte           N32   , Dn2 , v120 , gtp2
+        .byte   W03
+        .byte           VOL   , 40
+        .byte   W03
+        .byte                   41
+        .byte   W21
+        .byte                   23
+        .byte   W09
+        .byte                   41
+        .byte           N04   , Bn1
+        .byte   W06
+        .byte                   Cn2
+        .byte   W06
+        .byte           N10   , Dn2
+        .byte   W12
+        .byte                   Dn2
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte   PEND
+@ 017   ----------------------------------------
+onward_s_3_17:
+        .byte           VOL   , 41
+        .byte           N16   , Dn2 , v120
+        .byte   W15
+        .byte           VOL   , 23
+        .byte   W03
+        .byte                   41
+        .byte           N04   , Cn2
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   39
+        .byte           N66   , En2
+        .byte   W03
+        .byte           VOL   , 40
+        .byte   W03
+        .byte                   41
+        .byte   W18
+        .byte                   40
+        .byte   W03
+        .byte                   39
+        .byte   W03
+        .byte                   37
+        .byte   W03
+        .byte                   36
+        .byte   W15
+        .byte                   23
+        .byte   W06
+        .byte                   18
+        .byte   W18
+        .byte   PEND
+@ 018   ----------------------------------------
+onward_s_3_18:
+        .byte           VOL   , 41
+        .byte           N10   , Bn1 , v120
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte                   41
+        .byte           N04
+        .byte   W06
+        .byte                   Cn2
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   39
+        .byte           N32   , Dn2 , v120 , gtp2
+        .byte   W03
+        .byte           VOL   , 40
+        .byte   W03
+        .byte                   41
+        .byte   W21
+        .byte                   23
+        .byte   W09
+        .byte                   41
+        .byte           N04
+        .byte   W06
+        .byte                   Dn2
+        .byte   W06
+        .byte           N10
+        .byte   W12
+        .byte                   Dn2
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte   PEND
+@ 019   ----------------------------------------
+        .byte                   41
+        .byte           N16
+        .byte   W15
+        .byte           VOL   , 23
+        .byte   W03
+        .byte                   41
+        .byte           N04   , En2
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   39
+        .byte           N66   , Fn2
+        .byte   W03
+        .byte           VOL   , 40
+        .byte   W03
+        .byte                   41
+        .byte   W18
+        .byte                   40
+        .byte   W03
+        .byte                   39
+        .byte   W03
+        .byte                   37
+        .byte   W03
+        .byte                   36
+        .byte   W15
+        .byte                   23
+        .byte   W06
+        .byte                   18
+        .byte   W18
+@ 020   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_3_16
+@ 021   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_3_17
+@ 022   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_3_18
+@ 023   ----------------------------------------
+        .byte           VOL   , 41
+        .byte           N16   , Dn2 , v120
+        .byte   W15
+        .byte           VOL   , 23
+        .byte   W03
+        .byte                   41
+        .byte           N04   , En2
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   39
+        .byte           N72   , Fn2
+        .byte   W03
+        .byte           VOL   , 40
+        .byte   W03
+        .byte                   41
+        .byte   W09
+        .byte                   40
+        .byte   W03
+        .byte                   39
+        .byte   W03
+        .byte                   36
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   31
+        .byte   W03
+        .byte                   28
+        .byte   W06
+        .byte                   27
+        .byte   W03
+        .byte                   26
+        .byte   W06
+        .byte                   27
+        .byte   W03
+        .byte                   28
+        .byte   W03
+        .byte                   30
+        .byte   W03
+        .byte                   31
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   36
+        .byte   W03
+        .byte                   39
+        .byte   W03
+        .byte                   41
+        .byte   W03
+@ 024   ----------------------------------------
+        .byte           N10   , Gn2 , v100
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N04
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   36
+        .byte           N04   , Gn2 , v090
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   41
+        .byte           N10   , Gn2 , v100
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N10
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   23
+        .byte   W06
+@ 025   ----------------------------------------
+        .byte                   41
+        .byte           N10   , Fn2
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N04
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   36
+        .byte           N04   , Fn2 , v090
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   41
+        .byte           N10   , Fn2 , v100
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N10
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   23
+        .byte   W06
+@ 026   ----------------------------------------
+        .byte                   41
+        .byte           N10   , Gn2
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N04
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   36
+        .byte           N04   , Gn2 , v090
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   41
+        .byte           N10   , Gn2 , v100
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N10   , Fn2
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   23
+        .byte   W06
+@ 027   ----------------------------------------
+        .byte                   41
+        .byte           N10   , Ds2
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N04
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   36
+        .byte           N04   , Ds2 , v090
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   41
+        .byte           N10   , Ds2 , v100
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N05
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W02
+        .byte           N05   , Fn2
+        .byte   W01
+        .byte           VOL   , 23
+        .byte   W06
+@ 028   ----------------------------------------
+        .byte                   41
+        .byte           N10   , Gn2 , v092
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N04
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   36
+        .byte           N04
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   41
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N10
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   23
+        .byte   W06
+@ 029   ----------------------------------------
+        .byte                   41
+        .byte           N10   , Fn2
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N04
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   36
+        .byte           N04
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   41
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N10
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   23
+        .byte   W06
+@ 030   ----------------------------------------
+        .byte                   41
+        .byte           N10   , Gn2
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N04
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   36
+        .byte           N04
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   41
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N10   , Fn2
+        .byte   W03
+        .byte           VOL   , 36
+        .byte   W03
+        .byte                   23
+        .byte   W06
+@ 031   ----------------------------------------
+        .byte                   41
+        .byte           N10   , Ds2
+        .byte   W09
+        .byte           VOL   , 23
+        .byte   W03
+        .byte           N12
+        .byte   W24
+        .byte           VOL   , 31
+        .byte           N04
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   36
+        .byte           N04   , Fn2
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   41
+        .byte           N16   , Gn2
+        .byte   W12
+        .byte           VOL   , 23
+        .byte   W06
+        .byte           N04
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N24   , An2
+        .byte   W03
+        .byte           VOL   , 34
+        .byte   W03
+        .byte                   31
+        .byte   W06
+        .byte                   34
+        .byte   W03
+        .byte                   36
+        .byte   W03
+        .byte                   39
+        .byte   W03
+        .byte                   41
+        .byte   W03
+@ 032   ----------------------------------------
+        .byte                   34
+        .byte   GOTO
+         .word  onward_s_3_LOOP
+        .byte   W72
+        .byte   FINE
+
+@****************** Track 4 (Midi-Chn.4) ******************@
+
+onward_s_4:
+        .byte   KEYSH , onward_s_key+0
+@ 000   ----------------------------------------
+onward_s_4_LOOP:
+        .byte           VOICE , 47
+        .byte           VOL   , 39
+        .byte           N48   , Gn2 , v120
+        .byte   W03
+        .byte           VOL   , 42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   48
+        .byte   W84
+        .byte   W03
+@ 001   ----------------------------------------
+        .byte   W96
+@ 002   ----------------------------------------
+        .byte   W96
+@ 003   ----------------------------------------
+onward_s_4_3:
+        .byte   W84
+        .byte           N11   , Dn3 , v120
+        .byte   W12
+        .byte   PEND
+@ 004   ----------------------------------------
+        .byte           N48   , Gn2
+        .byte   W96
+@ 005   ----------------------------------------
+        .byte   W96
+@ 006   ----------------------------------------
+        .byte   W96
+@ 007   ----------------------------------------
+onward_s_4_7:
+        .byte   W48
+        .byte           N02   , Dn3 , v028
+        .byte   W03
+        .byte                   Dn3 , v038
+        .byte   W03
+        .byte                   Dn3 , v048
+        .byte   W03
+        .byte                   Dn3 , v057
+        .byte   W03
+        .byte                   Dn3 , v062
+        .byte   W03
+        .byte                   Dn3 , v067
+        .byte   W03
+        .byte                   Dn3 , v072
+        .byte   W03
+        .byte                   Dn3
+        .byte   W03
+        .byte                   Dn3
+        .byte   W03
+        .byte                   Dn3 , v069
+        .byte   W03
+        .byte                   Dn3 , v067
+        .byte   W03
+        .byte                   Dn3 , v062
+        .byte   W03
+        .byte           N11   , Dn3 , v120
+        .byte   W12
+        .byte   PEND
+@ 008   ----------------------------------------
+onward_s_4_8:
+        .byte           N18   , Gn2 , v120
+        .byte   W24
+        .byte                   Dn2 , v096
+        .byte   W24
+        .byte                   Gn2 , v120
+        .byte   W24
+        .byte                   Dn2 , v096
+        .byte   W24
+        .byte   PEND
+@ 009   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_4_8
+@ 010   ----------------------------------------
+onward_s_4_10:
+        .byte           N18   , Gn2 , v120
+        .byte   W24
+        .byte                   Dn2 , v096
+        .byte   W24
+        .byte                   Gn2 , v120
+        .byte   W24
+        .byte           N12   , Dn2 , v096
+        .byte   W12
+        .byte                   Gn2 , v120
+        .byte   W12
+        .byte   PEND
+@ 011   ----------------------------------------
+        .byte           N18   , An2
+        .byte   W24
+        .byte                   Dn2 , v096
+        .byte   W24
+        .byte                   An2 , v120
+        .byte   W24
+        .byte                   Dn2 , v096
+        .byte   W24
+@ 012   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_4_8
+@ 013   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_4_8
+@ 014   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_4_10
+@ 015   ----------------------------------------
+        .byte           N18   , An2 , v120
+        .byte   W24
+        .byte                   Dn2 , v096
+        .byte   W24
+        .byte                   An2 , v120
+        .byte   W24
+        .byte           N05   , Dn2 , v096
+        .byte   W06
+        .byte           N02   , Dn2 , v038
+        .byte   W03
+        .byte                   Dn2 , v048
+        .byte   W03
+        .byte                   Dn2 , v057
+        .byte   W03
+        .byte                   Dn2 , v062
+        .byte   W03
+        .byte                   Dn2 , v067
+        .byte   W03
+        .byte                   Dn2 , v076
+        .byte   W03
+@ 016   ----------------------------------------
+        .byte           N48   , Gn2 , v120
+        .byte   W96
+@ 017   ----------------------------------------
+        .byte   W96
+@ 018   ----------------------------------------
+        .byte   W96
+@ 019   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_4_3
+@ 020   ----------------------------------------
+        .byte           N48   , Gn2 , v120
+        .byte   W96
+@ 021   ----------------------------------------
+        .byte   W96
+@ 022   ----------------------------------------
+        .byte   W96
+@ 023   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_4_7
+@ 024   ----------------------------------------
+        .byte           N48   , Gn2 , v120
+        .byte   W96
+@ 025   ----------------------------------------
+        .byte                   Gn2
+        .byte   W84
+        .byte           N11   , Dn3
+        .byte   W12
+@ 026   ----------------------------------------
+        .byte           N48   , Gn2
+        .byte   W60
+        .byte           N12   , Dn2
+        .byte   W12
+        .byte                   Dn3
+        .byte   W12
+        .byte                   Dn2
+        .byte   W12
+@ 027   ----------------------------------------
+        .byte           N48   , Gn2
+        .byte   W96
+@ 028   ----------------------------------------
+onward_s_4_28:
+        .byte           N24   , Gn2 , v120
+        .byte   W24
+        .byte                   Dn2
+        .byte   W24
+        .byte                   Gn2
+        .byte   W24
+        .byte                   Dn2
+        .byte   W24
+        .byte   PEND
+@ 029   ----------------------------------------
+        .byte                   Gn2
+        .byte   W24
+        .byte                   Dn2
+        .byte   W24
+        .byte                   Gn2
+        .byte   W24
+        .byte           N12   , Dn2
+        .byte   W12
+        .byte                   Gn2
+        .byte   W12
+@ 030   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_4_28
+@ 031   ----------------------------------------
+        .byte           N24   , Gn2 , v120
+        .byte   W24
+        .byte                   Dn2
+        .byte   W24
+        .byte                   Gn2
+        .byte   W24
+        .byte           N05   , Gn2 , v105
+        .byte   W06
+        .byte           N02   , Gn2 , v067
+        .byte   W03
+        .byte                   Gn2 , v076
+        .byte   W03
+        .byte                   Gn2 , v086
+        .byte   W03
+        .byte                   Gn2 , v096
+        .byte   W03
+        .byte                   Gn2 , v100
+        .byte   W03
+        .byte                   Gn2 , v105
+        .byte   W03
+@ 032   ----------------------------------------
+        .byte           VOL   , 39
+        .byte   GOTO
+         .word  onward_s_4_LOOP
+        .byte   W72
+        .byte   FINE
+
+@****************** Track 5 (Midi-Chn.5) ******************@
+
+onward_s_5:
+        .byte   KEYSH , onward_s_key+0
+@ 000   ----------------------------------------
+onward_s_5_LOOP:
+        .byte           VOICE , 49
+        .byte           VOL   , 33
+        .byte           PAN   , c_v-26
+        .byte           N68   , Dn3 , v090 , gtp3
+        .byte   W03
+        .byte           VOL   , 35
+        .byte   W03
+        .byte                   37
+        .byte   W03
+        .byte                   38
+        .byte   W03
+        .byte                   39
+        .byte   W03
+        .byte                   40
+        .byte   W03
+        .byte                   41
+        .byte   W06
+        .byte                   42
+        .byte   W48
+        .byte           N16   , Fs3 , v100
+        .byte   W09
+        .byte           VOL   , 27
+        .byte   W09
+        .byte                   38
+        .byte           N05
+        .byte   W06
+@ 001   ----------------------------------------
+onward_s_5_1:
+        .byte           VOL   , 43
+        .byte           N80   , Dn3 , v100 , gtp3
+        .byte   W24
+        .byte           VOL   , 42
+        .byte   W06
+        .byte                   41
+        .byte   W42
+        .byte                   24
+        .byte   W24
+        .byte   PEND
+@ 002   ----------------------------------------
+onward_s_5_2:
+        .byte           VOL   , 43
+        .byte           N80   , Dn3 , v100 , gtp3
+        .byte   W24
+        .byte           VOL   , 42
+        .byte   W06
+        .byte                   41
+        .byte   W42
+        .byte                   24
+        .byte   W18
+        .byte                   38
+        .byte           N04
+        .byte   W06
+        .byte   PEND
+@ 003   ----------------------------------------
+        .byte           VOL   , 43
+        .byte           N44   , Dn3 , v100 , gtp3
+        .byte   W48
+        .byte                   Cn3
+        .byte   W48
+@ 004   ----------------------------------------
+        .byte           N68   , Dn3 , v090 , gtp3
+        .byte   W24
+        .byte           VOL   , 42
+        .byte   W06
+        .byte                   41
+        .byte   W42
+        .byte           N16   , Fs3 , v100
+        .byte   W09
+        .byte           VOL   , 27
+        .byte   W09
+        .byte                   38
+        .byte           N05
+        .byte   W06
+@ 005   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_5_1
+@ 006   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_5_2
+@ 007   ----------------------------------------
+        .byte           VOL   , 43
+        .byte           N44   , Dn3 , v100 , gtp2
+        .byte   W24
+        .byte           VOL   , 42
+        .byte   W06
+        .byte                   41
+        .byte   W18
+        .byte                   43
+        .byte           N44   , Cn3 , v100 , gtp3
+        .byte   W24
+        .byte           VOL   , 42
+        .byte   W06
+        .byte                   41
+        .byte   W18
+@ 008   ----------------------------------------
+        .byte                   35
+        .byte   W12
+        .byte           VOICE , 57
+        .byte           VOL   , 43
+        .byte           N04   , Gn3 , v076
+        .byte   W06
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W12
+        .byte                   43
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W18
+        .byte                   43
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W18
+        .byte                   43
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+@ 009   ----------------------------------------
+onward_s_5_9:
+        .byte   W12
+        .byte           VOL   , 43
+        .byte           N04   , Fn3 , v076
+        .byte   W06
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W12
+        .byte                   43
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W18
+        .byte                   43
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W18
+        .byte                   43
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte   PEND
+@ 010   ----------------------------------------
+        .byte   W12
+        .byte                   43
+        .byte           N04   , Gn3
+        .byte   W06
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W12
+        .byte                   43
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W18
+        .byte                   43
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W18
+        .byte                   43
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+@ 011   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_5_9
+@ 012   ----------------------------------------
+onward_s_5_12:
+        .byte   W12
+        .byte           VOL   , 43
+        .byte           N04   , Gn3 , v072
+        .byte   W06
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W12
+        .byte                   43
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W18
+        .byte                   43
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W18
+        .byte                   43
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte   PEND
+@ 013   ----------------------------------------
+onward_s_5_13:
+        .byte   W12
+        .byte           VOL   , 43
+        .byte           N04   , Fn3 , v072
+        .byte   W06
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W12
+        .byte                   43
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W18
+        .byte                   43
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W18
+        .byte                   43
+        .byte           N10
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte   PEND
+@ 014   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_5_12
+@ 015   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_5_13
+@ 016   ----------------------------------------
+        .byte           PAN   , c_v-18
+        .byte           VOICE , 73
+        .byte           MOD   , 1
+        .byte           VOL   , 43
+        .byte           N09   , Gn4 , v108
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           N12
+        .byte   W03
+        .byte           BEND  , c_v+63
+        .byte   W03
+        .byte                   c_v+0
+        .byte   W03
+        .byte           VOL   , 24
+        .byte   W03
+        .byte                   43
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte           MOD   , 7
+        .byte           VOL   , 43
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 24
+        .byte   W03
+        .byte           MOD   , 1
+        .byte           VOL   , 43
+        .byte           N12
+        .byte   W03
+        .byte           BEND  , c_v+63
+        .byte   W03
+        .byte                   c_v+0
+        .byte   W03
+        .byte           VOL   , 24
+        .byte   W03
+        .byte                   43
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           MOD   , 7
+        .byte           N09   , Gn4 , v098
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           MOD   , 1
+        .byte           N10   , Gn4 , v108
+        .byte   W09
+        .byte           VOL   , 24
+        .byte   W03
+@ 017   ----------------------------------------
+onward_s_5_17:
+        .byte           VOL   , 43
+        .byte           N09   , Gn4 , v108
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           N12   , Fn4
+        .byte   W03
+        .byte           BEND  , c_v+63
+        .byte   W03
+        .byte                   c_v+0
+        .byte   W03
+        .byte           VOL   , 24
+        .byte   W03
+        .byte                   43
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte           MOD   , 7
+        .byte           VOL   , 43
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 24
+        .byte   W03
+        .byte           MOD   , 1
+        .byte           VOL   , 43
+        .byte           N12
+        .byte   W03
+        .byte           BEND  , c_v+63
+        .byte   W03
+        .byte                   c_v+0
+        .byte   W03
+        .byte           VOL   , 24
+        .byte   W03
+        .byte                   43
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           MOD   , 7
+        .byte           N09   , Fn4 , v098
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           MOD   , 1
+        .byte           N04   , Fn4 , v108
+        .byte   W05
+        .byte                   Fs4
+        .byte   W04
+        .byte           BEND  , c_v+9
+        .byte   W03
+        .byte   PEND
+@ 018   ----------------------------------------
+onward_s_5_18:
+        .byte           BEND  , c_v+0
+        .byte           N09   , Gn4 , v108
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           N12
+        .byte   W03
+        .byte           BEND  , c_v+63
+        .byte   W03
+        .byte                   c_v+0
+        .byte   W03
+        .byte           VOL   , 24
+        .byte   W03
+        .byte                   43
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte           MOD   , 7
+        .byte           VOL   , 43
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 24
+        .byte   W03
+        .byte           MOD   , 1
+        .byte           VOL   , 43
+        .byte           N12
+        .byte   W03
+        .byte           BEND  , c_v+63
+        .byte   W03
+        .byte                   c_v+0
+        .byte   W03
+        .byte           VOL   , 24
+        .byte   W03
+        .byte                   43
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           MOD   , 7
+        .byte           N09   , Gn4 , v098
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           MOD   , 1
+        .byte           N10   , Gn4 , v108
+        .byte   W09
+        .byte           VOL   , 24
+        .byte   W03
+        .byte   PEND
+@ 019   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_5_17
+@ 020   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_5_18
+@ 021   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_5_17
+@ 022   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_5_18
+@ 023   ----------------------------------------
+        .byte           VOL   , 43
+        .byte           N09   , Gn4 , v108
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           N12   , An4
+        .byte   W03
+        .byte           BEND  , c_v+63
+        .byte   W03
+        .byte                   c_v+0
+        .byte   W03
+        .byte           VOL   , 24
+        .byte   W03
+        .byte                   43
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte           MOD   , 7
+        .byte           VOL   , 43
+        .byte           N10
+        .byte   W09
+        .byte           VOL   , 24
+        .byte   W03
+        .byte           MOD   , 1
+        .byte           VOL   , 43
+        .byte           N12
+        .byte   W03
+        .byte           BEND  , c_v+63
+        .byte   W03
+        .byte                   c_v+0
+        .byte   W03
+        .byte           VOL   , 24
+        .byte   W03
+        .byte                   43
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           N24   , An4 , v098
+        .byte   W03
+        .byte           VOL   , 42
+        .byte           BEND  , c_v+63
+        .byte   W03
+        .byte           VOL   , 39
+        .byte           BEND  , c_v+6
+        .byte   W03
+        .byte           VOL   , 38
+        .byte           BEND  , c_v+63
+        .byte   W03
+        .byte           VOL   , 39
+        .byte           BEND  , c_v+6
+        .byte   W03
+        .byte           VOL   , 41
+        .byte           BEND  , c_v+63
+        .byte   W03
+        .byte           VOL   , 42
+        .byte           BEND  , c_v+0
+        .byte   W03
+        .byte           VOL   , 43
+        .byte           BEND  , c_v+63
+        .byte   W03
+@ 024   ----------------------------------------
+        .byte           VOL   , 27
+        .byte           BEND  , c_v+0
+        .byte   W12
+        .byte           VOICE , 57
+        .byte           VOL   , 43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   35
+        .byte           N04   , Gn3 , v100
+        .byte           N04   , Dn3 , v064
+        .byte   W03
+        .byte           VOL   , 38
+        .byte   W03
+        .byte                   39
+        .byte           N04   , Gn3 , v100
+        .byte           N04   , Dn3 , v064
+        .byte   W03
+        .byte           VOL   , 41
+        .byte   W03
+@ 025   ----------------------------------------
+        .byte           N09   , Gn3 , v100
+        .byte           N09   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W06
+@ 026   ----------------------------------------
+        .byte   W12
+        .byte                   43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   35
+        .byte           N04   , Gn3 , v100
+        .byte           N04   , Dn3 , v064
+        .byte   W03
+        .byte           VOL   , 38
+        .byte   W03
+        .byte                   39
+        .byte           N04   , Gn3 , v100
+        .byte           N04   , Dn3 , v064
+        .byte   W03
+        .byte           VOL   , 41
+        .byte   W03
+@ 027   ----------------------------------------
+        .byte           N09   , Gn3 , v080
+        .byte           N09   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v064
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W06
+@ 028   ----------------------------------------
+onward_s_5_28:
+        .byte   W12
+        .byte           VOL   , 43
+        .byte           N12   , Gn3 , v096
+        .byte           N12   , Dn3 , v060
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v096
+        .byte           N12   , Dn3 , v060
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v096
+        .byte           N12   , Dn3 , v060
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   35
+        .byte           N04   , Gn3 , v096
+        .byte           N04   , Dn3 , v060
+        .byte   W03
+        .byte           VOL   , 38
+        .byte   W03
+        .byte                   39
+        .byte           N04   , Gn3 , v096
+        .byte           N04   , Dn3 , v060
+        .byte   W03
+        .byte           VOL   , 41
+        .byte   W03
+        .byte   PEND
+@ 029   ----------------------------------------
+        .byte           N09   , Gn3 , v076
+        .byte           N09   , Dn3 , v060
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           N12   , Gn3 , v096
+        .byte           N12   , Dn3 , v060
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v096
+        .byte           N12   , Dn3 , v060
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v096
+        .byte           N12   , Dn3 , v060
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v096
+        .byte           N12   , Dn3 , v060
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W06
+@ 030   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_5_28
+@ 031   ----------------------------------------
+        .byte           N09   , Gn3 , v076
+        .byte           N09   , Dn3 , v060
+        .byte   W06
+        .byte           VOL   , 24
+        .byte   W06
+        .byte                   43
+        .byte           N12   , Gn3 , v096
+        .byte           N12   , Dn3 , v060
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v096
+        .byte           N12   , Dn3 , v060
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W18
+        .byte                   43
+        .byte           N12   , Gn3 , v100
+        .byte           N12   , Dn3 , v068
+        .byte   W06
+        .byte           VOL   , 27
+        .byte   W06
+        .byte                   41
+        .byte           N24
+        .byte           N24   , Fs3 , v108
+        .byte   W03
+        .byte           VOL   , 38
+        .byte   W03
+        .byte                   27
+        .byte   W03
+        .byte                   30
+        .byte   W03
+        .byte                   31
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   38
+        .byte   W03
+@ 032   ----------------------------------------
+        .byte           VOICE , 49
+        .byte           VOL   , 33
+        .byte           PAN   , c_v-26
+        .byte           MOD   , 0
+        .byte   GOTO
+         .word  onward_s_5_LOOP
+        .byte   W72
+        .byte   FINE
+
+@****************** Track 6 (Midi-Chn.6) ******************@
+
+onward_s_6:
+        .byte   KEYSH , onward_s_key+0
+@ 000   ----------------------------------------
+onward_s_6_LOOP:
+        .byte           VOICE , 63
+        .byte           VOL   , 36
+        .byte           PAN   , c_v+16
+        .byte   W12
+        .byte           N15   , Cn2 , v090
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W03
+@ 001   ----------------------------------------
+onward_s_6_1:
+        .byte   W12
+        .byte           VOL   , 36
+        .byte           N15   , Bn1 , v090
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W03
+        .byte   PEND
+@ 002   ----------------------------------------
+onward_s_6_2:
+        .byte   W12
+        .byte           VOL   , 36
+        .byte           N15   , As1 , v090
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W03
+        .byte   PEND
+@ 003   ----------------------------------------
+        .byte   W12
+        .byte                   36
+        .byte           N15   , An1
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15   , Dn2
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W03
+@ 004   ----------------------------------------
+        .byte   W12
+        .byte                   36
+        .byte           N15   , Cn2
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W03
+@ 005   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_6_1
+@ 006   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_6_2
+@ 007   ----------------------------------------
+        .byte   W12
+        .byte           VOL   , 36
+        .byte           N15   , An1 , v090
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N15   , Dn2
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W15
+        .byte                   36
+        .byte           N11
+        .byte   W12
+@ 008   ----------------------------------------
+onward_s_6_8:
+        .byte           N09   , Bn1 , v094
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W06
+        .byte                   36
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W18
+        .byte                   36
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W06
+        .byte                   36
+        .byte           N11
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W03
+        .byte                   36
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W18
+        .byte                   36
+        .byte           N04   , Cn2
+        .byte   W06
+        .byte                   Dn2
+        .byte   W06
+        .byte   PEND
+@ 009   ----------------------------------------
+onward_s_6_9:
+        .byte           N09   , Fn2 , v094
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W06
+        .byte                   36
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W18
+        .byte                   36
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W06
+        .byte                   36
+        .byte           N11
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W03
+        .byte                   36
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W18
+        .byte                   36
+        .byte           N10   , Cn2
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W03
+        .byte   PEND
+@ 010   ----------------------------------------
+onward_s_6_10:
+        .byte           VOL   , 36
+        .byte           N09   , Bn1 , v094
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W06
+        .byte                   36
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W18
+        .byte                   36
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W06
+        .byte                   36
+        .byte           N11
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W03
+        .byte                   36
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W18
+        .byte                   36
+        .byte           N04   , Fn2
+        .byte   W06
+        .byte                   Gn2
+        .byte   W06
+        .byte   PEND
+@ 011   ----------------------------------------
+        .byte           N09   , An2 , v090
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W06
+        .byte                   36
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W18
+        .byte                   36
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W06
+        .byte                   36
+        .byte           N11
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W03
+        .byte                   36
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W18
+        .byte                   36
+        .byte           N04   , Cn2 , v094
+        .byte   W06
+        .byte           N06   , Gn1
+        .byte   W06
+@ 012   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_6_8
+@ 013   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_6_9
+@ 014   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_6_10
+@ 015   ----------------------------------------
+        .byte           N09   , An2 , v090
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W06
+        .byte                   36
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W18
+        .byte                   36
+        .byte           N09
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W06
+        .byte                   36
+        .byte           N11
+        .byte   W09
+        .byte           VOL   , 20
+        .byte   W03
+        .byte                   36
+        .byte           N12
+        .byte   W06
+        .byte           VOL   , 20
+        .byte   W18
+        .byte                   36
+        .byte           N04
+        .byte   W06
+        .byte                   An2 , v074
+        .byte   W06
 @ 016   ----------------------------------------
         .byte   W96
 @ 017   ----------------------------------------
@@ -1042,43 +4167,912 @@ Onward_5_LOOP:
 @ 023   ----------------------------------------
         .byte   W96
 @ 024   ----------------------------------------
-        .byte   W96
+        .byte           VOL   , 27
+        .byte           N90   , Gn1 , v110
+        .byte   W03
+        .byte           VOL   , 29
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   36
+        .byte   W06
+        .byte                   35
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   31
+        .byte   W03
+        .byte                   29
+        .byte   W03
+        .byte                   28
+        .byte   W03
+        .byte                   27
+        .byte   W24
+        .byte   W03
+        .byte                   25
+        .byte   W03
+        .byte                   20
+        .byte   W21
 @ 025   ----------------------------------------
-        .byte   W96
+        .byte                   27
+        .byte           N90   , Fn1
+        .byte   W03
+        .byte           VOL   , 29
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   36
+        .byte   W06
+        .byte                   35
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   31
+        .byte   W03
+        .byte                   29
+        .byte   W03
+        .byte                   28
+        .byte   W03
+        .byte                   27
+        .byte   W24
+        .byte   W03
+        .byte                   25
+        .byte   W03
+        .byte                   20
+        .byte   W21
 @ 026   ----------------------------------------
-        .byte   W96
+        .byte                   27
+        .byte           N72   , En1
+        .byte   W03
+        .byte           VOL   , 29
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   36
+        .byte   W06
+        .byte                   35
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   31
+        .byte   W03
+        .byte                   29
+        .byte   W03
+        .byte                   28
+        .byte   W03
+        .byte                   27
+        .byte   W36
+        .byte   W03
+        .byte                   29
+        .byte           N09   , Ds1
+        .byte   W03
+        .byte           VOL   , 32
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   36
+        .byte   W03
 @ 027   ----------------------------------------
-        .byte   W96
+        .byte                   27
+        .byte           N90
+        .byte   W03
+        .byte           VOL   , 29
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   36
+        .byte   W06
+        .byte                   35
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   31
+        .byte   W03
+        .byte                   29
+        .byte   W03
+        .byte                   28
+        .byte   W03
+        .byte                   27
+        .byte   W24
+        .byte   W03
+        .byte                   25
+        .byte   W03
+        .byte                   20
+        .byte   W21
 @ 028   ----------------------------------------
-Onward_5_28:
+        .byte                   27
+        .byte           N90   , Gn1 , v106
+        .byte   W03
+        .byte           VOL   , 29
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   36
+        .byte   W06
+        .byte                   35
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   31
+        .byte   W03
+        .byte                   29
+        .byte   W03
+        .byte                   28
+        .byte   W03
+        .byte                   27
+        .byte   W24
+        .byte   W03
+        .byte                   25
+        .byte   W03
+        .byte                   20
+        .byte   W21
+@ 029   ----------------------------------------
+        .byte                   27
+        .byte           N90   , Fn1
+        .byte   W03
+        .byte           VOL   , 29
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   36
+        .byte   W06
+        .byte                   35
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   31
+        .byte   W03
+        .byte                   29
+        .byte   W03
+        .byte                   28
+        .byte   W03
+        .byte                   27
+        .byte   W24
+        .byte   W03
+        .byte                   25
+        .byte   W03
+        .byte                   20
+        .byte   W21
+@ 030   ----------------------------------------
+        .byte                   27
+        .byte           N72   , En1
+        .byte   W03
+        .byte           VOL   , 29
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   36
+        .byte   W06
+        .byte                   35
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   31
+        .byte   W03
+        .byte                   29
+        .byte   W03
+        .byte                   28
+        .byte   W03
+        .byte                   27
+        .byte   W36
+        .byte   W03
+        .byte                   29
+        .byte           N09   , Ds1
+        .byte   W03
+        .byte           VOL   , 32
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   36
+        .byte   W03
+@ 031   ----------------------------------------
+        .byte                   27
+        .byte           N90
+        .byte   W03
+        .byte           VOL   , 29
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   35
+        .byte   W03
+        .byte                   36
+        .byte   W06
+        .byte                   35
+        .byte   W03
+        .byte                   34
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   32
+        .byte   W03
+        .byte                   31
+        .byte   W03
+        .byte                   29
+        .byte   W03
+        .byte                   28
+        .byte   W03
+        .byte                   27
+        .byte   W24
+        .byte   W03
+        .byte                   25
+        .byte   W03
+        .byte                   20
+        .byte   W21
+@ 032   ----------------------------------------
+        .byte                   36
+        .byte   GOTO
+         .word  onward_s_6_LOOP
+        .byte   W72
+        .byte   FINE
+
+@****************** Track 7 (Midi-Chn.7) ******************@
+
+onward_s_7:
+        .byte   KEYSH , onward_s_key+0
+@ 000   ----------------------------------------
+onward_s_7_LOOP:
+        .byte           VOICE , 127
+        .byte           VOL   , 48
+        .byte           N24   , Cs2 , v076
         .byte   W12
-        .byte           N11   , Gn4 , v080
+        .byte           N06   , Dn1 , v100
         .byte   W12
-        .byte                   Gn4
+        .byte                   Dn1 , v040
         .byte   W12
-        .byte                   Bn4
+        .byte                   Dn1 , v100
         .byte   W12
-        .byte                   Bn4
+        .byte                   Dn1 , v040
         .byte   W12
-        .byte                   An4
+        .byte                   Dn1 , v100
         .byte   W12
-        .byte                   An4
+        .byte                   Dn1 , v040
         .byte   W12
-        .byte                   Gn4
+        .byte                   Dn1 , v100
+        .byte   W12
+@ 001   ----------------------------------------
+onward_s_7_1:
+        .byte           N06   , Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte           N04   , Ds2 , v043
+        .byte   W06
+        .byte                   Ds2 , v050
+        .byte   W06
+        .byte   PEND
+@ 002   ----------------------------------------
+        .byte           N12   , Dn1 , v040
+        .byte           N10   , Ds2 , v050
+        .byte   W12
+        .byte           N06   , Dn1 , v100
+        .byte           N10   , Ds2 , v028
+        .byte   W12
+        .byte           N06   , Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+@ 003   ----------------------------------------
+onward_s_7_3:
+        .byte           N06   , Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
         .byte   W12
         .byte   PEND
-@ 029   ----------------------------------------
+@ 004   ----------------------------------------
+        .byte           N24   , Cs2 , v080
+        .byte   W12
+        .byte           N06   , Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+@ 005   ----------------------------------------
         .byte   PATT
-         .word  Onward_5_28
+         .word  onward_s_7_1
+@ 006   ----------------------------------------
+onward_s_7_6:
+        .byte           N06   , Dn1 , v040
+        .byte           N10   , Ds2 , v050
+        .byte   W12
+        .byte           N06   , Dn1 , v100
+        .byte           N10   , Ds2 , v028
+        .byte   W12
+        .byte           N06   , Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte   PEND
+@ 007   ----------------------------------------
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte           TIE   , En2 , v092
+        .byte   W12
+        .byte           N06   , Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+@ 008   ----------------------------------------
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte           EOT   , En2
+        .byte           N06   , Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+@ 009   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_7_3
+@ 010   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_7_3
+@ 011   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_7_1
+@ 012   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_7_6
+@ 013   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_7_3
+@ 014   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_7_3
+@ 015   ----------------------------------------
+        .byte           N06   , Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte           N72   , En2 , v100
+        .byte   W12
+        .byte           N06   , Dn1
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+@ 016   ----------------------------------------
+onward_s_7_16:
+        .byte           N06   , Dn1 , v040
+        .byte           N48   , Cs2 , v090
+        .byte   W12
+        .byte           N06   , Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte   PEND
+@ 017   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_7_3
+@ 018   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_7_3
+@ 019   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_7_3
+@ 020   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_7_16
+@ 021   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_7_3
+@ 022   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_7_3
+@ 023   ----------------------------------------
+        .byte           N06   , Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte                   Dn1 , v040
+        .byte   W12
+        .byte                   Dn1 , v100
+        .byte   W12
+        .byte           VOL   , 42
+        .byte           N24   , Ds1
+        .byte   W03
+        .byte           VOL   , 30
+        .byte   W03
+        .byte                   33
+        .byte   W03
+        .byte                   36
+        .byte   W03
+        .byte                   38
+        .byte   W03
+        .byte                   39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+@ 024   ----------------------------------------
+        .byte                   48
+        .byte           N04   , Dn1
+        .byte           N72   , An2
+        .byte   W06
+        .byte           N04   , Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   48
+        .byte           N04   , Dn1
+        .byte   W06
+        .byte                   Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   48
+        .byte           N04   , Dn1
+        .byte   W06
+        .byte                   Dn1 , v056
+        .byte   W06
+        .byte                   Dn1 , v100
+        .byte   W06
+        .byte                   Dn1
+        .byte   W06
+        .byte                   Dn1
+        .byte   W06
+        .byte                   Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+@ 025   ----------------------------------------
+onward_s_7_25:
+        .byte           VOL   , 48
+        .byte           N04   , Dn1 , v100
+        .byte           N24   , Cs2
+        .byte   W06
+        .byte           N04   , Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   48
+        .byte           N04   , Dn1
+        .byte   W06
+        .byte                   Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   48
+        .byte           N04   , Dn1
+        .byte   W06
+        .byte                   Dn1 , v056
+        .byte   W06
+        .byte                   Dn1 , v100
+        .byte   W06
+        .byte                   Dn1
+        .byte   W06
+        .byte                   Dn1
+        .byte   W06
+        .byte                   Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte   PEND
+@ 026   ----------------------------------------
+        .byte   PATT
+         .word  onward_s_7_25
+@ 027   ----------------------------------------
+        .byte           VOL   , 48
+        .byte           N04   , Dn1 , v100
+        .byte           N24   , Cs2
+        .byte   W06
+        .byte           N04   , Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   48
+        .byte           N04   , Dn1
+        .byte           N68   , En2 , v100 , gtp2
+        .byte   W06
+        .byte           N04   , Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   48
+        .byte           N04   , Dn1
+        .byte   W06
+        .byte                   Dn1 , v056
+        .byte   W06
+        .byte                   Dn1 , v100
+        .byte   W06
+        .byte                   Dn1
+        .byte   W06
+        .byte                   Dn1
+        .byte   W06
+        .byte                   Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+@ 028   ----------------------------------------
+        .byte                   48
+        .byte           N04   , Dn1
+        .byte           N72   , An2
+        .byte   W06
+        .byte           N04   , Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   48
+        .byte           N04   , Dn1
+        .byte   W06
+        .byte                   Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   48
+        .byte           N04   , Dn1
+        .byte   W06
+        .byte                   Dn1 , v088
+        .byte   W06
+        .byte                   Dn1
+        .byte   W06
+        .byte                   Dn1
+        .byte   W06
+        .byte                   Dn1 , v100
+        .byte   W06
+        .byte                   Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+@ 029   ----------------------------------------
+onward_s_7_29:
+        .byte           VOL   , 48
+        .byte           N04   , Dn1 , v100
+        .byte           N24   , Cs2
+        .byte   W06
+        .byte           N04   , Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   48
+        .byte           N04   , Dn1
+        .byte   W06
+        .byte                   Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   48
+        .byte           N04   , Dn1
+        .byte   W06
+        .byte                   Dn1 , v088
+        .byte   W06
+        .byte                   Dn1
+        .byte   W06
+        .byte                   Dn1
+        .byte   W06
+        .byte                   Dn1 , v100
+        .byte   W06
+        .byte                   Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte   PEND
 @ 030   ----------------------------------------
         .byte   PATT
-         .word  Onward_5_28
+         .word  onward_s_7_29
 @ 031   ----------------------------------------
-        .byte   PATT
-         .word  Onward_5_28
+        .byte           VOL   , 48
+        .byte           N04   , Dn1 , v100
+        .byte           N24   , Cs2
+        .byte   W06
+        .byte           N04   , Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   48
+        .byte           N04   , Dn1
+        .byte           N68   , En2 , v100 , gtp2
+        .byte   W06
+        .byte           N04   , Dn1 , v056
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1 , v100
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
+        .byte                   48
+        .byte           N04   , Dn1
+        .byte   W06
+        .byte                   Dn1 , v088
+        .byte   W06
+        .byte                   Dn1
+        .byte   W06
+        .byte                   Dn1
+        .byte   W06
+        .byte                   Dn1 , v100
+        .byte   W06
+        .byte                   Dn1
+        .byte   W06
+        .byte           VOL   , 36
+        .byte           N12   , Ds1
+        .byte   W03
+        .byte           VOL   , 39
+        .byte   W03
+        .byte                   42
+        .byte   W03
+        .byte                   45
+        .byte   W03
 @ 032   ----------------------------------------
+        .byte                   48
         .byte   GOTO
-         .word  Onward_5_LOOP
+         .word  onward_s_7_LOOP
+        .byte   W72
         .byte   FINE
 
 
@@ -1086,18 +5080,20 @@ Onward_5_28:
 
         .align  2
 Onward:
-        .byte   6                       @ Num Tracks
+        .byte   8                       @ Num Tracks
         .byte   0                       @ Unknown
-        .byte   Onward_pri              @ Priority
-        .byte   Onward_rev              @ Reverb
+        .byte   onward_s_pri            @ Priority
+        .byte   onward_s_rev            @ Reverb
 
-        .word   Onward_grp             
+        .word   onward_s_grp           
 
-        .word   Onward_0
-        .word   Onward_1
-        .word   Onward_2
-        .word   Onward_3
-        .word   Onward_4
-        .word   Onward_5
+        .word   onward_s_0
+        .word   onward_s_1
+        .word   onward_s_2
+        .word   onward_s_3
+        .word   onward_s_4
+        .word   onward_s_5
+        .word   onward_s_6
+        .word   onward_s_7
 
         .end

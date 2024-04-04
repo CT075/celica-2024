@@ -106,8 +106,7 @@ PlayerUnit(LArachel,MageKnight_F,1) [15,12] 0 0 1 MageMoves [Elfire,Physic,Vulne
 UNIT
 
 EirMoves:
-//REDA [8,2]
-REDA CastleCoords
+REDA [8,2]
 SethMoves:
 REDA [6,5]
 FlierMoves:
