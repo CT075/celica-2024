@@ -88,10 +88,14 @@ void runBattleRounds(
     gBattleHitIterator->attributes |= attrs;
     switch (gBattleRoundOrder[i].turn) {
     case InitiatorTurn:
-      runBattleRound(initiator, target, gBattleRoundOrder[i].count);
+      if (runBattleRound(initiator, target, gBattleRoundOrder[i].count)) {
+        return;
+      }
       break;
     case TargetTurn:
-      runBattleRound(target, initiator, gBattleRoundOrder[i].count);
+      if (runBattleRound(target, initiator, gBattleRoundOrder[i].count)) {
+        return;
+      }
       break;
     case BattleOver:
       return;
@@ -230,6 +234,7 @@ void defaultPopulateRoundResult(
 ) {
   if (!BattleRoll2RN(gBattleStats.hitRate, TRUE)) {
     out->didAttackHit = false;
+    return;
   }
 
   out->didAttackHit = true;
