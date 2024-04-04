@@ -175,7 +175,7 @@ int EvCheck00_Always(struct EventInfo* info);
 // ??? ClearChapterFlag(???);
 void ResetChapterFlags(void);
 // ??? CheckChapterFlag(???);
-// ??? SetPermanentFlag(???);
+void SetPermanentFlag(int flag);
 // ??? ClearPermanentFlag(???);
 void ResetPermanentFlags(void);
 bool CheckPermanentFlagFrom(int, void*);
