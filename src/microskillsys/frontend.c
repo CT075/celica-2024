@@ -29,7 +29,9 @@ const struct SimplePreBattleSkillSpec simpleSkills[] = {
   { hasSmite, applySmite },
   { recklessMayApply, applyReckless },
   { hasTrample, applyTrample },
-  { hasAirSuperiority, applyAirSuperiority }
+  { hasAirSuperiority, applyAirSuperiority },
+  { CharmEirApplies, applyCharmEir },
+  { hasCharmEph, applyCharmEph }
 };
 
 #define NUM_PROC_SKILLS (sizeof(procSkills) / sizeof(struct ProcSkillSpec))
@@ -177,6 +179,10 @@ short getClassSkillText(struct Unit *unit) {
     return ShootDownDesc;
   case CLASS_GREAT_KNIGHT:
     return TrampleDesc;
+  case CLASS_EIRIKA_MASTER_LORD:
+    return CharmEirDesc;
+  case CLASS_EPHRAIM_MASTER_LORD:
+    return CharmEphDesc;
   }
 
   return -1;

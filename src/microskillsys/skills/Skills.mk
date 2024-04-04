@@ -27,3 +27,9 @@ include $(dir)/Rules.mk
 
 dir := $(d)/Aegis
 include $(dir)/Rules.mk
+
+dir := $(d)/CharmEir
+include $(dir)/Rules.mk
+
+dir := $(d)/CharmEph
+include $(dir)/Rules.mk

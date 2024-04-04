@@ -141,6 +141,14 @@ __TEXTPROCESSB09:
 #incbin ".TextEntries/alltextTrampleDesc.fetxt.dmp"
 setText($B09, __TEXTPROCESSB09)
 
+__TEXTPROCESSB0A:
+#incbin ".TextEntries/alltextCharmEirDesc.fetxt.dmp"
+setText($B0A, __TEXTPROCESSB0A)
+
+__TEXTPROCESSB0B:
+#incbin ".TextEntries/alltextCharmEphDesc.fetxt.dmp"
+setText($B0B, __TEXTPROCESSB0B)
+
 __TEXTPROCESS24E:
 #incbin ".TextEntries/alltextBadGuyName.fetxt.dmp"
 setText($24E, __TEXTPROCESS24E)

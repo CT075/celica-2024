@@ -74,7 +74,7 @@ END_MAIN
 #define PlayerUnit(char, cls, lvl) "UNIT char cls Eirika Level(lvl,Ally,0)"
 
 PlayerUnits:
-PlayerUnit(Eirika,EirikaMasterLord,1) [9,0] 0 0 1 EirMoves [Rapier,Vulnerary] NoAI
+PlayerUnit(Eirika,EirikaMasterLord,1) [9,0] 0 0 1 EirMoves [Rapier,Elixir] NoAI
 PlayerUnit(Seth,Paladin,10) [10,0] 0 0 1 SethMoves [SilverLance,SteelSword] NoAI
 UNIT
 
@@ -84,7 +84,7 @@ UNIT StartBadGuy Brigand 0 Level(15,Enemy,1) [13,3] 0 0 1 BanditMoves2 [IronAxe,
 UNIT
 
 Flier:
-PlayerUnit(Vanessa,FalcoKnight,4) [0,7] 0 0 1 FlierMoves [SlimLance,HeavySpear] NoAI
+PlayerUnit(Vanessa,FalcoKnight,4) [0,7] 0 0 1 FlierMoves [SteelLance,SteelSword,Vulnerary] NoAI
 UNIT TheSniper Sniper 0 Level(5,Enemy,0) [0,11] 0 0 1 ArcherMoves [Longbow] AttackInRangeAI
 UNIT
 

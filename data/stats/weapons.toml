@@ -1,5 +1,14 @@
 schema = "item"
 
+[SteelSword]
+weight = 7
+
+[SteelLance]
+weight = 9
+
+[SteelAxe]
+weight = 12
+
 [Elfire]
 weight = 8
 

@@ -232,6 +232,16 @@ when wielding [0x93]thunder[0x94] tomes.[X]
 Slightly increase damage when[NL]
 attacking non-mounted foes.[X]
 
+# # CharmEirDesc
+
+Allies within two spaces have[NL]
+increased critical and avoid.[X]
+
+# # CharmEphDesc
+
+Increases critical and avoid[NL]
+per ally within two spaces.[X]
+
 # 0x024E BadGuyName
 
 Bad Guy[X]

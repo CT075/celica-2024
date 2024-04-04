@@ -8,3 +8,5 @@ Trample
 Pierce
 AirSuperiority
 Aegis
+CharmEir
+CharmEph

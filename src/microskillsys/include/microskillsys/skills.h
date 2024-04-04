@@ -8,3 +8,5 @@
 #include "skills/Pierce.h"
 #include "skills/AirSuperiority.h"
 #include "skills/Aegis.h"
+#include "skills/CharmEir.h"
+#include "skills/CharmEph.h"
