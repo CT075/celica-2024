@@ -7,7 +7,7 @@ $(d)/main.event: $(d)/map.dmp
 $(d)/map.dmp: MAP_WIDTH = 20
 $(d)/map.dmp: MAP_HEIGHT = 20
 
-EVENTS_$(d) := $(d)/main.event
+EVENTS_$(d) := $(d)/main.event $(d)/REDAHelpers.event
 ASSETS_$(d) := $(d)/map.dmp
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))

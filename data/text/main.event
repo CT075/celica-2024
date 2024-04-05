@@ -133,6 +133,18 @@ __TEXTPROCESS919:
 #incbin ".TextEntries/alltextSecretEnding5.fetxt.dmp"
 setText($919, __TEXTPROCESS919)
 
+__TEXTPROCESS91A:
+#incbin ".TextEntries/alltextEphidelSpawnText.fetxt.dmp"
+setText($91A, __TEXTPROCESS91A)
+
+__TEXTPROCESS91B:
+#incbin ".TextEntries/alltextGilliamSpawn.fetxt.dmp"
+setText($91B, __TEXTPROCESS91B)
+
+__TEXTPROCESS91C:
+#incbin ".TextEntries/alltextTalkToGilliamText.fetxt.dmp"
+setText($91C, __TEXTPROCESS91C)
+
 __TEXTPROCESS793:
 #incbin ".TextEntries/alltext793.fetxt.dmp"
 setText($793, __TEXTPROCESS793)

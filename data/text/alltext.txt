@@ -255,6 +255,45 @@ normally, anyway...[A]
 Thanks for playing![A]
 [X]
 
+# # EphidelSpawnText
+
+[OpenMidLeft][LoadFace][0x46][0x1]
+Ahhh![A][NL]
+After twenty years and[NL]
+being burned by a dragon,[A][NL]
+I'm finally free![NL]
+Time to conquer Magvel![A][X]
+
+# # GilliamSpawn
+
+[OpenMidLeft][LoadFace][0x5][0x1]
+A battle?[A][NL]
+Fear not, I will guard the[NL]
+castle gate with my life![A][X]
+
+# # TalkToGilliamText
+
+[OpenMidLeft][LoadFace][0x5][0x1]
+[OpenMidRight][LoadFace][0x2][0x1]
+Gilliam![A]
+[OpenMidLeft]
+Ah, Princess.[NL]
+Well met.[A]
+[OpenMidRight]
+Won't you let me in?[A]
+[OpenMidLeft]
+My apologies, Princess.[A][NL]
+I'm not to allow anyone[NL]
+into the castle while[A][NL]
+a battle of this level[NL]
+rages outside.[A]
+[OpenMidRight]
+I understand.[NL]
+Stay safe![A]
+[OpenMidLeft]
+And you as well.[A]
+[X]
+
 # 0x0793
 
 Onward![X]
@@ -325,6 +364,11 @@ increased critical and avoid.[X]
 
 Increases critical and avoid[NL]
 per ally within two spaces.[X]
+
+# # AllForOneDesc
+
+Increases stats[NL]
+per red unit.[X]
 
 # 0x024E BadGuyName
 

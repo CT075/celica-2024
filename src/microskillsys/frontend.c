@@ -14,6 +14,7 @@
 
 #include "microskillsys/battle_simple.h"
 #include "microskillsys/battleunit_calc.h"
+#include "microskillsys/buffs.h"
 #include "microskillsys/skills.h"
 
 #define NUM_CALC_SKILLS (sizeof(calcSkills) / sizeof(struct CalcModSkillSpec))
@@ -149,6 +150,48 @@ void ComputeBattleUnitEffectiveHitRate(
   }
 }
 
+int unitPowBuff(struct Unit *unit) {
+  if (UNIT_CHAR_ID(unit) == CHARACTER_LYON) {
+    return CountRedUnits() / 2;
+  }
+  return 0;
+}
+
+int unitSklBuff(struct Unit *unit) {
+  if (UNIT_CHAR_ID(unit) == CHARACTER_LYON) {
+    return CountRedUnits() / 2;
+  }
+  return 0;
+}
+
+int unitSpdBuff(struct Unit *unit) {
+  if (UNIT_CHAR_ID(unit) == CHARACTER_LYON) {
+    return CountRedUnits() / 2;
+  }
+  return 0;
+}
+
+int unitDefBuff(struct Unit *unit) {
+  if (UNIT_CHAR_ID(unit) == CHARACTER_LYON) {
+    return CountRedUnits() / 2;
+  }
+  return 0;
+}
+
+int unitResBuff(struct Unit *unit) {
+  if (UNIT_CHAR_ID(unit) == CHARACTER_LYON) {
+    return CountRedUnits() / 2;
+  }
+  return 0;
+}
+
+int unitLckBuff(struct Unit *unit) {
+  if (UNIT_CHAR_ID(unit) == CHARACTER_LYON) {
+    return CountRedUnits() / 2;
+  }
+  return 0;
+}
+
 // CR cam: de-dup the text tables from the icon tables
 
 short getCharacterSkillText(struct Unit *unit) {
@@ -156,6 +199,8 @@ short getCharacterSkillText(struct Unit *unit) {
   switch (UNIT_CHAR_ID(unit)) {
   case CHARACTER_LARACHEL:
     return SmiteDesc;
+  case CHARACTER_LYON:
+    return AllForOneDesc;
   }
 
   return -1;

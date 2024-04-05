@@ -1,3 +1,4 @@
+#include "internal/buffs.lyn.event"
 #include "internal/battle.lyn.event"
 
 #ifndef NO_MICROSKILLSYS_STATSCREEN
