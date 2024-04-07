@@ -1,0 +1,9 @@
+schema = "bossquotes"
+
+[0x1]
+initiator = "Matthew"
+receiver = "Ephidel"
+chapter = 0x0
+guard_id = 0
+text_id = "MatthewEphidel"
+event_pointer = 0

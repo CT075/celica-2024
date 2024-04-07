@@ -1,3 +1,4 @@
 #include players.table.event
 #include enemies.table.event
 #include weapons.table.event
+#include bossquotes.table.event
