@@ -315,6 +315,149 @@ Eirika![NL]
 We have arrived![A]
 [X]
 
+# # RealMapStarts
+
+Somehow, Ephidel returned.[NL]
+He'll need to be stopped,[NL]
+somehow.[A]
+[X]
+
+# # RealMapStarts2
+
+Ephidel gains stat boosts[NL]
+for each surviving enemy[NL]
+on the map.[A]
+[X]
+
+# # RealMapStartsSkills
+
+Also, be warned that[NL]
+promoted foes have[NL]
+powerful [ToggleRed]skills[ToggleRed] to[NL]
+turn the tide of a[NL]
+fight.[A]
+[X]
+
+# # RealMapStarts3
+
+Use your resources and[NL]
+positioning to [ToggleRed]clear[NL]
+the map[ToggleRed] and save the[NL]
+world![A]
+[X]
+
+# # EirikaMatthew
+
+[OpenMidLeft][LoadFace][0x2][0x1]
+[OpenMidRight][LoadFace][0xC][0x1]
+[OpenMidLeft]
+Um...[A][NL]
+Excuse me, have we-[A]
+[OpenMidRight]
+Met?[A][NL]
+I'm afraid not, or at[NL]
+least I'd hope not.[A][NL]
+Being memorable isn't the[NL]
+best quality for a spy,[A][NL]
+after all.[A]
+[OpenMidLeft]
+Yes, but-[A]
+[OpenMidRight]
+Well, I'm off.[NL][A]
+Time is light, foes to[NL]
+smite and all.[A]
+[ClearFace]
+[OpenMidLeft]
+Wait there, you-[A]
+[X]
+
+# # SethMatthew
+
+[OpenMidLeft][LoadFace][0x4][0x1]
+[OpenMidRight][LoadFace][0xC][0x1]
+[OpenMidLeft]
+You... Wait![A]
+I don't recognize you.[NL]
+You're not one of ours.[A][NL]
+[OpenMidRight]
+Whoa, easy there with the[NL]
+spear, my good sir![A][NL]
+I'm just a humble thief[NL]
+in the prince's employ![A][NL]
+If you don't believe me,[NL]
+ask him yourself![A][NL]
+[OpenMidLeft]
+...Fine.[A][NL]
+Amidst all this mess, if[NL]
+you wanted to betray us,[A][NL]
+you've had plenty of[NL]
+opportunities.[A][NL]
+[OpenMidRight]
+I thank you for your[NL]
+generosity, sir knight.[A][NL]
+[X]
+
+# # MatthewSecretShop
+
+[OpenMidLeft][LoadFace][0xC][0x1]
+Look, I'll tell you this[NL]
+morsel of juicy gossip,[NL]
+as a peace offering.[A][NL]
+I hear that there's a[NL]
+[ToggleRed]secret shop[ToggleRed] on this map.[A][NL]
+Sounds like they have[NL]
+some rare stuff, too.[A][NL]
+No idea where it is,[NL]
+alas, other than being[A][NL]
+[ToggleRed]suspicious and out of the[NL]
+way.[ToggleRed][A][NL]
+[CloseSpeechSlow]
+One last thing.[A][NL]
+That Ephidel guy and[NL]
+I...[A] We go way back.[A][NL]
+So [ToggleRed]let me take a crack[NL]
+at him.[ToggleRed] Please?[A]
+[X]
+
+# # MatthewEphidel
+
+[OpenMidRight][LoadFace][0xC][0x1]
+Heya.[A]
+[ClearFace]
+[OpenMidLeft][LoadFace][0x46][0x1]
+You... I know you.[NL]
+You are from Elibe.[A][NL]
+[ClearFace]
+[OpenMidRight][LoadFace][0xC][0x1]
+The young master has[NL]
+been looking for you,[NL]
+you know.[A][NL]
+We all owe you for your[NL]
+hospitality on Valor.[A][NL]
+[ClearFace]
+[OpenMidLeft][LoadFace][0x46][0x1]
+Silence! If it weren't[NL]
+for Hector's meddling,[A][NL]
+my master's plan would[NL]
+have been perfect![A][NL]
+But now, I am here,[NL]
+in this land of Magvel![A][NL]
+Can't you feel it? The[NL]
+power of these [0x93]skills[0x94]?[A][NL]
+[ClearFace]
+[OpenMidRight][LoadFace][0xC][0x1]
+Yeah, well... I've picked[NL]
+up a skill or two as well.[A][NL]
+[ClearFace]
+[OpenMidLeft][LoadFace][0x46][0x1]
+What? You-[A][NL]
+[ClearFace]
+[OpenMidRight][LoadFace][0xC][0x1]
+Goodbye, Ephidel.[A][NL]
+Make sure to send her[NL]
+my regards.[A][NL]
+[X]
+
 # 0x0793
 
 Onward![X]
@@ -398,7 +541,7 @@ Matthew[X]
 # 0x0276 MatthewDesc
 
 A cheery thief from faraway.[NL]
-Not sure why he's in blue.[X]
+His demeanor belies his skill.[X]
 
 # 0x0234 EphidelName
 

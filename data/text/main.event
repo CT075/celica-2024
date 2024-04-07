@@ -157,6 +157,38 @@ __TEXTPROCESS91F:
 #incbin ".TextEntries/alltextReinforcementsArrive.fetxt.dmp"
 setText($91F, __TEXTPROCESS91F)
 
+__TEXTPROCESS920:
+#incbin ".TextEntries/alltextRealMapStarts.fetxt.dmp"
+setText($920, __TEXTPROCESS920)
+
+__TEXTPROCESS921:
+#incbin ".TextEntries/alltextRealMapStarts2.fetxt.dmp"
+setText($921, __TEXTPROCESS921)
+
+__TEXTPROCESS922:
+#incbin ".TextEntries/alltextRealMapStartsSkills.fetxt.dmp"
+setText($922, __TEXTPROCESS922)
+
+__TEXTPROCESS923:
+#incbin ".TextEntries/alltextRealMapStarts3.fetxt.dmp"
+setText($923, __TEXTPROCESS923)
+
+__TEXTPROCESS924:
+#incbin ".TextEntries/alltextEirikaMatthew.fetxt.dmp"
+setText($924, __TEXTPROCESS924)
+
+__TEXTPROCESS925:
+#incbin ".TextEntries/alltextSethMatthew.fetxt.dmp"
+setText($925, __TEXTPROCESS925)
+
+__TEXTPROCESS926:
+#incbin ".TextEntries/alltextMatthewSecretShop.fetxt.dmp"
+setText($926, __TEXTPROCESS926)
+
+__TEXTPROCESS927:
+#incbin ".TextEntries/alltextMatthewEphidel.fetxt.dmp"
+setText($927, __TEXTPROCESS927)
+
 __TEXTPROCESS793:
 #incbin ".TextEntries/alltext793.fetxt.dmp"
 setText($793, __TEXTPROCESS793)

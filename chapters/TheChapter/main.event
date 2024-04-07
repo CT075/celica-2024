@@ -21,6 +21,11 @@ SHORT 0x01A2
 
 ORG 0x8B0916
 BYTE -1
+
+PUSH
+  ORG 0x5A8A24
+  SHORT Gilliam 0
+POP
 POP
 
 #define CastleCoords [5,16]
@@ -31,6 +36,9 @@ POP
 #define MageHouseId 11
 #define MemberCardId 12
 #define GilliamTalkId 13
+#define LateVisitId 14
+#define MatthewTalkId 15
+#define MatthewSecretId 16
 
 #define VisitedSecretShopId 131
 
@@ -63,25 +71,30 @@ TurnBasedEvents:
 TurnEventPlayer(0,LoadFlier,2)
 TurnEventPlayer(0,SpawnEnemies,4)
 TurnEventPlayer(0,SpawnReinforcements1,5)
+TurnEventPlayer(0,SpawnReinforcements2,6)
 TurnEventPlayer(0,EphidelAggro,8)
 END_MAIN
 
 CharacterBasedEvents:
 CharacterEvent(GilliamTalkId, TalkToGilliam, Eirika, Gilliam)
+CharacterEvent(MatthewTalkId, MatthewEirikaChat, Eirika, Matthew)
+CharacterEvent(MatthewTalkId, MatthewSethChat, Seth, Matthew)
 END_MAIN
 
 LocationBasedEvents:
 //House(MageHouseId, MageHouse, MageHouseCoords)
 House(MageHouseId, MageHouse, 15, 12)
 //Seize(0x3, DontSeizeBaka, CastleCoords)
-Seize(0x3, DontSeizeBaka, 5, 16)
+Seize(3, DontSeizeBaka, 5, 16)
 SecretShop(SecretShopContents,0,7)
 END_MAIN
 
 MiscBasedEvents:
 AREA EarlyWarningId CheckEarlyWarning [5,16] [5,17]
 AREA MemberCardId GiveMemberCard [0,19] [0,19]
+AREA 3 LateVisit [5,16] [5,16]
 CauseGameOverIfLordDies
+AFEV MatthewSecretId MatthewSecretShopChat MatthewTalkId
 END_MAIN
 
 TrapData:
@@ -163,15 +176,19 @@ PlayerUnit(Amelia,General,1) SouthFort 0 0 1 C_14_14 [SteelAxe,Javelin,SteelLanc
 PlayerUnit(Matthew,Rogue,6) SouthFort 0 0 1 C_12_15 [KillingEdge,Vulnerary] NoAI
 PlayerUnit(Ross,Berserker,1) SouthFort 0 0 1 C_12_12 [KillerAxe] NoAI
 PlayerUnit(Cormag,WyvernLord,7) SouthFort 0 0 1 C_15_15 [KillerLance,SteelSword,Vulnerary] NoAI
+PlayerUnit(Moulder,Sage,7) SouthFort 0 0 1 C_12_16 [Elfire,Physic,Mend] NoAI
 UNIT
 
 #define IgnoreGilliam [0x18,0x0]
 SouthEastPegs:
-UNIT BadGuy FalconKnight Level(4,Enemy,1) [16,19] 0 0 1 C_14_15 [SilverLance] IgnoreGilliam
-UNIT BadGuy FalconKnight Level(3,Enemy,1) [16,19] 0 0 1 C_13_16 [Spear] IgnoreGilliam
+UNIT BadGuy FalcoKnight Ephidel Level(4,Enemy,1) [16,19] 0 0 1 C_14_15 [SilverLance] IgnoreGilliam
+UNIT BadGuy FalcoKnight Ephidel Level(3,Enemy,1) [16,19] 0 0 1 C_13_16 [Spear] IgnoreGilliam
 UNIT
 
 SouthWestGuys:
+UNIT BadGuy Warrior Ephidel Level(4,Enemy,1) [5,19] 0 0 1 C_9_17 [SilverAxe] IgnoreGilliam
+UNIT BadGuy Warrior Ephidel Level(3,Enemy,1) [5,19] 0 0 1 C_10_15 [Tomahawk] IgnoreGilliam
+UNIT
 
 SecretShopContents:
 SHLI BraveSword BraveLance BraveAxe BraveBow Sleep Berserk Elixir
@@ -219,6 +236,16 @@ ENDA
 SpawnReinforcements1:
 EVBIT_T 0x9
 LOAD1 1 TopLeftSwords
+ENUN
+EVBIT_F 0x9
+NoFade
+ENDA
+
+SpawnReinforcements2:
+EVBIT_T 0x9
+LOAD1 1 SouthWestGuys
+ENUN
+LOAD1 1 SouthEastPegs
 ENUN
 EVBIT_F 0x9
 NoFade
@@ -332,6 +359,25 @@ SpawnEnemies: {
   LOAD1 1 EphraimReinforcements
   CursorFlash(Ephraim)
   Text(ReinforcementsArrive)
+  ScrollText(RealMapStarts)
+  CAMERA Ephidel
+  CursorFlash(Ephidel)
+  ScrollText(RealMapStarts2)
+#define Highlight(coords) "CAMERA c; CursorFlash(c)"
+#define c [17,14]
+  Highlight(c)
+#undef c
+#define c [15,9]
+  Highlight(c)
+#undef c
+#define c [4,5]
+  Highlight(c)
+#undef c
+#define c [4,7]
+  Highlight(c)
+#undef c
+  ScrollText(RealMapStartsSkills)
+  ScrollText(RealMapStarts3)
 
   Done:
   SetLabel(Done)
@@ -379,6 +425,29 @@ GiveMemberCard: {
 
 TalkToGilliam: {
   Text(TalkToGilliamText)
+  NoFade
+  ENDA
+}
+
+MatthewEirikaChat: {
+  Text(EirikaMatthew)
+  NoFade
+  ENDA
+}
+
+MatthewSethChat: {
+  Text(SethMatthew)
+  NoFade
+  ENDA
+}
+
+MatthewSecretShopChat: {
+  Text(MatthewSecretShop)
+  NoFade
+  ENDA
+}
+
+LateVisit: {
   NoFade
   ENDA
 }
