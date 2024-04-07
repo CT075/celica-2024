@@ -9,6 +9,12 @@ weight = 9
 [SteelAxe]
 weight = 12
 
+[Javelin]
+weight = 8
+
+[Spear]
+weight = 10
+
 [Elfire]
 weight = 8
 

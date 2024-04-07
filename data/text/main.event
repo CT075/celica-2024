@@ -138,12 +138,24 @@ __TEXTPROCESS91A:
 setText($91A, __TEXTPROCESS91A)
 
 __TEXTPROCESS91B:
-#incbin ".TextEntries/alltextGilliamSpawn.fetxt.dmp"
+#incbin ".TextEntries/alltextShowLArachel.fetxt.dmp"
 setText($91B, __TEXTPROCESS91B)
 
 __TEXTPROCESS91C:
-#incbin ".TextEntries/alltextTalkToGilliamText.fetxt.dmp"
+#incbin ".TextEntries/alltextGilliamSpawn.fetxt.dmp"
 setText($91C, __TEXTPROCESS91C)
+
+__TEXTPROCESS91D:
+#incbin ".TextEntries/alltextTalkToGilliamText.fetxt.dmp"
+setText($91D, __TEXTPROCESS91D)
+
+__TEXTPROCESS91E:
+#incbin ".TextEntries/alltextWhatToDo.fetxt.dmp"
+setText($91E, __TEXTPROCESS91E)
+
+__TEXTPROCESS91F:
+#incbin ".TextEntries/alltextReinforcementsArrive.fetxt.dmp"
+setText($91F, __TEXTPROCESS91F)
 
 __TEXTPROCESS793:
 #incbin ".TextEntries/alltext793.fetxt.dmp"
@@ -200,6 +212,30 @@ setText($B0A, __TEXTPROCESSB0A)
 __TEXTPROCESSB0B:
 #incbin ".TextEntries/alltextCharmEphDesc.fetxt.dmp"
 setText($B0B, __TEXTPROCESSB0B)
+
+__TEXTPROCESSB0C:
+#incbin ".TextEntries/alltextAllForOneDesc.fetxt.dmp"
+setText($B0C, __TEXTPROCESSB0C)
+
+__TEXTPROCESS21A:
+#incbin ".TextEntries/alltextMatthewName.fetxt.dmp"
+setText($21A, __TEXTPROCESS21A)
+
+__TEXTPROCESS276:
+#incbin ".TextEntries/alltextMatthewDesc.fetxt.dmp"
+setText($276, __TEXTPROCESS276)
+
+__TEXTPROCESS234:
+#incbin ".TextEntries/alltextEphidelName.fetxt.dmp"
+setText($234, __TEXTPROCESS234)
+
+__TEXTPROCESS28F:
+#incbin ".TextEntries/alltextEphidelDesc.fetxt.dmp"
+setText($28F, __TEXTPROCESS28F)
+
+__TEXTPROCESS33B:
+#incbin ".TextEntries/alltextNecromancerDesc.fetxt.dmp"
+setText($33B, __TEXTPROCESS33B)
 
 __TEXTPROCESS24E:
 #incbin ".TextEntries/alltextBadGuyName.fetxt.dmp"

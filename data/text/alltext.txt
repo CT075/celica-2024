@@ -264,6 +264,14 @@ being burned by a dragon,[A][NL]
 I'm finally free![NL]
 Time to conquer Magvel![A][X]
 
+# # ShowLArachel
+
+[OpenMidLeft][LoadFace][0x22][0x1]
+Oh no! A battle![A][NL]
+Now, wherever did I[NL]
+leave my staff...?[A]
+[X]
+
 # # GilliamSpawn
 
 [OpenMidLeft][LoadFace][0x5][0x1]
@@ -292,6 +300,19 @@ I understand.[NL]
 Stay safe![A]
 [OpenMidLeft]
 And you as well.[A]
+[X]
+
+# # WhatToDo
+
+[OpenMidLeft][LoadFace][0x2][0x1]
+Such horrible odds...[A]
+[X]
+
+# # ReinforcementsArrive
+
+[OpenMidLeft][LoadFace][0x14][0x1]
+Eirika![NL]
+We have arrived![A]
 [X]
 
 # 0x0793
@@ -367,8 +388,31 @@ per ally within two spaces.[X]
 
 # # AllForOneDesc
 
-Increases stats[NL]
-per red unit.[X]
+Gains power from remaining[NL]
+red units.[X]
+
+# 0x021A MatthewName
+
+Matthew[X]
+
+# 0x0276 MatthewDesc
+
+A cheery thief from faraway.[NL]
+Not sure why he's in blue.[X]
+
+# 0x0234 EphidelName
+
+Ephidel[X]
+
+# 0x028F EphidelDesc
+
+A mysterious figure[NL]
+with golden eyes.[X]
+
+# 0x033B NecromancerDesc
+
+A powerful sorceror calling[NL]
+upon magic from two realms.[X]
 
 # 0x024E BadGuyName
 

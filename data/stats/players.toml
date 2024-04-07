@@ -3,10 +3,10 @@ schema = "character"
 [Eirika]
 hp = "31-18"
 pow = "14-3"
-skl = "17-3"
+skl = "19-3"
 spd = "18-4"
 def = "12-5"
-res = 13
+res = 16
 lck = 18
 ranks = { sword = "A" }
 
@@ -37,6 +37,7 @@ skl = "17-5"
 spd = "15-6"
 def = "8-3"
 res = "21-6"
+lck = 27
 ranks = { anima = "A", staff = "S" }
 
 [Gilliam]
@@ -46,5 +47,76 @@ skl = "21-5"
 spd = 6
 def = "19"
 res = "21"
+lck = 18
 ranks = { sword = "B", lance = "S", axe = "A" }
 con = -2
+
+[Ephraim]
+hp = "38-18"
+pow = "20-6"
+skl = "17-3"
+spd = "18-4"
+def = "17-5"
+res = 13
+lck = 16
+ranks = { lance = "S" }
+
+[Duessel]
+hp = "50-21"
+pow = "23-8"
+skl = "19-4"
+spd = "14-6"
+def = "25-11"
+res = "13-6"
+lck = 15
+ranks = { sword = "B", lance = "A", axe = "S" }
+
+[Innes]
+hp = "34-21"
+pow = "17-7"
+skl = "21-6"
+spd = "20-5"
+def = "14-5"
+res = "15-2"
+lck = 20
+ranks = { bow = "S" }
+
+[Gerik]
+hp = "38-22"
+pow = "19-6"
+skl = "18-9"
+spd = "18-10"
+def = "16-8"
+res = "13-2"
+lck = 21
+ranks = { sword = "A", axe = "A" }
+
+[Amelia]
+hp = "43-20"
+pow = "19-8"
+skl = "16-5"
+spd = "13-5"
+def = "21-11"
+res = "23-4"
+lck = 24
+ranks = { sword = "B", lance = "A", axe = "B" }
+
+[Matthew]
+hp = "31-16"
+pow = "16-3"
+skl = "24-1"
+spd = "26-9"
+def = "12-2"
+res = 15
+lck = 18
+ranks = { sword = "A" }
+
+[Ross]
+hp = "44-24"
+pow = "20-7"
+skl = "16-6"
+spd = "17-7"
+def = "16-6"
+res = 8
+lck = 20
+ranks = { axe = "B" }

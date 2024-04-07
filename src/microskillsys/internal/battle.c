@@ -55,6 +55,9 @@ void setFollowup(
   out->count = 1 << BattleCheckBraveEffect(lastRoundAttacker);
 }
 
+// CR cam: rethink this design. this doesn't account for proc skills that
+// may change the battle order. instead, have BattleGenerateHit return some
+// info about the next round
 void defaultPopulateRoundOrder(
     struct BattleUnit *initiator, struct BattleUnit *target
 ) {
