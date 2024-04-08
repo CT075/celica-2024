@@ -10,3 +10,5 @@ AirSuperiority
 Aegis
 CharmEir
 CharmEph
+Revenger
+Covert

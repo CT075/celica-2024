@@ -33,3 +33,9 @@ include $(dir)/Rules.mk
 
 dir := $(d)/CharmEph
 include $(dir)/Rules.mk
+
+dir := $(d)/Revenger
+include $(dir)/Rules.mk
+
+dir := $(d)/Covert
+include $(dir)/Rules.mk

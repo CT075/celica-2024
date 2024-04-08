@@ -165,6 +165,7 @@ EphidelGroup:
 UNIT Ephidel Necromancer 0 Level(20,Enemy,0) [19,0] 0 0 1 C_17_3 [Naglfar] NeverMoveAI
 UNIT BadGuy Sage Ephidel Level(9,Enemy,1) [19,0] 0 0 1 C_18_4 [Fimbulvetr] MoveWithLeaderAI
 UNIT BadGuy Sage Ephidel Level(7,Enemy,1) [19,1] 0 0 1 C_16_2 [Elfire] MoveWithLeaderAI
+PlayerUnit(Matthew,Rogue,6) SouthFort 0 0 1 C_17_4 [KillingEdge,Vulnerary] NoAI
 UNIT
 
 EphraimReinforcements:
@@ -173,7 +174,7 @@ PlayerUnit(Duessel,GreatKnight,10) SouthFort 0 0 1 C_12_13 [SilverAxe,Spear] NoA
 PlayerUnit(Innes,Sniper,4) SouthFort 0 0 1 C_10_14 [SilverBow,Elixir] NoAI
 PlayerUnit(Gerik,Hero,8) SouthFort 0 0 1 C_11_13 [SteelBlade,HandAxe] NoAI
 PlayerUnit(Amelia,General,1) SouthFort 0 0 1 C_14_14 [SteelAxe,Javelin,SteelLance] NoAI
-PlayerUnit(Matthew,Rogue,6) SouthFort 0 0 1 C_12_15 [KillingEdge,Vulnerary] NoAI
+//PlayerUnit(Matthew,Rogue,6) SouthFort 0 0 1 C_12_15 [KillingEdge,Vulnerary] NoAI
 PlayerUnit(Ross,Berserker,1) SouthFort 0 0 1 C_12_12 [KillerAxe] NoAI
 PlayerUnit(Cormag,WyvernLord,7) SouthFort 0 0 1 C_15_15 [KillerLance,SteelSword,Vulnerary] NoAI
 PlayerUnit(Moulder,Sage,7) SouthFort 0 0 1 C_12_16 [Elfire,Physic,Mend] NoAI

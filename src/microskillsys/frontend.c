@@ -19,7 +19,10 @@
 
 #define NUM_CALC_SKILLS (sizeof(calcSkills) / sizeof(struct CalcModSkillSpec))
 
-const struct CalcModSkillSpec calcSkills[] = { { hasShootDown, applyShootDown } };
+const struct CalcModSkillSpec calcSkills[] = {
+  { hasShootDown, applyShootDown },
+  { hasCovert, applyCovert },
+};
 
 #define NUM_PRE_BATTLE_SPECS                                                           \
   (sizeof(simpleSkills) / sizeof(struct SimplePreBattleSkillSpec))
@@ -32,7 +35,8 @@ const struct SimplePreBattleSkillSpec simpleSkills[] = {
   { hasTrample, applyTrample },
   { hasAirSuperiority, applyAirSuperiority },
   { CharmEirApplies, applyCharmEir },
-  { hasCharmEph, applyCharmEph }
+  { hasCharmEph, applyCharmEph },
+  { hasRevenger, applyRevengerCombatBuffs },
 };
 
 #define NUM_PROC_SKILLS (sizeof(procSkills) / sizeof(struct ProcSkillSpec))
@@ -52,6 +56,7 @@ const struct ProcSkillSpec procSkills[] = {
       PerfectGuardProcRate,
       applyPerfectGuard,
   },
+  { Attacker, hasRevenger, RevengerProcRate, applyRevengerProc },
 };
 
 void populateRoundOrder(struct BattleUnit *initiator, struct BattleUnit *target) {

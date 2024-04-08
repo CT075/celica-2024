@@ -13,3 +13,5 @@
 #include "Aegis/Aegis.lyn.event"
 #include "CharmEir/CharmEir.lyn.event"
 #include "CharmEph/CharmEph.lyn.event"
+#include "Revenger/Revenger.lyn.event"
+#include "Covert/Covert.lyn.event"

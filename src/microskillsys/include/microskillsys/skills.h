@@ -10,3 +10,5 @@
 #include "skills/Aegis.h"
 #include "skills/CharmEir.h"
 #include "skills/CharmEph.h"
+#include "skills/Revenger.h"
+#include "skills/Covert.h"

@@ -136,7 +136,7 @@ void computeBattleUnitSpeedUnfloored(struct BattleUnit *bu) {
 }
 
 void computeBattleUnitAvoidRateUnfloored(struct BattleUnit *bu) {
-  bu->battleAvoidRate = (bu->battleSpeed * 2) + bu->terrainAvoid + (bu->unit.lck);
+  bu->battleAvoidRate = (bu->battleSpeed * 2) + bu->terrainAvoid + bu->unit.lck;
 }
 
 void defaultPopulateBattleStatGetters(struct BattleStatGetters *out) {

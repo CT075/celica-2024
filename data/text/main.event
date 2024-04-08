@@ -249,6 +249,10 @@ __TEXTPROCESSB0C:
 #incbin ".TextEntries/alltextAllForOneDesc.fetxt.dmp"
 setText($B0C, __TEXTPROCESSB0C)
 
+__TEXTPROCESSB0D:
+#incbin ".TextEntries/alltextRevenger.fetxt.dmp"
+setText($B0D, __TEXTPROCESSB0D)
+
 __TEXTPROCESS21A:
 #incbin ".TextEntries/alltextMatthewName.fetxt.dmp"
 setText($21A, __TEXTPROCESS21A)
