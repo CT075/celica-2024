@@ -120,3 +120,23 @@ def = "16-6"
 res = 8
 lck = 20
 ranks = { axe = "B" }
+
+[Cormag]
+hp = "38-25"
+pow = "23-9"
+skl = "17-5"
+spd = "19-7"
+def = "18-10"
+res = 9
+lck = 17
+ranks = { lance = "A" }
+
+[Moulder]
+hp = "36-21"
+pow = "18-4"
+skl = "20-4"
+spd = "18-4"
+def = "20-3"
+res = "21-8"
+lck = "25"
+ranks = { light = "A", staff = "S" }

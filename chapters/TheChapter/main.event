@@ -39,9 +39,10 @@ POP
 #define LateVisitId 14
 #define MatthewTalkId 15
 #define MatthewSecretId 16
+#define EphidelArrivedId 17
 
 #define VisitedSecretShopId 131
-#define MatthewFoughtEphidelId 132
+#define MatthewFoughtEphidelId 35
 #define RoutedId 6
 
 #define StartBadGuy 0x8E
@@ -71,7 +72,7 @@ POIN BeginningScene EndingScene
 
 TurnBasedEvents:
 TurnEventPlayer(0,LoadFlier,2)
-TurnEventPlayer(0,SpawnEnemies,4)
+TurnEventPlayer(EphidelArrivedId,SpawnEnemies,4)
 TurnEventPlayer(0,SpawnReinforcements1,5)
 TurnEventPlayer(0,SpawnReinforcements2,6)
 TurnEventPlayer(0,EphidelAggro,8)
@@ -88,7 +89,7 @@ LocationBasedEvents:
 //House(MageHouseId, MageHouse, MageHouseCoords)
 House(MageHouseId, MageHouse, 15, 12)
 //Seize(0x3, DontSeizeBaka, CastleCoords)
-Seize(3, DontSeizeBaka, 5, 16)
+Seize(2, DontSeizeBaka, 5, 16)
 SecretShop(SecretShopContents,0,7)
 END_MAIN
 
@@ -98,6 +99,7 @@ AREA MemberCardId GiveMemberCard [0,19] [0,19]
 AREA 3 LateVisit [5,16] [5,16]
 CauseGameOverIfLordDies
 AFEV MatthewSecretId MatthewSecretShopChat MatthewTalkId
+DefeatAll(GilliamLeaves)
 END_MAIN
 
 TrapData:
@@ -172,14 +174,14 @@ UNIT
 
 EphraimReinforcements:
 PlayerUnit(Ephraim,EphraimMasterLord,5) SouthFort 0 0 1 C_13_12 [Reginleif,Elixir] NoAI
-PlayerUnit(Duessel,GreatKnight,10) SouthFort 0 0 1 C_12_13 [SilverAxe,Spear] NoAI
-PlayerUnit(Innes,Sniper,4) SouthFort 0 0 1 C_10_14 [SilverBow,Elixir] NoAI
-PlayerUnit(Gerik,Hero,8) SouthFort 0 0 1 C_11_13 [SteelBlade,Tomahawk] NoAI
-PlayerUnit(Amelia,General,1) SouthFort 0 0 1 C_14_14 [SteelAxe,Javelin,SteelLance] NoAI
+PlayerUnit(Duessel,GreatKnight,10) SouthFort 0 0 1 C_14_12 [SilverAxe,Spear] NoAI
+PlayerUnit(Innes,Sniper,4) SouthFort 0 0 1 C_11_14 [SilverBow,Elixir] NoAI
+PlayerUnit(Gerik,Hero,8) SouthFort 0 0 1 C_12_13 [SteelBlade,Tomahawk] NoAI
+PlayerUnit(Amelia,General,1) SouthFort 0 0 1 C_14_13 [SteelAxe,Javelin,SteelLance] NoAI
 PlayerUnit(Matthew,Rogue,6) SouthFort 0 0 1 C_12_15 [KillingEdge,Vulnerary] NoAI
-PlayerUnit(Ross,Berserker,1) SouthFort 0 0 1 C_12_12 [KillerAxe] NoAI
-PlayerUnit(Cormag,WyvernLord,7) SouthFort 0 0 1 C_15_15 [KillerLance,Vulnerary] NoAI
-PlayerUnit(Moulder,Sage,7) SouthFort 0 0 1 C_12_16 [Fimbulvetr,Physic,Mend] NoAI
+PlayerUnit(Ross,Berserker,1) SouthFort 0 0 1 C_13_13 [KillerAxe] NoAI
+PlayerUnit(Cormag,WyvernLord,7) SouthFort 0 0 1 C_15_14 [KillerLance,Vulnerary] NoAI
+PlayerUnit(Moulder,Bishop,7) SouthFort 0 0 1 C_13_14 [Divine,Physic,Mend] NoAI
 UNIT
 
 #define IgnoreGilliam [0x18,0x0]
@@ -222,8 +224,6 @@ ScrollText(ExplainGoToCastle)
 ScrollText(ExplainSeize)
 SVAL s3 (-15000)
 GIVETOSLOT3
-SVAL s3 29
-ScrollText(DisplayNumTest)
 NoFade
 ENDA
 
@@ -336,6 +336,8 @@ SpawnEnemies: {
   SetLabel(SpawnEnemies)
   EVBIT_T 0x9
   LOAD1 1 EphidelGroup
+  ENUT EarlyWarningId
+  ENUF RoutedId
   ENUN
   CAMERA Ephidel
   CursorFlash(Ephidel)
@@ -417,6 +419,7 @@ DontSeizeBaka: {
   ScrollText(DontSeize6)
   ScrollText(DontSeize7)
   ScrollText(DontSeize8)
+  ENUT 3
   GameOver
   NoFade
   ENDA
@@ -455,6 +458,7 @@ MatthewSecretShopChat: {
 }
 
 DidNotVisit: {
+  ScrollText(Forgot1)
   SVAL s1 0
   CALL ComputeScore
   NoFade
@@ -462,14 +466,18 @@ DidNotVisit: {
 }
 
 LateVisit: {
+  ENUT LateVisitId
   CHECK_EVENTID 2
   BNE LabelDest(LateVisit,EphidelDead) sC s0
-  SVAL s1 10
-  // TODO: alt scoring if ephidel is alive
+  ScrollText(CongratsCastleVisitBossAlive1)
+  ScrollText(CongratsCastleVisitBossAlive2)
+  SVAL s1 8
+  CALL ComputeScore
   GOTO LabelDest(LateVisit,Done)
 
   EphidelDead:
   SetLabel(LateVisit)
+  ScrollText(CongratsCastleVisitBossDead)
   SVAL s1 5
   CALL ComputeScore
 
@@ -480,13 +488,107 @@ LateVisit: {
 }
 
 ComputeScore: {
-  CHECK_EVENTID 6
+  ScrollText(TallyUpStart)
+  CHECK_EVENTID RoutedId
   BEQ LabelDest(ComputeScore, PostRout) sC s0
-  SVAL s2 2
+  SVAL s2 3
   SADD s1 s1 s2
+  SVAL s3 1
+  ScrollText(CongratsRout)
 
   PostRout:
   SetLabel(ComputeScore)
+  CHECK_EVENTID MatthewFoughtEphidelId
+  BEQ LabelDest(ComputeScore, PostMatthew) sC s0
+  SVAL s2 1
+  SADD s1 s1 s2
+  SVAL s3 1
+  ScrollText(CongratsMatthewEphidel)
+
+  PostSecretShop:
+  SetLabel(ComputeScore)
+  CHECK_EVENTID VisitedSecretShopId
+  BEQ LabelDest(ComputeScore, PostMatthew) sC s0
+  SVAL s2 3
+  SADD s1 s1 s2
+  SVAL s3 1
+  ScrollText(CongratsSecretShop)
+
+  PostMatthew:
+  SetLabel(ComputeScore)
+  CHECK_EVENTID 2
+  BEQ LabelDest(ComputeScore, PostBuffCount) sC s0
+  CHECK_ENEMIES
+  SVAL s2 10
+  BGT LabelDest(ComputeScore, PostBuffCount) s2 sC
+  SVAL s2 5
+  SADD s1 s1 s2
+  SVAL s3 1
+  ScrollText(CongratsBuffs)
+
+  PostBuffCount:
+  SetLabel(ComputeScore)
+  BNE LabelDest(ComputeScore, AtLeastOne) s3 s0
+  ScrollText(DotDotDot)
+  GOTO LabelDest(ComputeScore, Done)
+
+  AtLeastOne:
+  ScrollText(Computing)
+
+  Done:
+  SetLabel(ComputeScore)
+  CALL TallyUp
+  NoFade
+  ENDA
 }
+
+TallyUp: {
+  SVAL s2 10
+  BGT LabelDest(TallyUp, lt10) s2 s1
+  ScrollText(GoodScore)
+  GOTO LabelDest(TallyUp, ReportDone)
+
+  lt10:
+  SetLabel(TallyUp)
+  SVAL s2 5
+  BGT LabelDest(TallyUp, lt5) s2 s1
+  ScrollText(MidScore)
+  GOTO LabelDest(TallyUp, ReportDone)
+
+  lt5:
+  SetLabel(TallyUp)
+  ScrollText(BadScore)
+
+  ReportDone:
+  SetLabel(TallyUp)
+  ScrollText(WhatMissed)
+  CHECK_EVENTID LateVisitId
+  BNE LabelDest(TallyUp, Visited) sC s0
+  ScrollText(SuggestVisit)
+  GOTO LabelDest(TallyUp, Done)
+
+  Visited:
+  SetLabel(TallyUp)
+  ScrollText(SuggestLTC1)
+  ScrollText(SuggestLTC2)
+
+  Done:
+  SetLabel(TallyUp)
+  ScrollText(ThanksForPlaying)
+  CALL EndingScene
+  NoFade
+  ENDA
+}
+
+GilliamLeaves:
+CHECK_EVENTID EphidelArrivedId
+BEQ 1 sC s0
+CAMERA Gilliam
+CursorFlash(Gilliam)
+Text(GilliamLeavesTalk)
+REMOVEUNIT Gilliam
+GOTO 2
+LABEL 1
+ENDA
 
 ALIGN 4

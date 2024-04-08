@@ -479,6 +479,28 @@ the end of the turn to[NL]
 try to remember.[A]
 [X]
 
+# # CongratsCastleVisitBossDead
+
+You remembered! Your goal[NL]
+was to [ToggleRed]reach the castle[NL]
+with Eirika![ToggleRed][A]
+[X]
+
+# # CongratsCastleVisitBossAlive1
+
+Oho.[A][NL]
+You're sharp.[A]
+[X]
+
+# # CongratsCastleVisitBossAlive2
+
+You realized that your[NL]
+objective was to [ToggleRed]end[NL]
+the map by reaching the[NL]
+castle[ToggleRed], not to fight the[NL]
+boss.[A]
+[X]
+
 # # EphidelDeathQuote
 
 [OpenMidLeft][LoadFace][0x46][0x1]
@@ -486,6 +508,123 @@ Stop... You musn't...[A][NL]
 Lord Nergal! Lord Nergal![A][NL]
 Please! Not again! I won't-[NL]
 Gwaaaaahhhh![A]
+[X]
+
+# # CongratsRout
+
+Looks like you went above[NL]
+and beyond and [ToggleRed]routed the[NL]
+enemy.[ToggleRed][A]
+[X]
+
+# # CongratsBuffs
+
+Wow! You defeated Ephidel[NL]
+while [ToggleRed]he still had plenty[NL]
+of shared power![ToggleRed][A]
+[X]
+
+# # CongratsSecretShop
+
+Good work on sniffing[NL]
+out the [ToggleRed]secret shop[ToggleRed]![NL]
+I hope you bought[NL]
+something good![A]
+[X]
+
+# # CongratsMatthewEphidel
+
+You did as Matthew[NL]
+asked and [ToggleRed]let him[NL]
+fight Ephidel.[ToggleRed][A]
+[X]
+
+# # Forgot1
+
+Seems like you've[NL]
+forgotten... Oh well.[A]
+[X]
+
+# # Forgot2
+
+I'll have to dock your[NL]
+score a bit, but anyway...[A]
+[X]
+
+# # TallyUpStart
+
+Let's see what[NL]
+[ToggleRed]objectives[ToggleRed] you cleared!
+[A]
+[X]
+
+# # GilliamLeavesTalk
+
+[OpenMidLeft][LoadFace][0x5][0x1]
+It seems the battle[NL]
+has ended.[A]
+[X]
+
+# # Computing
+
+So, how did you do?[A]
+[X]
+
+# # DotDotDot
+
+...[A]
+[X]
+
+# # GoodScore
+
+Wow, I have almost no[NL]
+complaints! Good work![A]
+[X]
+
+# # MidScore
+
+You did alright,[NL]
+I guess.[A]
+[X]
+
+# # BadScore
+
+Well... at least[NL]
+you cleared the[NL]
+chapter![A]
+[X]
+
+# # WhatMissed
+
+As for something[NL]
+you missed...[A]
+[X]
+
+# # SuggestVisit
+
+Did you notice that[NL]
+the [ToggleRed]goal window[ToggleRed] never[NL]
+changed, even after[NL]
+the enemy army spawned?[A]
+[X]
+
+# # SuggestLTC1
+
+Well, the best battle is[NL]
+one not fought at all.[A]
+[X]
+
+# # SuggestLTC2
+
+Maybe we can end the map[NL]
+[ToggleRed]before Ephidel even[NL]
+arrives?[ToggleRed][A]
+[X]
+
+# # ThanksForPlaying
+
+Thanks for playing, or[NL]
+[ToggleRed]come challenge me again![ToggleRed][A]
 [X]
 
 # 0x0793
