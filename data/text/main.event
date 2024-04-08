@@ -18,20 +18,24 @@ __TEXTPROCESS0D4:
 setText($D4, __TEXTPROCESS0D4)
 
 __TEXTPROCESS0D5:
-#incbin ".TextEntries/alltextExplainGrade.fetxt.dmp"
+#incbin ".TextEntries/alltextDisplayNumTest.fetxt.dmp"
 setText($D5, __TEXTPROCESS0D5)
 
 __TEXTPROCESS0D6:
-#incbin ".TextEntries/alltextExplainMutuallyExclusive.fetxt.dmp"
+#incbin ".TextEntries/alltextExplainGrade.fetxt.dmp"
 setText($D6, __TEXTPROCESS0D6)
 
 __TEXTPROCESS0D7:
-#incbin ".TextEntries/alltextExplainGoToCastle.fetxt.dmp"
+#incbin ".TextEntries/alltextExplainMutuallyExclusive.fetxt.dmp"
 setText($D7, __TEXTPROCESS0D7)
 
 __TEXTPROCESS0D8:
-#incbin ".TextEntries/alltextExplainSeize.fetxt.dmp"
+#incbin ".TextEntries/alltextExplainGoToCastle.fetxt.dmp"
 setText($D8, __TEXTPROCESS0D8)
+
+__TEXTPROCESS0D9:
+#incbin ".TextEntries/alltextExplainSeize.fetxt.dmp"
+setText($D9, __TEXTPROCESS0D9)
 
 __TEXTPROCESS1A2:
 #incbin ".TextEntries/alltextStartingGoal.fetxt.dmp"
@@ -189,6 +193,22 @@ __TEXTPROCESS927:
 #incbin ".TextEntries/alltextMatthewEphidel.fetxt.dmp"
 setText($927, __TEXTPROCESS927)
 
+__TEXTPROCESS928:
+#incbin ".TextEntries/alltextEphidelBeaten1.fetxt.dmp"
+setText($928, __TEXTPROCESS928)
+
+__TEXTPROCESS929:
+#incbin ".TextEntries/alltextEphidelBeaten2.fetxt.dmp"
+setText($929, __TEXTPROCESS929)
+
+__TEXTPROCESS92A:
+#incbin ".TextEntries/alltextEphidelBeaten3.fetxt.dmp"
+setText($92A, __TEXTPROCESS92A)
+
+__TEXTPROCESS92B:
+#incbin ".TextEntries/alltextEphidelDeathQuote.fetxt.dmp"
+setText($92B, __TEXTPROCESS92B)
+
 __TEXTPROCESS793:
 #incbin ".TextEntries/alltext793.fetxt.dmp"
 setText($793, __TEXTPROCESS793)
@@ -250,8 +270,16 @@ __TEXTPROCESSB0C:
 setText($B0C, __TEXTPROCESSB0C)
 
 __TEXTPROCESSB0D:
-#incbin ".TextEntries/alltextRevenger.fetxt.dmp"
+#incbin ".TextEntries/alltextRevengerDesc.fetxt.dmp"
 setText($B0D, __TEXTPROCESSB0D)
+
+__TEXTPROCESSB0E:
+#incbin ".TextEntries/alltextCovertDesc.fetxt.dmp"
+setText($B0E, __TEXTPROCESSB0E)
+
+__TEXTPROCESSB0F:
+#incbin ".TextEntries/alltextAirRaidDesc.fetxt.dmp"
+setText($B0F, __TEXTPROCESSB0F)
 
 __TEXTPROCESS21A:
 #incbin ".TextEntries/alltextMatthewName.fetxt.dmp"

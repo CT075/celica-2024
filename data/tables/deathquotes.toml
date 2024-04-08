@@ -1,0 +1,8 @@
+schema = "deathquotes"
+
+[0x1]
+character = "Ephidel"
+chapter = 0x0
+event_id = 2
+text_id = "EphidelDeathQuote"
+event_pointer = 0

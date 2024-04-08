@@ -1,0 +1,24 @@
+[metadata]
+base_offset = 0x9ECD4C
+num_entries = 79
+entry_size = 12
+
+[character]
+index = 0
+size = 1
+
+[chapter]
+index = 3
+size = 1
+
+[event_id]
+index = 4
+size = 1
+
+[text_id]
+index = 6
+size = 2
+
+[event_pointer]
+index = 8
+size = 4

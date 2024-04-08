@@ -41,6 +41,8 @@ POP
 #define MatthewSecretId 16
 
 #define VisitedSecretShopId 131
+#define MatthewFoughtEphidelId 132
+#define RoutedId 6
 
 #define StartBadGuy 0x8E
 #define BadGuy 0x80
@@ -73,6 +75,7 @@ TurnEventPlayer(0,SpawnEnemies,4)
 TurnEventPlayer(0,SpawnReinforcements1,5)
 TurnEventPlayer(0,SpawnReinforcements2,6)
 TurnEventPlayer(0,EphidelAggro,8)
+DefeatBoss(DidNotVisit)
 END_MAIN
 
 CharacterBasedEvents:
@@ -165,19 +168,18 @@ EphidelGroup:
 UNIT Ephidel Necromancer 0 Level(20,Enemy,0) [19,0] 0 0 1 C_17_3 [Naglfar] NeverMoveAI
 UNIT BadGuy Sage Ephidel Level(9,Enemy,1) [19,0] 0 0 1 C_18_4 [Fimbulvetr] MoveWithLeaderAI
 UNIT BadGuy Sage Ephidel Level(7,Enemy,1) [19,1] 0 0 1 C_16_2 [Elfire] MoveWithLeaderAI
-PlayerUnit(Matthew,Rogue,6) SouthFort 0 0 1 C_17_4 [KillingEdge,Vulnerary] NoAI
 UNIT
 
 EphraimReinforcements:
 PlayerUnit(Ephraim,EphraimMasterLord,5) SouthFort 0 0 1 C_13_12 [Reginleif,Elixir] NoAI
 PlayerUnit(Duessel,GreatKnight,10) SouthFort 0 0 1 C_12_13 [SilverAxe,Spear] NoAI
 PlayerUnit(Innes,Sniper,4) SouthFort 0 0 1 C_10_14 [SilverBow,Elixir] NoAI
-PlayerUnit(Gerik,Hero,8) SouthFort 0 0 1 C_11_13 [SteelBlade,HandAxe] NoAI
+PlayerUnit(Gerik,Hero,8) SouthFort 0 0 1 C_11_13 [SteelBlade,Tomahawk] NoAI
 PlayerUnit(Amelia,General,1) SouthFort 0 0 1 C_14_14 [SteelAxe,Javelin,SteelLance] NoAI
-//PlayerUnit(Matthew,Rogue,6) SouthFort 0 0 1 C_12_15 [KillingEdge,Vulnerary] NoAI
+PlayerUnit(Matthew,Rogue,6) SouthFort 0 0 1 C_12_15 [KillingEdge,Vulnerary] NoAI
 PlayerUnit(Ross,Berserker,1) SouthFort 0 0 1 C_12_12 [KillerAxe] NoAI
-PlayerUnit(Cormag,WyvernLord,7) SouthFort 0 0 1 C_15_15 [KillerLance,SteelSword,Vulnerary] NoAI
-PlayerUnit(Moulder,Sage,7) SouthFort 0 0 1 C_12_16 [Elfire,Physic,Mend] NoAI
+PlayerUnit(Cormag,WyvernLord,7) SouthFort 0 0 1 C_15_15 [KillerLance,Vulnerary] NoAI
+PlayerUnit(Moulder,Sage,7) SouthFort 0 0 1 C_12_16 [Fimbulvetr,Physic,Mend] NoAI
 UNIT
 
 #define IgnoreGilliam [0x18,0x0]
@@ -218,6 +220,10 @@ STAL 30
 CursorFlash(CastleCoords)
 ScrollText(ExplainGoToCastle)
 ScrollText(ExplainSeize)
+SVAL s3 (-15000)
+GIVETOSLOT3
+SVAL s3 29
+ScrollText(DisplayNumTest)
 NoFade
 ENDA
 
@@ -381,7 +387,7 @@ SpawnEnemies: {
   ScrollText(RealMapStarts3)
 
   Done:
-  SetLabel(Done)
+  SetLabel(SpawnEnemies)
   NoFade
   ENDA
 }
@@ -448,9 +454,39 @@ MatthewSecretShopChat: {
   ENDA
 }
 
-LateVisit: {
+DidNotVisit: {
+  SVAL s1 0
+  CALL ComputeScore
   NoFade
   ENDA
+}
+
+LateVisit: {
+  CHECK_EVENTID 2
+  BNE LabelDest(LateVisit,EphidelDead) sC s0
+  SVAL s1 10
+  // TODO: alt scoring if ephidel is alive
+  GOTO LabelDest(LateVisit,Done)
+
+  EphidelDead:
+  SetLabel(LateVisit)
+  SVAL s1 5
+  CALL ComputeScore
+
+  Done:
+  SetLabel(LateVisit)
+  NoFade
+  ENDA
+}
+
+ComputeScore: {
+  CHECK_EVENTID 6
+  BEQ LabelDest(ComputeScore, PostRout) sC s0
+  SVAL s2 2
+  SADD s1 s1 s2
+
+  PostRout:
+  SetLabel(ComputeScore)
 }
 
 ALIGN 4

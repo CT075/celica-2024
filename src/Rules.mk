@@ -23,9 +23,6 @@ include $(dir)/Rules.mk
 dir := $(d)/convoy
 include $(dir)/Rules.mk
 
-dir := $(d)/displayNum
-include $(dir)/Rules.mk
-
 EVENTS_$(d) := $(d)/main.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))

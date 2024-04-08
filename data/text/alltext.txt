@@ -454,7 +454,38 @@ What?[A][NL]
 [ClearFace]
 [OpenMidRight][LoadFace][0xC][0x1]
 Goodbye, Ephidel.[NL]
-Send Leila my regards.[A][NL]
+Send her my regards.[A][NL]
+[X]
+
+# # EphidelBeaten1
+
+Well done![NL]
+With Ephidel defeated,[NL]
+Magvel is safe from...[NL]
+well, whatever he was[NL]
+plotting.[A]
+[X]
+
+# # EphidelBeaten2
+
+All that said... [ToggleRed]aren't[NL]
+you forgetting something?[ToggleRed][A]
+[X]
+
+# # EphidelBeaten3
+
+Well, I'll give you until[NL]
+the end of the turn to[NL]
+try to remember.[A]
+[X]
+
+# # EphidelDeathQuote
+
+[OpenMidLeft][LoadFace][0x46][0x1]
+Stop... You musn't...[A][NL]
+Lord Nergal! Lord Nergal![A][NL]
+Please! Not again! I won't-[NL]
+Gwaaaaahhhh![A]
 [X]
 
 # 0x0793
@@ -533,10 +564,19 @@ per ally within two spaces.[X]
 Gains power from remaining[NL]
 red units.[X]
 
-# # Revenger
+# # RevengerDesc
 
 Significantly improves combat[NL]
 stats against a certain foe.[X]
+
+# # CovertDesc
+
+Doubles terrain bonuses.[X]
+
+# # AirRaidDesc
+
+Increases speed if foe is[NL]
+unable to enter unit's tile.[X]
 
 # 0x021A MatthewName
 

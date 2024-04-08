@@ -4,6 +4,6 @@ schema = "bossquotes"
 initiator = "Matthew"
 receiver = "Ephidel"
 chapter = 0x0
-guard_id = 0
+event_id = 132
 text_id = "MatthewEphidel"
 event_pointer = 0
