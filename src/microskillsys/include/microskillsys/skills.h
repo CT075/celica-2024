@@ -12,3 +12,4 @@
 #include "skills/CharmEph.h"
 #include "skills/Revenger.h"
 #include "skills/Covert.h"
+#include "skills/AirRaid.h"

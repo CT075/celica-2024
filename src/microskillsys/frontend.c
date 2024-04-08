@@ -206,6 +206,8 @@ short getCharacterSkillText(struct Unit *unit) {
     return SmiteDesc;
   case CHARACTER_LYON:
     return AllForOneDesc;
+  case CHARACTER_COLM:
+    return RevengerDesc;
   }
 
   return -1;
@@ -233,6 +235,10 @@ short getClassSkillText(struct Unit *unit) {
     return CharmEirDesc;
   case CLASS_EPHRAIM_MASTER_LORD:
     return CharmEphDesc;
+  case CLASS_ROGUE:
+    return CovertDesc;
+  case CLASS_WYVERN_KNIGHT:
+    return AirRaidDesc;
   }
 
   return -1;

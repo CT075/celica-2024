@@ -1,0 +1,30 @@
+#include displayNum.lyn.event
+
+PUSH
+ORG 0x0076F0
+// Old code:
+//   ldr r4, =0859133C
+//   ldr r1, [r4]
+//   ldr r0, [r1]
+//   subs r0, 1h 
+//   str r0, [r1, 4]  // sTalkState->strBackup = sTalkState->str--
+//
+//   bl GetTacticianName
+//   ldr r1, [r4]
+//   str r0, r1  // sTalkState->str = GetTacticianName()
+//   b 8006FDA
+//
+// easiest thing to do is veneer with r0=sTalkState
+SHORT 0x4C04 // ldr r4, =runDisplayNum
+SHORT 0x46A6 // mov lr, r4
+SHORT 0xF800 // bl lr
+SHORT 0x46C0 // nop
+SHORT 0x46c0 // nop
+SHORT 0x46C0 // nop
+SHORT 0x46c0 // nop
+SHORT 0x46c0 // nop
+SHORT 0xE46A // b 8006FDA 
+
+// ORG 0x007704
+POIN runDisplayNum
+POP

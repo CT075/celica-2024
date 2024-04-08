@@ -39,3 +39,6 @@ include $(dir)/Rules.mk
 
 dir := $(d)/Covert
 include $(dir)/Rules.mk
+
+dir := $(d)/AirRaid
+include $(dir)/Rules.mk

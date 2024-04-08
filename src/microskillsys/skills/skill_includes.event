@@ -15,3 +15,4 @@
 #include "CharmEph/CharmEph.lyn.event"
 #include "Revenger/Revenger.lyn.event"
 #include "Covert/Covert.lyn.event"
+#include "AirRaid/AirRaid.lyn.event"

@@ -4,6 +4,7 @@
 #include bgm/main.event
 #include checkSecretShop/main.lyn.event
 #include setRNGAtTitle/main.lyn.event
+#include convoy/convoy.lyn.event
 
 // Individual tweaks
 
