@@ -4,7 +4,7 @@
 #include "eventinfo.h"
 #include "proc.h"
 
-#define VisitedSecretShopId 131
+#define VisitedSecretShopId 34
 
 void StartSecretShopScreen(struct Unit *unit, u16 *shopItems, ProcPtr parent) {
   SetPermanentFlag(VisitedSecretShopId);

@@ -1,0 +1,10 @@
+#define ephidelMug 0x46
+#define ephidel2Mug 0x47
+#define matthewMug 0xC
+
+PUSH
+ORG 0x8ACBC4
+PortraitTable:
+POP
+
+#include Installer.event

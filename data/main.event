@@ -1,3 +1,4 @@
 #include music/main.event
 #include text/main.event
 #include tables/main.event
+#include mugs/main.event

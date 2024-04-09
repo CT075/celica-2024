@@ -41,7 +41,7 @@ POP
 #define MatthewSecretId 16
 #define EphidelArrivedId 17
 
-#define VisitedSecretShopId 131
+#define VisitedSecretShopId 34
 #define MatthewFoughtEphidelId 35
 #define RoutedId 6
 
@@ -174,13 +174,10 @@ UNIT
 
 EphraimReinforcements:
 PlayerUnit(Ephraim,EphraimMasterLord,5) SouthFort 0 0 1 C_13_12 [Reginleif,Elixir] NoAI
-PlayerUnit(Duessel,GreatKnight,10) SouthFort 0 0 1 C_14_12 [SilverAxe,Spear] NoAI
 PlayerUnit(Innes,Sniper,4) SouthFort 0 0 1 C_11_14 [SilverBow,Elixir] NoAI
-PlayerUnit(Gerik,Hero,8) SouthFort 0 0 1 C_12_13 [SteelBlade,Tomahawk] NoAI
 PlayerUnit(Amelia,General,1) SouthFort 0 0 1 C_14_13 [SteelAxe,Javelin,SteelLance] NoAI
 PlayerUnit(Matthew,Rogue,6) SouthFort 0 0 1 C_12_15 [KillingEdge,Vulnerary] NoAI
 PlayerUnit(Ross,Berserker,1) SouthFort 0 0 1 C_13_13 [KillerAxe] NoAI
-PlayerUnit(Cormag,WyvernLord,7) SouthFort 0 0 1 C_15_14 [KillerLance,Vulnerary] NoAI
 PlayerUnit(Moulder,Bishop,7) SouthFort 0 0 1 C_13_14 [Divine,Physic,Mend] NoAI
 UNIT
 
@@ -587,7 +584,6 @@ CAMERA Gilliam
 CursorFlash(Gilliam)
 Text(GilliamLeavesTalk)
 REMOVEUNIT Gilliam
-GOTO 2
 LABEL 1
 ENDA
 

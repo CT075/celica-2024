@@ -11,6 +11,9 @@ include $(dir)/Rules.mk
 dir := $(d)/tables
 include $(dir)/Rules.mk
 
+dir := $(d)/mugs
+include $(dir)/Rules.mk
+
 EVENTS_$(d) := $(d)/main.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))
