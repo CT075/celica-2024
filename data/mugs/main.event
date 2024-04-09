@@ -1,5 +1,5 @@
 #define ephidelMug 0x46
-#define ephidel2Mug 0x47
+#define ephidel2Mug 0x4A
 #define matthewMug 0xC
 
 PUSH
