@@ -32,7 +32,7 @@ ranks = { sword = "B", lance = "A" }
 
 [LArachel]
 hp = "28-19"
-pow = "14-3"
+pow = "19-3"
 skl = "17-5"
 spd = "15-6"
 def = "8-3"

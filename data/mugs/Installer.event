@@ -21,4 +21,13 @@
             #incbin "matthew.dmp"
     }
 
+    {
+        __mx_mug(ephidel2Mug, __mug_dmp)
+        #incbin "ephidel2.pos.dmp"
+        BYTE 1 0 0 0; POP;
+        align 4
+        __mug_dmp:
+            #incbin "ephidel2.dmp"
+    }
+
 }
