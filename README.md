@@ -13,6 +13,8 @@ their original licenses:
 - `lyn`, libgbafe, text-process-classic and Expanded Modular Save by
   [stan](https://github.com/StanHash/)
 - Inline GenerateBestMovementScript by 7743
+- [portraits2dmp.py](https://feuniverse.us/t/the-portrait-formatter-no-one-was-asking-for/13910)
+  by MintX
 - ParseFile and Png2Dmp by [CrazyColorz5](https://github.com/Crazycolorz5)
 - [SkipHuffmanDecompression](https://github.com/ZaneAvernathy/Rewrite) by Zane Avernathy
 - FE8 Essential Fixes by the [FE8 Skill System](https://github.com/FireEmblemUniverse/SkillSystem_FE8/) team and contributors
