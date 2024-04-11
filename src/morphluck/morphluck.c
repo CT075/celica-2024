@@ -18,5 +18,12 @@ void UnitAutolevelCore(struct Unit *unit, u8 classId, int levelCount) {
 
   if (UNIT_CHAR_ID(unit) == BadGuy) {
     unit->lck = 0;
+    unit->maxHP += 5;
+    unit->pow += 2;
+    unit->skl += 2;
+    unit->spd += 2;
+    unit->def += 2;
+    unit->res += 2;
+    unit->lck += 2;
   }
 }
