@@ -26,6 +26,9 @@ include $(dir)/Rules.mk
 dir := $(d)/extraVoices
 include $(dir)/Rules.mk
 
+dir := $(d)/morphluck
+include $(dir)/Rules.mk
+
 EVENTS_$(d) := $(d)/main.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))

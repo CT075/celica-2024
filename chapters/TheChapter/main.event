@@ -182,14 +182,14 @@ PlayerUnit(Moulder,Bishop,7) SouthFort 0 0 1 C_13_14 [Divine,Physic,Mend] NoAI
 UNIT
 
 #define IgnoreGilliam [0x18,0x0]
-SouthEastPegs:
-UNIT BadGuy FalcoKnight Ephidel Level(4,Enemy,1) [16,19] 0 0 1 C_14_15 [SilverLance] IgnoreGilliam
-UNIT BadGuy FalcoKnight Ephidel Level(3,Enemy,1) [16,19] 0 0 1 C_13_16 [Spear] IgnoreGilliam
+SouthWestWyverns:
+UNIT BadGuy WyvernKnight Ephidel Level(4,Enemy,1) [16,19] 0 0 1 C_8_16 [SilverLance] IgnoreGilliam
+UNIT BadGuy WyvernKnight Ephidel Level(3,Enemy,1) [16,19] 0 0 1 C_9_17 [Spear] IgnoreGilliam
 UNIT
 
-SouthWestGuys:
-UNIT BadGuy Warrior Ephidel Level(4,Enemy,1) [5,19] 0 0 1 C_9_17 [SilverAxe] IgnoreGilliam
-UNIT BadGuy Warrior Ephidel Level(3,Enemy,1) [5,19] 0 0 1 C_10_15 [Tomahawk] IgnoreGilliam
+SouthEastGuys:
+UNIT BadGuy Warrior Ephidel Level(4,Enemy,1) [0,18] 0 0 1 C_9_17 [SilverAxe] IgnoreGilliam
+UNIT BadGuy Warrior Ephidel Level(3,Enemy,1) [0,18] 0 0 1 C_10_15 [Tomahawk] IgnoreGilliam
 UNIT
 
 SecretShopContents:
@@ -247,9 +247,9 @@ ENDA
 
 SpawnReinforcements2:
 EVBIT_T 0x9
-LOAD1 1 SouthWestGuys
+LOAD1 1 SouthEastGuys
 ENUN
-LOAD1 1 SouthEastPegs
+LOAD1 1 SouthWestWyverns
 ENUN
 EVBIT_F 0x9
 NoFade

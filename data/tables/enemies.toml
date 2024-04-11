@@ -9,7 +9,7 @@ skl = "27-6"
 spd = "14-5"
 def = "16-5"
 res = "1"
-lck = 14
+lck = 0
 ranks = { bow = "S" }
 
 [StartBadGuy]
@@ -21,7 +21,7 @@ skl = 8
 spd = 4
 def = -1
 res = 0
-lck = 11
+lck = 12
 
 [BadGuy]
 name = "BadGuyName"
@@ -32,7 +32,7 @@ skl = 6
 spd = 4
 def = 4
 res = 2
-lck = 18
+lck = 0
 
 [Ephidel]
 hp = "80-18"

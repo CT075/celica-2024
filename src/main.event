@@ -6,6 +6,7 @@
 #include setRNGAtTitle/main.lyn.event
 #include convoy/convoy.lyn.event
 #include extraVoices/main.event
+#include morphluck/morphluck.lyn.event
 
 // Individual tweaks
 

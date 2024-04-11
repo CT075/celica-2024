@@ -740,7 +740,7 @@ upon magic from two realms.[X]
 
 # 0x024E BadGuyName
 
-Bad Guy[X]
+Morph[X]
 
 # 0x024F BanditName
 
@@ -748,7 +748,8 @@ Rude Guy[X]
 
 # 0x02AA BadGuyDesc
 
-A villain![X]
+A creature given life by[NL]
+supernatural powers.[X]
 
 # # BanditDesc
 
