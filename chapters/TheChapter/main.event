@@ -91,6 +91,8 @@ House(MageHouseId, MageHouse, 15, 12)
 //Seize(0x3, DontSeizeBaka, CastleCoords)
 Seize(2, DontSeizeBaka, 5, 16)
 SecretShop(SecretShopContents,0,7)
+Armory(ArmoryContents,18,11)
+Vendor(VendorContents,19,11)
 END_MAIN
 
 MiscBasedEvents:
@@ -141,15 +143,15 @@ UNIT Gilliam General Gilliam Level(10,NPC,0) CastleCoords 0 0 0 0 [SilverLance,E
 UNIT
 
 RightCavs:
-UNIT BadGuy GreatKnight Ephidel Level(4,Enemy,1) [19,15] 0 0 1 C_17_14 [SilverAxe,SteelLance] ChaseOnceApproachedAI
-UNIT BadGuy Cavalier Ephidel Level(16,Enemy,1) [19,16] 0 0 1 C_18_13 [IronLance] ChaseOnceApproachedAI
+UNIT BadGuy GreatKnight Ephidel Level(6,Enemy,1) [19,15] 0 0 1 C_17_14 [SilverAxe,SteelLance] ChaseOnceApproachedAI
+UNIT BadGuy Cavalier Ephidel Level(16,Enemy,1) [19,16] 0 0 1 C_18_13 [SteelLance] ChaseOnceApproachedAI
 UNIT BadGuy Cavalier Ephidel Level(18,Enemy,1) [19,15] 0 0 1 C_18_15 [SteelSword] ChaseOnceApproachedAI
 UNIT
 
 MiddleInfantry:
 UNIT BadGuy Berserker Ephidel Level(3,Enemy,1) [14,11] 0 0 1 C_15_9 [KillerAxe] AttackInRangeAI
-UNIT BadGuy Brigand Ephidel Level(18,Enemy,1) [14,11] 0 0 1 C_13_9 [IronAxe] AttackInRangeAI
-UNIT BadGuy Brigand Ephidel Level(16,Enemy,1) [14,11] 0 0 1 C_14_8 [HandAxe] AttackInRangeAI
+UNIT BadGuy Brigand Ephidel Level(18,Enemy,1) [14,11] 0 0 1 C_13_9 [SteelAxe] AttackInRangeAI
+UNIT BadGuy Berserker Ephidel Level(5,Enemy,1) [14,11] 0 0 1 C_14_8 [HandAxe] AttackInRangeAI
 UNIT BadGuy Brigand Ephidel Level(19,Enemy,1) [14,11] 0 0 1 C_16_10 [SteelAxe] AttackInRangeAI
 UNIT
 
@@ -161,9 +163,9 @@ UNIT BadGuy WyvernRider Ephidel Level(17,Enemy,1) [0,4] 0 0 1 C_3_6 [Javelin] No
 UNIT
 
 TopLeftSwords:
-UNIT BadGuy Swordmaster Ephidel Level(5,Enemy,1) [5,0] 0 0 1 C_7_5 [BraveSword] NoAI
-UNIT BadGuy Myrmidon Ephidel Level(16,Enemy,1) [5,0] 0 0 1 C_7_4 [KillingEdge] NoAI
-UNIT BadGuy Myrmidon Ephidel Level(18,Enemy,1) [5,0] 0 0 1 C_6_5 [SteelSword] NoAI
+UNIT BadGuy Hero Ephidel Level(5,Enemy,1) [5,0] 0 0 1 C_7_5 [BraveSword] NoAI
+UNIT BadGuy Mercenary Ephidel Level(16,Enemy,1) [5,0] 0 0 1 C_7_4 [KillingEdge] NoAI
+UNIT BadGuy Mercenary Ephidel Level(18,Enemy,1) [5,0] 0 0 1 C_6_5 [SteelSword] NoAI
 UNIT
 
 EphidelGroup:
@@ -190,10 +192,17 @@ UNIT
 SouthEastGuys:
 UNIT BadGuy Warrior Ephidel Level(4,Enemy,1) [0,18] 0 0 1 C_9_17 [SilverAxe] IgnoreGilliam
 UNIT BadGuy Warrior Ephidel Level(3,Enemy,1) [0,18] 0 0 1 C_10_15 [Tomahawk] IgnoreGilliam
+UNIT BadGuy Warrior Ephidel Level(3,Enemy,1) [0,18] 0 0 1 C_10_15 [SteelAxe, SteelBow] IgnoreGilliam
 UNIT
 
 SecretShopContents:
 SHLI BraveSword BraveLance BraveAxe BraveBow Sleep Berserk Elixir
+
+ArmoryContents:
+SHLI SteelSword SteelLance Javelin SteelAxe HandAxe SteelBow
+
+VendorContents:
+SHLI Elfire Shine Mend Vulnerary
 
 ALIGN 4
 
