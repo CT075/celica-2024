@@ -5,6 +5,7 @@
 #include checkSecretShop/main.lyn.event
 #include setRNGAtTitle/main.lyn.event
 #include convoy/convoy.lyn.event
+#include extraVoices/main.event
 
 // Individual tweaks
 

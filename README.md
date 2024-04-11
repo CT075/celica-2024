@@ -16,6 +16,7 @@ their original licenses:
 - ParseFile and Png2Dmp by [CrazyColorz5](https://github.com/Crazycolorz5)
 - [SkipHuffmanDecompression](https://github.com/ZaneAvernathy/Rewrite) by Zane Avernathy
 - FE8 Essential Fixes by the [FE8 Skill System](https://github.com/FireEmblemUniverse/SkillSystem_FE8/) team and contributors
+- Extra Voices patch adapted from Agro and Brendor
 - Many internal engine hacks taken or adapted from the [fe8-archipelago](https://github.com/CT075/fe8-archipelago) project (also by me).
 - Project template initially forked from MysticOCE's
   [EasyBuildfile](https://github.com/MysticOCE/EasyBuildfile)
