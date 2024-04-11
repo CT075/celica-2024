@@ -30,7 +30,6 @@ const struct CalcModSkillSpec calcSkills[] = {
 // CR cam: generate this
 const struct SimplePreBattleSkillSpec simpleSkills[] = {
   { hasShootDown, applyShootDownHitBonus },
-  { hasSmite, applySmite },
   { recklessMayApply, applyReckless },
   { hasTrample, applyTrample },
   { hasAirSuperiority, applyAirSuperiority },
@@ -202,8 +201,6 @@ int unitLckBuff(struct Unit *unit) {
 short getCharacterSkillText(struct Unit *unit) {
   // CR cam: populate this
   switch (UNIT_CHAR_ID(unit)) {
-  case CHARACTER_LARACHEL:
-    return SmiteDesc;
   case CHARACTER_LYON:
     return AllForOneDesc;
   case CHARACTER_COLM:
