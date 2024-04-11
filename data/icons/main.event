@@ -1,0 +1,4 @@
+#define ItemIconGraphicOffs 0x5926F4
+#include iconnames.event
+
+#include installer.event

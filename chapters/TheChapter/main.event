@@ -22,10 +22,8 @@ SHORT 0x01A2
 ORG 0x8B0916
 BYTE -1
 
-PUSH
-  ORG 0x5A8A24
-  SHORT Gilliam 0
-POP
+ORG 0x5A8A24
+SHORT Gilliam 0
 POP
 
 #define CastleCoords [5,16]
@@ -151,13 +149,13 @@ UNIT
 MiddleInfantry:
 UNIT BadGuy Berserker Ephidel Level(3,Enemy,1) [14,11] 0 0 1 C_15_9 [KillerAxe] AttackInRangeAI
 UNIT BadGuy Brigand Ephidel Level(18,Enemy,1) [14,11] 0 0 1 C_13_9 [SteelAxe] AttackInRangeAI
-UNIT BadGuy Berserker Ephidel Level(5,Enemy,1) [14,11] 0 0 1 C_14_8 [HandAxe] AttackInRangeAI
+UNIT BadGuy Brigand Ephidel Level(18,Enemy,1) [14,11] 0 0 1 C_14_8 [HandAxe] AttackInRangeAI
 UNIT BadGuy Brigand Ephidel Level(19,Enemy,1) [14,11] 0 0 1 C_16_10 [SteelAxe] AttackInRangeAI
 UNIT
 
 TopLeftWyverns:
 UNIT BadGuy WyvernKnight Ephidel Level(4,Enemy,1) [0,3] 0 0 1 C_4_5 [SilverLance] NoAI
-UNIT BadGuy WyvernKnight Ephidel Level(3,Enemy,1) [0,3] 0 0 1 C_4_7 [SilverLance] NoAI
+UNIT BadGuy WyvernKnight Ephidel Level(3,Enemy,1) [0,3] 0 0 1 C_4_7 [Spear] NoAI
 UNIT BadGuy WyvernRider Ephidel Level(19,Enemy,1) [0,3] 0 0 1 C_3_4 [SteelLance] NoAI
 UNIT BadGuy WyvernRider Ephidel Level(17,Enemy,1) [0,4] 0 0 1 C_3_6 [Javelin] NoAI
 UNIT
@@ -175,11 +173,11 @@ UNIT BadGuy Sage Ephidel Level(7,Enemy,1) [19,1] 0 0 1 C_16_2 [Elfire] MoveWithL
 UNIT
 
 EphraimReinforcements:
-PlayerUnit(Ephraim,EphraimMasterLord,5) SouthFort 0 0 1 C_13_12 [Reginleif,Elixir] NoAI
+PlayerUnit(Ephraim,EphraimMasterLord,5) SouthFort 0 0 1 C_13_12 [Reginleif,Spear,Elixir] NoAI
 PlayerUnit(Innes,Sniper,4) SouthFort 0 0 1 C_11_14 [SilverBow,Elixir] NoAI
 PlayerUnit(Amelia,General,1) SouthFort 0 0 1 C_14_13 [SteelAxe,Javelin,SteelLance] NoAI
 PlayerUnit(Matthew,Rogue,6) SouthFort 0 0 1 C_12_15 [KillingEdge,Vulnerary] NoAI
-PlayerUnit(Ross,Berserker,1) SouthFort 0 0 1 C_13_13 [KillerAxe] NoAI
+PlayerUnit(Ross,Berserker,1) SouthFort 0 0 1 C_12_13 [KillerAxe] NoAI
 PlayerUnit(Moulder,Bishop,7) SouthFort 0 0 1 C_13_14 [Divine,Physic,Mend] NoAI
 UNIT
 

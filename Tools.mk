@@ -54,6 +54,8 @@ $(STRUCT_MUNGER):
 
 TEXT_PROCESS_CLASSIC := $(VENDOR_BIN)/text-process-classic.py
 
+MAKE_ICON_INSTALLER := $(BIN_DIR)/make_icon_installer.py
+
 .PHONY: ColorzCore
 ColorzCore: $(COLORZCORE)
 
