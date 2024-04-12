@@ -34,4 +34,10 @@ ORG ItemIconGraphicOffs+(128*SteelLanceIcon)
 #incbin SteelLance.png.dmp
 ORG ItemIconGraphicOffs+(128*ReginleifIcon)
 #incbin Reginleif.png.dmp
+ORG ItemIconGraphicOffs+(128*DivineIcon)
+#incbin Divine.png.dmp
+ORG ItemIconGraphicOffs+(128*FimbulvetrIcon)
+#incbin Fimbulvetr.png.dmp
+ORG ItemIconGraphicOffs+(128*HandAxeIcon)
+#incbin HandAxe.png.dmp
 POP
