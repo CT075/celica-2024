@@ -4,7 +4,7 @@ schema = "character"
 hp = "31-18"
 pow = "14-3"
 skl = "19-3"
-spd = "18-4"
+spd = "20-4"
 def = "12-5"
 res = 16
 lck = 18
@@ -24,10 +24,11 @@ ranks = { sword = "A", lance = "S" }
 hp = "33-20"
 pow = "16-7"
 skl = "18-7"
-spd = "22-7"
+spd = "25-7"
 def = "11-5"
 res = "18-4"
 lck = 15
+con = 1
 ranks = { sword = "B", lance = "A" }
 
 [LArachel]
@@ -48,12 +49,12 @@ spd = 6
 def = "19"
 res = "21"
 lck = 18
-ranks = { sword = "B", lance = "S", axe = "A" }
 con = -2
+ranks = { sword = "B", lance = "S", axe = "A" }
 
 [Ephraim]
 hp = "38-18"
-pow = "20-6"
+pow = "21-6"
 skl = "17-3"
 spd = "18-4"
 def = "17-5"
