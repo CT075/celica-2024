@@ -18,4 +18,20 @@ ORG ItemIconGraphicOffs+(128*KillerAxeIcon)
 #incbin KillerAxe.png.dmp
 ORG ItemIconGraphicOffs+(128*SpearIcon)
 #incbin Spear.png.dmp
+ORG ItemIconGraphicOffs+(128*SteelSwordIcon)
+#incbin SteelSword.png.dmp
+ORG ItemIconGraphicOffs+(128*KillingEdgeIcon)
+#incbin KillingEdge.png.dmp
+ORG ItemIconGraphicOffs+(128*SilverAxeIcon)
+#incbin SilverAxe.png.dmp
+ORG ItemIconGraphicOffs+(128*SilverSwordIcon)
+#incbin SilverSword.png.dmp
+ORG ItemIconGraphicOffs+(128*JavelinIcon)
+#incbin Javelin.png.dmp
+ORG ItemIconGraphicOffs+(128*BraveSwordIcon)
+#incbin BraveSword.png.dmp
+ORG ItemIconGraphicOffs+(128*SteelLanceIcon)
+#incbin SteelLance.png.dmp
+ORG ItemIconGraphicOffs+(128*ReginleifIcon)
+#incbin Reginleif.png.dmp
 POP

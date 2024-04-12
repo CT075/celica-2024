@@ -397,6 +397,18 @@ __TEXTPROCESS2AB:
 #incbin ".TextEntries/alltextBanditDesc.fetxt.dmp"
 setText($2AB, __TEXTPROCESS2AB)
 
+__TEXTPROCESS35D:
+#incbin ".TextEntries/alltext35D.fetxt.dmp"
+setText($35D, __TEXTPROCESS35D)
+
+__TEXTPROCESS36E:
+#incbin ".TextEntries/alltext36E.fetxt.dmp"
+setText($36E, __TEXTPROCESS36E)
+
+__TEXTPROCESS37E:
+#incbin ".TextEntries/alltext37E.fetxt.dmp"
+setText($37E, __TEXTPROCESS37E)
+
 }
 
 #endif // TEXT_INSTALLER_ALLTEXT

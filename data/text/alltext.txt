@@ -755,3 +755,15 @@ supernatural powers.[X]
 
 Small fry. Not worth[NL]
 considering.[X]
+
+# 0x035D
+
+Hero Sword[X]
+
+# 0x036E
+
+Hero Lance[X]
+
+# 0x037E
+
+Hero Axe[X]
