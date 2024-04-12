@@ -24,6 +24,5 @@ void UnitAutolevelCore(struct Unit *unit, u8 classId, int levelCount) {
     unit->spd += 2;
     unit->def += 2;
     unit->res += 2;
-    unit->lck += 2;
   }
 }

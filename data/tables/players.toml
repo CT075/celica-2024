@@ -34,7 +34,7 @@ ranks = { sword = "B", lance = "A" }
 hp = "28-19"
 pow = "19-3"
 skl = "17-5"
-spd = "15-6"
+spd = "17-6"
 def = "8-3"
 res = "21-6"
 lck = 27
@@ -135,8 +135,8 @@ ranks = { lance = "A" }
 hp = "36-21"
 pow = "18-4"
 skl = "20-4"
-spd = "18-4"
-def = "20-3"
+spd = "20-4"
+def = "17-3"
 res = "21-8"
 lck = "25"
 ranks = { light = "A", staff = "S" }
