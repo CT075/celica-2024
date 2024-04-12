@@ -40,3 +40,5 @@ otherwise specified.
 
 - FE1 "Onward" initial arrangement by me, greatly improved by Alusq
 - FE3 "March" by [Sme](https://github.com/sme23) (listed as F2U)
+- FE4 "AllyAttack" by pandan (listed as F2U)
+- Thanks to 2WB for assistance with the Ephidel minimug
