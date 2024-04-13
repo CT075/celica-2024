@@ -7,6 +7,7 @@
 #include convoy/convoy.lyn.event
 #include extraVoices/main.event
 #include morphluck/morphluck.lyn.event
+#include forceAnimsOn/forceAnimsOn.lyn.event
 
 // Individual tweaks
 

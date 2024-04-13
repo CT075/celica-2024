@@ -5,8 +5,11 @@
 #include "constants/characters.h"
 #include "efxbattle.h"
 #include "ekrbattle.h"
+#include "event.h"
 #include "soundwrapper.h"
 #include "types.h"
+
+#include "eventinfo.h"
 
 #include "ram_structures.h"
 
@@ -109,10 +112,47 @@ void EfxOverrideBgm(int songid, int volume) {
 
 void EkrRestoreBGM(void) {
   if (CheckBanimHensei() == true || gBmSt.gameStateBits & BM_FLAG_5 ||
-      gEkrMainBgmPlaying == false || *gPersistentBgm != -1) {
+      gEkrMainBgmPlaying == false ||
+      (*gPersistentBgm != -1 && !*gRestoreFromDeathQuote)) {
     MakeBgmOverridePersist();
     return;
   }
 
   RestoreBgm();
+
+  if (*gRestoreFromDeathQuote) {
+    *gRestoreFromDeathQuote = 0;
+  }
+}
+
+void DisplayDefeatTalkForPid(u8 pid) {
+  struct DefeatTalkEnt *ent = GetDefeatTalkEntry(pid);
+
+  if (ent) {
+    if ((ent->route == 1) && (ent->flag == 0x65)) {
+      StartBgm(0x3e, NULL);
+      gPlaySt.config.disableBgm = 1;
+    }
+    else {
+      if (UNIT_FACTION(GetUnitFromCharId(pid)) == FACTION_BLUE) {
+        if (*gPersistentBgm) {
+          MakeBgmOverridePersist();
+          *gRestoreFromDeathQuote = 1;
+        }
+        StartBgm(0x3f, NULL);
+      }
+    }
+    if (ent->msg != 0) {
+      CallBattleQuoteEventInBattle(ent->msg);
+    }
+    else {
+      if (ent->event) {
+        EventEngine_CreateBattle((u16 *)ent->event);
+      }
+    }
+
+    SetPidDefeatedFlag(pid, ent->flag);
+  }
+
+  return;
 }

@@ -18,7 +18,9 @@
 #define gSkillTextIdBuffer ((short *)(G_SKILL_TEXT_ID_BUFFER_ADDR))
 #define G_PERSISTENT_BGM_ADDR (G_SKILL_TEXT_ID_BUFFER_ADDR + sizeof_round(short[MAX_SKILLS_POSSIBLE]))
 #define gPersistentBgm ((int *)(G_PERSISTENT_BGM_ADDR))
-#define ALLOC_END (G_PERSISTENT_BGM_ADDR + sizeof_round(int)) // for verifying that ram does not overrun
+#define G_RESTORE_FROM_DEATH_QUOTE_ADDR (G_PERSISTENT_BGM_ADDR + sizeof_round(int))
+#define gRestoreFromDeathQuote ((int *)(G_RESTORE_FROM_DEATH_QUOTE_ADDR))
+#define ALLOC_END (G_RESTORE_FROM_DEATH_QUOTE_ADDR + sizeof_round(int)) // for verifying that ram does not overrun
 
 #endif // RAM_STRUCTURES_H
 

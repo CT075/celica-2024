@@ -2,3 +2,4 @@ name,real_type,access_type,notes
 g Battle Round Order,struct BattleRound[MAX_BATTLE_ROUNDS],struct BattleRound *,
 g Skill Text Id Buffer,short[MAX_SKILLS_POSSIBLE],short *,
 g Persistent Bgm,int,,
+g Restore From Death Quote,int,,
