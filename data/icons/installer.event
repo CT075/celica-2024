@@ -40,4 +40,8 @@ ORG ItemIconGraphicOffs+(128*FimbulvetrIcon)
 #incbin Fimbulvetr.png.dmp
 ORG ItemIconGraphicOffs+(128*HandAxeIcon)
 #incbin HandAxe.png.dmp
+ORG ItemIconGraphicOffs+(128*BraveAxeIcon)
+#incbin BraveAxe.png.dmp
+ORG ItemIconGraphicOffs+(128*BraveLanceIcon)
+#incbin BraveLance.png.dmp
 POP

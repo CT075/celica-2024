@@ -4,72 +4,22 @@
 #include "efxbattle.h"
 #include "ekrbattle.h"
 #include "soundwrapper.h"
+#include "types.h"
 
-void EkrPlayMainBGM(void) {
-  int ret, songid, songid2, pid, staff_type;
-  struct BattleUnit *bul, *bur, **pbul, **pbur;
+struct BattleSong {
+  int songid : 31;
+  bool persist : 1;
+};
 
-  pbul = &gpEkrBattleUnitLeft;
-  pbur = &gpEkrBattleUnitRight;
+struct BattleSong selectBattleSong() {
+  struct BattleUnit *bul = gpEkrBattleUnitLeft;
+  struct BattleUnit *bur = gpEkrBattleUnitRight;
+  int staff_type;
 
-  bul = *pbul;
-  bur = *pbur;
-
-  if (gBmSt.gameStateBits & BM_FLAG_5) {
-    gEkrMainBgmPlaying = 0;
-    return;
-  }
-
-  gEkrMainBgmPlaying = 1;
-
-  songid = gBanimFactionPal[gEkrInitialHitSide] != 1 ? 0x39 : 0x19;
-
-  ret = false;
-  if (EkrCheckWeaponSieglindeSiegmund(bur->weaponBefore) == true) {
-    ret = true;
-  }
-
-  if (!EkrCheckAttackRound(1)) {
-    ret = false;
-  }
-
-  if (gBanimValid[POS_L] == false) {
-    ret = false;
-  }
-
-  pid = UNIT_CHAR_ID(&bul->unit);
-  if (pid == CHARACTER_LYON) {
-    ret = false;
-  }
-
-  if (pid == CHARACTER_LYON_FINAL) {
-    ret = false;
-  }
-
-  if (ret == true) {
-    EfxOverrideBgm(0x1F, 0x100);
-    return;
-  }
-
-  songid2 = GetBanimBossBGM(&bul->unit);
-
-  if (UNIT_FACTION(GetUnitFromCharId(UNIT_CHAR_ID(&bul->unit))) == FACTION_BLUE) {
-    songid2 = -1;
-  }
-
-  if (gBanimValid[POS_L] == false) {
-    songid2 = -1;
-  }
-
-  if (songid2 != -1) {
-    EfxOverrideBgm(songid2, 0x100);
-    return;
-  }
-
-  if (EfxCheckRetaliation(POS_L) == true) {
+  if (EfxCheckRetaliation(POS_L)) {
     staff_type = EfxCheckStaffType(gBattleActor.weaponBefore);
   }
-  else if (EfxCheckRetaliation(POS_R) == true) {
+  else if (EfxCheckRetaliation(POS_R)) {
     staff_type = EfxCheckStaffType(gBattleTarget.weaponBefore);
   }
   else {
@@ -78,21 +28,45 @@ void EkrPlayMainBGM(void) {
 
   switch (staff_type) {
   case 2:
-    songid = 0x22;
-    break;
+    return (struct BattleSong){ .songid = 0x22, .persist = false };
 
   case 1:
-    songid = 0x21;
-    break;
-
-  default:
-    break;
+    return (struct BattleSong){ .songid = 0x21, .persist = false };
   }
+
+  if (UNIT_CHAR_ID(&bul->unit) == CHARACTER_LYON) {
+    return (struct BattleSong){ .songid = 0x1D, .persist = true };
+  }
+
+  int songid;
+  bool playerphase = gBanimFactionPal[gEkrInitialHitSide] != 1;
+
+  if (playerphase) {
+    songid = UNIT_CHAR_ID(&bur->unit) == CHARACTER_COLM ? 0x2F : 0x39;
+  }
+  else {
+    songid = 0x1A;
+  }
+
+  return (struct BattleSong){ .songid = songid, .persist = false };
+}
+
+void EkrPlayMainBGM(void) {
+  if (gBmSt.gameStateBits & BM_FLAG_5) {
+    gEkrMainBgmPlaying = false;
+    return;
+  }
+
+  gEkrMainBgmPlaying = true;
+
+  struct BattleSong bs = selectBattleSong();
+  int songid = bs.songid;
 
   if (songid != -1) {
     EfxOverrideBgm(songid, 0x100);
     return;
   }
+
   gEkrMainBgmPlaying = false;
 }
 
