@@ -487,7 +487,7 @@ with Eirika![ToggleRed][A]
 # # CongratsCastleVisitBossAlive1
 
 Oho.[A][NL]
-You're sharp.[A]
+Well done.[A]
 [X]
 
 # # CongratsCastleVisitBossAlive2
@@ -573,14 +573,17 @@ So, how did you do?[A]
 ...[A]
 [X]
 
-# # GoodScore
+# # GreatScore
 
-Wow, I have almost no[NL]
-complaints! Good work![A]
+Wow, I have almost[NL]
+no complaints![A]
+[X]
+
+# # GoodScore
+Good work![A]
 [X]
 
 # # MidScore
-
 You did alright,[NL]
 I guess.[A]
 [X]

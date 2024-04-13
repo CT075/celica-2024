@@ -553,12 +553,19 @@ ComputeScore: {
 }
 
 TallyUp: {
-  SVAL s2 10
-  BGT LabelDest(TallyUp, lt10) s2 s1
+  SVAL s2 11
+  BGT LabelDest(TallyUp, lt11) s2 s1
+  ScrollText(GreatScore)
+  GOTO LabelDest(TallyUp, ReportDone)
+
+  lt11:
+  SetLabel(TallyUp)
+  SVAL s2 8
+  BGT LabelDest(TallyUp, lt8) s2 s1
   ScrollText(GoodScore)
   GOTO LabelDest(TallyUp, ReportDone)
 
-  lt10:
+  lt8:
   SetLabel(TallyUp)
   SVAL s2 5
   BGT LabelDest(TallyUp, lt5) s2 s1
