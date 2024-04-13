@@ -129,8 +129,9 @@ void computeBattleUnitSpeedUnfloored(struct BattleUnit *bu) {
 
   effWt -= bu->unit.conBonus;
 
-  if (effWt < 0)
+  if (effWt < 0) {
     effWt = 0;
+  }
 
   bu->battleSpeed = bu->unit.spd - effWt;
 }
@@ -215,6 +216,10 @@ void applyRoundResult(
 
   if (gBattleStats.damage > BATTLE_MAX_DAMAGE) {
     gBattleStats.damage = BATTLE_MAX_DAMAGE;
+  }
+
+  if (gBattleStats.damage < 0) {
+    gBattleStats.damage = 0;
   }
 
   BattleCheckPetrify(attacker, defender);
