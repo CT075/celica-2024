@@ -468,6 +468,13 @@ DidNotVisit: {
 }
 
 LateVisit: {
+  CHECK_ACTIVEID Eirika
+  BNE LabelDest(LateVisit, Real) sC s0
+  ENUF 3
+  GOTO LabelDest(LateVisit, Done)
+
+  Real:
+  SetLabel(LateVisit)
   ENUT LateVisitId
   CHECK_EVENTID 2
   BNE LabelDest(LateVisit,EphidelDead) sC s0
@@ -535,7 +542,7 @@ ComputeScore: {
   GOTO LabelDest(ComputeScore, Done)
 
   AtLeastOne:
-  SetLabel(ComputeScore)
+  SetLabel(AtLeastOne)
   ScrollText(Computing)
 
   Done:
