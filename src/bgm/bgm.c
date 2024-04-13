@@ -6,6 +6,8 @@
 #include "soundwrapper.h"
 #include "types.h"
 
+#include "ram_structures.h"
+
 struct BattleSong {
   int songid : 31;
   bool persist : 1;
@@ -62,12 +64,18 @@ void EkrPlayMainBGM(void) {
   struct BattleSong bs = selectBattleSong();
   int songid = bs.songid;
 
-  if (songid != -1) {
-    EfxOverrideBgm(songid, 0x100);
+  if (songid == -1) {
+    gEkrMainBgmPlaying = false;
     return;
   }
 
-  gEkrMainBgmPlaying = false;
+  if (*gPersistentBgm == songid) {
+    return;
+  }
+
+  *gPersistentBgm = songid * bs.persist;
+
+  EfxOverrideBgm(songid, 0x100);
 }
 
 void EkrRestoreBGM(void) {
