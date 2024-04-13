@@ -20,5 +20,8 @@ include $(dir)/Rules.mk
 dir := $(d)/ChapterNames
 include $(dir)/Rules.mk
 
+dir := $(d)/advancedMusicInstaller
+include $(dir)/Rules.mk
+
 d := $(dirstack_$(sp))
 sp := $(basename $(sp))

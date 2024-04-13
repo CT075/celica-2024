@@ -27,6 +27,7 @@ __pycache__
 !vendor/CLib/reference/*
 !vendor/src/ChapterNames/fe8_chapter_names.*
 !vendor/src/ChapterNames/chartable.dmp
+!vendor/src/advancedMusicInstaller/*
 !vendor/bin/Sappy2EA/*
 !data/music/tracks/*.s
 data/music/tracks/*.event

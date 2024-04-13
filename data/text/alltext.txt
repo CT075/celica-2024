@@ -629,6 +629,22 @@ Thanks for playing, or[NL]
 
 Onward![X]
 
+# 0x0794
+
+March![X]
+
+# 0x07C5
+
+Attack![X]
+
+# 0x07BB
+
+Strike![X]
+
+# 0x07A7
+
+Softly with Grace[X]
+
 # 0x08FE SuspendDialogue
 
 [OpenLeft][LoadFace][0x64][0x1]

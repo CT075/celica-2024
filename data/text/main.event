@@ -293,6 +293,22 @@ __TEXTPROCESS793:
 #incbin ".TextEntries/alltext793.fetxt.dmp"
 setText($793, __TEXTPROCESS793)
 
+__TEXTPROCESS794:
+#incbin ".TextEntries/alltext794.fetxt.dmp"
+setText($794, __TEXTPROCESS794)
+
+__TEXTPROCESS7C5:
+#incbin ".TextEntries/alltext7C5.fetxt.dmp"
+setText($7C5, __TEXTPROCESS7C5)
+
+__TEXTPROCESS7BB:
+#incbin ".TextEntries/alltext7BB.fetxt.dmp"
+setText($7BB, __TEXTPROCESS7BB)
+
+__TEXTPROCESS7A7:
+#incbin ".TextEntries/alltext7A7.fetxt.dmp"
+setText($7A7, __TEXTPROCESS7A7)
+
 __TEXTPROCESS8FE:
 #incbin ".TextEntries/alltextSuspendDialogue.fetxt.dmp"
 setText($8FE, __TEXTPROCESS8FE)
