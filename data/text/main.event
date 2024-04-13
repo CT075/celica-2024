@@ -377,6 +377,10 @@ __TEXTPROCESSB0F:
 #incbin ".TextEntries/alltextAirRaidDesc.fetxt.dmp"
 setText($B0F, __TEXTPROCESSB0F)
 
+__TEXTPROCESSB10:
+#incbin ".TextEntries/alltextSlayerDesc.fetxt.dmp"
+setText($B10, __TEXTPROCESSB10)
+
 __TEXTPROCESS21A:
 #incbin ".TextEntries/alltextMatthewName.fetxt.dmp"
 setText($21A, __TEXTPROCESS21A)
@@ -424,6 +428,10 @@ setText($36E, __TEXTPROCESS36E)
 __TEXTPROCESS37E:
 #incbin ".TextEntries/alltext37E.fetxt.dmp"
 setText($37E, __TEXTPROCESS37E)
+
+__TEXTPROCESS390:
+#incbin ".TextEntries/alltext390.fetxt.dmp"
+setText($390, __TEXTPROCESS390)
 
 }
 

@@ -236,6 +236,8 @@ short getClassSkillText(struct Unit *unit) {
     return CovertDesc;
   case CLASS_WYVERN_KNIGHT:
     return AirRaidDesc;
+  case CLASS_BISHOP:
+    return SlayerDesc;
   }
 
   return -1;

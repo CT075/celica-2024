@@ -731,6 +731,11 @@ Doubles terrain bonuses.[X]
 Increases speed if foe is[NL]
 unable to enter unit's tile.[X]
 
+# # SlayerDesc
+
+Unit deals effective[NL]
+damageto monsters.[X]
+
 # 0x021A MatthewName
 
 Matthew[X]
@@ -783,3 +788,7 @@ Hero Lance[X]
 # 0x037E
 
 Hero Axe[X]
+
+# 0x0390
+
+Hero Bow[X]
