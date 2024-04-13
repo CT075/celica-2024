@@ -592,6 +592,7 @@ CursorFlash(Gilliam)
 Text(GilliamLeavesTalk)
 REMOVEUNIT Gilliam
 LABEL 1
+NoFade
 ENDA
 
 ALIGN 4

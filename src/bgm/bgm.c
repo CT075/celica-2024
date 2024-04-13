@@ -1,5 +1,7 @@
 #include "global.h"
 
+#include "agb_sram.h"
+#include "bm.h"
 #include "constants/characters.h"
 #include "efxbattle.h"
 #include "ekrbattle.h"
@@ -7,6 +9,14 @@
 #include "types.h"
 
 #include "ram_structures.h"
+
+void savePersistentBgm(void *target, unsigned size) {
+  WriteAndVerifySramFast((void *)gPersistentBgm, target, size);
+}
+
+void loadPersistentBgm(void *source, unsigned size) {
+  ReadSramFast(source, (void *)gPersistentBgm, size);
+}
 
 struct BattleSong {
   int songid : 31;
@@ -55,6 +65,7 @@ struct BattleSong selectBattleSong() {
 
 void EkrPlayMainBGM(void) {
   if (gBmSt.gameStateBits & BM_FLAG_5) {
+    *gPersistentBgm = -1;
     gEkrMainBgmPlaying = false;
     return;
   }
@@ -65,6 +76,7 @@ void EkrPlayMainBGM(void) {
   int songid = bs.songid;
 
   if (songid == -1) {
+    *gPersistentBgm = -1;
     gEkrMainBgmPlaying = false;
     return;
   }
@@ -73,14 +85,32 @@ void EkrPlayMainBGM(void) {
     return;
   }
 
-  *gPersistentBgm = songid * bs.persist;
+  if (bs.persist) {
+    *gPersistentBgm = songid;
+  }
+  else {
+    *gPersistentBgm = -1;
+  }
 
   EfxOverrideBgm(songid, 0x100);
 }
 
+void EfxOverrideBgm(int songid, int volume) {
+  if (gBmSt.gameStateBits & BM_FLAG_5)
+    return;
+
+  if (GetCurrentBgmSong() == songid) {
+    return;
+  }
+
+  Sound_SetSEVolume(volume);
+  OverrideBgm(songid);
+}
+
 void EkrRestoreBGM(void) {
   if (CheckBanimHensei() == true || gBmSt.gameStateBits & BM_FLAG_5 ||
-      gEkrMainBgmPlaying == false) {
+      gEkrMainBgmPlaying == false || *gPersistentBgm != -1) {
+    MakeBgmOverridePersist();
     return;
   }
 
