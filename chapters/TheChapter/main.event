@@ -503,28 +503,28 @@ ComputeScore: {
   PostRout:
   SetLabel(ComputeScore)
   CHECK_EVENTID MatthewFoughtEphidelId
-  BEQ LabelDest(ComputeScore, PostMatthew) sC s0
+  BEQ LabelDest(ComputeScore,PostMatthew) sC s0
   SVAL s2 1
   SADD s1 s1 s2
   SVAL s3 1
   ScrollText(CongratsMatthewEphidel)
 
-  PostSecretShop:
+  PostMatthew:
   SetLabel(ComputeScore)
   CHECK_EVENTID VisitedSecretShopId
-  BEQ LabelDest(ComputeScore, PostMatthew) sC s0
+  BEQ LabelDest(ComputeScore,PostSecretShop) sC s0
   SVAL s2 3
   SADD s1 s1 s2
   SVAL s3 1
   ScrollText(CongratsSecretShop)
 
-  PostMatthew:
+  PostSecretShop:
   SetLabel(ComputeScore)
   CHECK_EVENTID 2
-  BEQ LabelDest(ComputeScore, PostBuffCount) sC s0
+  BEQ LabelDest(ComputeScore,PostBuffCount) sC s0
   CHECK_ENEMIES
   SVAL s2 10
-  BGT LabelDest(ComputeScore, PostBuffCount) s2 sC
+  BGT LabelDest(ComputeScore,PostBuffCount) s2 sC
   SVAL s2 5
   SADD s1 s1 s2
   SVAL s3 1
@@ -537,6 +537,7 @@ ComputeScore: {
   GOTO LabelDest(ComputeScore, Done)
 
   AtLeastOne:
+  SetLabel(ComputeScore)
   ScrollText(Computing)
 
   Done:
