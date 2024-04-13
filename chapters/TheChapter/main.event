@@ -498,6 +498,8 @@ LateVisit: {
 
 ComputeScore: {
   ScrollText(TallyUpStart)
+
+  // Did we rout?
   CHECK_EVENTID RoutedId
   BEQ LabelDest(ComputeScore, PostRout) sC s0
   SVAL s2 3
@@ -507,15 +509,19 @@ ComputeScore: {
 
   PostRout:
   SetLabel(ComputeScore)
+
+  // Did Matthew fight Ephidel?
   CHECK_EVENTID MatthewFoughtEphidelId
   BEQ LabelDest(ComputeScore,PostMatthew) sC s0
-  SVAL s2 1
+  SVAL s2 2
   SADD s1 s1 s2
   SVAL s3 1
   ScrollText(CongratsMatthewEphidel)
 
   PostMatthew:
   SetLabel(ComputeScore)
+
+  // Did you find the secret shop?
   CHECK_EVENTID VisitedSecretShopId
   BEQ LabelDest(ComputeScore,PostSecretShop) sC s0
   SVAL s2 3
@@ -525,6 +531,8 @@ ComputeScore: {
 
   PostSecretShop:
   SetLabel(ComputeScore)
+
+  // How many enemies were alive when you defeated Ephidel?
   CHECK_EVENTID 2
   BEQ LabelDest(ComputeScore,PostBuffCount) sC s0
   CHECK_ENEMIES
