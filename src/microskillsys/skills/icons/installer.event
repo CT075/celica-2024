@@ -44,3 +44,6 @@ AllForOneIcon:
 #define SmiteIconId 14
 SmiteIcon:
 #incbin Smite.png.dmp
+#define SlayerIconId 15
+SlayerIcon:
+#incbin Slayer.png.dmp

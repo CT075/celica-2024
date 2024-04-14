@@ -13,3 +13,4 @@
 #define RevengerIconId 12
 #define AllForOneIconId 13
 #define SmiteIconId 14
+#define SlayerIconId 15

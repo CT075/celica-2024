@@ -285,10 +285,8 @@ short getClassSkillIcon(struct Unit *unit) {
     return CovertIconId;
   case CLASS_WYVERN_KNIGHT:
     return AirRaidIconId;
-    /*
   case CLASS_BISHOP:
     return SlayerIconId;
-    */
   }
 
   return -1;
