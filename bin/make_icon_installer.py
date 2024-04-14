@@ -6,11 +6,12 @@ import contextlib
 import functools
 
 
-def main(d, png2dmp, out):
+def main(d, png2dmp, inline, out):
     p = functools.partial(print, file=out)
 
     p("// THIS FILE IS GENERATED")
     p("PUSH")
+    i = 0
     for fname in os.listdir(d):
         name = os.path.splitext(fname)[0]
         file = os.path.join(d, fname)
@@ -18,8 +19,13 @@ def main(d, png2dmp, out):
             case ("image/png", _):
                 output = fname + ".dmp"
                 subprocess.run([png2dmp, file, "-o", os.path.join(d, output)])
-                p(f"ORG ItemIconGraphicOffs+(128*{name}Icon)")
+                if inline:
+                    p(f"ORG ItemIconGraphicOffs+(128*{name}Icon)")
+                else:
+                    p(f"#define {name}IconId {i}")
+                    p(f"{name}Icon:")
                 p(f"#incbin {output}")
+                i += 1
     p("POP")
 
 
@@ -33,6 +39,7 @@ if __name__ == "__main__":
     parser.add_argument("dir")
     parser.add_argument("--output", required=False)
     parser.add_argument("--png2dmp", required=True)
+    parser.add_argument("--inline", action="store_true")
 
     args = parser.parse_args()
 
@@ -41,4 +48,4 @@ if __name__ == "__main__":
     with (
         open(args.output, "w") if args.output else contextlib.nullcontext(sys.stdout)
     ) as out:
-        main(d, args.png2dmp, out)
+        main(d, args.png2dmp, args.inline, out)

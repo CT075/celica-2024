@@ -4,6 +4,9 @@ d := $(dir)
 
 include $(d)/Skills.mk
 
+dir := $(d)/icons
+include $(dir)/Rules.mk
+
 EVENTS_$(d) := $(d)/main.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))
