@@ -1,0 +1,10 @@
+EmptyScrollText:
+#incbin EmptyScrollText.png.dmp
+
+DefaultScroll:
+#incbin defaultscroll.png.dmp
+
+PUSH
+ORG 0xC5830
+POIN DefaultScroll
+POP

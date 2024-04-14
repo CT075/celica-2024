@@ -3,3 +3,4 @@
 #include tables/main.event
 #include mugs/main.event
 #include icons/main.event
+#include miscgfx/main.event

@@ -17,6 +17,12 @@ include $(dir)/Rules.mk
 dir := $(d)/icons
 include $(dir)/Rules.mk
 
+dir := $(d)/miscgfx
+include $(dir)/Rules.mk
+
+%.png.dmp: %.png $(PNG2DMP)
+	$(PNG2DMP) $< -o $@ --lz77
+
 EVENTS_$(d) := $(d)/main.event
 
 EVENTS := $(EVENTS) $(EVENTS_$(d))

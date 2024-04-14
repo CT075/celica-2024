@@ -50,6 +50,8 @@ POP
 #define EphidelArrivedId 17
 #define EphidelBossQuoteId 18
 #define BossDeadTextId 19
+#define EphidelEirikaQuoteId 20
+#define EphidelEphraimQuoteId 21
 
 #define VisitedSecretShopId 34
 #define MatthewFoughtEphidelId 35
@@ -637,6 +639,16 @@ EphidelBossQuoteGeneric: {
   ENDA
 }
 
+EphidelEirikaBossQuote: {
+  NoFade
+  ENDA
+}
+
+EphidelEphraimBossQuote: {
+  NoFade
+  ENDA
+}
+
 EphidelMatthewQuoteEvent: {
   //ENUT 4
   Text(MatthewEphidel)
@@ -645,8 +657,17 @@ EphidelMatthewQuoteEvent: {
 }
 
 EphidelDeathQuote: {
-  //ENUF 4
+  CHECK_ACTIVEID Matthew
+  BEQ LabelDest(EphidelDeathQuote, NotMatthew) sC s0
+  Text(MatthewKillsEphidel)
+  GOTO LabelDest(EphidelDeathQuote, Done)
+
+  NotMatthew:
+  SetLabel(EphidelDeathQuote)
   Text(EphidelDeathQuoteText)
+
+  Done:
+  SetLabel(EphidelDeathQuote)
   NoFade
   ENDA
 }

@@ -17,6 +17,38 @@ text_id = 0
 event_pointer = "EphidelMatthewQuoteEvent"
 
 [0x3]
+initiator = "Ephidel"
+receiver = "Eirika"
+chapter = 0
+event_id = "EphidelEirikaQuoteId"
+text_id = "EphidelEirika"
+event_pointer = 0
+
+[0x4]
+initiator = "Eirika"
+receiver = "Ephidel"
+chapter = 0
+event_id = "EphidelEirikaQuoteId"
+text_id = "EphidelEirika"
+event_pointer = 0
+
+[0x5]
+initiator = "Ephraim"
+receiver = "Ephidel"
+chapter = 0
+event_id = "EphidelEphraimQuoteId"
+text_id = "EphidelEphraim"
+event_pointer = 0
+
+[0x6]
+initiator = "Ephidel"
+receiver = "Ephraim"
+chapter = 0
+event_id = "EphidelEphraimQuoteId"
+text_id = "EphidelEphraim"
+event_pointer = 0
+
+[0x7]
 initiator = 0
 receiver = "Ephidel"
 chapter = 0
@@ -24,10 +56,11 @@ event_id = "EphidelBossQuoteId"
 text_id = 0
 event_pointer = "EphidelBossQuoteGeneric"
 
-[0x4]
+[0x8]
 initiator = "Ephidel"
 receiver = 0
 chapter = 0
 event_id = "EphidelBossQuoteId"
 text_id = 0
 event_pointer = "EphidelBossQuoteGeneric"
+
