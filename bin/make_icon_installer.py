@@ -10,7 +10,8 @@ def main(d, png2dmp, inline, out):
     p = functools.partial(print, file=out)
 
     p("// THIS FILE IS GENERATED")
-    p("PUSH")
+    if inline:
+        p("PUSH")
     i = 0
     for fname in os.listdir(d):
         name = os.path.splitext(fname)[0]
@@ -26,7 +27,8 @@ def main(d, png2dmp, inline, out):
                     p(f"{name}Icon:")
                 p(f"#incbin {output}")
                 i += 1
-    p("POP")
+    if inline:
+        p("POP")
 
 
 if __name__ == "__main__":

@@ -18,7 +18,7 @@
 void drawSkillIcon(u16 *BgOut, int IconIndex, int OamPalBase);
 void clearSkillIcons();
 
-extern const char SkillIconTileGraphic[];
+extern const u8 SkillIconTileGraphic[];
 
 inline void displaySkills(void) {
   struct Unit *unit = gStatScreen.unit;

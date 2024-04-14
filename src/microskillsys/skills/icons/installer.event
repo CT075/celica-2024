@@ -1,5 +1,4 @@
 // THIS FILE IS GENERATED
-PUSH
 #define AegisIconId 0
 AegisIcon:
 #incbin Aegis.png.dmp
@@ -39,4 +38,3 @@ ShootDownIcon:
 #define RevengerIconId 12
 RevengerIcon:
 #incbin Revenger.png.dmp
-POP
