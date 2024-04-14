@@ -25,4 +25,4 @@ size = 2
 
 [event_pointer]
 index = 12
-size = 4
+size = "pointer"

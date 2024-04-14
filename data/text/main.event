@@ -190,108 +190,112 @@ __TEXTPROCESS927:
 setText($927, __TEXTPROCESS927)
 
 __TEXTPROCESS928:
-#incbin ".TextEntries/alltextEphidelBeaten1.fetxt.dmp"
+#incbin ".TextEntries/alltextEphidelGeneric.fetxt.dmp"
 setText($928, __TEXTPROCESS928)
 
 __TEXTPROCESS929:
-#incbin ".TextEntries/alltextEphidelBeaten2.fetxt.dmp"
+#incbin ".TextEntries/alltextEphidelBeaten1.fetxt.dmp"
 setText($929, __TEXTPROCESS929)
 
 __TEXTPROCESS92A:
-#incbin ".TextEntries/alltextEphidelBeaten3.fetxt.dmp"
+#incbin ".TextEntries/alltextEphidelBeaten2.fetxt.dmp"
 setText($92A, __TEXTPROCESS92A)
 
 __TEXTPROCESS92B:
-#incbin ".TextEntries/alltextCongratsCastleVisitBossDead.fetxt.dmp"
+#incbin ".TextEntries/alltextEphidelBeaten3.fetxt.dmp"
 setText($92B, __TEXTPROCESS92B)
 
 __TEXTPROCESS92C:
-#incbin ".TextEntries/alltextCongratsCastleVisitBossAlive1.fetxt.dmp"
+#incbin ".TextEntries/alltextCongratsCastleVisitBossDead.fetxt.dmp"
 setText($92C, __TEXTPROCESS92C)
 
 __TEXTPROCESS92D:
-#incbin ".TextEntries/alltextCongratsCastleVisitBossAlive2.fetxt.dmp"
+#incbin ".TextEntries/alltextCongratsCastleVisitBossAlive1.fetxt.dmp"
 setText($92D, __TEXTPROCESS92D)
 
 __TEXTPROCESS92E:
-#incbin ".TextEntries/alltextEphidelDeathQuote.fetxt.dmp"
+#incbin ".TextEntries/alltextCongratsCastleVisitBossAlive2.fetxt.dmp"
 setText($92E, __TEXTPROCESS92E)
 
 __TEXTPROCESS92F:
-#incbin ".TextEntries/alltextCongratsRout.fetxt.dmp"
+#incbin ".TextEntries/alltextEphidelDeathQuoteText.fetxt.dmp"
 setText($92F, __TEXTPROCESS92F)
 
 __TEXTPROCESS930:
-#incbin ".TextEntries/alltextCongratsBuffs.fetxt.dmp"
+#incbin ".TextEntries/alltextCongratsRout.fetxt.dmp"
 setText($930, __TEXTPROCESS930)
 
 __TEXTPROCESS931:
-#incbin ".TextEntries/alltextCongratsSecretShop.fetxt.dmp"
+#incbin ".TextEntries/alltextCongratsBuffs.fetxt.dmp"
 setText($931, __TEXTPROCESS931)
 
 __TEXTPROCESS932:
-#incbin ".TextEntries/alltextCongratsMatthewEphidel.fetxt.dmp"
+#incbin ".TextEntries/alltextCongratsSecretShop.fetxt.dmp"
 setText($932, __TEXTPROCESS932)
 
 __TEXTPROCESS933:
-#incbin ".TextEntries/alltextForgot1.fetxt.dmp"
+#incbin ".TextEntries/alltextCongratsMatthewEphidel.fetxt.dmp"
 setText($933, __TEXTPROCESS933)
 
 __TEXTPROCESS934:
-#incbin ".TextEntries/alltextForgot2.fetxt.dmp"
+#incbin ".TextEntries/alltextForgot1.fetxt.dmp"
 setText($934, __TEXTPROCESS934)
 
 __TEXTPROCESS935:
-#incbin ".TextEntries/alltextTallyUpStart.fetxt.dmp"
+#incbin ".TextEntries/alltextForgot2.fetxt.dmp"
 setText($935, __TEXTPROCESS935)
 
 __TEXTPROCESS936:
-#incbin ".TextEntries/alltextGilliamLeavesTalk.fetxt.dmp"
+#incbin ".TextEntries/alltextTallyUpStart.fetxt.dmp"
 setText($936, __TEXTPROCESS936)
 
 __TEXTPROCESS937:
-#incbin ".TextEntries/alltextComputing.fetxt.dmp"
+#incbin ".TextEntries/alltextGilliamLeavesTalk.fetxt.dmp"
 setText($937, __TEXTPROCESS937)
 
 __TEXTPROCESS938:
-#incbin ".TextEntries/alltextDotDotDot.fetxt.dmp"
+#incbin ".TextEntries/alltextComputing.fetxt.dmp"
 setText($938, __TEXTPROCESS938)
 
 __TEXTPROCESS939:
-#incbin ".TextEntries/alltextGreatScore.fetxt.dmp"
+#incbin ".TextEntries/alltextDotDotDot.fetxt.dmp"
 setText($939, __TEXTPROCESS939)
 
 __TEXTPROCESS93A:
-#incbin ".TextEntries/alltextGoodScore.fetxt.dmp"
+#incbin ".TextEntries/alltextGreatScore.fetxt.dmp"
 setText($93A, __TEXTPROCESS93A)
 
 __TEXTPROCESS93B:
-#incbin ".TextEntries/alltextMidScore.fetxt.dmp"
+#incbin ".TextEntries/alltextGoodScore.fetxt.dmp"
 setText($93B, __TEXTPROCESS93B)
 
 __TEXTPROCESS93C:
-#incbin ".TextEntries/alltextBadScore.fetxt.dmp"
+#incbin ".TextEntries/alltextMidScore.fetxt.dmp"
 setText($93C, __TEXTPROCESS93C)
 
 __TEXTPROCESS93D:
-#incbin ".TextEntries/alltextWhatMissed.fetxt.dmp"
+#incbin ".TextEntries/alltextBadScore.fetxt.dmp"
 setText($93D, __TEXTPROCESS93D)
 
 __TEXTPROCESS93E:
-#incbin ".TextEntries/alltextSuggestVisit.fetxt.dmp"
+#incbin ".TextEntries/alltextWhatMissed.fetxt.dmp"
 setText($93E, __TEXTPROCESS93E)
 
 __TEXTPROCESS93F:
-#incbin ".TextEntries/alltextSuggestLTC1.fetxt.dmp"
+#incbin ".TextEntries/alltextSuggestVisit.fetxt.dmp"
 setText($93F, __TEXTPROCESS93F)
 
 __TEXTPROCESS940:
-#incbin ".TextEntries/alltextSuggestLTC2.fetxt.dmp"
+#incbin ".TextEntries/alltextSuggestLTC1.fetxt.dmp"
 setText($940, __TEXTPROCESS940)
 
 __TEXTPROCESS941:
-#incbin ".TextEntries/alltextThanksForPlaying.fetxt.dmp"
+#incbin ".TextEntries/alltextSuggestLTC2.fetxt.dmp"
 setText($941, __TEXTPROCESS941)
+
+__TEXTPROCESS942:
+#incbin ".TextEntries/alltextThanksForPlaying.fetxt.dmp"
+setText($942, __TEXTPROCESS942)
 
 __TEXTPROCESS793:
 #incbin ".TextEntries/alltext793.fetxt.dmp"

@@ -455,6 +455,14 @@ Goodbye, Ephidel.[NL]
 Send her my regards.[A][NL]
 [X]
 
+# # EphidelGeneric
+
+[OpenMidLeft][LoadFace][0x46][0x1]
+Be not afraid...[A][NL]
+You shall bear witness to a[NL]
+power that surpasses all![A]
+[X]
+
 # # EphidelBeaten1
 
 Well done![NL]
@@ -499,7 +507,7 @@ castle[ToggleRed], not to fight the[NL]
 boss.[A]
 [X]
 
-# # EphidelDeathQuote
+# # EphidelDeathQuoteText
 
 [OpenMidLeft][LoadFace][0x46][0x1]
 Stop... You musn't...[A][NL]

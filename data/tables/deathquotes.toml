@@ -4,5 +4,5 @@ schema = "deathquotes"
 character = "Ephidel"
 chapter = 0x0
 event_id = 2
-text_id = "EphidelDeathQuote"
-event_pointer = 0
+text_id = 0
+event_pointer = "EphidelDeathQuote"

@@ -1,6 +1,7 @@
+// CR cam: asasdgfasdfasdfasdfasdfa
+
 #include "global.h"
 
-#include "agb_sram.h"
 #include "bm.h"
 #include "constants/characters.h"
 #include "efxbattle.h"
@@ -11,22 +12,7 @@
 
 #include "eventinfo.h"
 
-#include "ram_structures.h"
-
-void savePersistentBgm(void *target, unsigned size) {
-  WriteAndVerifySramFast((void *)gPersistentBgm, target, size);
-}
-
-void loadPersistentBgm(void *source, unsigned size) {
-  ReadSramFast(source, (void *)gPersistentBgm, size);
-}
-
-struct BattleSong {
-  int songid : 31;
-  bool persist : 1;
-};
-
-struct BattleSong selectBattleSong() {
+int selectBattleSong() {
   struct BattleUnit *bul = gpEkrBattleUnitLeft;
   struct BattleUnit *bur = gpEkrBattleUnitRight;
   int staff_type;
@@ -43,14 +29,14 @@ struct BattleSong selectBattleSong() {
 
   switch (staff_type) {
   case 2:
-    return (struct BattleSong){ .songid = 0x22, .persist = false };
+    return 0x22;
 
   case 1:
-    return (struct BattleSong){ .songid = 0x21, .persist = false };
+    return 0x21;
   }
 
   if (UNIT_CHAR_ID(&bul->unit) == CHARACTER_LYON) {
-    return (struct BattleSong){ .songid = 0x1D, .persist = true };
+    return 0x1D;
   }
 
   int songid;
@@ -63,41 +49,28 @@ struct BattleSong selectBattleSong() {
     songid = 0x1A;
   }
 
-  return (struct BattleSong){ .songid = songid, .persist = false };
+  return songid;
 }
 
 void EkrPlayMainBGM(void) {
   if (gBmSt.gameStateBits & BM_FLAG_5) {
-    *gPersistentBgm = -1;
     gEkrMainBgmPlaying = false;
     return;
   }
 
   gEkrMainBgmPlaying = true;
 
-  struct BattleSong bs = selectBattleSong();
-  int songid = bs.songid;
+  int songid = selectBattleSong();
 
   if (songid == -1) {
-    *gPersistentBgm = -1;
     gEkrMainBgmPlaying = false;
     return;
-  }
-
-  if (*gPersistentBgm == songid) {
-    return;
-  }
-
-  if (bs.persist) {
-    *gPersistentBgm = songid;
-  }
-  else {
-    *gPersistentBgm = -1;
   }
 
   EfxOverrideBgm(songid, 0x100);
 }
 
+/*
 void EfxOverrideBgm(int songid, int volume) {
   if (gBmSt.gameStateBits & BM_FLAG_5)
     return;
@@ -112,47 +85,19 @@ void EfxOverrideBgm(int songid, int volume) {
 
 void EkrRestoreBGM(void) {
   if (CheckBanimHensei() == true || gBmSt.gameStateBits & BM_FLAG_5 ||
-      gEkrMainBgmPlaying == false ||
-      (*gPersistentBgm != -1 && !*gRestoreFromDeathQuote)) {
+      gEkrMainBgmPlaying == false || GetCurrentBgmSong() == GetCurrentMapMusicIndex()) {
     MakeBgmOverridePersist();
     return;
   }
 
   RestoreBgm();
-
-  if (*gRestoreFromDeathQuote) {
-    *gRestoreFromDeathQuote = 0;
-  }
 }
 
-void DisplayDefeatTalkForPid(u8 pid) {
-  struct DefeatTalkEnt *ent = GetDefeatTalkEntry(pid);
-
-  if (ent) {
-    if ((ent->route == 1) && (ent->flag == 0x65)) {
-      StartBgm(0x3e, NULL);
-      gPlaySt.config.disableBgm = 1;
-    }
-    else {
-      if (UNIT_FACTION(GetUnitFromCharId(pid)) == FACTION_BLUE) {
-        if (*gPersistentBgm) {
-          MakeBgmOverridePersist();
-          *gRestoreFromDeathQuote = 1;
-        }
-        StartBgm(0x3f, NULL);
-      }
-    }
-    if (ent->msg != 0) {
-      CallBattleQuoteEventInBattle(ent->msg);
-    }
-    else {
-      if (ent->event) {
-        EventEngine_CreateBattle((u16 *)ent->event);
-      }
-    }
-
-    SetPidDefeatedFlag(pid, ent->flag);
+void StartMapSongBgm(void) {
+  int songid = GetCurrentMapMusicIndex();
+  int currentSong = GetCurrentBgmSong();
+  if (currentSong != songid) {
+    StartBgm(songid, 0);
   }
-
-  return;
 }
+*/

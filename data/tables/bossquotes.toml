@@ -3,7 +3,31 @@ schema = "bossquotes"
 [0x1]
 initiator = "Matthew"
 receiver = "Ephidel"
-chapter = 0x0
+chapter = 0
 event_id = "MatthewFoughtEphidelId"
-text_id = "MatthewEphidel"
-event_pointer = 0
+text_id = 0
+event_pointer = "EphidelMatthewQuoteEvent"
+
+[0x2]
+initiator = "Ephidel"
+receiver = "Matthew"
+chapter = 0
+event_id = "MatthewFoughtEphidelId"
+text_id = 0
+event_pointer = "EphidelMatthewQuoteEvent"
+
+[0x3]
+initiator = 0
+receiver = "Ephidel"
+chapter = 0
+event_id = "EphidelBossQuoteId"
+text_id = 0
+event_pointer = "EphidelBossQuoteGeneric"
+
+[0x4]
+initiator = "Ephidel"
+receiver = 0
+chapter = 0
+event_id = "EphidelBossQuoteId"
+text_id = 0
+event_pointer = "EphidelBossQuoteGeneric"
