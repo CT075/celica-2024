@@ -9,8 +9,16 @@
 #include "constants.h"
 #include "microskillsys/constants.h"
 #include "microskillsys/frontend.h"
+#include "microskillsys/skills.h"
+
+#include "ram_structures.h"
 
 #define gUiTmScratchA ((u16 *)UI_SCRATCH_A_ADDR)
+
+void drawSkillIcon(u16 *BgOut, int IconIndex, int OamPalBase);
+void clearSkillIcons();
+
+extern const char SkillIconTileGraphic[];
 
 inline void displaySkills(void) {
   struct Unit *unit = gStatScreen.unit;
@@ -20,6 +28,7 @@ inline void displaySkills(void) {
     icons[i] = -1;
   }
 
+  clearSkillIcons();
   populateSkillIconList(unit, icons);
 
   for (int i = 0; i < MAX_SKILLS_POSSIBLE; i++) {
@@ -29,7 +38,7 @@ inline void displaySkills(void) {
 
     int idx = i + 1;
 
-    DrawIcon(
+    drawSkillIcon(
         gUiTmScratchA + TILEMAP_INDEX(2 * idx, 14), icons[i],
         TILEREF(0, STATSCREEN_BGPAL_EXTICONS)
     );
@@ -110,3 +119,63 @@ const struct HelpBoxInfo sHelpInfo_Skill4 = {
   &sHelpInfo_Ss0Res, NULL,           &sHelpInfo_Skill3, NULL, 0xAC, 0x80, 4,
   &redirectSkill,    &populateSkill,
 };
+
+// It is very annoying to need to reproduce all this manually. We could do the
+// l33t thing and add a hook to replace the single pointer to `DrawnIconLookupTable`,
+// but this is clearer
+
+void clearSkillIcons() {
+  CpuFill16(0, skillIconLookupTable, sizeof(struct IconStruct[MAX_SKILLS_POSSIBLE]));
+  CpuFill16(0, skillIconGFXIDLookupTable, 0x20);
+}
+
+int getSkillIconGfxTileIndex(int idx) { return 0x300 - idx * 4; }
+
+int getSkillIconGfxIndex(int Index) {
+  int i;
+  for (i = 0; i < MAX_SKILLS_POSSIBLE; i++) {
+    if (skillIconGFXIDLookupTable[i] == 0) {
+      skillIconGFXIDLookupTable[i] = Index + 1;
+      return i;
+    }
+  }
+  return -1;
+}
+
+u16 getSkillIconTileIndex(int Index) {
+  if (skillIconLookupTable[Index].Index != 0) {
+    if (skillIconLookupTable[Index].References < 0xFF) {
+      skillIconLookupTable[Index].References++;
+    }
+  }
+  else {
+    skillIconLookupTable[Index].References++;
+    skillIconLookupTable[Index].Index = getSkillIconGfxIndex(Index) + 1;
+
+    RegisterDataMove(
+        SkillIconTileGraphic + (Index * 0x80),
+        (void *)(VRAM + (0x1FFE0 & (VRAM + 0x20 * getSkillIconGfxTileIndex(
+                                                      skillIconLookupTable[Index].Index
+                                                  )))),
+        0x80
+    );
+  }
+  return getSkillIconGfxTileIndex(skillIconLookupTable[Index].Index);
+}
+
+void drawSkillIcon(u16 *BgOut, int IconIndex, int OamPalBase) {
+  if (IconIndex < 0) {
+    BgOut[0] = 0;
+    BgOut[1] = 0;
+    BgOut[32] = 0;
+    BgOut[33] = 0;
+  }
+  else {
+    u16 Tile = getSkillIconTileIndex(IconIndex) + OamPalBase;
+
+    BgOut[0] = Tile++;
+    BgOut[1] = Tile++;
+    BgOut[32] = Tile++;
+    BgOut[33] = Tile;
+  }
+}

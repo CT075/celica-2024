@@ -15,6 +15,7 @@
 #include "microskillsys/battle_simple.h"
 #include "microskillsys/battleunit_calc.h"
 #include "microskillsys/buffs.h"
+#include "microskillsys/icons.h"
 #include "microskillsys/skills.h"
 
 #define NUM_CALC_SKILLS (sizeof(calcSkills) / sizeof(struct CalcModSkillSpec))
@@ -243,6 +244,55 @@ short getClassSkillText(struct Unit *unit) {
   return -1;
 }
 
+short getCharacterSkillIcon(struct Unit *unit) {
+  // CR cam: populate this
+  switch (UNIT_CHAR_ID(unit)) {
+    /*
+  case CHARACTER_LYON:
+    return AllForOneIconId;
+    */
+  case CHARACTER_COLM:
+    return RevengerIconId;
+  }
+
+  return -1;
+}
+
+short getClassSkillIcon(struct Unit *unit) {
+  switch (UNIT_CLASS_ID(unit)) {
+  case CLASS_PALADIN:
+    return AegisIconId;
+  case CLASS_FALCON_KNIGHT:
+    return AirSuperiorityIconId;
+  case CLASS_WARRIOR:
+    return NoGuardIconId;
+  case CLASS_GENERAL:
+    return PerfectGuardIconId;
+  case CLASS_WYVERN_LORD:
+    return PierceIconId;
+  case CLASS_BERSERKER:
+    return RecklessIconId;
+  case CLASS_SNIPER:
+    return ShootDownIconId;
+  case CLASS_GREAT_KNIGHT:
+    return TrampleIconId;
+  case CLASS_EIRIKA_MASTER_LORD:
+    return CharmEirIconId;
+  case CLASS_EPHRAIM_MASTER_LORD:
+    return CharmEphIconId;
+  case CLASS_ROGUE:
+    return CovertIconId;
+  case CLASS_WYVERN_KNIGHT:
+    return AirRaidIconId;
+    /*
+  case CLASS_BISHOP:
+    return SlayerIconId;
+    */
+  }
+
+  return -1;
+}
+
 void initSkillDisplay(struct Unit *unit) {
   for (int i = 0; i < MAX_SKILLS_POSSIBLE; i += 1) {
     gSkillTextIdBuffer[i] = -1;
@@ -266,13 +316,13 @@ void populateSkillIconList(struct Unit *unit, int *icons) {
   int index = 0;
   short result;
 
-  if ((result = getCharacterSkillText(unit)) != -1) {
-    icons[index] = 0x79 + 0 + 1;
+  if ((result = getCharacterSkillIcon(unit)) != -1) {
+    icons[index] = result;
     index += 1;
   }
 
-  if ((result = getClassSkillText(unit)) != -1) {
-    icons[index] = 0x79 + 1 + 1;
+  if ((result = getClassSkillIcon(unit)) != -1) {
+    icons[index] = result;
     index += 1;
   }
 }

@@ -31,5 +31,11 @@ $(d)/include/microskillsys/skills.h: $(d)/skills/skill_list.txt
 		| xargs -I '{}' python -c 'print("#include \"skills/{}.h\"")' \
 		> $@
 
+$(d)/include/microskillsys/icons.h: $(d)/skills/icons/installer.event
+	sed -n '/^#define/p' $< > $@
+
+# no idea why this needs to be done manually
+$(d)/frontend.o: $(d)/include/microskillsys/icons.h
+
 d := $(dirstack_$(sp))
 sp := $(basename $(sp))

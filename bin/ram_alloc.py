@@ -12,6 +12,7 @@ HEADER = """\
 
 #include "global.h"
 #include "constants.h"
+#include "icon.h"
 #include "microskillsys/constants.h"
 #include "microskillsys/battle.h"
 

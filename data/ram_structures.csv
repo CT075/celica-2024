@@ -1,3 +1,5 @@
 name,real_type,access_type,notes
 g Battle Round Order,struct BattleRound[MAX_BATTLE_ROUNDS],struct BattleRound *,
 g Skill Text Id Buffer,short[MAX_SKILLS_POSSIBLE],short *,
+skill Icon Lookup Table,struct IconStruct[MAX_SKILLS_POSSIBLE],struct IconStruct *,
+skill Icon G F X I D Lookup Table,u8[MAX_SKILLS_POSSIBLE],u8 *,
