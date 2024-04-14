@@ -5,7 +5,7 @@ entry_size = 12
 
 [character]
 index = 0
-size = 1
+size = 2
 
 [chapter]
 index = 3
@@ -13,7 +13,7 @@ size = 1
 
 [event_id]
 index = 4
-size = 1
+size = 2
 
 [text_id]
 index = 6

@@ -49,6 +49,7 @@ POP
 #define MatthewSecretId 16
 #define EphidelArrivedId 17
 #define EphidelBossQuoteId 18
+#define BossDeadTextId 19
 
 #define VisitedSecretShopId 34
 #define MatthewFoughtEphidelId 35
@@ -111,6 +112,7 @@ AREA 3 LateVisit [5,16] [5,16]
 CauseGameOverIfLordDies
 AFEV MatthewSecretId MatthewSecretShopChat MatthewTalkId
 DefeatAll(GilliamLeaves)
+AFEV BossDeadTextId DidYouForget 2
 END_MAIN
 
 TrapData:
@@ -178,8 +180,7 @@ UNIT BadGuy Mercenary Ephidel Level(18,Enemy,1) [5,0] 0 0 1 C_6_5 [SteelSword] N
 UNIT
 
 EphidelGroup:
-//UNIT Ephidel Necromancer 0 Level(20,Enemy,0) [19,0] 0 0 1 C_17_3 [Naglfar] [0xC, 0x3, 0, 0]
-UNIT Ephidel Necromancer 0 Level(20,Enemy,0) [19,0] 0 0 1 C_12_16 [Naglfar] [0xC, 0x3, 0, 0]
+UNIT Ephidel Necromancer 0 Level(20,Enemy,0) [19,0] 0 0 1 C_17_3 [Naglfar] [0xC, 0x3, 0, 0]
 UNIT
 
 EphraimReinforcements:
@@ -238,7 +239,6 @@ ScrollText(ExplainGoToCastle)
 ScrollText(ExplainSeize)
 SVAL s3 (-15000)
 GIVETOSLOT3
-CALL SpawnEnemies
 NoFade
 ENDA
 
@@ -647,6 +647,14 @@ EphidelMatthewQuoteEvent: {
 EphidelDeathQuote: {
   //ENUF 4
   Text(EphidelDeathQuoteText)
+  NoFade
+  ENDA
+}
+
+DidYouForget: {
+  ScrollText(EphidelBeaten1)
+  ScrollText(EphidelBeaten2)
+  ScrollText(EphidelBeaten3)
   NoFade
   ENDA
 }

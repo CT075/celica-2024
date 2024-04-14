@@ -1,143 +1,143 @@
 schema = "character"
 
 [Eirika]
-hp = "31"
-pow = "14"
-skl = "19"
-spd = "20"
-def = "12"
+hp = "31-18"
+pow = "14-3"
+skl = "19-3"
+spd = "20-4"
+def = "12-5"
 res = 16
 lck = 18
 ranks = { sword = "A" }
 
 [Seth]
-hp = "45"
-pow = "18"
-skl = "20"
-spd = "18"
-def = "17"
-res = "12"
+hp = "45-23"
+pow = "18-7"
+skl = "20-4"
+spd = "18-7"
+def = "17-8"
+res = "12-3"
 lck = 14
 ranks = { sword = "A", lance = "S" }
 
 [Vanessa]
-hp = "33"
-pow = "16"
-skl = "18"
-spd = "25"
-def = "11"
-res = "18"
+hp = "33-20"
+pow = "16-7"
+skl = "18-7"
+spd = "25-7"
+def = "11-5"
+res = "18-4"
 lck = 15
 con = 1
 ranks = { sword = "B", lance = "A" }
 
 [LArachel]
-hp = "28"
-pow = "19"
-skl = "17"
-spd = "17"
-def = "8"
-res = "21"
+hp = "28-19"
+pow = "19-3"
+skl = "17-5"
+spd = "17-6"
+def = "8-3"
+res = "21-6"
 lck = 27
 ranks = { anima = "A", staff = "S" }
 
 [Gilliam]
 hp = 50
-pow = "26"
-skl = "21"
+pow = "26-7"
+skl = "21-5"
 spd = 6
 def = "19"
 res = "21"
 lck = 18
-con = -1
+con = -2
 ranks = { sword = "B", lance = "S", axe = "A" }
 
 [Ephraim]
-hp = "38"
-pow = "21"
-skl = "17"
-spd = "18"
-def = "17"
+hp = "38-18"
+pow = "21-6"
+skl = "17-3"
+spd = "18-4"
+def = "17-5"
 res = 13
 lck = 16
 ranks = { lance = "S" }
 
 [Duessel]
-hp = "50"
-pow = "23"
-skl = "19"
-spd = "14"
-def = "25"
-res = "13"
+hp = "50-21"
+pow = "23-8"
+skl = "19-4"
+spd = "14-6"
+def = "25-11"
+res = "13-6"
 lck = 15
 ranks = { sword = "B", lance = "A", axe = "S" }
 
 [Innes]
-hp = "34"
-pow = "17"
-skl = "21"
-spd = "20"
-def = "14"
-res = "15"
+hp = "34-21"
+pow = "17-7"
+skl = "21-6"
+spd = "20-5"
+def = "14-5"
+res = "15-2"
 lck = 20
 ranks = { bow = "S" }
 
 [Gerik]
-hp = "38"
-pow = "19"
-skl = "18"
-spd = "18"
-def = "16"
-res = "13"
+hp = "38-22"
+pow = "19-6"
+skl = "18-9"
+spd = "18-10"
+def = "16-8"
+res = "13-2"
 lck = 21
 ranks = { sword = "A", axe = "A" }
 
 [Amelia]
-hp = "43"
-pow = "19"
-skl = "16"
-spd = "13"
-def = "21"
-res = "23"
+hp = "43-20"
+pow = "19-8"
+skl = "16-5"
+spd = "13-5"
+def = "21-11"
+res = "23-4"
 lck = 24
 ranks = { sword = "B", lance = "A", axe = "B" }
 
 [Matthew]
-hp = "31"
-pow = "16"
-skl = "24"
-spd = "26"
-def = "12"
+hp = "31-16"
+pow = "16-3"
+skl = "24-1"
+spd = "26-9"
+def = "12-2"
 res = 15
 lck = 18
 ranks = { sword = "A" }
 
 [Ross]
-hp = "44"
-pow = "20"
-skl = "16"
-spd = "17"
-def = "16"
+hp = "44-24"
+pow = "20-7"
+skl = "16-6"
+spd = "17-7"
+def = "16-6"
 res = 8
 lck = 20
 ranks = { axe = "B" }
 
 [Cormag]
-hp = "38"
-pow = "23"
-skl = "17"
-spd = "19"
-def = "18"
+hp = "38-25"
+pow = "23-9"
+skl = "17-5"
+spd = "19-7"
+def = "18-10"
 res = 9
 lck = 17
 ranks = { lance = "A" }
 
 [Moulder]
-hp = "36"
-pow = "18"
-skl = "20"
-spd = "20"
-def = "17"
-res = "21"
+hp = "36-21"
+pow = "18-4"
+skl = "20-4"
+spd = "20-4"
+def = "17-3"
+res = "21-8"
 lck = "25"
 ranks = { light = "A", staff = "S" }

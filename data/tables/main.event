@@ -2,3 +2,4 @@
 #include enemies.table.event
 #include weapons.table.event
 #include bossquotes.table.event
+#include deathquotes.table.event

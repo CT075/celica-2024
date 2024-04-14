@@ -1,6 +1,6 @@
 schema = "deathquotes"
 
-[0x1]
+[0x40]
 character = "Ephidel"
 chapter = 0x0
 event_id = 2
