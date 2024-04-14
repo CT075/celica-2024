@@ -11,3 +11,5 @@
 #define RecklessIconId 10
 #define ShootDownIconId 11
 #define RevengerIconId 12
+#define AllForOneIconId 13
+#define SmiteIconId 14

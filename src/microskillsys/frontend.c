@@ -37,6 +37,7 @@ const struct SimplePreBattleSkillSpec simpleSkills[] = {
   { CharmEirApplies, applyCharmEir },
   { hasCharmEph, applyCharmEph },
   { hasRevenger, applyRevengerCombatBuffs },
+  { hasSmite, applySmite },
 };
 
 #define NUM_PROC_SKILLS (sizeof(procSkills) / sizeof(struct ProcSkillSpec))
@@ -247,12 +248,12 @@ short getClassSkillText(struct Unit *unit) {
 short getCharacterSkillIcon(struct Unit *unit) {
   // CR cam: populate this
   switch (UNIT_CHAR_ID(unit)) {
-    /*
   case CHARACTER_LYON:
     return AllForOneIconId;
-    */
   case CHARACTER_COLM:
     return RevengerIconId;
+  case CHARACTER_LARACHEL:
+    return SmiteIconId;
   }
 
   return -1;

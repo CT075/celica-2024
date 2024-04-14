@@ -38,3 +38,9 @@ ShootDownIcon:
 #define RevengerIconId 12
 RevengerIcon:
 #incbin Revenger.png.dmp
+#define AllForOneIconId 13
+AllForOneIcon:
+#incbin AllForOne.png.dmp
+#define SmiteIconId 14
+SmiteIcon:
+#incbin Smite.png.dmp
