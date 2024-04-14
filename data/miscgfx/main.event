@@ -1,6 +1,3 @@
-EmptyScrollText:
-#incbin EmptyScrollText.png.dmp
-
 DefaultScroll:
 #incbin defaultscroll.png.dmp
 

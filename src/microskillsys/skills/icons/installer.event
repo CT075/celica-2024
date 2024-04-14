@@ -5,12 +5,12 @@ AegisIcon:
 #define AirRaidIconId 1
 AirRaidIcon:
 #incbin AirRaid.png.dmp
-#define TrampleIconId 2
-TrampleIcon:
-#incbin Trample.png.dmp
-#define AirSuperiorityIconId 3
+#define AirSuperiorityIconId 2
 AirSuperiorityIcon:
 #incbin AirSuperiority.png.dmp
+#define AllForOneIconId 3
+AllForOneIcon:
+#incbin AllForOne.png.dmp
 #define CharmEirIconId 4
 CharmEirIcon:
 #incbin CharmEir.png.dmp
@@ -32,18 +32,18 @@ PierceIcon:
 #define RecklessIconId 10
 RecklessIcon:
 #incbin Reckless.png.dmp
-#define ShootDownIconId 11
-ShootDownIcon:
-#incbin ShootDown.png.dmp
-#define RevengerIconId 12
+#define RevengerIconId 11
 RevengerIcon:
 #incbin Revenger.png.dmp
-#define AllForOneIconId 13
-AllForOneIcon:
-#incbin AllForOne.png.dmp
+#define ShootDownIconId 12
+ShootDownIcon:
+#incbin ShootDown.png.dmp
+#define SlayerIconId 13
+SlayerIcon:
+#incbin Slayer.png.dmp
 #define SmiteIconId 14
 SmiteIcon:
 #incbin Smite.png.dmp
-#define SlayerIconId 15
-SlayerIcon:
-#incbin Slayer.png.dmp
+#define TrampleIconId 15
+TrampleIcon:
+#incbin Trample.png.dmp
