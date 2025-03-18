@@ -129,7 +129,7 @@ void clearSkillIcons() {
   CpuFill16(0, skillIconGFXIDLookupTable, 0x20);
 }
 
-int getSkillIconGfxTileIndex(int idx) { return 0x300 - idx * 4; }
+int getSkillIconGfxTileIndex(int idx) { return 0x300 - idx * 4 - 0x30 * 4; }
 
 int getSkillIconGfxIndex(int Index) {
   int i;
