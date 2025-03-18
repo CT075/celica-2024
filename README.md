@@ -34,8 +34,4 @@ therein is original.
 - FE3 "March" by [Sme](https://github.com/sme23) (listed as F2U)
 - FE4 "AllyAttack" by pandan (listed as F2U)
 - Thanks to 2WB for assistance with the Ephidel minimug
-- Thanks to SgtSmilies for the following skill icons, used with permission:
-    - Aegis
-    - Air Raid
-    - Trample
-    - Air Superiority
+- Thanks to SgtSmilies for all skill icons, used with permission
